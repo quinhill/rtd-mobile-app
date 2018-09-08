@@ -1,8 +1,10 @@
-export const scheduleReducer = (state = [], action) => {
+export const schedules = (state = [], action) => {
   switch (action.type) {
-  case 'FETCH_SCHEDULE_DATA':
+  case 'STORE_SCHEDULE_DATA':
     return action.schedule;
   default:
     return state;
   }
 };
+
+export default schedules;

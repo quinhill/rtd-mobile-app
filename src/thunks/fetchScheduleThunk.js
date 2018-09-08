@@ -1,6 +1,6 @@
-import { isLoading, hasErrored, putScheduleData } from '../actions';
+import { isLoading, hasErrored, storeScheduleData } from '../actions';
 
-export const fetchSchedule = (url) => {
+export const fetchScheduleThunk = (url) => {
   return (dispatch) => {
     dispatch(isLoading(true));
     fetch(url)
@@ -12,7 +12,9 @@ export const fetchSchedule = (url) => {
         return response;
       })
       .then(response => response.json())
-      .then(schedule => dispatch(putScheduleData(schedule)))
+      .then(schedule => dispatch(storeScheduleData(schedule)))
       .catch(() => dispatch(hasErrored(true)));
   };
 };
+
+export default fetchScheduleThunk;

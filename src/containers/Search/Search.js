@@ -50,7 +50,7 @@ export class Search extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  fetchRouteSchedules: (url) => dispatch(fetchScheduleThunk(url))
+  storeRouteSchedules: (url) => dispatch(fetchScheduleThunk(url))
 });
 
 export default connect(null, mapDispatchToProps)(Search);

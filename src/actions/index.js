@@ -8,7 +8,7 @@ export const hasErrored = (bool) => ({
   hasErrored: bool
 });
 
-export const putScheduleData = (schedule) => ({
-  type: 'FETCH_SCHEDULE_DATA',
+export const storeScheduleData = (schedule) => ({
+  type: 'STORE_SCHEDULE_DATA',
   schedule
 });
