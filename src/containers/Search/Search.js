@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fetchScheduleThunk } from '../../thunks/fetchScheduleThunk';
+import { storeUserSearch } from '../../actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -22,7 +23,7 @@ export class Search extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // const url = 'somestring';
+    const url = 'somestring';
     this.props.storeRouteSchedules(url);
     this.props.storeUserSearch(this.state);    
     this.setState({startPoint: '', destination: ''});
