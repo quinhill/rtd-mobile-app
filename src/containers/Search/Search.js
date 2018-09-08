@@ -54,3 +54,7 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(null, mapDispatchToProps)(Search);
+
+Search.propTypes = {
+  fetchRouteSchedules: PropTypes.func
+};
