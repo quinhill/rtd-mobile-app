@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Home from '../Home/Home';
-// import Favorites from '../Favorites/Favorites';
+import Footer from '../Footer/Footer';
 // import Tickets from '../Tickets/Tickets';
 import Search from '../../containers/Search/Search';
+import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';
 
 import './App.css';
 
-export const App = () => {
+export class App extends Component {
+  render(){
     return (
       <div className="App">
       <Route exact path='/' component={ Home }/>
-      {/* <Route exact path='/favorites' component={ Favorites }/> */}
+      <Route exact path='/favorites' component={ FavoritesContainer }/>
       <Route exact path='/search' component={ Search }/>
       {/* <Route exact path= '/tickets' component={ Tickets } />      */}
+      <Footer />
       </div>
     );
+  }
   }
 
 

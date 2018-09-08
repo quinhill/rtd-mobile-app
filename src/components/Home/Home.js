@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Footer from '../Footer/Footer';
 import Search from '../../containers/Search/Search';
 
 import './Home.css';
@@ -12,7 +11,6 @@ class Home extends Component {
       <div>
         <Search />
         <FavoritesContainer />
-        <Footer />
       </div>
     )
   }
