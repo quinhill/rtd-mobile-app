@@ -12,3 +12,9 @@ export const storeScheduleData = (schedule) => ({
   type: 'STORE_SCHEDULE_DATA',
   schedule
 });
+
+export const storeUserSearch = (startingPoint, destination) => ({
+  type: 'STORE_USER_SEARCH',
+  startingPoint,
+  destination
+});

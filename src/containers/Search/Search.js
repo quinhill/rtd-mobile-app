@@ -22,8 +22,10 @@ export class Search extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const url = 'somestring';
+    // const url = 'somestring';
     this.props.storeRouteSchedules(url);
+    this.props.storeUserSearch(this.state);    
+    this.setState({startPoint: '', destination: ''});
   }
 
   render(){
@@ -57,7 +59,8 @@ export class Search extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  storeRouteSchedules: (url) => dispatch(fetchScheduleThunk(url))
+  storeRouteSchedules: (url) => dispatch(fetchScheduleThunk(url)),
+  storeUserSearch: (startingPoint, destination) => dispatch(storeUserSearch(startingPoint, destination))
 });
 
 export default connect(null, mapDispatchToProps)(Search);
