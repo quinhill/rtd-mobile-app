@@ -61,11 +61,13 @@ export class Search extends Component {
 
 export const mapDispatchToProps = dispatch => ({
   storeRouteSchedules: (url) => dispatch(fetchScheduleThunk(url)),
-  storeUserSearch: (startingPoint, destination) => dispatch(storeUserSearch(startingPoint, destination))
+  storeUserSearch: (startingPoint, destination) => (
+    dispatch(storeUserSearch(startingPoint, destination)))
 });
 
 export default connect(null, mapDispatchToProps)(Search);
 
 Search.propTypes = {
-  storeRouteSchedules: PropTypes.func
+  storeRouteSchedules: PropTypes.func,
+  storeUserSearch: PropTypes.func
 };
