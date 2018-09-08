@@ -10,8 +10,11 @@ class Home extends Component {
     return(
       <div>
         <Search />
+        {/* <Favorites /> */}
         <Footer />
       </div>
     )
   }
 }
+
+export default Home;
