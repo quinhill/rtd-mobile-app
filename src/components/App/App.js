@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Home from '../Home/Home';
 import Footer from '../Footer/Footer';
-// import Tickets from '../Tickets/Tickets';
+import TicketsContainer from '../TicketsContainer/TicketsContainer';
 import Search from '../../containers/Search/Search';
 import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';
 
@@ -15,7 +15,7 @@ export class App extends Component {
       <Route exact path='/' component={ Home }/>
       <Route exact path='/favorites' component={ FavoritesContainer }/>
       <Route exact path='/search' component={ Search }/>
-      {/* <Route exact path= '/tickets' component={ Tickets } />      */}
+      <Route exact path= '/tickets' component={ TicketsContainer } />     
       <Footer />
       </div>
     );
