@@ -6,3 +6,5 @@ export const isLoading = (state = false, action) => {
     return state;
   }
 };
+
+export default isLoading;
