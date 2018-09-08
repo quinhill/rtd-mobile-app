@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { fetchScheduleThunk } from '../../thunks/fetchScheduleThunk';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 
 export class Search extends Component {
@@ -7,17 +10,22 @@ export class Search extends Component {
     this.state = {
       startPoint: '',
       destination: ''
-    }
+    };
   }
 
   handleChange = (event) => {
-    event.preventDefault();
     const { name, value } = event.target;
-    this.setState({ [name]: value })
+    this.setState({ [name]: value });
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const url = 'somestring';
+    this.props.fetchRouteSchedules(url);
   }
 
   render(){
-    return(
+    return (
       <div>
         <form onSubmit={ this.handleSubmit }>
           <input 
@@ -37,8 +45,12 @@ export class Search extends Component {
           <button type='submit'>Search</button>
         </form>   
       </div>
-    )
+    );
   }
 }
 
-export default Search;
+export const mapDispatchToProps = dispatch => ({
+  fetchRouteSchedules: (url) => dispatch(fetchScheduleThunk(url))
+});
+
+export default connect(null, mapDispatchToProps)(Search);
