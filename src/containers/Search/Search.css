@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+.search_container {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+form { 
+  margin: 1rem 0;
+  width: 60%
+}
+
+.starting_location {
+  display: block;
+  width: 100%;
+
+} 
+
+.destination {
+  display: block;
+  width: 100%;
+
+}
+
+.search_button {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+}
+

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { fetchScheduleThunk } from '../../thunks/fetchScheduleThunk';
+import { storeUserSearch } from '../../actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
+import './Search.css';
 
 
 export class Search extends Component {
@@ -21,28 +24,35 @@ export class Search extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const url = 'somestring';
-    this.props.fetchRouteSchedules(url);
+    this.props.storeRouteSchedules(url);
+    this.props.storeUserSearch(this.state);    
+    this.setState({startPoint: '', destination: ''});
   }
 
   render(){
     return (
-      <div>
+      <div className="search_container">
         <form onSubmit={ this.handleSubmit }>
           <input 
+            className="starting_location"
             onChange={ this.handleChange }
             type="text" 
-            name='startPoint' 
+            name="startPoint"
             value={ this.state.startPoint } 
             placeholder="Starting Location" 
           />
           <input 
+            className = "destination"
             onChange={ this.handleChange }
             type="text" 
             name='destination' 
             value={ this.state.destination } 
             placeholder="Destination" 
           />
-          <button type='submit'>Search</button>
+          <button 
+            className="search_button"
+            type='submit'>Search
+          </button>
         </form>   
       </div>
     );
@@ -50,11 +60,12 @@ export class Search extends Component {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  storeRouteSchedules: (url) => dispatch(fetchScheduleThunk(url))
+  storeRouteSchedules: (url) => dispatch(fetchScheduleThunk(url)),
+  storeUserSearch: (startingPoint, destination) => dispatch(storeUserSearch(startingPoint, destination))
 });
 
 export default connect(null, mapDispatchToProps)(Search);
 
 Search.propTypes = {
-  fetchRouteSchedules: PropTypes.func
+  storeRouteSchedules: PropTypes.func
 };
