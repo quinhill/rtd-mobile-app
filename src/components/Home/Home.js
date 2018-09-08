@@ -3,6 +3,7 @@ import Footer from '../Footer/Footer';
 import Search from '../../containers/Search/Search';
 
 import './Home.css';
+import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';
 
 class Home extends Component {
   
@@ -10,7 +11,7 @@ class Home extends Component {
     return(
       <div>
         <Search />
-        {/* <Favorites /> */}
+        <FavoritesContainer />
         <Footer />
       </div>
     )
