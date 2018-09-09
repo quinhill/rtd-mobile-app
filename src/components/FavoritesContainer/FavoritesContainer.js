@@ -1,15 +1,28 @@
 import React, { Component } from 'react'
 import Favorite from '../Favorite/Favorite';
+import { connect } from 'react-redux';
 
 export class FavoritesContainer extends Component {
-
+  
   render(){
-    return(
+    const { favorites } = this.props;
+    const createFavCards = favorites.map((favoriteRoute, index) => {
+      return (<Favorite
+        name={favoriteRoute.name}
+        key={index}
+      />);
+    });
+
+    return (
       <div>
-        <Favorite />
+        {createFavCards}
       </div>
-    )
+    );
   }
 }
 
-export default FavoritesContainer;
+export const mapStateToProps = (props) => ({
+  favorites: props.favorites
+});
+
+export default connect(mapStateToProps)(FavoritesContainer);
