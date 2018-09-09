@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { fetchScheduleThunk } from '../../thunks/fetchScheduleThunk';
-import { storeUserSearch, storeMockFavData} from '../../actions';
+import { storeUserSearch, storeMockFavRoutes} from '../../actions';
 import { connect } from 'react-redux';
-import { mockFavData } from 'mockFavData';
+import { mockFavRoutes } from 'mockFavRoutes';
 import PropTypes from 'prop-types';
 
 import './Search.css';
@@ -26,7 +26,8 @@ export class Search extends Component {
     event.preventDefault();
     const url = 'somestring';
     this.props.storeRouteSchedules(url);
-    this.props.storeUserSearch(this.state);    
+    this.props.storeUserSearch(this.state);  
+    this.props.storeMockFavRoutes(mockFavRoutes);  
     this.setState({startPoint: '', destination: ''});
   }
 
@@ -64,7 +65,7 @@ export class Search extends Component {
 
 export const mapDispatchToProps = dispatch => ({
   storeRouteSchedules: (url) => dispatch(fetchScheduleThunk(url)),
-  storeMockFav: (mockFavData) => dispatch(storeMockFavData(mockFavData)),
+  storeMockFavRoutes: (mockFavRoutes) => dispatch(storeMockFavRoutes(mockFavRoutes)),
   storeUserSearch: (startingPoint, destination) => (
     dispatch(storeUserSearch(startingPoint, destination)))
 });
