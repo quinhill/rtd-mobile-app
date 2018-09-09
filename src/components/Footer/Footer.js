@@ -4,27 +4,32 @@ import { NavLink } from 'react-router-dom';
 import './Footer.css';
 
 export const Footer = (props) => {
+
+  const selectDisplay = (event) => {
+    event.preventDefault();
+    const { id } = event.target;
+    props.selectDisplay(id);
+  };
+
   return (
     <footer className="footer_container">
-      {/* <NavLink>user info</NavLink> */}
-      <NavLink to='/favorites'>
-        <img 
-          src="/images/user.svg" 
-          className="icon" 
-        />
+      <NavLink 
+        to='/favorites'
+        id="favorites"
+        class="icon"
+      >
       </NavLink>
-      <NavLink to='/'>
-        <img 
-          src="/images/home.svg" 
-          className="icon" 
-          id="home-icon" 
-        />
+      <NavLink 
+        exact to='/'
+        id="home"
+        class="icon"
+      >
       </NavLink>
-      <NavLink to='/tickets'>
-        <img 
-          src="/images/tickets.svg" className="icon" 
-          id="tickets-icon"
-        />
+      <NavLink 
+        to='/tickets'
+        id="tickets"
+        class="icon"
+      >
       </NavLink> 
     </footer>
   );

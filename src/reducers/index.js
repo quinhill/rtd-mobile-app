@@ -6,6 +6,7 @@ import userSearch from './userSearchReducer';
 import favorites from './favoritesReducer';
 
 
+
 const rootReducer = combineReducers({
   userSearch,
   schedules,

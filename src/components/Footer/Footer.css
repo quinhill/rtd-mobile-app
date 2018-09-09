@@ -1,25 +1,49 @@
 footer {
   position: absolute;
   bottom: 0;
-  height: 40px;
+  height: 60px;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   background-color: #c02d34;
 }
 
 .icon {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
 }
 
-#home-icon {
-  height: 23px;
-  width: 23px;
+#favorites {
+  background-image: url('/images/user.svg');
+  background-size: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 33.5%;
+  transition: .5s ease;
 }
 
-#tickets-icon {
-  height: 23px;
-  width: 23px;
+#home {
+  background-image: url('/images/home.svg');
+  background-size: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 33%;
+  transition: .5s ease;
+}
+
+#tickets {
+  background-image: url('/images/tickets.svg');
+  background-size: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 33.5%;
+  transition: .5s ease;
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.3);
 }
