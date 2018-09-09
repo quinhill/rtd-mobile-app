@@ -18,3 +18,8 @@ export const storeUserSearch = (startingPoint, destination) => ({
   startingPoint,
   destination
 });
+
+export const displaySelected = (selected) => ({
+  type: 'DISPLAY_SELECTED',
+  selected
+});

@@ -1,7 +1,7 @@
 footer {
   position: absolute;
   bottom: 0;
-  height: 40px;
+  height: 60px;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -10,16 +10,16 @@ footer {
 }
 
 .icon {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
 }
 
-#home-icon {
-  height: 23px;
-  width: 23px;
+#home {
+  height: 30px;
+  width: 30px;
 }
 
-#tickets-icon {
-  height: 23px;
-  width: 23px;
+#tickets {
+  height: 30px;
+  width: 30px;
 }
