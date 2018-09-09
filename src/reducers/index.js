@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
 import hasErrored from './hasErroredReducer';
 import isLoading from './isLoadingReducer';
-import schedules from "./scheduleReducer";
-import userSearch from "./userSearchReducer";
-import display from './displayReducer';
+import schedules from './scheduleReducer';
+import userSearch from './userSearchReducer';
+import favorites from './favoritesReducer';
+
 
 
 const rootReducer = combineReducers({
@@ -11,7 +12,7 @@ const rootReducer = combineReducers({
   schedules,
   hasErrored,
   isLoading,
-  display
+  favorites
 });
 
 export default rootReducer;

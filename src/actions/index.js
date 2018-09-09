@@ -19,7 +19,8 @@ export const storeUserSearch = (startingPoint, destination) => ({
   destination
 });
 
-export const displaySelected = (selected) => ({
-  type: 'DISPLAY_SELECTED',
-  selected
+
+export const storeMockFavRoutes = (mockFavRoutes) => ({
+  type: 'STORE_MOCK_FAV_ROUTES',
+  mockFavRoutes
 });
