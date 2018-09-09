@@ -4,16 +4,22 @@
 
 .favorite_card {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(231, 231, 231, 0.651);
   width: 80%;
-  height: 4rem;
+  /* height: 4rem; */
   margin: 1rem auto;
 }
 
+.favorite_card-name {
+  background-color: rgba(231, 231, 231, 0.87);
+  width: 100%
+}
+
 .favorite_trip-details {
-  
+  background-color: rgba(231, 231, 231, 0.87);
+  width: 100%;
 } 
 
 .starting-point {
