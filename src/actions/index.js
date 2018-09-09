@@ -18,3 +18,8 @@ export const storeUserSearch = (startingPoint, destination) => ({
   startingPoint,
   destination
 });
+
+export const storeMockFavRoutes = (mockFavRoutes) => ({
+  type: 'STORE_MOCK_FAV_ROUTES',
+  mockFavRoutes
+});

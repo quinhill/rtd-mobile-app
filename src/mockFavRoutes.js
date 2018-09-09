@@ -1,4 +1,4 @@
-export const favoriteRoutes = [{
+export const mockFavRoutes = [{
   'name': 'Commute',
   'origin': 'Alameda Ave & Fairmount Drive',
   'terminus': '18th St & Larimer St',
