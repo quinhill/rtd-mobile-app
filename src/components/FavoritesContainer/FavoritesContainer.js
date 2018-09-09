@@ -16,7 +16,7 @@ export class FavoritesContainer extends Component {
     });
 
     return (
-      <div>
+      <div className='favorite_card-container'>
         {createFavCards}
       </div>
     );
