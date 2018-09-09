@@ -1,0 +1,24 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+}
+
+#home-icon {
+  height: 23px;
+  width: 23px;
+}
+
+#tickets-icon {
+  height: 23px;
+  width: 23px;
+}
