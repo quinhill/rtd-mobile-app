@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
 import Favorite from '../Favorite/Favorite';
+import { connect } from 'react-redux';
 
 export class FavoritesContainer extends Component {
-
+  
   render(){
-    return(
+   
+    return (
       <div>
-        <Favorite />
       </div>
-    )
+    );
   }
 }
 
-export default FavoritesContainer;
+export const mapStateToProps = (props) => ({
+  favorites: props.favorites
+});
+
+export default connect(mapStateToProps)(FavoritesContainer);
