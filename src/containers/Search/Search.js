@@ -33,8 +33,9 @@ export class Search extends Component {
     return (
       <div className="search_container">
         <form onSubmit={ this.handleSubmit }>
-          <input 
-            className="starting_location"
+          <input
+            id="starting_location"
+            className="search-input"
             onChange={ this.handleChange }
             type="text" 
             name="startPoint"
@@ -42,7 +43,8 @@ export class Search extends Component {
             placeholder="Starting Location" 
           />
           <input 
-            className = "destination"
+            id="destination"
+            className="search-input"
             onChange={ this.handleChange }
             type="text" 
             name='destination' 

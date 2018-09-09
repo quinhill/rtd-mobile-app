@@ -13,12 +13,14 @@ export class App extends Component {
   render(){
     return (
       <div className="App">
-        <Header />
-        <Route exact path='/' component={ Home }/>
-        <Route exact path='/favorites' component={ FavoritesContainer }/>
-        <Route exact path='/search' component={ Search }/>
-        <Route exact path= '/tickets' component={ TicketsContainer } />     
-        <Footer />
+        <div className="overlay">
+          <Header />
+          <Route exact path='/' component={ Home }/>
+          <Route exact path='/favorites' component={ FavoritesContainer }/>
+          <Route exact path='/search' component={ Search }/>
+          <Route exact path= '/tickets' component={ TicketsContainer } />     
+          <Footer />
+        </div>
       </div>
     );
   }
