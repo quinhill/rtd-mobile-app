@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import Favorite from '../Favorite/Favorite';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 
 export class FavoritesContainer extends Component {
   
@@ -14,7 +16,7 @@ export class FavoritesContainer extends Component {
     });
 
     return (
-      <div>
+      <div className='favorite_card-container'>
         {createFavCards}
       </div>
     );
@@ -26,3 +28,7 @@ export const mapStateToProps = (props) => ({
 });
 
 export default connect(mapStateToProps)(FavoritesContainer);
+
+FavoritesContainer.propTypes = {
+  favorites: PropTypes.array
+};

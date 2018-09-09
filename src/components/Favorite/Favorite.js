@@ -1,11 +1,20 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export const Favorite = (props) => {
-  return(
-    <h2>
-      {props.name}
-    </h2>
+import './Favorite.css';
+
+export const Favorite = ({ name }) => {
+  return (
+    <div className='favorite_card'>
+      <h2>
+        {name}
+      </h2>
+    </div>
   );
 };
 
 export default Favorite;
+
+Favorite.propTypes = {
+  name: PropTypes.string
+}; 

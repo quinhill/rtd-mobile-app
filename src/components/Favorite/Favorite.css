@@ -1,0 +1,13 @@
+.favorite_card-container {
+  width: 100vw;
+}
+
+.favorite_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(231, 231, 231, 0.651);
+  width: 80%;
+  height: 4rem;
+  margin: 1rem auto;
+}
