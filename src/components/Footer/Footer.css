@@ -4,7 +4,7 @@ footer {
   height: 60px;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   background-color: #c02d34;
 }
@@ -14,12 +14,36 @@ footer {
   width: 25px;
 }
 
+#favorites {
+  background-image: url('/images/user.svg');
+  background-size: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 33.5%;
+  transition: .5s ease;
+}
+
 #home {
-  height: 30px;
-  width: 30px;
+  background-image: url('/images/home.svg');
+  background-size: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 33%;
+  transition: .5s ease;
 }
 
 #tickets {
-  height: 30px;
-  width: 30px;
+  background-image: url('/images/tickets.svg');
+  background-size: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 33.5%;
+  transition: .5s ease;
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.3);
 }
