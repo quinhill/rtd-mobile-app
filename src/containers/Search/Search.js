@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { fetchScheduleThunk } from '../../thunks/fetchScheduleThunk';
 import { storeUserSearch, storeMockFavRoutes} from '../../actions';
 import { connect } from 'react-redux';
-import { mockFavRoutes } from 'mockFavRoutes';
+import { mockFavRoutes } from '../../mockFavRoutes';
 import PropTypes from 'prop-types';
 
 import './Search.css';
