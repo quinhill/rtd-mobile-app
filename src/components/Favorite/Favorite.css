@@ -9,8 +9,9 @@
 }
 
 h2 {
-  font-size: 130%;
-  color: #213982;
+  font-size: 110%;
+  color: #000000;
+  font-weight: 300;
 }
 
 .favorite_trip-details {
