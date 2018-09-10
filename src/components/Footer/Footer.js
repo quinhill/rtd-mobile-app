@@ -3,13 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import './Footer.css';
 
-export const Footer = (props) => {
-
-  const selectDisplay = (event) => {
-    event.preventDefault();
-    const { id } = event.target;
-    props.selectDisplay(id);
-  };
+export const Footer = () => {
 
   return (
     <footer className="footer_container">
