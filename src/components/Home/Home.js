@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { mockFavRoutes } from '../../mockFavRoutes';
-import './HomePage.css';
+import './Home.css';
 
 class HomePage extends Component {
   componentDidMount(){

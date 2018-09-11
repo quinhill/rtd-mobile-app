@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import HomePage from '../Home/HomePage';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import HomePage from '../Home/Home';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import AccountPage from '../Account/AccountPage';
-import LandingPage from '../Landing/LandingPage';
-import SignUpPage from '../SignUp/SignUpPage';
-import SignInPage from '../SignIn/SignInPage';
-import PasswordForgetPage from '../PasswordForget/PasswordForgetPage';
+import AccountPage from '../Account/Account';
+import LandingPage from '../Landing/Landing';
+import SignUpPage from '../SignUp/SignUp';
+import SignInPage from '../SignIn/SignIn';
+import PasswordForgetPage from '../PasswordForget/PasswordForget';
 
 import * as routes from '../../constants/routes';
 
@@ -20,32 +20,34 @@ export class App extends Component {
       <div className="App">
         <div className="overlay">
           <Header />
-          <Router>
-            <Route 
-              exact path={routes.LANDING} 
-              component={LandingPage} 
-            />
-            <Route 
-              exact path={routes.SIGN_UP} 
-              component={SignUpPage} 
-            />
-            <Route 
-              exact path={routes.SIGN_IN} 
-              component={SignInPage} 
-            />
-            <Route 
-              exact path={routes.PASSWORD_FORGET} 
-              component={PasswordForgetPage} 
-            />
-            <Route 
-              exact path={routes.HOME} 
-              component={HomePage} 
-            />
-            <Route 
-              exact path={routes.ACCOUNT} 
-              component={AccountPage} 
-            />
-          </Router>
+          <BrowserRouter>
+            <Switch>
+              <Route 
+                exact path={routes.LANDING} 
+                component={LandingPage} 
+              />
+              <Route 
+                exact path={routes.SIGN_UP} 
+                component={SignUpPage} 
+              />
+              <Route 
+                exact path={routes.SIGN_IN} 
+                component={SignInPage} 
+              />
+              <Route 
+                exact path={routes.PASSWORD_FORGET} 
+                component={PasswordForgetPage} 
+              />
+              <Route 
+                exact path={routes.HOME} 
+                component={HomePage} 
+              />
+              <Route 
+                exact path={routes.ACCOUNT} 
+                component={AccountPage} 
+              />
+            </Switch>
+          </BrowserRouter>
           <Footer />
         </div>
       </div>
