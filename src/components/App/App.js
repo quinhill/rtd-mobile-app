@@ -16,7 +16,6 @@ import './App.css';
 export class App extends Component {
   render(){
     return (
-      
       <div className="App">
         <div className="overlay">
           <Header />
@@ -28,12 +27,12 @@ export class App extends Component {
               />
               <Route 
                 exact path={routes.SIGN_UP} 
-                component={SignUpPage} 
+                component={SignUpPage}
               />
-              <Route 
+              {/* <Route 
                 exact path={routes.SIGN_IN} 
                 component={SignInPage} 
-              />
+              /> */}
               <Route 
                 exact path={routes.PASSWORD_FORGET} 
                 component={PasswordForgetPage} 

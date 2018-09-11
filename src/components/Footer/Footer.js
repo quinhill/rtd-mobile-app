@@ -12,19 +12,19 @@ export const Footer = () => {
       <NavLink 
         to={routes.ACCOUNT}
         id="favorites"
-        class="icon"
+        className="icon"
       >
       </NavLink>
       <NavLink 
         exact to={routes.HOME}
         id="home"
-        class="icon"
+        className="icon"
       >
       </NavLink>
       <NavLink 
         to={routes.TICKETS}
         id="tickets"
-        class="icon"
+        className="icon"
       >
       </NavLink> 
     </footer>

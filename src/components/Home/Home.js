@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { mockFavRoutes } from '../../mockFavRoutes';
 import './Home.css';
 
-class HomePage extends Component {
+export class HomePage extends Component {
   componentDidMount(){
     this.props.storeMockFavRoutes(mockFavRoutes);
   }
