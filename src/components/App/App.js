@@ -29,10 +29,10 @@ export class App extends Component {
                 exact path={routes.SIGN_UP} 
                 component={SignUpPage}
               />
-              {/* <Route 
+              <Route 
                 exact path={routes.SIGN_IN} 
                 component={SignInPage} 
-              /> */}
+              />
               <Route 
                 exact path={routes.PASSWORD_FORGET} 
                 component={PasswordForgetPage} 

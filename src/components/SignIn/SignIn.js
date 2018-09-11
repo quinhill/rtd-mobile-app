@@ -1,104 +1,106 @@
-// import React, { Component } from 'react';
-// import { withRouter, Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
-// import { auth } from '../../firebase/firebase';
+import { auth } from '../../firebase';
+import { SignUpLink } from '../SignUp/SignUp';
 
-// import * as routes from '../../constants/routes';
+import * as routes from '../../constants/routes';
 
-// const SignInPage = ({ history }) => {
-//   <div>
-//     <h1>Sign In</h1>
-//     <SignInForm history={history} />
-//   </div>;
+const SignInPage = ({ history }) => {
+  return (
+    <div>
+      <h1>Sign In</h1>
+      <SignInForm history={history} />
+      <SignUpLink />
+    </div>
+  );
+};
 
-// };
-
-// const INITIAL_STATE = {
-//   email: '',
-//   password: '',
-//   error: null
-// };
-
-// const byPropKey = (propertyName, value) => () => ({
-//   [propertyName]: value
-// });
+const INITIAL_STATE = {
+  email: '',
+  password: '',
+  error: null
+};
 
 
-// class SignInForm extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       ...INITIAL_STATE
-//     };
-//   }
+class SignInForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      ...INITIAL_STATE
+    };
+  }
 
-//     onSubmit = (event) => {
-//       const {
-//         email,
-//         password
-//       } = this.state;
+    onSubmit = (event) => {
+      const {
+        email,
+        password
+      } = this.state;
 
-//       const { history } = this.props;
+      const { history } = this.props;
   
-//       auth.doCreateUserWithEmailAndPassword(email, password)
-//         .then(authUser => {
-//           this.setState({ ...INITIAL_STATE });
-//           history.push(routes.HOME);
-//         })
-//         .catch(error => {
-//           this.setState(byPropKey('error', error));
-//         });
+      auth.doSignInWithEmailAndPassword(email, password)
+        .then(authUser => {
+          this.setState({ ...INITIAL_STATE });
+          history.push(routes.HOME);
+        })
+        .catch(error => {
+          this.setState({error: error});
+        });
   
-//       event.preventDefault();
-//     }
+      event.preventDefault();
+    }
 
-//     render() {
-//       const {
-//         email,
-//         password,
-//         error
-//       } = this.state;
+    handleChange = (event) => {
+      const { name, value } = event.target;
+      this.setState({
+        [name]: value
+      });
+    };
 
-//       const isInvalid =
-//       password === '' ||
-//       email === '';
+    render() {
+      const {
+        email,
+        password,
+        error
+      } = this.state;
 
-//       return (
-//         <form onSubmit={this.onSubmit}>
-//           <input
-//             value={email}
-//             onChange={
-//               event => this.setState(byPropKey(
-//                 'email', event.target.value)
-//               )}
-//             type="text"
-//             placeholder="Email Address"
-//           />
-//           <input
-//             value={password}
-//             onChange={
-//               event => this.setState(byPropKey(
-//                 'password', event.target.value)
-//               )}
-//             type="password"
-//             placeholder="Password"
-//           />
-//           <button 
-//             type="submit"
-//             disabled={isInvalid}
-//           >
-//           Sign In
-//           </button>
+      const isInvalid =
+      password === '' ||
+      email === '';
 
-//           { error && <p>{error.message}</p> }
-//         </form>
-//       );
-//     }
-// }
+      return (
+        <form onSubmit={this.onSubmit}>
+          <input
+            name="email"
+            value={email}
+            onChange={this.handleChange}
+            type="email"
+            placeholder="Email Address"
+          />
+          <input
+            name="password"
+            value={password}
+            onChange={this.handleChange}
+            type="password"
+            placeholder="Password"
+          />
+          <button 
+            type="submit"
+            disabled={isInvalid}
+          >
+          Sign Up
+          </button>
+
+          { error && <p>{error.message}</p> }
+        </form>
+      );
+    }
+}
 
 
-// export default withRouter(SignInPage);
+export default withRouter(SignInPage);
 
-// export {
-//   SignInForm
-// };
+export {
+  SignInForm
+};

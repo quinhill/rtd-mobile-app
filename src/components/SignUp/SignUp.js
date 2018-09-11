@@ -22,11 +22,6 @@ const INITIAL_STATE = {
   error: null
 };
 
-const byPropKey = (propertyName, value) => () => ({
-  [propertyName]: value
-});
-
-
 class SignUpForm extends Component {
   constructor(props) {
     super(props);
@@ -50,7 +45,7 @@ class SignUpForm extends Component {
           history.push(routes.HOME);
         })
         .catch(error => {
-          this.setState(byPropKey('error', error));
+          this.setState({error: error});
         });
   
       event.preventDefault();
