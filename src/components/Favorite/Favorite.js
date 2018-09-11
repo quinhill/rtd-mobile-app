@@ -25,7 +25,7 @@ export class Favorite extends Component {
         className='favorite_card'
         onClick={this.showDetails}
       >
-        <div>
+        <div className='favorite_card-name'>
           <h2>
             {this.props.name}
           </h2>
@@ -33,6 +33,7 @@ export class Favorite extends Component {
         <div className='favorite_trip-details' hidden={this.state.hidden}>
           <h4 className='starting-point'>{startingPoint}</h4>
           <h4 className='destination'>{destination}</h4>
+
         </div>
       </div>
     );

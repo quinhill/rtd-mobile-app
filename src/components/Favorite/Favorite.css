@@ -1,5 +1,6 @@
 .favorite_card {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgba(231, 231, 231, 0.9);
@@ -15,7 +16,8 @@ h2 {
 }
 
 .favorite_trip-details {
-  
+  background-color: rgba(231, 231, 231, 0.87);
+  width: 100%;
 } 
 
 .starting-point {
