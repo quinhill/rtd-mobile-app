@@ -1,22 +1,22 @@
 import React from 'react';
 import './Header.css';
 import SignOutButton from '../SignOut/SignOut';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 
 const Header = ({ authUser }) => {
 
   
-  const NavigationAuth = () => {
+  const HeaderNonAuth = () => {
     return (
       <header>
         <img src="images/rtd-logo.png" className="logo-banner" />
-        <Link exact to={routes.SIGN_IN}>Sign In</Link>
+        <NavLink to={routes.SIGN_IN}>Sign In</NavLink>
       </header>
     );
   };
   
-  const NavigationNonAuth = () => {
+  const HeaderAuth  = () => {
     return (
       <header>
         <img src="images/rtd-logo.png" className="logo-banner" />
@@ -28,8 +28,8 @@ const Header = ({ authUser }) => {
   return (
     <div>
       { authUser
-        ? <NavigationAuth />
-        : <NavigationNonAuth />
+        ? <HeaderAuth />
+        : <HeaderNonAuth />
       }
     </div>
   );
