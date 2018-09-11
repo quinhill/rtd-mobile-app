@@ -1,20 +1,18 @@
-.favorite_card-container {
-  width: 100vw;
-}
-
 .favorite_card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  /* height: 4rem; */
+  background-color: rgba(231, 231, 231, 0.9);
+  width: 95%;
+  height: 40px;
   margin: 1rem auto;
 }
 
-.favorite_card-name {
-  background-color: rgba(231, 231, 231, 0.87);
-  width: 100%
+h2 {
+  font-size: 110%;
+  color: #000000;
+  font-weight: 300;
 }
 
 .favorite_trip-details {

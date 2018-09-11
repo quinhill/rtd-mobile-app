@@ -16,6 +16,10 @@ export class Favorite extends Component {
   };
 
   render() {
+    const {
+      startingPoint,
+      destination
+    } = this.props;
     return (
       <div 
         className='favorite_card'
@@ -27,9 +31,9 @@ export class Favorite extends Component {
           </h2>
         </div>
         <div className='favorite_trip-details' hidden={this.state.hidden}>
-          <h4 className='starting-point'>{this.props.startingPoint}</h4>
-          <p>←→</p>
-          <h4 className='destination'>{this.props.destination}</h4>
+          <h4 className='starting-point'>{startingPoint}</h4>
+          <h4 className='destination'>{destination}</h4>
+
         </div>
       </div>
     );
