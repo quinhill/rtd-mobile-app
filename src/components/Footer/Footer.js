@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import * as routes from '../../constants/routes';
+
 import './Footer.css';
 
 export const Footer = () => {
@@ -8,19 +10,19 @@ export const Footer = () => {
   return (
     <footer className="footer_container">
       <NavLink 
-        to='/favorites'
+        to={routes.ACCOUNT}
         id="favorites"
         class="icon"
       >
       </NavLink>
       <NavLink 
-        exact to='/'
+        exact to={routes.HOME}
         id="home"
         class="icon"
       >
       </NavLink>
       <NavLink 
-        to='/tickets'
+        to={routes.TICKETS}
         id="tickets"
         class="icon"
       >

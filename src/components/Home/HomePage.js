@@ -6,9 +6,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { mockFavRoutes } from '../../mockFavRoutes';
-import './Home.css';
+import './HomePage.css';
 
-class Home extends Component {
+class HomePage extends Component {
   componentDidMount(){
     this.props.storeMockFavRoutes(mockFavRoutes);
   }
@@ -28,8 +28,8 @@ export const mapDispatchToProps = dispatch => ({
   )
 });
 
-export default connect(null, mapDispatchToProps)(Home);
+export default connect(null, mapDispatchToProps)(HomePage);
 
-Home.propTypes = {
+HomePage.propTypes = {
   storeMockFavRoutes: PropTypes.array
 };
