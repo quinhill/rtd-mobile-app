@@ -11,6 +11,8 @@ export class FavoritesContainer extends Component {
     const createFavCards = favorites.map((favoriteRoute, index) => {
       return (<Favorite
         name={favoriteRoute.name}
+        startingPoint={favoriteRoute.origin}
+        destination={favoriteRoute.terminus}
         key={index}
       />);
     });
