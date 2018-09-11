@@ -1,11 +1,16 @@
 import React from 'react';
 
-const AccountPage = () => {
-  return (
-    <div>
-      <h1>AccountPage</h1>
-    </div>
-  );
-};
+import AuthUserContext from '../AuthUserContext';
+import PasswordChangeForm from '../PasswordChange/PasswordChange';
+
+const AccountPage = () =>
+  <AuthUserContext.Consumer>
+    {authUser =>
+      <div>
+        <h1>Account: {authUser.email}</h1>
+        <PasswordChangeForm />
+      </div>
+    }
+  </AuthUserContext.Consumer>;
 
 export default AccountPage;
