@@ -1,3 +1,5 @@
+import { userInfo } from "os";
+
 export const isLoading = (bool) => ({
   type: 'IS_LOADING',
   isLoading: bool
@@ -23,4 +25,9 @@ export const storeUserSearch = (startingPoint, destination) => ({
 export const storeMockFavRoutes = (mockFavRoutes) => ({
   type: 'STORE_MOCK_FAV_ROUTES',
   mockFavRoutes
+});
+
+export const signUpUser = (userInfo) => ({
+  type: 'SIGN_UP_USER',
+  userInfo
 });

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { signUpUser } from '../../actions';
 
 import { auth } from '../../firebase';
 
@@ -42,10 +43,10 @@ class SignUpForm extends Component {
   
       auth.doCreateUserWithEmailAndPassword(email, passwordOne)
         .then(authUser => {
-          console.log(authUser);
           this.setState({ ...INITIAL_STATE });
           history.push(routes.HOME);
         })
+        .then(userInfo => this.props.signUpUser(userInfo))
         .catch(error => {
           this.setState({error: error});
         });
