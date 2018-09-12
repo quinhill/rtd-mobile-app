@@ -11,7 +11,7 @@ const Header = ({ authUser }) => {
   const HeaderNonAuth = () => {
     return (
       <header>
-        <img src="images/rtd-logo.png" className="logo-banner" />
+        <img src="/rtd-logo.png" className="logo-banner" />
         <Link to={routes.SIGN_IN}>Sign In</Link>
       </header>
     );
@@ -20,7 +20,7 @@ const Header = ({ authUser }) => {
   const HeaderAuth  = () => {
     return (
       <header>
-        <img src="images/rtd-logo.png" className="logo-banner" />
+        <img src="/rtd-logo.png" className="logo-banner" />
         <SignOutButton />
       </header>
     ); 

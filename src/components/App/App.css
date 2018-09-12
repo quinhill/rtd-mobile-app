@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-image: url('/images/background-image.jpg');
+  background-image: url('/background-image.jpg');
   background-size: inherit;
   background-repeat: no-repeat;
   height: 100vh;
