@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import { auth } from '../../firebase';
 
@@ -41,6 +42,7 @@ class SignUpForm extends Component {
   
       auth.doCreateUserWithEmailAndPassword(email, passwordOne)
         .then(authUser => {
+          console.log(authUser);
           this.setState({ ...INITIAL_STATE });
           history.push(routes.HOME);
         })
@@ -127,7 +129,8 @@ const SignUpLink = () => {
 
 };
 
-export default withRouter(SignUpPage);
+
+export default withRouter(connect(null, mapDispatchToProps)(SignUpPage));
 
 export {
   SignUpForm,
