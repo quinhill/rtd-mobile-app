@@ -129,6 +129,9 @@ const SignUpLink = () => {
 
 };
 
+export const mapDispatchToProps = dispatch => ({
+  signUpUser: (userInfo) => dispatch(signUpUser(userInfo))
+});
 
 export default withRouter(connect(null, mapDispatchToProps)(SignUpPage));
 
