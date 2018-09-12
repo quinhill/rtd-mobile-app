@@ -1,4 +1,4 @@
-const userInfo = (state=[], action) => {
+const userInfo = (state={}, action) => {
   switch (action.type) {
   case 'SIGN_UP_USER':
     return action.userInfo;

@@ -31,5 +31,5 @@ export const mapDispatchToProps = dispatch => ({
 export default connect(null, mapDispatchToProps)(HomePage);
 
 HomePage.propTypes = {
-  storeMockFavRoutes: PropTypes.array
+  storeMockFavRoutes: PropTypes.func
 };
