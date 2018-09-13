@@ -1,55 +1,72 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-
+import { connect } from 'react-redux';
+import { signUpUser } from '../../actions';
+// import { postUser } from '../../helpers/fetchRoutes';
+import * as routes from '../../constants/routes';
 import { auth } from '../../firebase';
 
-import * as routes from '../../constants/routes';
 
-const SignUpPage = ({ history }) => {
-  return (
-    <div>
-      <h1>Sign Up</h1>
-      <SignUpForm history={history} />
-    </div>
-  );
-};
 
-const INITIAL_STATE = {
-  username: '',
-  email: '',
-  passwordOne: '',
-  passwordTwo: '',
-  error: null
-};
+// const SignUpPage = ({ history }) => {
+//   return (
+//     <div>
+//       <h1>Sign Up</h1>
+//       <SignUpForm history={history} />
+//     </div>
+//   );
+// };
 
-class SignUpForm extends Component {
+class SignUpPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ...INITIAL_STATE
+      username: '',
+      email: '',
+      passwordOne: '',
+      passwordTwo: '',
+      error: null
     };
   }
 
+  createUser = (userInfo) => ({
+    userId: userInfo.user.uid,
+    email: userInfo.user.email    
+  })
+  
+  resetForm = () => {
+    this.setState({
+      username: '',
+      email: '',
+      passwordOne: '',
+      passwordTwo: '',
+      error: null
+    });
+  }
+
     onSubmit = (event) => {
+      event.preventDefault();
+
       const {
         username,
         email,
         passwordOne
       } = this.state;
-
+      
       const { history } = this.props;
-  
+      
       auth.doCreateUserWithEmailAndPassword(email, passwordOne)
         .then(authUser => {
-          this.setState({ ...INITIAL_STATE });
-          history.push(routes.HOME);
+          const createUser = this.createUser(authUser);
+          return this.props.signUpUser(createUser);
         })
         .catch(error => {
           this.setState({error: error});
         });
-  
-      event.preventDefault();
+      this.resetForm();
+      history.push(routes.HOME);
     }
+
 
     handleChange = (event) => {
       const { name, value } = event.target;
@@ -127,9 +144,12 @@ const SignUpLink = () => {
 
 };
 
-export default withRouter(SignUpPage);
+export const mapDispatchToProps = dispatch => ({
+  signUpUser: (userInfo) => dispatch(signUpUser(userInfo))
+});
+
+export default withRouter(connect(null, mapDispatchToProps)(SignUpPage));
 
 export {
-  SignUpForm,
   SignUpLink
 };
