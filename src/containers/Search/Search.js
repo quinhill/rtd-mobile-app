@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { fetchScheduleThunk } from '../../thunks/fetchScheduleThunk';
-import { storeUserSearch } from '../../actions';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import StartPointInput from '../../components/StartPointInput/StartPointInput';
+import EndPointInput from '../../components/EndPointInput/EndPointInput';
 
 import './Search.css';
-
 
 export class Search extends Component {
   constructor(props){
@@ -32,7 +32,9 @@ export class Search extends Component {
   render(){
     return (
       <div className="search_container">
-        <form onSubmit={ this.handleSubmit }>
+      <StartPointInput />
+      <EndPointInput />
+        {/* <form onSubmit={ this.handleSubmit }>
           <input
             id="starting_location"
             className="search-input"
@@ -55,19 +57,23 @@ export class Search extends Component {
             className="search_button"
             type='submit'>Search
           </button>
-        </form>   
+        </form>    */}
       </div>
     );
   }
 }
 
-export const mapDispatchToProps = dispatch => ({
-  storeRouteSchedules: (url) => dispatch(fetchScheduleThunk(url)),
-  storeUserSearch: (startingPoint, destination) => (
-    dispatch(storeUserSearch(startingPoint, destination)))
+export const mapStateToProps = state => ({
+
 });
 
-export default connect(null, mapDispatchToProps)(Search);
+// export const mapDispatchToProps = dispatch => ({
+//   storeRouteSchedules: (url) => dispatch(fetchScheduleThunk(url)),
+//   storeUserSearch: (startingPoint, destination) => (
+//     dispatch(storeUserSearch(startingPoint, destination)))
+// });
+
+export default connect(mapStateToProps)(Search);
 
 Search.propTypes = {
   storeRouteSchedules: PropTypes.func,
