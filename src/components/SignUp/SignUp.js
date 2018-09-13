@@ -33,6 +33,16 @@ class SignUpPage extends Component {
     userId: userInfo.user.uid,
     email: userInfo.user.email    
   })
+  
+  resetForm = () => {
+    this.setState({
+      username: '',
+      email: '',
+      passwordOne: '',
+      passwordTwo: '',
+      error: null
+    });
+  }
 
     onSubmit = (event) => {
       event.preventDefault();
@@ -48,11 +58,8 @@ class SignUpPage extends Component {
       auth.doCreateUserWithEmailAndPassword(email, passwordOne)
         .then(authUser => {
           const createUser = this.createUser(authUser);
-          return createUser;
-          // return postUser(createUser);
+          return this.props.signUpUser(createUser);
         })
-        .then(response => response.json())
-        .then(async user => this.props.signUpUser(user))
         .catch(error => {
           this.setState({error: error});
         });
@@ -60,15 +67,6 @@ class SignUpPage extends Component {
       history.push(routes.HOME);
     }
 
-    resetForm = () => {
-      this.setState({
-        username: '',
-        email: '',
-        passwordOne: '',
-        passwordTwo: '',
-        error: null
-      });
-    }
 
     handleChange = (event) => {
       const { name, value } = event.target;
