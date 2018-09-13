@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PlacesAutocomplete from 'react-places-autocomplete';
+import { connect } from "react-redux";
+import { storeEndAddress} from '../../actions';
  
 class EndPointInput extends Component {
   constructor(props) {
@@ -15,7 +17,7 @@ class EndPointInput extends Component {
  
   handleSelect = address => {
     console.log('end: ', address);
-    return address;
+    this.props.storeEndAddress(address);
   };
  
   render() {
@@ -68,4 +70,8 @@ class EndPointInput extends Component {
   }
 }
 
-export default EndPointInput;
+export const mapDispatchToProps = dispatch => ({
+  storeEndAddress: (endAddress) => dispatch(storeEndAddress(endAddress))
+});
+
+export default connect(null, mapDispatchToProps)(EndPointInput);
