@@ -1,10 +1,10 @@
-export const userSearch = (state = {}, action) => {
+export const userSearch = (state = '', action) => {
   switch (action.type) {
-  case 'STORE_USER_SEARCH':
-    return {
-      ...action.startingPoint, 
-      ...action.destination 
-    };
+  case 'STORE_START_SEARCH':
+    return action.startAddress;
+
+  case 'STORE_END_SEARCH':
+    return action.endAddress;
   
   default:
     return state;
