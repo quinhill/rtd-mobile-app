@@ -15,12 +15,15 @@ export const storeScheduleData = (schedule) => ({
   schedule
 });
 
-export const storeUserSearch = (startingPoint, destination) => ({
-  type: 'STORE_USER_SEARCH',
-  startingPoint,
-  destination
+export const storeStartSearch = (startAddress) => ({
+  type: 'STORE_START_SEARCH',
+  startAddress
 });
 
+export const storeEndSearch = (endAddress) => ({
+  type: 'STORE_END_SEARCH',
+  endAddress
+});
 
 export const storeMockFavRoutes = (mockFavRoutes) => ({
   type: 'STORE_MOCK_FAV_ROUTES',
