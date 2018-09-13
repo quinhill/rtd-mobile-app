@@ -15,13 +15,13 @@ export const storeScheduleData = (schedule) => ({
   schedule
 });
 
-export const storeStartSearch = (startAddress) => ({
-  type: 'STORE_START_SEARCH',
+export const storeStartAddress = (startAddress) => ({
+  type: 'STORE_START_ADDRESS',
   startAddress
 });
 
-export const storeEndSearch = (endAddress) => ({
-  type: 'STORE_END_SEARCH',
+export const storeEndAddress = (endAddress) => ({
+  type: 'STORE_END_ADDRESS',
   endAddress
 });
 

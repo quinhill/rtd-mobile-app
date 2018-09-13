@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PlacesAutocomplete from 'react-places-autocomplete';
+import { storeStartAddress } from '../../actions';
+import { connect } from "react-redux";
  
 class StartPointInput extends Component {
   constructor(props) {
@@ -15,7 +17,7 @@ class StartPointInput extends Component {
  
   handleSelect = address => {
     console.log('start: ', address);
-    return address;
+    this.props.storeStartAddress(address);
   };
  
   render() {
@@ -61,11 +63,15 @@ class StartPointInput extends Component {
                 })}
               </div>
             </div>
-          ) 
-;}}
+          );
+        }}
       </PlacesAutocomplete>
     );
   }
 }
 
-export default StartPointInput;
+export const mapDispatchToProps = dispatch => ({
+  storeStartAddress: (startAddress) => dispatch(storeStartAddress(startAddress))
+});
+
+export default connect(null, mapDispatchToProps)(StartPointInput);
