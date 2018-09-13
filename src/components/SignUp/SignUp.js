@@ -30,6 +30,7 @@ class SignUpPage extends Component {
   }
 
   createUser = (userInfo) => ({
+    userName:this.state.username,
     userId: userInfo.user.uid,
     email: userInfo.user.email    
   })
@@ -57,6 +58,7 @@ class SignUpPage extends Component {
       
       auth.doCreateUserWithEmailAndPassword(email, passwordOne)
         .then(authUser => {
+          console.log(authUser)
           const createUser = this.createUser(authUser);
           return this.props.signUpUser(createUser);
         })
