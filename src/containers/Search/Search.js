@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchScheduleThunk } from '../../thunks/fetchScheduleThunk';
+// import { fetchScheduleThunk } from '../../thunks/fetchScheduleThunk';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import StartPointInput from '../../components/StartPointInput/StartPointInput';
@@ -11,8 +11,9 @@ export class Search extends Component {
   constructor(props){
     super(props);
     this.state = {
-      startPoint: '',
-      destination: ''
+      hours: this.getTime().hours,
+      minutes: this.getTime().minutes,
+      departing: true
     };
   }
 
@@ -21,12 +22,37 @@ export class Search extends Component {
     this.setState({ [name]: value });
   }
 
+  getTime = () => {
+    const time = new Date();
+    const hours = time.getHours();
+    const minutes = time.getMinutes();
+    return {
+      hours,
+      minutes
+    };
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
-    const url = 'somestring';
-    this.props.storeRouteSchedules(url);
-    this.props.storeUserSearch(this.state);  
-    this.setState({startPoint: '', destination: ''});
+    const {
+      hours,
+      minutes,
+      departing
+    } = this.state;
+    const {
+      startAddress,
+      endAddress
+    } = this.props;
+    const depOrArr = departing
+      ? 'departing'
+      : 'arriving';
+    const options = {
+      startAddress,
+      endAddress,
+      type: depOrArr,
+      time: `${hours}:${minutes}`
+    };
+    console.log(options);
   }
 
   render(){
@@ -34,8 +60,15 @@ export class Search extends Component {
       <div className="search_container">
         <StartPointInput />
         <EndPointInput />
-        <form className='time'>
-          <select name='hours'>
+        <form 
+          className='time'
+          onSubmit={this.handleSubmit}
+        >
+          <select 
+            name='hours'
+            onChange={this.handleChange}
+            value={this.state.hours}
+          >
             <option value='1'>1</option>
             <option value='2'>2</option>
             <option value='3'>3</option>
@@ -49,7 +82,11 @@ export class Search extends Component {
             <option value='11'>11</option>
             <option value='12'>12</option>
           </select>
-          <select name='minutes'>
+          <select 
+            name='minutes'
+            onChange={this.handleChange}
+            value={this.state.minutes}
+          >
             <option value='00'>00</option>
             <option value='05'>05</option>
             <option value='10'>10</option>
@@ -63,25 +100,37 @@ export class Search extends Component {
             <option value='50'>50</option>
             <option value='55'>55</option>
           </select>
-          <input 
-            id='departure'
-            className='departure-arrival' 
-            type='radio' 
-            value='departing'
-          />
-          <label HTMLfor='departure'>
+          <div 
+            name='departing'
+            onChange={this.handleChange}
+          >
+            <input 
+              name='departing'
+              id='departing'
+              type='radio'
+              defaultChecked
+              value={true}
+            />
+            <label htmlFor='departing'>
             departing
-          </label>
-          <input
-            id='arrival'
-            className='departure-arrival' 
-            type='radio' 
-            value='arriving'
-          />
-          <label HTMLfor='arrival'>
+            </label>
+            <input
+              name='departing'
+              id='arriving' 
+              type='radio'
+              value={false}
+            />
+            <label htmlFor='arriving'>
             arriving
-          </label>
-          <p>at</p>
+            </label>
+            <p>at</p>
+          </div>
+          <button
+            type='submit'
+            className='itinerary-search-button'
+          >
+            Search
+          </button>
         </form>
       </div>
     );
@@ -89,7 +138,8 @@ export class Search extends Component {
 }
 
 export const mapStateToProps = state => ({
-
+  startAddress: state.startAddress,
+  endAdress: state.endAddress
 });
 
 // export const mapDispatchToProps = dispatch => ({
@@ -102,5 +152,7 @@ export default connect(mapStateToProps)(Search);
 
 Search.propTypes = {
   storeRouteSchedules: PropTypes.func,
-  storeUserSearch: PropTypes.func
+  storeUserSearch: PropTypes.func,
+  startAddress: PropTypes.string,
+  endAddress: PropTypes.string
 };
