@@ -5,6 +5,7 @@ import signUpThunk from '../../thunks';
 import * as routes from '../../constants/routes';
 import { auth } from '../../firebase';
 import PropTypes from 'prop-types';
+import { SignInLink } from '../SignIn/SignIn';
 
 
 class SignUpPage extends Component {
@@ -90,44 +91,47 @@ class SignUpPage extends Component {
     username === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="username"
-          value={username}
-          onChange={this.handleChange}
-          type="text"
-          placeholder="Full Name"
-        />
-        <input
-          name="email"
-          value={email}
-          onChange={this.handleChange}
-          type="email"
-          placeholder="Email Address"
-        />
-        <input
-          name="passwordOne"
-          value={passwordOne}
-          onChange={this.handleChange}
-          type="password"
-          placeholder="Password"
-        />
-        <input
-          name="passwordTwo"
-          value={passwordTwo}
-          onChange={this.handleChange}
-          type="password"
-          placeholder="Confirm Password"
-        />
-        <button 
-          type="submit"
-          disabled={isInvalid}
-        >
+      <div className='sign-up-container'>
+        <form onSubmit={this.onSubmit}>
+          <input
+            name='username'
+            value={username}
+            onChange={this.handleChange}
+            type='text'
+            placeholder='Full Name'
+          />
+          <input
+            name='email'
+            value={email}
+            onChange={this.handleChange}
+            type='email'
+            placeholder='Email Address'
+          />
+          <input
+            name='passwordOne'
+            value={passwordOne}
+            onChange={this.handleChange}
+            type='password'
+            placeholder='Password'
+          />
+          <input
+            name='passwordTwo'
+            value={passwordTwo}
+            onChange={this.handleChange}
+            type='password'
+            placeholder='Confirm Password'
+          />
+          <button 
+            type='submit'
+            disabled={isInvalid}
+          >
         Sign Up
-        </button>
+          </button>
 
-        { error && <p>{error.message}</p> }
-      </form>
+          { error && <p>{error.message}</p> }
+        </form>
+        <SignInLink />
+      </div>
     );
   }
 }
