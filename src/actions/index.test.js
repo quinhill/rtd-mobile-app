@@ -41,4 +41,57 @@ describe.only('actions', () => {
 
     expect(result).toEqual(expected);
   });
+
+  it('should have a type of STORE_ITINERARY', () => {
+    const expected = {
+      type: 'STORE_ITINERARY',
+      itinerary: 'Overland Golf Course, South Huron Street, Denver, CO, USA'
+    };
+    const result = actions.storeItinerary(expected.itinerary);
+
+    expect(result).toEqual(expected);
+  });
+  
+  it('should have a type of SIGN_UP_USER', () => {
+    const expected = {
+      type: 'SIGN_UP_USER',
+      userInfo: {
+        id: 7,
+        created_at: "2018-09-15T20:34:14.443Z",
+        updated_at: "2018-09-15T20:34:14.443Z",
+        email: "ddddd@ddddd.co",
+        uid: "5bhfMWMizVcYWo6Ko3wUTExOPm93",
+        username: "dddd"
+      }
+    };
+    const result = actions.signUpUser(expected.userInfo);
+
+    expect(result).toEqual(expected);
+  });
+
+  it('should have a type of SIGN_IN_USER', () => {
+    const expected = {
+      type: 'SIGN_IN_USER',
+      userInfo: {
+        id: 7,
+        created_at: "2018-09-15T20:34:14.443Z",
+        updated_at: "2018-09-15T20:34:14.443Z",
+        email: "ddddd@ddddd.co",
+        uid: "5bhfMWMizVcYWo6Ko3wUTExOPm93",
+        username: "dddd"
+      }
+    };
+    const result = actions.signInUser(expected.userInfo);
+
+    expect(result).toEqual(expected);
+  });
+
+  it('should have a type of SIGN_OUT_USER', () => {
+    const expected = {
+      type: 'SIGN_OUT_USER'
+    };
+    const result = actions.signOutUser();
+
+    expect(result).toEqual(expected);
+  });
 });
