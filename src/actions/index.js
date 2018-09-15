@@ -8,11 +8,6 @@ export const hasErrored = (bool) => ({
   hasErrored: bool
 });
 
-export const storeScheduleData = (schedule) => ({
-  type: 'STORE_SCHEDULE_DATA',
-  schedule
-});
-
 export const storeStartAddress = (startAddress) => ({
   type: 'STORE_START_ADDRESS',
   startAddress

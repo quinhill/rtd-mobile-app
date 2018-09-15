@@ -22,4 +22,13 @@ describe.only('actions', () => {
     expect(result).toEqual(expected);
   });
   
+  it('should have a type of STORE_START_ADDRESS', () => {
+    const expected = {
+      type: 'STORE_START_ADDRESS',
+      startAddress: 'Union Station, Denver, CO, USA'
+    };
+    const result = actions.storeStartAddress(expected.startAddress);
+
+    expect(result).toEqual(expected);
+  });
 });
