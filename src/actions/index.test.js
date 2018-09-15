@@ -85,4 +85,13 @@ describe.only('actions', () => {
 
     expect(result).toEqual(expected);
   });
+
+  it('should have a type of SIGN_OUT_USER', () => {
+    const expected = {
+      type: 'SIGN_OUT_USER'
+    };
+    const result = actions.signOutUser();
+
+    expect(result).toEqual(expected);
+  });
 });
