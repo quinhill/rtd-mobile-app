@@ -45,7 +45,6 @@ class StartAddressInput extends Component {
                   const className = suggestion.active
                     ? 'suggestion-item--active'
                     : 'suggestion-item';
-                  // inline style for demonstration purpose
                   const style = suggestion.active
                     ? { backgroundColor: '#fafafa', cursor: 'pointer' }
                     : { backgroundColor: '#ffffff', cursor: 'pointer' };
@@ -78,4 +77,4 @@ export default connect(null, mapDispatchToProps)(StartAddressInput);
 
 StartAddressInput.propTypes = {
   storeStartAddress: PropTypes.func
-}
+};

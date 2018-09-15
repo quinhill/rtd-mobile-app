@@ -104,7 +104,7 @@ class SignInPage extends Component {
             type="submit"
             disabled={isInvalid}
           >
-        Sign Up
+            Sign In
           </button>
 
           { error && <p>{error.message}</p> }
