@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import SignOutButton from '../SignOut/SignOut';
+import SignOutButton from '../../containers/SignOut/SignOut';
 import { Link } from 'react-router-dom';
 
 import AuthUserContext from '../AuthUserContext';
