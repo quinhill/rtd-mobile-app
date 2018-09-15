@@ -53,7 +53,7 @@ export class Search extends Component {
     const {
       startAddress,
       endAddress,
-      id,
+      // id,
       postItineraryThunk
     } = this.props;
     const url = 
@@ -159,8 +159,8 @@ export class Search extends Component {
 
 export const mapStateToProps = state => ({
   startAddress: state.startAddress,
-  endAddress: state.endAddress,
-  id: state.userInfo.id
+  endAddress: state.endAddress
+  // id: state.userInfo.id
 });
 
 export const mapDispatchToProps = dispatch => ({
