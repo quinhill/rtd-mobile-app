@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme-adapter-react-16": "^1.5.0",
     "firebase": "^5.4.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",

@@ -6,6 +6,9 @@ const user = (state={}, action) => {
   case 'SIGN_IN_USER':
     return action.userInfo;
 
+  case 'SIGN_OUT_USER':
+    return {};
+
   default:
     return state;
   }

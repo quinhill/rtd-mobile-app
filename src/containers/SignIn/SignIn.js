@@ -3,7 +3,8 @@ import { withRouter, Link } from 'react-router-dom';
 
 import { auth } from '../../firebase';
 import { SignUpLink } from '../SignUp/SignUp';
-import { PasswordForgetLink } from '../../components/PasswordForget/PasswordForget';
+import { PasswordForgetLink } from 
+  '../../components/PasswordForget/PasswordForget';
 
 import { connect } from 'react-redux';
 import signInThunk from '../../thunks';
