@@ -7,7 +7,11 @@ import PropTypes from 'prop-types';
 export class FavoritesContainer extends Component {
   
   render(){
+<<<<<<< HEAD
+    // const { favorites } = this.props;
+=======
     const { favorites } = this.props;
+>>>>>>> master
     // const createFavCards = favorites.map((favoriteRoute, index) => {
     //   return (<Favorite
     //     name={favoriteRoute.name}
@@ -26,7 +30,6 @@ export class FavoritesContainer extends Component {
 }
 
 export const mapStateToProps = (props) => ({
-  favorites: props.favorites
 });
 
 export default connect(mapStateToProps)(FavoritesContainer);

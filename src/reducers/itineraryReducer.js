@@ -1,4 +1,4 @@
-const itinerary = (state = [], action) => {
+const itinerary = (state = {}, action) => {
   switch (action.type) {
   case 'STORE_ITINERARY':
     return action.itinerary;
