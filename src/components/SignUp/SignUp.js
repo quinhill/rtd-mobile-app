@@ -154,5 +154,6 @@ export {
 };
 
 SignUpPage.propTypes = {
-  signUpThunk: PropTypes.func
+  signUpThunk: PropTypes.func,
+  history: PropTypes.object
 };

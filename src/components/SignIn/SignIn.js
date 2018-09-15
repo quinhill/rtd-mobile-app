@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import { auth } from '../../firebase';
 import { SignUpLink } from '../SignUp/SignUp';
@@ -9,6 +9,8 @@ import { connect } from 'react-redux';
 import signInThunk from '../../thunks';
 
 import * as routes from '../../constants/routes';
+
+import PropTypes from 'prop-types';
 
 class SignInPage extends Component {
   constructor(props) {
@@ -59,8 +61,8 @@ class SignInPage extends Component {
       .catch(error => {
         this.setState({error: error});
       });
-      this.resetForm();
-      history.push(routes.HOME);
+    this.resetForm();
+    history.push(routes.HOME);
   }
 
   handleChange = (event) => {
@@ -82,36 +84,56 @@ class SignInPage extends Component {
     email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          name="email"
-          value={email}
-          onChange={this.handleChange}
-          type="email"
-          placeholder="Email Address"
-        />
-        <input
-          name="password"
-          value={password}
-          onChange={this.handleChange}
-          type="password"
-          placeholder="Password"
-        />
-        <button 
-          type="submit"
-          disabled={isInvalid}
-        >
+      <div className='sign-in-container'>
+        <form onSubmit={this.onSubmit}>
+          <input
+            name="email"
+            value={email}
+            onChange={this.handleChange}
+            type="email"
+            placeholder="Email Address"
+          />
+          <input
+            name="password"
+            value={password}
+            onChange={this.handleChange}
+            type="password"
+            placeholder="Password"
+          />
+          <button 
+            type="submit"
+            disabled={isInvalid}
+          >
         Sign Up
-        </button>
+          </button>
 
-        { error && <p>{error.message}</p> }
-      </form>
+          { error && <p>{error.message}</p> }
+        </form>
+        <SignUpLink />
+        <PasswordForgetLink />
+      </div>
     );
   }
 }
+
+export const SignInLink = () => {
+  return (
+    <div>
+      <p>
+        Already have an account?
+      </p>
+      <Link to={routes.SIGN_IN}>Sign In</Link>
+    </div>
+  );
+};
 
 export const mapDispatchToProps = dispatch => ({
   signInThunk: (user) => dispatch(signInThunk(user))
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(SignInPage));
+
+SignInPage.propTypes = {
+  signInThunk: PropTypes.func,
+  history: PropTypes.object
+};
