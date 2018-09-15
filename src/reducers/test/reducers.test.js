@@ -5,7 +5,7 @@ import itinerary from '../itineraryReducer';
 import startAddress from '../startAddressReducer';
 import user from '../userReducer';
 
-describe.only('Reducers', () => {
+describe('Reducers', () => {
   describe('endAddressReducer', () => {
     it('should return the initial state', () => {
       const expected = '';
