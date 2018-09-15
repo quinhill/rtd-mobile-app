@@ -1,21 +1,12 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { signUpUser } from '../../actions';
-// import { postUser } from '../../helpers/fetchRoutes';
+import signUpThunk from '../../thunks/signUpThunk';
 import * as routes from '../../constants/routes';
 import { auth } from '../../firebase';
+import PropTypes from 'prop-types';
+import { createFetchObject } from '../../helpers/createFetchObject';
 
-
-
-// const SignUpPage = ({ history }) => {
-//   return (
-//     <div>
-//       <h1>Sign Up</h1>
-//       <SignUpForm history={history} />
-//     </div>
-//   );
-// };
 
 class SignUpPage extends Component {
   constructor(props) {
@@ -30,9 +21,16 @@ class SignUpPage extends Component {
   }
 
   createUser = (userInfo) => ({
-    userName:this.state.username,
-    userId: userInfo.user.uid,
-    email: userInfo.user.email    
+    url: 'http://rtd-revamp-api.herokuapp.com/api/v1/users',
+    options: {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        username: this.state.username,
+        uid: userInfo.user.uid,
+        email: userInfo.user.email
+      })
+    }
   })
   
   resetForm = () => {
@@ -49,7 +47,6 @@ class SignUpPage extends Component {
       event.preventDefault();
 
       const {
-        username,
         email,
         passwordOne
       } = this.state;
@@ -58,9 +55,8 @@ class SignUpPage extends Component {
       
       auth.doCreateUserWithEmailAndPassword(email, passwordOne)
         .then(authUser => {
-          console.log(authUser)
-          const createUser = this.createUser(authUser);
-          return this.props.signUpUser(createUser);
+          const newUser = this.createUser(authUser);
+          return this.props.signUpThunk(newUser);
         })
         .catch(error => {
           this.setState({error: error});
@@ -147,11 +143,15 @@ const SignUpLink = () => {
 };
 
 export const mapDispatchToProps = dispatch => ({
-  signUpUser: (userInfo) => dispatch(signUpUser(userInfo))
+  signUpThunk: (userInfo) => dispatch(signUpThunk(userInfo))
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(SignUpPage));
 
 export {
   SignUpLink
+};
+
+SignUpPage.propTypes = {
+  signUpThunk: PropTypes.func
 };

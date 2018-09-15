@@ -1,12 +1,13 @@
 import { isLoading, hasErrored, signUpUser } from '../actions';
-import { auth } from '../firebase';
 
-const signUpThunk = (userInfo) => {
-  const { email, passwordOne } = userInfo;
-  console.log('thunk');
+const signUpThunk = (fetchObj) => {
+  const {
+    url,
+    options
+  } = fetchObj;
   return (dispatch) => {
     dispatch(isLoading(true));
-    auth.doCreateUserWithEmailAndPassword(email, passwordOne)
+    fetch(url, options)
       .then(response => {
         if (!response.ok) {
           throw Error();
@@ -16,10 +17,8 @@ const signUpThunk = (userInfo) => {
       })
       .then(response => response.json())
       .then(userInfo => {
-        console.log(userInfo);
         dispatch(signUpUser(userInfo));
       })
-        
       .catch(() => dispatch(hasErrored(true)));
   };
 };

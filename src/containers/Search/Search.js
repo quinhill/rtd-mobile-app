@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import StartPointInput from '../../components/StartPointInput/StartPointInput';
 import EndPointInput from '../../components/EndPointInput/EndPointInput';
+import postItineraryThunk from '../../thunks/postItineraryThunk';
 
 import './Search.css';
 
@@ -39,22 +40,39 @@ export class Search extends Component {
       minutes,
       departing
     } = this.state;
-    const {
-      startAddress,
-      endAddress
-    } = this.props;
     const depOrArr = departing
-      ? 'departing'
-      : 'arriving';
-    const options = {
-      startAddress,
-      endAddress,
-      type: depOrArr,
-      time: `${hours}:${minutes}`
+      ? 'departure_time'
+      : 'arrival_time';
+    const timeData = {
+      [depOrArr]: `${hours}:${minutes}`
     };
-    console.log(options);
+    this.makeOptions(timeData);
   }
 
+  makeOptions = (timeData) => {
+    const {
+      startAddress,
+      endAddress,
+      id,
+      postItineraryThunk
+    } = this.props;
+    const url = `http://rtd-revamp-api.herokuapp.com/api/v1/users/${id}/itineraries`;
+    const bodyObj = {
+      start_address: startAddress,
+      end_address: endAddress,
+      ...timeData
+    };
+    const options = {
+      method: 'POST', 
+      body: JSON.stringify(bodyObj)
+    };
+    const fetchObject = {
+      url,
+      options
+    };
+    postItineraryThunk(fetchObject);
+  };
+  
   render(){
     return (
       <div className="search_container">
@@ -139,19 +157,18 @@ export class Search extends Component {
 
 export const mapStateToProps = state => ({
   startAddress: state.startAddress,
-  endAdress: state.endAddress
+  endAddress: state.endAddress,
+  id: state.userInfo.id
 });
 
-// export const mapDispatchToProps = dispatch => ({
-//   storeRouteSchedules: (url) => dispatch(fetchScheduleThunk(url)),
-//   storeUserSearch: (startingPoint, destination) => (
-//     dispatch(storeUserSearch(startingPoint, destination)))
-// });
+export const mapDispatchToProps = dispatch => ({
+  postItineraryThunk: (fetchObject) => dispatch(postItineraryThunk(fetchObject))
+});
 
-export default connect(mapStateToProps)(Search);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
 
 Search.propTypes = {
-  storeRouteSchedules: PropTypes.func,
+  postItineraryThunk: PropTypes.func,
   storeUserSearch: PropTypes.func,
   startAddress: PropTypes.string,
   endAddress: PropTypes.string

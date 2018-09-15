@@ -30,6 +30,11 @@ export const storeMockFavRoutes = (mockFavRoutes) => ({
   mockFavRoutes
 });
 
+export const storeItinerary = (itinerary) => ({
+  type: 'STORE_ITINERARY',
+  itinerary
+});
+
 export const signUpUser = (userInfo) => ({
   type: 'SIGN_UP_USER',
   userInfo
