@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { fetchScheduleThunk } from '../../thunks/fetchScheduleThunk';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import StartAddressInput from '../../containers/StartAddressInput/StartAddressInput';
@@ -53,7 +52,6 @@ export class Search extends Component {
     const {
       startAddress,
       endAddress,
-      id,
       postItineraryThunk
     } = this.props;
     const url = 
@@ -159,8 +157,8 @@ export class Search extends Component {
 
 export const mapStateToProps = state => ({
   startAddress: state.startAddress,
-  endAddress: state.endAddress,
-  id: state.userInfo.id
+  endAddress: state.endAddress
+  // id: state.userInfo.id
 });
 
 export const mapDispatchToProps = dispatch => ({

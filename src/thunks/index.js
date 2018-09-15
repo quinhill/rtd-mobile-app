@@ -3,7 +3,7 @@ import signUpThunk from './signUpThunk';
 import signInThunk from './signInThunk';
 
 
-export default {
+export {
   postItineraryThunk,
   signUpThunk,
   signInThunk
