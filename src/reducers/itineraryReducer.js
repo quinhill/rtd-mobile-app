@@ -1,7 +1,7 @@
 const itinerary = (state = [], action) => {
   switch (action.type) {
   case 'STORE_ITINERARY':
-    return [...state, action.itinerary];
+    return action.itinerary;
 
   default:
     return state;

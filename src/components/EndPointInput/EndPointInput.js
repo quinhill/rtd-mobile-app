@@ -16,7 +16,6 @@ class EndPointInput extends Component {
   };
  
   handleSelect = address => {
-    console.log('end: ', address);
     this.props.storeEndAddress(address);
   };
  

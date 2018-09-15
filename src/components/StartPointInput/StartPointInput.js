@@ -16,7 +16,6 @@ class StartPointInput extends Component {
   };
  
   handleSelect = address => {
-    console.log('start: ', address);
     this.props.storeStartAddress(address);
   };
  
