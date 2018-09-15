@@ -7,12 +7,20 @@ import AuthUserContext from '../AuthUserContext';
 import * as routes from '../../constants/routes';
 
   
-const Header = ({ authUser }) => {
+const Header = () => {
   const HeaderNonAuth = () => {
     return (
       <header>
-        <img src="/rtd-logo.png" className="logo-banner" />
-        <Link to={routes.SIGN_IN}>Sign In</Link>
+        <img 
+          src="https://i.imgur.com/BmUB9ud.png" 
+          className="logo-banner" 
+        />
+        <Link 
+          to={routes.SIGN_IN}
+          className='sign-in-link'
+        >
+          Sign In
+        </Link>
       </header>
     );
   };
