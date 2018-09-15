@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 // import { fetchScheduleThunk } from '../../thunks/fetchScheduleThunk';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import StartPointInput from '../../components/StartPointInput/StartPointInput';
-import EndPointInput from '../../components/EndPointInput/EndPointInput';
+import StartAddressInput from '../../containers/StartAddressInput/StartAddressInput';
+import EndAddressInput from '../../containers/EndAddressInput/EndAddressInput';
 import postItineraryThunk from '../../thunks/postItineraryThunk';
 
 import './Search.css';
@@ -78,8 +78,8 @@ export class Search extends Component {
   render(){
     return (
       <div className="search_container">
-        <StartPointInput />
-        <EndPointInput />
+        <StartAddressInput />
+        <EndAddressInput />
         <form 
           className='time'
           onSubmit={this.handleSubmit}

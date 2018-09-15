@@ -12,7 +12,12 @@ const Header = ({ authUser }) => {
     return (
       <header>
         <img src="/rtd-logo.png" className="logo-banner" />
-        <Link to={routes.SIGN_IN}>Sign In</Link>
+        <Link 
+          to={routes.SIGN_IN}
+          className='sign-in-link'
+        >
+          Sign In
+        </Link>
       </header>
     );
   };
