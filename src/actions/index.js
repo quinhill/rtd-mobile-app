@@ -39,3 +39,8 @@ export const signUpUser = (userInfo) => ({
   type: 'SIGN_UP_USER',
   userInfo
 });
+
+export const signInUser = (userInfo) => ({
+  type: 'SIGN_IN_USER',
+  userInfo
+});

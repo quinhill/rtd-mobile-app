@@ -5,6 +5,9 @@ import { auth } from '../../firebase';
 import { SignUpLink } from '../SignUp/SignUp';
 import { PasswordForgetLink } from '../PasswordForget/PasswordForget';
 
+import { connect } from 'react-redux';
+import signInThunk from '../../thunks';
+
 import * as routes from '../../constants/routes';
 
 class SignInPage extends Component {
@@ -36,6 +39,7 @@ class SignInPage extends Component {
         },
         body: JSON.stringify({})
       }
+    };
   }
 
   onSubmit = (event) => {
@@ -45,17 +49,18 @@ class SignInPage extends Component {
       password
     } = this.state;
 
-
     const { history } = this.props;
 
     auth.doSignInWithEmailAndPassword(email, password)
       .then(authUser => {
         const user = this.signIn(authUser);
-        history.push(routes.HOME);
+        return this.props.signInThunk(user);
       })
       .catch(error => {
         this.setState({error: error});
       });
+      this.resetForm();
+      history.push(routes.HOME);
   }
 
   handleChange = (event) => {
@@ -105,5 +110,8 @@ class SignInPage extends Component {
   }
 }
 
+export const mapDispatchToProps = dispatch => ({
+  signInThunk: (user) => dispatch(signInThunk(user))
+});
 
-export default withRouter(SignInPage);
+export default withRouter(connect(null, mapDispatchToProps)(SignInPage));

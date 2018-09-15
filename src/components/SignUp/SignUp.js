@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import signUpThunk from '../../thunks/signUpThunk';
+import signUpThunk from '../../thunks';
 import * as routes from '../../constants/routes';
 import { auth } from '../../firebase';
 import PropTypes from 'prop-types';
@@ -44,92 +44,92 @@ class SignUpPage extends Component {
     });
   }
 
-    onSubmit = (event) => {
-      event.preventDefault();
+  onSubmit = (event) => {
+    event.preventDefault();
 
-      const {
-        email,
-        passwordOne
-      } = this.state;
-      
-      const { history } = this.props;
-      
-      auth.doCreateUserWithEmailAndPassword(email, passwordOne)
-        .then(authUser => {
-          const newUser = this.createUser(authUser);
-          return this.props.signUpThunk(newUser);
-        })
-        .catch(error => {
-          this.setState({error: error});
-        });
-      this.resetForm();
-      history.push(routes.HOME);
-    }
-
-
-    handleChange = (event) => {
-      const { name, value } = event.target;
-      this.setState({
-        [name]: value
+    const {
+      email,
+      passwordOne
+    } = this.state;
+    
+    const { history } = this.props;
+    
+    auth.doCreateUserWithEmailAndPassword(email, passwordOne)
+      .then(authUser => {
+        const newUser = this.createUser(authUser);
+        return this.props.signUpThunk(newUser);
+      })
+      .catch(error => {
+        this.setState({error: error});
       });
-    };
+    this.resetForm();
+    history.push(routes.HOME);
+  }
 
-    render() {
-      const {
-        username,
-        email,
-        passwordOne,
-        passwordTwo,
-        error
-      } = this.state;
 
-      const isInvalid =
-      passwordOne !== passwordTwo ||
-      passwordOne === '' ||
-      email === '' ||
-      username === '';
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
-      return (
-        <form onSubmit={this.onSubmit}>
-          <input
-            name="username"
-            value={username}
-            onChange={this.handleChange}
-            type="text"
-            placeholder="Full Name"
-          />
-          <input
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-            type="email"
-            placeholder="Email Address"
-          />
-          <input
-            name="passwordOne"
-            value={passwordOne}
-            onChange={this.handleChange}
-            type="password"
-            placeholder="Password"
-          />
-          <input
-            name="passwordTwo"
-            value={passwordTwo}
-            onChange={this.handleChange}
-            type="password"
-            placeholder="Confirm Password"
-          />
-          <button 
-            type="submit"
-            disabled={isInvalid}
-          >
-          Sign Up
-          </button>
+  render() {
+    const {
+      username,
+      email,
+      passwordOne,
+      passwordTwo,
+      error
+    } = this.state;
 
-          { error && <p>{error.message}</p> }
-        </form>
-      );
-    }
+    const isInvalid =
+    passwordOne !== passwordTwo ||
+    passwordOne === '' ||
+    email === '' ||
+    username === '';
+
+    return (
+      <form onSubmit={this.onSubmit}>
+        <input
+          name="username"
+          value={username}
+          onChange={this.handleChange}
+          type="text"
+          placeholder="Full Name"
+        />
+        <input
+          name="email"
+          value={email}
+          onChange={this.handleChange}
+          type="email"
+          placeholder="Email Address"
+        />
+        <input
+          name="passwordOne"
+          value={passwordOne}
+          onChange={this.handleChange}
+          type="password"
+          placeholder="Password"
+        />
+        <input
+          name="passwordTwo"
+          value={passwordTwo}
+          onChange={this.handleChange}
+          type="password"
+          placeholder="Confirm Password"
+        />
+        <button 
+          type="submit"
+          disabled={isInvalid}
+        >
+        Sign Up
+        </button>
+
+        { error && <p>{error.message}</p> }
+      </form>
+    );
+  }
 }
 
 const SignUpLink = () => {
