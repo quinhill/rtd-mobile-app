@@ -148,7 +148,7 @@ export class Search extends Component {
             className='itinerary-search-button'
           >
             Search
-          </button>
+          </button >
         </form>
       </div>
     );

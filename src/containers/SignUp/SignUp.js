@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import signUpThunk from '../../thunks';
+import signUpThunk from '../../thunks/signUpThunk';
 import * as routes from '../../constants/routes';
 import { auth } from '../../firebase';
 import PropTypes from 'prop-types';
@@ -53,12 +53,12 @@ class SignUpPage extends Component {
       passwordOne
     } = this.state;
     
-    const { history } = this.props;
+    const { history, signUpThunk } = this.props;
     
     auth.doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         const newUser = this.createUser(authUser);
-        return this.props.signUpThunk(newUser);
+        return signUpThunk(newUser);
       })
       .catch(error => {
         this.setState({error: error});
@@ -66,7 +66,6 @@ class SignUpPage extends Component {
     this.resetForm();
     history.push(routes.HOME);
   }
-
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -147,9 +146,10 @@ const SignUpLink = () => {
 
 };
 
-export const mapDispatchToProps = dispatch => ({
-  signUpThunk: (userInfo) => dispatch(signUpThunk(userInfo))
-});
+export const mapDispatchToProps = dispatch => {
+console.log('boobies');
+  return {signUpThunk: (userInfo) => dispatch(signUpThunk(userInfo))};
+};
 
 export default withRouter(connect(null, mapDispatchToProps)(SignUpPage));
 
