@@ -41,4 +41,14 @@ describe.only('actions', () => {
 
     expect(result).toEqual(expected);
   });
+
+  it('should have a type of STORE_ITINERARY', () => {
+    const expected = {
+      type: 'STORE_ITINERARY',
+      itinerary: 'Overland Golf Course, South Huron Street, Denver, CO, USA'
+    };
+    const result = actions.storeItinerary(expected.itinerary);
+
+    expect(result).toEqual(expected);
+  });
 });
