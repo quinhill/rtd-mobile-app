@@ -31,4 +31,14 @@ describe.only('actions', () => {
 
     expect(result).toEqual(expected);
   });
+
+  it('should have a type of STORE_END_ADDRESS', () => {
+    const expected = {
+      type: 'STORE_END_ADDRESS',
+      endAddress: 'Overland Golf Course, South Huron Street, Denver, CO, USA'
+    };
+    const result = actions.storeEndAddress(expected.endAddress);
+
+    expect(result).toEqual(expected);
+  });
 });
