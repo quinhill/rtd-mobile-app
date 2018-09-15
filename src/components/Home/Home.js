@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Search from '../../containers/Search/Search';
-import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';
+import ItineraryContainer from '../../containers/ItineraryContainer/ItineraryContainer';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -15,7 +15,7 @@ export class HomePage extends Component {
     return (
       <div>
         <Search />
-        <FavoritesContainer />
+        <ItineraryContainer />
       </div>
     );
   }
