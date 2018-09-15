@@ -7,102 +7,103 @@ import { PasswordForgetLink } from '../PasswordForget/PasswordForget';
 
 import * as routes from '../../constants/routes';
 
-const SignInPage = ({ history }) => {
-  return (
-    <div>
-      <h1>Sign In</h1>
-      <SignInForm history={history} />
-      <SignUpLink />
-      <PasswordForgetLink />
-    </div>
-  );
-};
-
-const INITIAL_STATE = {
-  email: '',
-  password: '',
-  error: null
-};
-
-
-class SignInForm extends Component {
+class SignInPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ...INITIAL_STATE
+      email: '',
+      password: '',
+      error: null
     };
   }
 
-    onSubmit = (event) => {
-      const {
-        email,
-        password
-      } = this.state;
+  resetForm = () => {
+    this.setState({
+      email: '',
+      password: '',
+      error: null
+    });
+  }
 
-      const { history } = this.props;
-  
-      auth.doSignInWithEmailAndPassword(email, password)
-        .then(authUser => {
-          this.setState({ ...INITIAL_STATE });
-          history.push(routes.HOME);
-        })
-        .catch(error => {
-          this.setState({error: error});
-        });
-  
-      event.preventDefault();
-    }
+  signIn = (authUser) => {
+    const { uid } = authUser.user;
+    return {
+      url: `http://rtd-revamp-api.herokuapp.com/api/v1/users/${uid}`,
+      options: {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'applications/json'
+        },
+        body: JSON.stringify({})
+      }
+  }
 
-    handleChange = (event) => {
-      const { name, value } = event.target;
-      this.setState({
-        [name]: value
+  onSubmit = (event) => {
+    event.preventDefault();
+    const {
+      email,
+      password
+    } = this.state;
+
+
+    const { history } = this.props;
+
+    auth.doSignInWithEmailAndPassword(email, password)
+      .then(authUser => {
+        const user = this.signIn(authUser);
+        history.push(routes.HOME);
+      })
+      .catch(error => {
+        this.setState({error: error});
       });
-    };
+  }
 
-    render() {
-      const {
-        email,
-        password,
-        error
-      } = this.state;
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
-      const isInvalid =
-      password === '' ||
-      email === '';
+  render() {
+    const {
+      email,
+      password,
+      error
+    } = this.state;
 
-      return (
-        <form onSubmit={this.onSubmit}>
-          <input
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-            type="email"
-            placeholder="Email Address"
-          />
-          <input
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-            type="password"
-            placeholder="Password"
-          />
-          <button 
-            type="submit"
-            disabled={isInvalid}
-          >
-          Sign Up
-          </button>
+    const isInvalid =
+    password === '' ||
+    email === '';
 
-          { error && <p>{error.message}</p> }
-        </form>
-      );
-    }
+    return (
+      <form onSubmit={this.onSubmit}>
+        <input
+          name="email"
+          value={email}
+          onChange={this.handleChange}
+          type="email"
+          placeholder="Email Address"
+        />
+        <input
+          name="password"
+          value={password}
+          onChange={this.handleChange}
+          type="password"
+          placeholder="Password"
+        />
+        <button 
+          type="submit"
+          disabled={isInvalid}
+        >
+        Sign Up
+        </button>
+
+        { error && <p>{error.message}</p> }
+      </form>
+    );
+  }
 }
 
 
 export default withRouter(SignInPage);
-
-export {
-  SignInForm
-};

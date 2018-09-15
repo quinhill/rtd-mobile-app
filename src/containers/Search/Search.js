@@ -56,7 +56,8 @@ export class Search extends Component {
       id,
       postItineraryThunk
     } = this.props;
-    const url = `http://rtd-revamp-api.herokuapp.com/api/v1/users/3/itineraries`;
+    const url = 
+    `http://rtd-revamp-api.herokuapp.com/api/v1/users/3/itineraries`;
     const bodyObj = {
       start_address: startAddress,
       end_address: endAddress,

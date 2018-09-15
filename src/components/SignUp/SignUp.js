@@ -5,7 +5,6 @@ import signUpThunk from '../../thunks/signUpThunk';
 import * as routes from '../../constants/routes';
 import { auth } from '../../firebase';
 import PropTypes from 'prop-types';
-import { createFetchObject } from '../../helpers/createFetchObject';
 
 
 class SignUpPage extends Component {
@@ -24,7 +23,9 @@ class SignUpPage extends Component {
     url: 'http://rtd-revamp-api.herokuapp.com/api/v1/users',
     options: {
       method: 'POST',
-      headers: {"Content-Type": "application/json"},
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         username: this.state.username,
         uid: userInfo.user.uid,
