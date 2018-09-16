@@ -1,7 +1,6 @@
 import { isLoading, hasErrored, signUpUser } from '../actions';
 
 const signUpThunk = (fetchObj) => {
-  console.log('click');
   const {
     url,
     options
