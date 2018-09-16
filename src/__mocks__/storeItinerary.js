@@ -1,0 +1,1 @@
+export const storeItinerary = jest.fn();

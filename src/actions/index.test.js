@@ -1,7 +1,7 @@
 import * as actions from '../actions';
 // import { shallow } from "enzyme";
 
-describe.only('actions', () => {
+describe('actions', () => {
   it('should have a type of IS_LOADING', () => {
     const expected = {
       type: 'IS_LOADING',
