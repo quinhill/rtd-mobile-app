@@ -13,6 +13,8 @@ export const signInThunk = (url) => {
       })
       .then(response => response.json())
       .then(userInfo => {
+        console.log(userInfo);
+        
         dispatch(signInUser(userInfo));
       })
       .catch(() => dispatch(hasErrored(true)));
