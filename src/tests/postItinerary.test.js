@@ -44,7 +44,7 @@ describe.only('postItineraries', () => {
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
   });
 
-  it('should dispatch fetchBios with the correct param', async () => {
+  it('should dispatch storeItinerary with the correct param', async () => {
     // const itinerary = mockItinerary;
 
     window.fetch = jest.fn().mockImplpementation(() => Promise.resolve({
