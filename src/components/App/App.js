@@ -8,8 +8,8 @@ import LandingPage from '../Landing/Landing';
 import SignUpPage from '../../containers/SignUp/SignUp';
 import SignInPage from '../../containers/SignIn/SignIn';
 import PasswordForgetPage from '../PasswordForget/PasswordForget';
-// import { firebase } from '../../firebase';
 import withAuthentication from '../withAuthentication';
+import ItineraryContainer from '../../containers/ItineraryContainer/ItineraryContainer';
 
 import * as routes from '../../constants/routes';
 
@@ -44,6 +44,10 @@ export const App = () => {
           <Route 
             exact path={routes.ACCOUNT} 
             component={AccountPage} 
+          />
+          <Route 
+            exact path={routes.ITINERARY}
+            component={ItineraryContainer}
           />
         </Switch>
         <Footer />

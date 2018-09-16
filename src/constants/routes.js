@@ -7,3 +7,4 @@ export const SEARCH = '/search';
 export const TICKETS = '/tickets';
 export const PASSWORD_FORGET = '/pw-forget';
 export const ACCOUNT = '/account';
+export const ITINERARY = '/itinerary';

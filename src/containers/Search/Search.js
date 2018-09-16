@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import StartAddressInput from '../../containers/StartAddressInput/StartAddressInput';
 import EndAddressInput from '../../containers/EndAddressInput/EndAddressInput';
 import postItineraryThunk from '../../thunks/postItineraryThunk';
+import * as routes from '../../constants/routes';
 
 import './Search.css';
+import { itineraryUrl } from '../../constants/urlGenerator';
 
 export class Search extends Component {
   constructor(props){
@@ -52,10 +55,11 @@ export class Search extends Component {
     const {
       startAddress,
       endAddress,
-      postItineraryThunk
+      postItineraryThunk,
+      // history,
+      uid
     } = this.props;
-    const url = 
-    `http://rtd-revamp-api.herokuapp.com/api/v1/users/3/itineraries`;
+    const url = itineraryUrl(uid);
     const bodyObj = {
       start_address: startAddress,
       end_address: endAddress,
@@ -71,6 +75,7 @@ export class Search extends Component {
       options
     };
     postItineraryThunk(fetchObject);
+    // history.push(routes.ITINERARY);
   };
   
   render(){
@@ -157,19 +162,21 @@ export class Search extends Component {
 
 export const mapStateToProps = state => ({
   startAddress: state.startAddress,
-  endAddress: state.endAddress
-  // id: state.userInfo.id
+  endAddress: state.endAddress,
+  uid: state.user.uid
 });
 
 export const mapDispatchToProps = dispatch => ({
   postItineraryThunk: (fetchObject) => dispatch(postItineraryThunk(fetchObject))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
 
 Search.propTypes = {
   postItineraryThunk: PropTypes.func,
   storeUserSearch: PropTypes.func,
   startAddress: PropTypes.string,
-  endAddress: PropTypes.string
+  endAddress: PropTypes.string,
+  history: PropTypes.object,
+  uid: PropTypes.string
 };
