@@ -1,5 +1,6 @@
 import { hasErrored, isLoading, storeItinerary } from '../../actions';
 import signUpThunk from '../signUpThunk';
+import signUpUser from '../../containers/SignUp/SignUp';
 
 
 describe('signUpThunk', () => {
@@ -51,7 +52,12 @@ describe('signUpThunk', () => {
 
   it('should dispatch storeItinerary with the correct param', async () => {
     const mockUser = {
-
+      created_at : "2018-09-16T17:17:43.318Z",
+      email : "www@wwww.com",
+      id : 12,
+      uid : "rMxbhM5AUSbZshYF3eOVF4Rvq8v2",
+      updated_at : "2018-09-16T17:17:43.318Z",
+      username : "ww"
     };
 
     window.fetch = jest.fn().mockImplpementation(() => Promise.resolve({
