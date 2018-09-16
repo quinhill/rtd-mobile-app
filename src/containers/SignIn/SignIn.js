@@ -7,7 +7,7 @@ import { PasswordForgetLink } from
   '../../components/PasswordForget/PasswordForget';
 
 import { connect } from 'react-redux';
-import signInThunk from '../../thunks';
+import signInThunk from '../../thunks/signInThunk';
 
 import * as routes from '../../constants/routes';
 

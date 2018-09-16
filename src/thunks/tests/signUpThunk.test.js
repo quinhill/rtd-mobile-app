@@ -1,18 +1,19 @@
-import { hasErrored, isLoading, storeItinerary } from '../actions';
-import postItineraryThunk from '../thunks/postItineraryThunk';
-import { mockItinerary } from '../__mocks__/mockItinerary';
+import { hasErrored, isLoading, storeItinerary } from '../../actions';
+import signUpThunk from '../signUpThunk';
 
-describe.only('postItineraries', () => {
+
+describe('signUpThunk', () => {
   let mockUrl;
   let mockDispatch;
 
+
   beforeEach(() => {
-    mockUrl = 'www.someurl.com';
+    mockUrl = 'www.mockUrl.com';
     mockDispatch = jest.fn();
   });
 
   it('calls dispatch with the isLoading action ', () => {
-    const thunk = postItineraryThunk(mockUrl);
+    const thunk = signUpThunk(mockUrl);
 
     thunk(mockDispatch);
 
@@ -23,8 +24,12 @@ describe.only('postItineraries', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: false
     }));
-  
-    const thunk = postItineraryThunk(mockUrl); 
+    const fetchObject = {
+      url: mockUrl,
+      options: {}
+    };
+
+    const thunk = signUpThunk(fetchObject); 
   
     await thunk(mockDispatch);
   
@@ -37,7 +42,7 @@ describe.only('postItineraries', () => {
       ok: true
     }));
   
-    const thunk = postItineraryThunk(mockUrl); 
+    const thunk = signUpThunk(mockUrl); 
   
     await thunk(mockDispatch);
   
@@ -45,20 +50,21 @@ describe.only('postItineraries', () => {
   });
 
   it('should dispatch storeItinerary with the correct param', async () => {
-    // const itinerary = mockItinerary;
+    const mockUser = {
+
+    };
 
     window.fetch = jest.fn().mockImplpementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve({
-        mockItinerary
+        mockUser
       })
     }));
 
-    const thunk = postItineraryThunk(mockUrl);
+    const thunk = signUpThunk(mockUrl);
 
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(storeItinerary(mockItinerary));
+    expect(mockDispatch).toHaveBeenCalledWith(signUpUser(mockUser));
   });
-
 });

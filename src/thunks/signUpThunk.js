@@ -17,6 +17,7 @@ const signUpThunk = (fetchObj) => {
       })
       .then(response => response.json())
       .then(userInfo => {
+        console.log(userInfo);
         dispatch(signUpUser(userInfo));
       })
       .catch(() => dispatch(hasErrored(true)));
