@@ -7,4 +7,12 @@ describe('ItineraryPage', () => {
     const wrapper = shallow(<ItineraryPage />);
     expect(wrapper).toMatchSnapShot;
   });
+
+  describe('mapStateToProps', () => {
+    test('should return an object with an itinerary', () => {
+      
+    });
+    
+  });
+  
 });

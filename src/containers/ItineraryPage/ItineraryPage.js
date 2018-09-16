@@ -4,11 +4,13 @@ import ItineraryCard from    '../../components/ItineraryCard/ItineraryCard';
 import PropTypes from 'prop-types';
 import {mockItinerary} from '../../__mocks__/mockItinerary';
 
-export class ItineraryPage extends Component {
+class ItineraryPage extends Component {
   constructor(props){
     super(props);
 
   }
+
+
 
   render() {
     return (

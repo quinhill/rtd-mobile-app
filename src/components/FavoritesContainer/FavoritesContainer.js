@@ -15,7 +15,7 @@ export class FavoritesContainer extends Component {
     //     startingPoint={favoriteRoute.origin}
     //     destination={favoriteRoute.terminus}
     //     key={index}
-    //   />);
+    //   />);  
     // });
 
     return (
