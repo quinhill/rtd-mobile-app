@@ -31,6 +31,7 @@ class ItineraryCard extends Component {
       duration,
       distance
     } = this.props;
+    console.log(this.props)
 
     return (
       <div id ={itinerary_id}>

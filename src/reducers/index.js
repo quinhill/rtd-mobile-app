@@ -6,7 +6,6 @@ import startAddress from './startAddressReducer';
 import endAddress from './endAddressReducer';
 import itinerary from './itineraryReducer';
 
-
 const rootReducer = combineReducers({
   startAddress,
   endAddress,

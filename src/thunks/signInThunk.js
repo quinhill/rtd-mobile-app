@@ -1,13 +1,9 @@
 import { isLoading, hasErrored, signInUser } from '../actions';
 
-const signInThunk = (fetchObj) => {
-  const {
-    url,
-    options
-  } = fetchObj;
+const signInThunk = (url) => {
   return (dispatch) => {
     dispatch(isLoading(true));
-    fetch(url, options)
+    fetch(url)
       .then(response => {
         if (!response.ok) {
           throw Error();
