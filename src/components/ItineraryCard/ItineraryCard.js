@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { topCleaner } from '../../constants/cleanerFunction';
+import { infoCleaner, cleanStep } from '../../constants/cleanerFunctions';
+import ItineraryStep from '../ItineraryStep/ItineraryStep';
 
 import './ItineraryCard.css';
 
 class ItineraryCard extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      showMore: false
+    };
   }
 
-  
-  displayLine = () => {
-    const { steps } = this.props.itinerary;
-    console.log(steps);
-  };
+  handleClick = () => {
+    this.setState({
+      showMore: !this.state.showMore
+    });
+  }
 
   addressCleaner = (address) => {
     return address.split(',')[0];
@@ -22,48 +26,64 @@ class ItineraryCard extends Component {
   render(){
     const {
       itinerary_id,
-      start_address,
-      end_address,
-      favorite,
-      departure_time,
       arrival_time,
       duration,
-      distance,
       steps
     } = this.props.itinerary;
 
-    console.log(this.props.itinerary);
-    return (
-      <div 
-        className='itinerary-card'
-        id ={itinerary_id}
-      >
-        <div className='top-container'>
-          <h2>
-            <span className='descriptor'>towards:</span>
-            {topCleaner(steps)}
-          </h2>
-        </div>
-        <div className='trip-detail-row'>
-          <h3 className="time-depart">
-            {departure_time}
-          </h3>
-          <div className='line-container'>
-            <hr className='duration-line'/>
+    const info = infoCleaner(steps);
+    console.log(info);
+
+    if (this.state.showMore) {
+      return steps.map((step, index) => {
+        const props = cleanStep(step);
+        return (
+          <ItineraryStep 
+            data={props}
+            key={index}
+            handleClick={this.handleClick}
+          />
+        );
+      });
+    } else {
+      return (
+        <div 
+          className='itinerary-card'
+          id ={itinerary_id}
+          onClick={this.handleClick}
+        >
+          <div className='top-container'>
+            <img
+              className='vehicle-icon'
+              src={`${info.vehicle_type}.png`} 
+            />
+            <p className='line-id'>
+              {info.short_name}
+            </p>
+            <h2>
+            Towards {info.headsign}
+            </h2>
           </div>
-          <h3 className="time-depart">
-            {arrival_time}
-          </h3>
+          <div className='trip-detail-row'>
+            <h3 className="time-depart">
+              {info.departure_time}
+            </h3>
+            <div className='line-container'>
+              <hr className='duration-line'/>
+            </div>
+            <h3 className="time-depart">
+              {arrival_time}
+            </h3>
+          </div>
+          <div className='bottom-container'>
+            <h2>
+            from {info.departure_stop}
+            </h2>
+            <h2>{duration}</h2>
+          </div>
         </div>
-        <div className='bottom-container'>
-          <h2>
-            <span className='descriptor'>from:</span>
-            {this.addressCleaner(start_address)}
-          </h2>
-          <h2>{duration}</h2>
-        </div>
-      </div>
-    );
+      );
+    }
   }
 }
 

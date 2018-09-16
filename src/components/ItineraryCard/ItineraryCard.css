@@ -8,9 +8,9 @@
   display: flex;
 }
 
-.descriptor {
-  font-weight: 700;
-  margin: 0 5px 0 10px;
+.vehicle-icon {
+  height: 30px;
+  width: auto;
 }
 
 .trip-detail-row {
