@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ItineraryCard from    '../../components/ItineraryCard/ItineraryCard';
+import PropTypes from 'prop-types';
 
-class ItineraryContainer extends Component {
+class ItineraryPage extends Component {
   constructor(props){
     super(props);
 
   }
+
+
 
   render() {
     return (
@@ -23,4 +26,8 @@ const mapStateToProps = state => ({
   itinerary: state.itinerary
 });
 
-export default connect(mapStateToProps)(ItineraryContainer);
+export default connect(mapStateToProps)(ItineraryPage);
+
+ItineraryPage.propTypes = {
+  itinerary: PropTypes.object
+};

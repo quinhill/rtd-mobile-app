@@ -45,7 +45,7 @@ class SignInPage extends Component {
 
     auth.doSignInWithEmailAndPassword(email, password)
       .then(authUser => {
-        const url = signInUrl(authUser.uid);
+        const url = signInUrl(authUser.user.uid);
         return this.props.signInThunk(url);
       })
       .catch(error => {

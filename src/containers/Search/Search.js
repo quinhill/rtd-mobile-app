@@ -56,7 +56,7 @@ export class Search extends Component {
       startAddress,
       endAddress,
       postItineraryThunk,
-      // history,
+      history,
       uid
     } = this.props;
     const url = itineraryUrl(uid);
@@ -75,7 +75,7 @@ export class Search extends Component {
       options
     };
     postItineraryThunk(fetchObject);
-    // history.push(routes.ITINERARY);
+    history.push(routes.ITINERARY);
   };
   
   render(){
