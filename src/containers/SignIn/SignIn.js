@@ -7,7 +7,7 @@ import { PasswordForgetLink } from
   '../../components/PasswordForget/PasswordForget';
 
 import { connect } from 'react-redux';
-import signInThunk from '../../thunks';
+import signInThunk from '../../thunks/signInThunk';
 
 import * as routes from '../../constants/routes';
 
@@ -31,18 +31,9 @@ class SignInPage extends Component {
     });
   }
 
-  signIn = (authUser) => {
+  signInUrl = (authUser) => {
     const { uid } = authUser.user;
-    return {
-      url: `http://rtd-revamp-api.herokuapp.com/api/v1/users/${uid}`,
-      options: {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'applications/json'
-        },
-        body: JSON.stringify({})
-      }
-    };
+    return `http://rtd-revamp-api.herokuapp.com/api/v1/users/${uid}`;
   }
 
   onSubmit = (event) => {
@@ -56,8 +47,8 @@ class SignInPage extends Component {
 
     auth.doSignInWithEmailAndPassword(email, password)
       .then(authUser => {
-        const user = this.signIn(authUser);
-        return this.props.signInThunk(user);
+        const url = this.signInUrl(authUser);
+        return this.props.signInThunk(url);
       })
       .catch(error => {
         this.setState({error: error});
