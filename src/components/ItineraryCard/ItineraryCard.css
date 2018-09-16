@@ -1,0 +1,32 @@
+.itinerary-card {
+  height: 20%;
+  width: 100%;
+  background: white;
+}
+
+.top-container {
+  display: flex;
+}
+
+.descriptor {
+  font-weight: 700;
+  margin: 0 5px 0 10px;
+}
+
+.trip-detail-row {
+  display: grid;
+  grid-template-columns: 20% 1fr 20%;
+  align-items: center;
+  justify-items: center;
+}
+
+.line-container {
+  box-sizing: border-box;
+  width: 90%;
+}
+
+.bottom-container {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}

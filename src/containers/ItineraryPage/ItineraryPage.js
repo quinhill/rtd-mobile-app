@@ -16,7 +16,7 @@ class ItineraryPage extends Component {
     return (
       <div>
         <ItineraryCard 
-          props={mockItinerary[0]}
+          itinerary={mockItinerary[0]}
         />
       </div>
     );
