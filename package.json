@@ -27,5 +27,12 @@
     "enzyme": "^3.6.0",
     "eslint": "^5.5.0",
     "react-router-dom": "^4.3.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js",
+      "!src/setupTests.js"
+    ]
   }
 }
