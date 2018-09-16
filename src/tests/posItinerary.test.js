@@ -1,7 +1,8 @@
-import postItinerary from '../postItineraryThunk';
-import { hasErrored, isLoading, storeItinerary } from '../../actions';
+import { hasErrored, isLoading, storeItinerary } from '../actions';
+import postItineraryThunk from '../thunks/postItineraryThunk';
+import { mockItinerary } from '../__mocks__/mockItinerary';
 
-describe('postItineraries', () => {
+describe.only('postItineraries', () => {
   let mockUrl;
   let mockDispatch;
 
@@ -11,7 +12,7 @@ describe('postItineraries', () => {
   });
 
   it('calls dispatch with the isLoading action ', () => {
-    const thunk = postItinerary(mockUrl);
+    const thunk = postItineraryThunk(mockUrl);
 
     thunk(mockDispatch);
 
@@ -23,7 +24,7 @@ describe('postItineraries', () => {
       ok: false
     }));
   
-    const thunk = postItinerary(mockUrl); 
+    const thunk = postItineraryThunk(mockUrl); 
   
     await thunk(mockDispatch);
   
@@ -36,11 +37,28 @@ describe('postItineraries', () => {
       ok: true
     }));
   
-    const thunk = postItinerary(mockUrl); 
+    const thunk = postItineraryThunk(mockUrl); 
   
     await thunk(mockDispatch);
   
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
   });
-    
+
+  it('should dispatch fetchBios with the correct param', async () => {
+    // const itinerary = mockItinerary;
+
+    window.fetch = jest.fn().mockImplpementation(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({
+        mockItinerary
+      })
+    }));
+
+    const thunk = postItineraryThunk(mockUrl);
+
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(storeItinerary(mockItinerary));
+  });
+
 });
