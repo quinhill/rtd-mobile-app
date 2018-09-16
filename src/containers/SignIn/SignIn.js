@@ -10,6 +10,7 @@ import { connect } from 'react-redux';
 import signInThunk from '../../thunks/signInThunk';
 
 import * as routes from '../../constants/routes';
+import { signInUrl } from '../../constants/urlGenerator';
 
 import PropTypes from 'prop-types';
 
@@ -31,20 +32,6 @@ class SignInPage extends Component {
     });
   }
 
-  signIn = (authUser) => {
-    const { uid } = authUser.user;
-    return {
-      url: `http://rtd-revamp-api.herokuapp.com/api/v1/users/${uid}`,
-      options: {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'applications/json'
-        },
-        body: JSON.stringify({})
-      }
-    };
-  }
-
   onSubmit = (event) => {
     event.preventDefault();
     const {
@@ -56,8 +43,8 @@ class SignInPage extends Component {
 
     auth.doSignInWithEmailAndPassword(email, password)
       .then(authUser => {
-        const user = this.signIn(authUser);
-        return this.props.signInThunk(user);
+        const url = signInUrl(authUser.user.uid);
+        return this.props.signInThunk(url);
       })
       .catch(error => {
         this.setState({error: error});

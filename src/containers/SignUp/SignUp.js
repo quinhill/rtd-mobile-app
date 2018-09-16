@@ -146,10 +146,9 @@ const SignUpLink = () => {
 
 };
 
-export const mapDispatchToProps = dispatch => {
-console.log('boobies');
-  return {signUpThunk: (userInfo) => dispatch(signUpThunk(userInfo))};
-};
+export const mapDispatchToProps = dispatch => ({
+  signUpThunk: (userInfo) => dispatch(signUpThunk(userInfo))
+});
 
 export default withRouter(connect(null, mapDispatchToProps)(SignUpPage));
 
