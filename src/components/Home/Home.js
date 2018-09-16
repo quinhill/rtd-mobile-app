@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Search from '../../containers/Search/Search';
-import ItineraryContainer from '../../containers/ItineraryContainer/ItineraryContainer';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';

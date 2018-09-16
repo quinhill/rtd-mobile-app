@@ -11,8 +11,6 @@ import signInThunk from '../../thunks/signInThunk';
 
 import * as routes from '../../constants/routes';
 import { signInUrl } from '../../constants/urlGenerator';
-import firebase from 'firebase/app';
-import 'firebase/auth';
 
 import PropTypes from 'prop-types';
 
