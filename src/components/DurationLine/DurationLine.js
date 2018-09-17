@@ -1,13 +1,13 @@
 import React from 'react';
 
 const durationLines = ({totalSteps}) => {
-
   const totalDuration = totalSteps.duration;
   const lineDurations = totalSteps.eachStep.map((stepDur) => {
-    return (totalDuration / stepDur) * 100;
+    return (stepDur / totalDuration) * 100;
   });
   const lineContainerStyles = {
-    width: '100%'
+    display: 'flex',
+    width: '90%'
   };
   const eachLine = lineDurations.map((line, index) => {
     const singleLineStyles = {
