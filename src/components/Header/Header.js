@@ -7,7 +7,7 @@ import AuthUserContext from '../AuthUserContext';
 import * as routes from '../../constants/routes';
 
   
-const Header = () => {
+export const Header = () => {
   const HeaderNonAuth = () => {
     return (
       <header>

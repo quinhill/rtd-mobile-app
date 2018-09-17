@@ -11,7 +11,24 @@ describe('PasswordForget', () => {
   });
 
   describe('handleChange', () => {
-    it('should update handleChange', () => {
+    it('should update state when handleChange is called', () => {
+      const wrapper = shallow( < PasswordForgetPage /> );
+      // const handleChange = jest.fn();
+      const event = {
+        target: {
+          name: 'email',
+          value: 'austin@gmail.com'
+        }
+      };
+
+      wrapper.instance().handleChange(event);
+
+      // wrapper.find('form').simulate('change', event);
+      // expect(wrapper.handleChange).toHaveBeenCalled();
+      expect(wrapper.state('email')).toEqual('austin@gmail.com');
+    });
+
+    it('should call handle change when the input field is altered', () => {
       const wrapper = shallow( < PasswordForgetPage /> );
       const handleChange = jest.fn();
       const event = {
@@ -24,11 +41,7 @@ describe('PasswordForget', () => {
       handleChange(event);
 
       wrapper.find('form').simulate('change', event);
-      wrapper.find('form').simulate('change', event);
       expect(handleChange).toHaveBeenCalled();
-      // expect(wrapper.state('name')).toEqual('email');
-      expect(wrapper.state('email')).toEqual('austin@gmail.com');
-
     });
   });
 
@@ -55,9 +68,7 @@ describe('PasswordForget', () => {
   
       expect(wrapper).toMatchSnapshot();
     });
-    
   });
-  
 });
 
 
