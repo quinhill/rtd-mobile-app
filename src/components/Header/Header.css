@@ -5,6 +5,8 @@ header {
 }
 
 .logo-banner {
+  left: -50px;
+  position: absolute;
   height: 55px;
   width: auto;
 }
