@@ -58,6 +58,7 @@ class ItineraryCard extends Component {
         >
           <div className='top-container'>
             <img
+              alt='transit-icon'
               className='transit-icon'
               src={`${info.vehicle_type}.png`} 
             />
