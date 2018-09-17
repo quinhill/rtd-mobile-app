@@ -27,6 +27,10 @@
   margin: 0 5px 0 5px;
 }
 
+.add-favorite {
+  border: 1px solid black;
+}
+
 .line-id {
   color: white;
 }

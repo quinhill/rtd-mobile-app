@@ -5,6 +5,7 @@ import user from './userReducer';
 import startAddress from './startAddressReducer';
 import endAddress from './endAddressReducer';
 import itinerary from './itineraryReducer';
+import favorites from './favoriteReducer';
 
 const rootReducer = combineReducers({
   startAddress,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   hasErrored,
   isLoading,
   user,
-  itinerary
+  itinerary,
+  favorites
 });
 
 export default rootReducer;

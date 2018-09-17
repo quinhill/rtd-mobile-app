@@ -32,6 +32,11 @@ class ItineraryCard extends Component {
       steps
     } = this.props.itinerary;
 
+    const {
+      addFavorite,
+      uid
+    } = this.props;
+
     const info = infoCleaner(steps);
 
     const lineStyles = {
@@ -73,6 +78,14 @@ class ItineraryCard extends Component {
             <h2>
               Towards {info.headsign}
             </h2>
+            <button
+              className='add-favorite'
+              onClick={addFavorite}
+              id={itinerary_id}
+              value={uid}
+            >
+              Add to Favorites
+            </button>
           </div>
           <div className='trip-detail-row'>
             <h3 className="time-depart">
@@ -100,5 +113,7 @@ class ItineraryCard extends Component {
 export default ItineraryCard;
 
 ItineraryCard.propTypes = {
-  itinerary: PropTypes.object
+  itinerary: PropTypes.object,
+  addFavorite: PropTypes.func,
+  uid: PropTypes.string
 };

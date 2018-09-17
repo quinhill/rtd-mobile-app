@@ -4,10 +4,22 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';
 import './Home.css';
+import { getFavoritesUrl } from '../../constants/urlGenerator';
+import getFavoritesThunk from '../../thunks/getFavoritesThunk';
 
 export class HomePage extends Component {
 
   render(){
+    const {
+      user
+    } = this.props;
+
+    if (user) {
+      const { uid } = user;
+      const url = getFavoritesUrl(uid);
+      this.props.getFavorites(url);
+    }
+
     return (
       <div>
         <Search />
@@ -18,12 +30,17 @@ export class HomePage extends Component {
 }
 
 export const mapStateToProps = state => ({
-  user: state.user,
+  user: state.user
 });
 
-export default connect(mapStateToProps)(HomePage);
+export const mapDispatchToState = dispatch => ({
+  getFavorites: (url) => dispatch(getFavoritesThunk(url))
+});
+
+export default connect(mapStateToProps, mapDispatchToState)(HomePage);
 
 HomePage.propTypes = {
   user: PropTypes.object,
-  display: PropTypes.string
+  display: PropTypes.string,
+  getFavorites: PropTypes.func
 };

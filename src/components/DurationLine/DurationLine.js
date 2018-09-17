@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const durationLines = ({totalSteps}) => {
+const DurationLines = ({totalSteps}) => {
   const totalDuration = totalSteps.duration;
   const lineDurations = totalSteps.eachStep.map((stepDur) => {
     return (stepDur / totalDuration) * 100;
@@ -43,4 +44,8 @@ const durationLines = ({totalSteps}) => {
   );
 };
 
-export default durationLines;
+export default DurationLines;
+
+DurationLines.propTypes = {
+  totalSteps: PropTypes.object
+};
