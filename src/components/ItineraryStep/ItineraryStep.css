@@ -1,0 +1,79 @@
+.transit-leg-container {
+  background: white;
+  display: grid;
+  grid-template-columns: 40% 1% 60%;
+  height: 90px;
+}
+
+.step-time-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.depart-time {
+  font-size: 90%;
+  font-weight: 600;
+  margin: 0;
+}
+
+.arrive-time {
+  font-size: 90%;
+  font-weight: 300;
+  margin: 0;
+}
+
+.step-locations-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: start;
+  padding-left: 5px;
+}
+
+.line-info-container {
+  display: flex;
+  align-items: center;
+}
+
+.instructions-container {
+  text-align: start;
+  background: rgb(165, 163, 163);
+  border: 1px black;
+  padding-left: 5px;
+  box-shadow: inset 0 0 0.5px 0.5px rgba(0, 0, 0, 0.5);
+}
+
+.depart-stop {
+  font-size: 100%;
+  font-weight: 600;
+  margin: 0;
+}
+
+.transit-icon{
+  height: 20px;
+  width: auto;
+}
+
+.arrive-stop {
+  font-size: 100%;
+  font-weight: 300;
+  margin: 0;
+}
+
+.instructions-container {
+  display: flex;
+  align-items: center;
+}
+
+.walk-icon {
+  height: 14px;
+  width: auto;
+  margin: 5px;
+}
+
+.instructions {
+  margin: 0;
+  font-size: 80%;
+  font-weight: 300;
+}

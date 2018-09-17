@@ -17,12 +17,15 @@ export const infoCleaner = (steps) => {
 };
 
 export const cleanStep = (step) => {
+
   const imgUrl = step.vehicle_type 
     ? `${step.vehicle_type.toLowerCase()}.png`
     : `${step.travel_mode.toLowerCase()}.png`;
   const {
     arrival_stop,
     arrival_time,
+    departure_stop,
+    departure_time,
     duration,
     headsign,
     instructions,
@@ -33,6 +36,8 @@ export const cleanStep = (step) => {
     imgUrl,
     arrival_stop,
     arrival_time,
+    departure_stop,
+    departure_time,
     duration,
     headsign,
     instructions,
