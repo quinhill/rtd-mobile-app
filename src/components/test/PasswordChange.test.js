@@ -3,14 +3,14 @@ import { PasswordChangeForm } from '../PasswordChange/PasswordChange';
 import { shallow } from 'enzyme';
 
 describe('PasswordChange', () => {
-  test('should matchSnapshot', () => {
+  it('should matchSnapshot', () => {
     const wrapper = shallow(<PasswordChangeForm/>);
 
     expect(wrapper).toMatchSnapshot();
   });
 
   describe('handleChange', () => {
-    test('should call handleChange of change of the input field ', () => {
+    it('should call handleChange of change of the input field ', () => {
       const wrapper = shallow(<PasswordChangeForm/>);
       const mockPassword = '123456';
       const handleChange = jest.fn();
@@ -31,7 +31,7 @@ describe('PasswordChange', () => {
   });
 
   describe('handleSubmit', () => {
-    test('should call handlesubmit of change of the input field ', () => {
+    it('should call handlesubmit of change of the input field ', () => {
       const wrapper = shallow(<PasswordChangeForm/>);
       const onSubmit = jest.fn();
       const event = {
