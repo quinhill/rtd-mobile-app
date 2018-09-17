@@ -3,7 +3,11 @@
 exports[`Search should matchSnapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Search />,
+  Symbol(enzyme.__unrendered__): <Search
+    endAddress="Overland Golf Course"
+    startAddress="Union Station"
+    uid="12"
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -28,7 +32,7 @@ ShallowWrapper {
                     className="search-hours"
                     name="hours"
                     onChange={[Function]}
-                    value={14}
+                    value={16}
           >
                     <option
                               value="1"
@@ -94,7 +98,7 @@ ShallowWrapper {
           <select
                     name="minutes"
                     onChange={[Function]}
-                    value={11}
+                    value={25}
           >
                     <option
                               value="00"
@@ -228,7 +232,7 @@ ShallowWrapper {
               className="search-hours"
               name="hours"
               onChange={[Function]}
-              value={14}
+              value={16}
 >
               <option
                             value="1"
@@ -294,7 +298,7 @@ ShallowWrapper {
             <select
               name="minutes"
               onChange={[Function]}
-              value={11}
+              value={25}
 >
               <option
                             value="00"
@@ -470,7 +474,7 @@ ShallowWrapper {
               "className": "search-hours",
               "name": "hours",
               "onChange": [Function],
-              "value": 14,
+              "value": 16,
             },
             "ref": null,
             "rendered": Array [
@@ -690,7 +694,7 @@ ShallowWrapper {
               ],
               "name": "minutes",
               "onChange": [Function],
-              "value": 11,
+              "value": 25,
             },
             "ref": null,
             "rendered": Array [
@@ -982,7 +986,7 @@ ShallowWrapper {
                         className="search-hours"
                         name="hours"
                         onChange={[Function]}
-                        value={14}
+                        value={16}
             >
                         <option
                                     value="1"
@@ -1048,7 +1052,7 @@ ShallowWrapper {
             <select
                         name="minutes"
                         onChange={[Function]}
-                        value={11}
+                        value={25}
             >
                         <option
                                     value="00"
@@ -1182,7 +1186,7 @@ ShallowWrapper {
                 className="search-hours"
                 name="hours"
                 onChange={[Function]}
-                value={14}
+                value={16}
 >
                 <option
                                 value="1"
@@ -1248,7 +1252,7 @@ ShallowWrapper {
               <select
                 name="minutes"
                 onChange={[Function]}
-                value={11}
+                value={25}
 >
                 <option
                                 value="00"
@@ -1424,7 +1428,7 @@ ShallowWrapper {
                 "className": "search-hours",
                 "name": "hours",
                 "onChange": [Function],
-                "value": 14,
+                "value": 16,
               },
               "ref": null,
               "rendered": Array [
@@ -1644,7 +1648,7 @@ ShallowWrapper {
                 ],
                 "name": "minutes",
                 "onChange": [Function],
-                "value": 11,
+                "value": 25,
               },
               "ref": null,
               "rendered": Array [
