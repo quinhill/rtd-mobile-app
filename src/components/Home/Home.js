@@ -16,12 +16,9 @@ export class HomePage extends Component {
   }
 
   checkForUser = () => {
-    console.log('run')
     const {history, user} = this.props;
     if (!user.uid) {
       history.push(routes.SIGN_IN);
-    } else {
-      console.log(user);
     }
   }
 
@@ -56,5 +53,6 @@ export default withRouter(connect(mapStateToProps, mapDispatchToState)(HomePage)
 HomePage.propTypes = {
   user: PropTypes.object,
   display: PropTypes.string,
-  getFavorites: PropTypes.func
+  getFavorites: PropTypes.func,
+  history: PropTypes.object
 };
