@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { infoCleaner, cleanStep } from '../../constants/cleanerFunctions';
 import ItineraryStep from '../ItineraryStep/ItineraryStep';
+import DurationLine from '../DurationLine/DurationLine';
 
 import './ItineraryCard.css';
 
@@ -33,7 +34,7 @@ class ItineraryCard extends Component {
 
     const info = infoCleaner(steps);
 
-    const styles = {
+    const lineStyles = {
       background: info.color
     };
 
@@ -62,30 +63,30 @@ class ItineraryCard extends Component {
             />
             <div 
               className='line-id-container'
-              style={styles}
+              style={lineStyles}
             >
               <p className='line-id'>
                 {info.short_name}
               </p>
             </div>
             <h2>
-            Towards {info.headsign}
+              Towards {info.headsign}
             </h2>
           </div>
           <div className='trip-detail-row'>
             <h3 className="time-depart">
               {info.departure_time}
             </h3>
-            <div className='line-container'>
-              <hr className='duration-line'/>
-            </div>
+            <DurationLine
+              totalSteps={info.totalSteps} 
+            />
             <h3 className="time-depart">
               {arrival_time}
             </h3>
           </div>
           <div className='bottom-container'>
             <h2>
-            from {info.departure_stop}
+              From {info.departure_stop}
             </h2>
             <h2>{duration}</h2>
           </div>
