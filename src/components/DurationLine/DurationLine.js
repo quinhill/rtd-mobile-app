@@ -1,6 +1,6 @@
 import React from 'react';
 
-const durationLines = ({totalSteps}) => {
+const durationLines = ({ totalSteps }) => {
   console.log(totalSteps)
   const totalDuration = totalSteps.duration;
   const lineDurations = totalSteps.eachStep.map((stepDur) => {
