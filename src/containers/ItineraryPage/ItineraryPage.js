@@ -13,11 +13,13 @@ class ItineraryPage extends Component {
 
 
   render() {
+    console.log(this.props.itinerary);
+    const itineraries = this.props.itinerary.map((itinerary, index) => {
+      return <ItineraryCard key={index} itinerary={itinerary} />;
+    });
     return (
       <div>
-        <ItineraryCard 
-          itinerary={mockItinerary[0]}
-        />
+        {itineraries}
       </div>
     );
   }
