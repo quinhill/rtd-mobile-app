@@ -8,10 +8,9 @@ const INITIAL_STATE = {
   error: null
 };
 
-class PasswordChangeForm extends Component {
+export class PasswordChangeForm extends Component {
   constructor(props) {
     super(props);
-
     this.state = { ...INITIAL_STATE };
   }
 
@@ -50,6 +49,7 @@ class PasswordChangeForm extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <input
+          className='password-one'
           name="passwordOne"
           value={passwordOne}
           onChange={this.handleChange}
@@ -57,6 +57,7 @@ class PasswordChangeForm extends Component {
           placeholder="New Password"
         />
         <input
+          className='password-two'
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.handleChange}

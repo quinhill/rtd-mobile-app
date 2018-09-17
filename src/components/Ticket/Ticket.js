@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 export const Ticket = (props) => {
-  return(
+  return (
     <div>
       TICKET OBJECT
     </div>
-  )
-}
+  );
+};
 
 export default Ticket;
