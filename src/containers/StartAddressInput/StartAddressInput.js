@@ -18,6 +18,7 @@ export class StartAddressInput extends Component {
  
   handleSelect = address => {
     this.props.storeStartAddress(address);
+    this.setState({startAddress: address});
   };
  
   render() {
@@ -36,7 +37,7 @@ export class StartAddressInput extends Component {
                 value={this.state.startAddress}
                 {...getInputProps({
                   placeholder: 'Search Starting Point ...',
-                  className: 'location-search-input-start'
+                  className: 'location-search-input-start',
                 })}
               />
               <div className="autocomplete-dropdown-container">

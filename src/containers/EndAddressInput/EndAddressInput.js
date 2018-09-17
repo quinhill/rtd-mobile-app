@@ -18,6 +18,7 @@ export class EndAddressInput extends Component {
  
   handleSelect = address => {
     this.props.storeEndAddress(address);
+    this.setState({endAddress: address});
   };
  
   render() {
