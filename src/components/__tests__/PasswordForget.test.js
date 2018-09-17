@@ -13,7 +13,6 @@ describe('PasswordForget', () => {
   describe('handleChange', () => {
     it('should update state when handleChange is called', () => {
       const wrapper = shallow( < PasswordForgetPage /> );
-      // const handleChange = jest.fn();
       const event = {
         target: {
           name: 'email',
@@ -23,8 +22,6 @@ describe('PasswordForget', () => {
 
       wrapper.instance().handleChange(event);
 
-      // wrapper.find('form').simulate('change', event);
-      // expect(wrapper.handleChange).toHaveBeenCalled();
       expect(wrapper.state('email')).toEqual('austin@gmail.com');
     });
 
