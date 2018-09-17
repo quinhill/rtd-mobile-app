@@ -7,7 +7,7 @@ const durationLines = ({totalSteps}) => {
   });
   const lineContainerStyles = {
     display: 'flex',
-    width: '90%'
+    width: '100%'
   };
   const eachLine = lineDurations.map((line, index) => {
     const singleLineStyles = {
