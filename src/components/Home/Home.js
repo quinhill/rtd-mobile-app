@@ -9,17 +9,16 @@ import getFavoritesThunk from '../../thunks/getFavoritesThunk';
 
 export class HomePage extends Component {
 
-  render(){
-    const {
-      user
-    } = this.props;
-
-    if (user) {
-      const { uid } = user;
-      const url = getFavoritesUrl(uid);
+  componentDidUpdate() {
+    if (this.props.user) {
+      const { user } = this.props;
+      console.log(user.uid);
+      const url = getFavoritesUrl(user.uid);
       this.props.getFavorites(url);
     }
+  }
 
+  render(){
     return (
       <div>
         <Search />
