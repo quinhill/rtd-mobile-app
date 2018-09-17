@@ -29,7 +29,6 @@ const Header = () => {
     return (
       <header>
         <img src="/rtd-logo.png" className="logo-banner" />
-        <SignOutButton />
       </header>
     ); 
   };
