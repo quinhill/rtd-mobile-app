@@ -89,6 +89,7 @@ export class Search extends Component {
         >
           <select 
             className='search-hours'
+            className='search-hours'
             name='hours'
             onChange={this.handleChange}
             value={this.state.hours}

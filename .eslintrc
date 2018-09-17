@@ -45,3 +45,10 @@
     "expect": true
   }
 }
+   ],
+    "max-depth": ["warn", 4]
+  },
+  "globals": {
+    "expect": true
+  }
+}
