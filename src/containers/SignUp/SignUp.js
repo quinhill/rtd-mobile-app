@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { SignInLink } from '../SignIn/SignIn';
 
 
-class SignUpPage extends Component {
+export class SignUpPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
