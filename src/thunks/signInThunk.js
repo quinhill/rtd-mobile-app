@@ -1,6 +1,6 @@
 import { isLoading, hasErrored, signInUser } from '../actions';
 
-const signInThunk = (url) => {
+export const signInThunk = (url) => {
   return (dispatch) => {
     dispatch(isLoading(true));
     fetch(url)

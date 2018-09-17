@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import { storeStartAddress } from '../../actions';
 import { connect } from "react-redux";
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; 
  
-class StartAddressInput extends Component {
+export class StartAddressInput extends Component {
   constructor(props) {
     super(props);
     this.state = { 

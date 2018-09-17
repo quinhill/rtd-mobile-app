@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; 
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import signUpThunk from '../../thunks/signUpThunk';

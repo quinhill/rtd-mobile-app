@@ -1,9 +1,8 @@
 import React from 'react';
-
 import AuthUserContext from '../AuthUserContext';
 import PasswordChangeForm from '../PasswordChange/PasswordChange';
 
-const AccountPage = () =>
+export const AccountPage = () =>
   <AuthUserContext.Consumer>
     {authUser =>
       <div>

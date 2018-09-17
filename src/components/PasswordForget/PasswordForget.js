@@ -5,7 +5,7 @@ import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
 
 const PasswordForgetPage = () =>
-  <div>
+  <div> 
     <h1>PasswordForget</h1>
     <PasswordForgetForm />
   </div>;
@@ -18,7 +18,6 @@ const INITIAL_STATE = {
 class PasswordForgetForm extends Component {
   constructor(props) {
     super(props);
-
     this.state = { ...INITIAL_STATE };
   }
 
@@ -54,6 +53,7 @@ class PasswordForgetForm extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <input
+          className='password-forget'
           name="email"
           value={email}
           onChange={this.handleChange}
@@ -70,7 +70,7 @@ class PasswordForgetForm extends Component {
   }
 }
 
-const PasswordForgetLink = () =>
+export const PasswordForgetLink = () =>
   <p>
     <Link to={routes.PASSWORD_FORGET}>Forgot Password?</Link>
   </p>;
@@ -78,6 +78,6 @@ const PasswordForgetLink = () =>
 export default PasswordForgetPage;
 
 export {
-  PasswordForgetForm,
-  PasswordForgetLink
+  PasswordForgetForm
+  // PasswordForgetLink
 };

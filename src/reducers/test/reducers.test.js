@@ -26,9 +26,9 @@ describe('Reducers', () => {
   });
 
   describe('startAddressReducer', () => {
-    it('should return the initial state', () => {
+    it('should return the initial state as a default', () => {
       const expected = '';
-      const result = endAddress(undefined, '');
+      const result = startAddress(undefined, '');
 
       expect(result).toEqual(expected);
     });

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { storeEndAddress} from '../../actions';
 import PropTypes from 'prop-types';
  
-class EndAddressInput extends Component {
+export class EndAddressInput extends Component {
   constructor(props) {
     super(props);
     this.state = { 
