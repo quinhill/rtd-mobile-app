@@ -13,6 +13,7 @@ const SignOutButton = (props) => {
 
   return (
     <button
+      className='sign-out-button'
       type="button"
       onClick={signOut}
     >
