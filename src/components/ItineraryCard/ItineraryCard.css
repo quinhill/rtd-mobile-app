@@ -5,12 +5,29 @@
 }
 
 .top-container {
+  height: 40px;
   display: flex;
+  align-content: flex-end;
+  padding: 5px;
 }
 
-.vehicle-icon {
+.transit-icon {
   height: 30px;
   width: auto;
+}
+
+.line-id-container {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  margin: 0 5px 0 5px;
+}
+
+.line-id {
+  color: white;
 }
 
 .trip-detail-row {

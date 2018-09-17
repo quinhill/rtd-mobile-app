@@ -2,11 +2,12 @@ import React from 'react';
 
 import './ItineraryStep.css';
 
-const ItineraryStep = ({data}) => {
-  console.log(data);
+const ItineraryStep = ({handleClick, data}) => {
+
   const {
     arrival_stop,
     arrival_time,
+    color,
     duration,
     departure_stop,
     departure_time,
@@ -16,9 +17,16 @@ const ItineraryStep = ({data}) => {
     short_name
   } = data;
 
+  const styles = {
+    background: color
+  };
+
   if (headsign) {
     return (
-      <div className='transit-leg-container'>
+      <div 
+        className='transit-leg-container'
+        onClick={handleClick}
+      >
         <div className='step-time-data'>
           <p 
             className='depart-time'
@@ -43,7 +51,14 @@ const ItineraryStep = ({data}) => {
               className='transit-icon'
               src={`${imgUrl}`} 
             />
-            <p>{short_name}</p>
+            <div 
+              className='line-id-container'
+              style={styles}
+            >
+              <p className='line-id'>
+                {short_name}
+              </p>
+            </div>
           </div>
           <h3 
             className='arrive-stop'

@@ -2,12 +2,14 @@ export const infoCleaner = (steps) => {
   const firstVehicle = steps.find(step => step.travel_mode !== 'Walking');
   const vehicle_type = firstVehicle.vehicle_type.toLowerCase();
   const {
+    color,
     headsign,
     departure_stop,
     departure_time,
     short_name
   } = firstVehicle;
   return {
+    color,
     headsign,
     vehicle_type,
     departure_stop,
@@ -24,6 +26,7 @@ export const cleanStep = (step) => {
   const {
     arrival_stop,
     arrival_time,
+    color,
     departure_stop,
     departure_time,
     duration,
@@ -36,6 +39,7 @@ export const cleanStep = (step) => {
     imgUrl,
     arrival_stop,
     arrival_time,
+    color,
     departure_stop,
     departure_time,
     duration,

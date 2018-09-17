@@ -32,7 +32,10 @@ class ItineraryCard extends Component {
     } = this.props.itinerary;
 
     const info = infoCleaner(steps);
-    console.log(info);
+
+    const styles = {
+      background: info.color
+    };
 
     if (this.state.showMore) {
       return steps.map((step, index) => {
@@ -54,12 +57,17 @@ class ItineraryCard extends Component {
         >
           <div className='top-container'>
             <img
-              className='vehicle-icon'
+              className='transit-icon'
               src={`${info.vehicle_type}.png`} 
             />
-            <p className='line-id'>
-              {info.short_name}
-            </p>
+            <div 
+              className='line-id-container'
+              style={styles}
+            >
+              <p className='line-id'>
+                {info.short_name}
+              </p>
+            </div>
             <h2>
             Towards {info.headsign}
             </h2>
