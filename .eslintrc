@@ -1,17 +1,13 @@
 {
   "parser": "babel-eslint",
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended"
-  ],
-  "plugins": [
-    "react"
-  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["react"],
   "env": {
     "browser": true,
     "mocha": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "rules": {
     "eqeqeq": ["error", "always"],
@@ -32,7 +28,17 @@
     "max-len": ["warn", 80],
     "no-duplicate-imports": "error",
     "id-length": "error",
-    "id-blacklist": ["error", "data", "err", "e", "cb", "callback", "payload", "obj", "arr"],
+    "id-blacklist": [
+      "error",
+      "data",
+      "err",
+      "e",
+      "cb",
+      "callback",
+      "payload",
+      "obj",
+      "arr"
+    ],
     "max-depth": ["warn", 4]
   },
   "globals": {

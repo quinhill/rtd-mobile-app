@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom';
 import { auth } from '../../firebase';
 import * as routes from '../../constants/routes';
 
-const PasswordForgetPage = () =>
-  <div> 
-    <h1>PasswordForget</h1>
-    <PasswordForgetForm />
-  </div>;
+// const PasswordForgetPage = () =>
+//   <div> 
+//     <h1>PasswordForget</h1>
+//     <PasswordForgetForm />
+//   </div>;
 
 const INITIAL_STATE = {
   email: '',
   error: null
 };
 
-class PasswordForgetForm extends Component {
+export class PasswordForgetPage extends Component {
   constructor(props) {
     super(props);
     this.state = { ...INITIAL_STATE };
@@ -43,6 +43,10 @@ class PasswordForgetForm extends Component {
   }
 
   render() {
+    <div> 
+      <h1>PasswordForget</h1>
+    </div>;
+
     const {
       email,
       error
@@ -77,7 +81,3 @@ export const PasswordForgetLink = () =>
 
 export default PasswordForgetPage;
 
-export {
-  PasswordForgetForm
-  // PasswordForgetLink
-};

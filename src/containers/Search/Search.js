@@ -88,6 +88,7 @@ export class Search extends Component {
           onSubmit={this.handleSubmit}
         >
           <select 
+            className='search-hours'
             name='hours'
             onChange={this.handleChange}
             value={this.state.hours}
