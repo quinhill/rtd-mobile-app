@@ -1,50 +1,62 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 import './Favorite.css'; 
+import { connect } from 'react-redux';
+import getFavItineraryThunk from '../../thunks/getFavItineraryThunk';
+import { getFavUrl } from '../../constants/urlGenerator';
+import * as routes from '../../constants/routes';
 
 export class Favorite extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      hidden: true
-    };
+  
+  handleClick = (event) => {
+    const { id } = event.target;
+    const { 
+      uid, 
+      getFavItinerary, 
+      history } = this.props;
+    const url = getFavUrl(uid, id);
+    getFavItinerary(url);
+    history.push(routes.ITINERARY);
   }
 
-  showDetails = () => {
-    this.setState({ hidden: !this.state.hidden });
-  };
-
   render() {
+    const { favData } = this.props;
     const {
-      startingPoint,
-      destination
-    } = this.props;
-    return (
-      <div 
-        className='favorite_card'
-        onClick={this.showDetails}
-      >
-        <div className='favorite_card-name'>
-          <h2>
-            {this.props.name}
-          </h2>
-        </div>
-        <div className='favorite_trip-details' hidden={this.state.hidden}>
-          <h4 className='starting-point'>{startingPoint}</h4>
-          <h4 className='destination'>{destination}</h4>
+      start_address,
+      end_address,
+      itinerary_id
+    } = favData;
 
-        </div>
-      </div>
+    const startName = start_address.split(',')[0];
+    const endName = end_address.split(',')[0];
+
+    return (
+      <button
+        id={itinerary_id}
+        onClick={this.handleClick}
+      >
+        {startName}
+        {endName}
+      </button>
     );
 
   }
 };
 
-export default Favorite;
+export const mapPropsToState = state => ({
+  uid: state.user.uid
+});
+
+export const mapDispatchToState = dispatch => ({
+  getFavItinerary: (url) => dispatch(getFavItineraryThunk(url))
+});
+
+export default withRouter(connect(mapPropsToState, mapDispatchToState)(Favorite));
 
 Favorite.propTypes = {
   name: PropTypes.string,
-  startingPoint: PropTypes.string,
-  destination: PropTypes.string
+  favData: PropTypes.object,
+  history: PropTypes.object
 }; 

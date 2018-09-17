@@ -1,10 +1,8 @@
 export const infoCleaner = (steps) => {
   const totalSteps = steps.reduce((sumTotal, step) => {
     if (step.travel_mode !== 'Walking') {
-      sumTotal.eachStep = [];
-      const durTotal = parseInt(step.duration.split(' ')[0]);
-      sumTotal.eachStep.push(durTotal);
-      if (!sumTotal.stepsSum) {
+      let durTotal = parseInt(step.duration.split(' ')[0]);
+      if (!sumTotal.stepsSum && !sumTotal.eachStep) {
         sumTotal.stepsSum = 1;
       } else {
         sumTotal.stepsSum++;
@@ -14,13 +12,17 @@ export const infoCleaner = (steps) => {
       } else {
         sumTotal.duration += durTotal;
       }
+      if (!sumTotal.eachStep) {
+        sumTotal.eachStep = [durTotal];
+      } else {
+        sumTotal.eachStep.push(durTotal);
+      }
     }
     return sumTotal;
   }, {});
-  console.log(totalSteps);
   const firstVehicle = steps.find(step => (
     step.travel_mode !== 'Walking'));
-  const vehicle_type = firstVehicle.vehicle_type.toLowerCase();
+  const imgUrl = `${firstVehicle.vehicle_type.split(' ')[0].toLowerCase()}.png`;
   const {
     color,
     headsign,
@@ -29,9 +31,9 @@ export const infoCleaner = (steps) => {
     short_name
   } = firstVehicle;
   return {
+    imgUrl,
     color,
     headsign,
-    vehicle_type,
     departure_stop,
     departure_time,
     short_name,
@@ -40,9 +42,10 @@ export const infoCleaner = (steps) => {
 };
 
 export const cleanStep = (step) => {
+  
 
   const imgUrl = step.vehicle_type 
-    ? `${step.vehicle_type.toLowerCase()}.png`
+    ? `${step.vehicle_type.split(' ')[0].toLowerCase()}.png`
     : `${step.travel_mode.toLowerCase()}.png`;
   const {
     arrival_stop,

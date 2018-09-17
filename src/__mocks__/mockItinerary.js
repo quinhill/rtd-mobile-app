@@ -17,7 +17,7 @@ export const mockItinerary =[{
     departure_stop: null,
     name: null,
     short_name: null,
-    instructions: "Walk to Union Sta,tion",
+    instructions: "Walk to Union Station",
     distance: "1 ft",
     duration: "1 min",
     color: null,
