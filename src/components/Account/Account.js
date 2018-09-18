@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import SignOutButton from '../../containers/SignOut/SignOut';
 import SignInPage from '../../containers/SignIn/SignIn';
 
+import './Account.css';
+
 export const AccountPage = (props) => {
   if (props.user.email) {
     return (

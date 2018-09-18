@@ -1,0 +1,22 @@
+.sign-in-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-in-form {
+  width: 325px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in-input {
+  height: 40px;
+  border: none;
+  font-size: 15px;
+}
+
+#sign-in-password {
+  border-top: 1px solid #797676;
+}

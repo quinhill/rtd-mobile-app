@@ -14,6 +14,8 @@ import { signInUrl } from '../../constants/urlGenerator';
 
 import PropTypes from 'prop-types';
 
+import './SignIn.css';
+
 class SignInPage extends Component {
   constructor(props) {
     super(props);
@@ -73,23 +75,30 @@ class SignInPage extends Component {
 
     return (
       <div className='sign-in-container'>
-        <form onSubmit={this.onSubmit}>
+        <form 
+          className='sign-in-form'
+          onSubmit={this.onSubmit}
+        >
           <input
-            name="email"
+            className='sign-in-input'
+            name='email'
             value={email}
             onChange={this.handleChange}
-            type="email"
-            placeholder="Email Address"
+            type='email'
+            placeholder='Email Address'
           />
           <input
-            name="password"
+            className='sign-in-input'
+            id='sign-in-password'
+            name='password'
             value={password}
             onChange={this.handleChange}
-            type="password"
-            placeholder="Password"
+            type='password'
+            placeholder='Password'
           />
           <button 
-            type="submit"
+            className='sign-in-button'
+            type='submit'
             disabled={isInvalid}
           >
             Sign In
