@@ -28,7 +28,10 @@ export class Search extends Component {
 
   getTime = () => {
     const time = new Date();
-    const hours = time.getHours();
+    let hours = time.getHours();
+    if (hours > 12) {
+      hours -= 12
+    }
     const minutes = time.getMinutes();
     return {
       hours,
@@ -38,18 +41,22 @@ export class Search extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const {
-      hours,
-      minutes,
-      departing
-    } = this.state;
-    const depOrArr = departing
-      ? 'departure_time'
-      : 'arrival_time';
-    const timeData = {
-      [depOrArr]: `${hours}:${minutes}`
-    };
-    this.makeOptions(timeData);
+    if ( this.props.uid) {
+      const {
+        hours,
+        minutes,
+        departing
+      } = this.state;
+      const depOrArr = departing
+        ? 'departure_time'
+        : 'arrival_time';
+      const timeData = {
+        [depOrArr]: `${hours}:${minutes}`
+      };
+      this.makeOptions(timeData);
+    } else {
+      this.props.history.push(routes.SIGN_UP);
+    }
   }
 
   makeOptions = (timeData) => {
@@ -79,20 +86,16 @@ export class Search extends Component {
     history.push(routes.ITINERARY);
   };
 
-
-  minuteOptions = () => {
-
-  };
-
+  
   render() {
+    
+    const hourOptions = hours.map((hour, index) => {
+      return <option key={index} value={hour}>{hour}</option>
+    });
 
-    const hourOptions = hours.map((hour, index) => (
-      <option key={index} value={hour}>{hour}</option>
-    ));
-
-    const minuteOptions = minutes.map((minute, index) => (
-      <option key={index} value={minute}>{minute}</option>
-    ));
+    const minuteOptions = minutes.map((minute, index) => {
+      return <option key={index} value={minute}>{minute}</option>
+    });
 
     return (
       <div className="container">
@@ -144,10 +147,8 @@ export class Search extends Component {
               onChange={this.handleChange}
               value={this.state.hours}
               list='hours'
-              id='hours'
             />
             <datalist
-              className='time-datalist'
               id='hours'
             >
               {hourOptions}
@@ -159,12 +160,11 @@ export class Search extends Component {
               onChange={this.handleChange}
               value={this.state.minutes}
               list='minutes'
-              id='minutes'
+              // id='minutes'
             />
             <datalist
-              className='time-datalist'
+              // className='time-datalist'
               id='minutes'
-              value={this.state.minutes}
             >
               {minuteOptions}
             </datalist>

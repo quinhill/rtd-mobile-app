@@ -73,8 +73,15 @@
 
 .time-select {
   margin: 5px;
-  width: 20px;
+  width: 45px;
+  height: 30px;
   border: 1px solid gray;
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+datalist {
+  top: -5;
 }
 
 .search-button {
