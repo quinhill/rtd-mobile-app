@@ -1,12 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export const durationLines = ({ totalSteps }) => {
-  console.log('totalSteps', totalSteps);
+
+const DurationLines = ({totalSteps}) => {
+
   const totalDuration = totalSteps.duration;
   const lineDurations = totalSteps.eachStep.map((stepDur) => {
-    return (totalDuration / stepDur) * 100;
+    return (stepDur / totalDuration) * 100;
   });
   const lineContainerStyles = {
+    display: 'flex',
     width: '100%'
   };
   const eachLine = lineDurations.map((line, index) => {
@@ -43,4 +46,8 @@ export const durationLines = ({ totalSteps }) => {
   );
 };
 
-export default durationLines;
+export default DurationLines;
+
+DurationLines.propTypes = {
+  totalSteps: PropTypes.object
+};

@@ -36,3 +36,13 @@ export const signInUser = (userInfo) => ({
 export const signOutUser = () => ({
   type: 'SIGN_OUT_USER'
 });
+
+export const addFavorite = (favorite) => ({
+  type: 'ADD_FAVORITE',
+  favorite
+});
+
+export const getFavorites = (favorites) => ({
+  type: 'GET_FAVORITES',
+  favorites
+});
