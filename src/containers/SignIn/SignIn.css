@@ -1,0 +1,37 @@
+.sign-in-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-in-form {
+  width: 325px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+#sign-in-title {
+  font-weight: 400;
+}
+
+.sign-in-input {
+  height: 40px;
+  border: none;
+  font-size: 15px;
+  color: #3c3b3b;
+}
+
+#sign-in-password {
+  border-top: 1px solid #797676;
+}
+
+.sign-in-button {
+  height: 30px;
+  background: #c02d34;
+  border: none;
+  color: white;
+  font-size: 15px;
+}
