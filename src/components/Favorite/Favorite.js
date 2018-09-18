@@ -42,7 +42,6 @@ export class Favorite extends Component {
         {endName}
       </button>
     );
-
   }
 };
 
