@@ -18,6 +18,7 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": [Function],
+      "className": "start-address-input",
       "debounce": 200,
       "highlightFirstSuggestion": false,
       "name": "startAddress",
@@ -39,6 +40,7 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": [Function],
+        "className": "start-address-input",
         "debounce": 200,
         "highlightFirstSuggestion": false,
         "name": "startAddress",

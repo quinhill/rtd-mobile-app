@@ -158,7 +158,7 @@ describe('Reducers', () => {
     it('should return state with an empty user object if the type is SIGN_OUT_USER', () => {
       const expected = {};
       const result = user(undefined, {
-        type: 'SIGN_UP_USER',
+        type: 'SIGN_OUT_USER',
         userInfo: {}
       });
 

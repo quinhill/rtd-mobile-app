@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
 const DurationLines = ({totalSteps}) => {
+
   const totalDuration = totalSteps.duration;
   const lineDurations = totalSteps.eachStep.map((stepDur) => {
     return (stepDur / totalDuration) * 100;

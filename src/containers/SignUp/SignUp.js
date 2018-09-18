@@ -9,7 +9,7 @@ import { SignInLink } from '../SignIn/SignIn';
 
 import './SignUp.css';
 
-class SignUpPage extends Component {
+export class SignUpPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
