@@ -59,6 +59,12 @@ class SignInPage extends Component {
     });
   };
 
+  deleteInput = (event) => {
+    event.preventDefault();
+    const { name } = event.target;
+    this.setState({[name]: ''})
+  }
+
   render() {
     const { email, password, error } = this.state;
 
@@ -78,7 +84,11 @@ class SignInPage extends Component {
                 type="email"
                 placeholder="Email Address"
               />
-              <button className="delete-button" />
+              <button 
+                className="delete-button" 
+                name='email'
+                onClick={this.deleteInput}
+              />
             </div>
             <div className='input-container last-input-container' >
               <input
@@ -89,7 +99,10 @@ class SignInPage extends Component {
                 type="password"
                 placeholder="Password"
               />
-              <button className="delete-button" />
+              <button
+                className="delete-button"
+                name='password'
+                onClick={this.deleteInput}/>
             </div>
             <button className="button" type="submit" disabled={isInvalid}>
               Sign In

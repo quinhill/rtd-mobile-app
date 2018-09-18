@@ -70,16 +70,17 @@ p {
   border: none;
   font-size: 15px;
   padding: 0 10px;
+  outline: none;
 }
 
 .input-container {
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr 30px;
+  grid-template-columns: 1fr 15px;
   border: 1px solid hsl(0, 0%, 50%);
   border-bottom: none;
   width: 90%;
-  /* padding: 0 5px; */
+  padding: 0 10px 0 0;
 }
 
 .last-input-container {
@@ -94,5 +95,5 @@ p {
   border: none;
   height: 15px;
   width: 15px;
-
+  outline: none;
 }
