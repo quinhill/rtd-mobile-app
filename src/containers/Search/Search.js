@@ -17,7 +17,8 @@ export class Search extends Component {
     this.state = {
       hours: this.getTime().hours,
       minutes: this.getTime().minutes,
-      departing: true
+      departing: true,
+      am: true
     };
   }
 
@@ -85,6 +86,10 @@ export class Search extends Component {
     postItineraryThunk(fetchObject);
     history.push(routes.ITINERARY);
   };
+
+  handleSelect = () => {
+    // this.setState({ am})
+  }
 
   
   render() {
@@ -160,14 +165,28 @@ export class Search extends Component {
               onChange={this.handleChange}
               value={this.state.minutes}
               list='minutes'
-              // id='minutes'
             />
             <datalist
-              // className='time-datalist'
               id='minutes'
             >
               {minuteOptions}
             </datalist>
+            <select 
+              onChange={this.handleChange}
+              value={this.state.am}
+              name='am'
+              >
+              <option
+                value='true'
+                selected
+              >
+                am
+              </option>
+              <option
+                value='false'>
+                pm
+              </option>
+            </select>
           </div>
           <button
             type='submit'
