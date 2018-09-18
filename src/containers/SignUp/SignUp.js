@@ -74,6 +74,12 @@ export class SignUpPage extends Component {
     });
   };
 
+  deleteInput = (event) => {
+    event.preventDefault();
+    const { name } = event.target;
+    this.setState({ [name]: '' })
+  }
+
   render() {
     const { username, email, passwordOne, passwordTwo, error } = this.state;
 
@@ -84,48 +90,75 @@ export class SignUpPage extends Component {
       username === "";
 
     return (
-      <div className='sign-up-page'>
-        <div className='sign-up-container'>
+      <div className='page'>
+        <div className='container'>
           <form 
-            className='sign-up-form'
+            className='form'
             onSubmit={this.onSubmit}
           >
-            <p className='sign-up-title'>
+            <p className='title'>
             Sign Up
             </p>
-            <input
-              className='sign-up-input'
-              name='username'
-              value={username}
-              onChange={this.handleChange}
-              type='text'
-              placeholder='Full Name'
-            />
-            <input
-              className='sign-up-input'
-              name='email'
-              value={email}
-              onChange={this.handleChange}
-              type='email'
-              placeholder='Email Address'
-            />
-            <input
-              className='sign-up-input'
-              name='passwordOne'
-              value={passwordOne}
-              onChange={this.handleChange}
-              type='password'
-              placeholder='Password'
-            />
-            <input
-              className='sign-up-input'
-              id='password-two'
-              name='passwordTwo'
-              value={passwordTwo}
-              onChange={this.handleChange}
-              type='password'
-              placeholder='Confirm Password'
-            />
+            <div className='input-container'>
+              <input
+                className='input'
+                name='username'
+                value={username}
+                onChange={this.handleChange}
+                type='text'
+                placeholder='Full Name'
+              />
+              <button
+                className="delete-button"
+                name='username'
+                onClick={this.deleteInput}
+              />
+            </div>
+            <div className='input-container'>
+              <input
+                className='input'
+                name='email'
+                value={email}
+                onChange={this.handleChange}
+                type='email'
+                placeholder='Email Address'
+              />
+              <button
+                className="delete-button"
+                name='email'
+                onClick={this.deleteInput}
+              />
+            </div>
+            <div className='input-container'>
+              <input
+                className='input'
+                name='passwordOne'
+                value={passwordOne}
+                onChange={this.handleChange}
+                type='password'
+                placeholder='Password'
+              />
+              <button
+                className="delete-button"
+                name='paswordOne'
+                onClick={this.deleteInput}
+              />
+            </div>
+            <div className='input-container last-input-container'>
+              <input
+                className='input'
+                name='passwordTwo'
+                value={passwordTwo}
+                onChange={this.handleChange}
+                type='password'
+                placeholder='Confirm Password'
+              />
+              <button 
+                className="delete-button" 
+                name='passwordTwo'
+                onClick={this.deleteInput}
+              />
+            </div>
             <button 
               className='button'
               type='submit'

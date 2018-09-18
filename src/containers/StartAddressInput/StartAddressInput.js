@@ -22,6 +22,12 @@ export class StartAddressInput extends Component {
     this.props.storeStartAddress(address);
     this.setState({startAddress: address});
   };
+
+  deleteInput = (event) => {
+    event.preventDefault();
+    const { name } = event.target;
+    this.setState({ [name]: '' })
+  }
  
   render() {
     return (
@@ -35,14 +41,21 @@ export class StartAddressInput extends Component {
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => {
   
           return (
-            <div>
-              <input
-                value={this.state.startAddress}
-                {...getInputProps({
-                  placeholder: 'Search Starting Point ...',
-                  className: 'location-search-input'
-                })}
-              />
+            <div className='form'>
+              <div className="input-container search-container" id='start'>
+                <input
+                  value={this.state.startAddress}
+                  {...getInputProps({
+                    placeholder: 'Search Starting Point ...',
+                    className: 'input'
+                  })}
+                  />
+                <button
+                  className="delete-button"
+                  name='startAddress'
+                  onClick={this.deleteInput}
+                />
+              </div>
               <div className="autocomplete-dropdown-container">
                 {loading && <div>Loading...</div>}
                 {suggestions.map((suggestion, index )=> {

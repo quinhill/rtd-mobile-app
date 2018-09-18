@@ -7,6 +7,7 @@ import EndAddressInput from '../../containers/EndAddressInput/EndAddressInput';
 import postItineraryThunk from '../../thunks/postItineraryThunk';
 import * as routes from '../../constants/routes';
 import { hours, minutes } from '../../constants/timeArrays';
+import { timeCleaner } from '../../constants/cleanerFunctions'
 
 import './Search.css';
 import { itineraryUrl } from '../../constants/urlGenerator';
@@ -17,7 +18,8 @@ export class Search extends Component {
     this.state = {
       hours: this.getTime().hours,
       minutes: this.getTime().minutes,
-      departing: true
+      departing: true,
+      am: true
     };
   }
 
@@ -28,7 +30,10 @@ export class Search extends Component {
 
   getTime = () => {
     const time = new Date();
-    const hours = time.getHours();
+    let hours = time.getHours();
+    if (hours > 12) {
+      hours -= 12
+    }
     const minutes = time.getMinutes();
     return {
       hours,
@@ -38,18 +43,23 @@ export class Search extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const {
-      hours,
-      minutes,
-      departing
-    } = this.state;
-    const depOrArr = departing
-      ? 'departure_time'
-      : 'arrival_time';
-    const timeData = {
-      [depOrArr]: `${hours}:${minutes}`
-    };
-    this.makeOptions(timeData);
+    if ( this.props.uid) {
+      const {
+        hours,
+        minutes,
+        departing,
+        am
+      } = this.state;
+      const depOrArr = departing
+        ? 'departure_time'
+        : 'arrival_time';
+      const timeData = {
+        [depOrArr]: timeCleaner(hours, minutes, am)
+      };
+      this.makeOptions(timeData);
+    } else {
+      this.props.history.push(routes.SIGN_UP);
+    }
   }
 
   makeOptions = (timeData) => {
@@ -79,32 +89,32 @@ export class Search extends Component {
     history.push(routes.ITINERARY);
   };
 
+  handleSelect = () => {
+    // this.setState({ am})
+  }
 
-  minuteOptions = () => {
-
-  };
-
+  
   render() {
+    
+    const hourOptions = hours.map((hour, index) => {
+      return <option key={index} value={hour}>{hour}</option>
+    });
 
-    const hourOptions = hours.map((hour, index) => (
-      <option key={index} value={hour}>{hour}</option>
-    ));
-
-    const minuteOptions = minutes.map((minute, index) => (
-      <option key={index} value={minute}>{minute}</option>
-    ));
+    const minuteOptions = minutes.map((minute, index) => {
+      return <option key={index} value={minute}>{minute}</option>
+    });
 
     return (
-      <div className="search_container">
-        <h2 className='search-title'>
+      <div className="container">
+        <h2 className='title'>
           Search for a connection:
         </h2>
-        <form
-          className='time'
-          onSubmit={this.handleSubmit}
-        >
           <StartAddressInput />
           <EndAddressInput />
+        <form
+          className='form'
+          onSubmit={this.handleSubmit}
+        >
           <div className='time-select-container'>
             <div
               className='radio-container'
@@ -144,10 +154,8 @@ export class Search extends Component {
               onChange={this.handleChange}
               value={this.state.hours}
               list='hours'
-              id='hours'
             />
             <datalist
-              className='time-datalist'
               id='hours'
             >
               {hourOptions}
@@ -159,19 +167,32 @@ export class Search extends Component {
               onChange={this.handleChange}
               value={this.state.minutes}
               list='minutes'
-              id='minutes'
             />
             <datalist
-              className='time-datalist'
               id='minutes'
-              value={this.state.minutes}
             >
               {minuteOptions}
             </datalist>
+            <select 
+              onChange={this.handleChange}
+              value={this.state.am}
+              name='am'
+              >
+              <option
+                value='true'
+                selected
+              >
+                am
+              </option>
+              <option
+                value='false'>
+                pm
+              </option>
+            </select>
           </div>
           <button
             type='submit'
-            className='search-button'
+            className='button'
           >
             Search
           </button >

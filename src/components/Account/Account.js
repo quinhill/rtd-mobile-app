@@ -11,19 +11,15 @@ export const AccountPage = (props) => {
   if (props.user.email) {
     return (
       <div className='account-page-container'>
-        <div className='account-container'>
           <h3>Hi, {props.user.email}</h3>
           <SignOutButton />
           <PasswordChangeForm />
-        </div>
       </div>
     );
   } else {
     return (
       <div className='account-page-container'>
-        <div className='account-container'>
           <SignInPage />
-        </div>
       </div>
     );
   }
