@@ -89,11 +89,6 @@ export class Search extends Component {
     history.push(routes.ITINERARY);
   };
 
-  handleSelect = () => {
-    // this.setState({ am})
-  }
-
-  
   render() {
     
     const hourOptions = hours.map((hour, index) => {
@@ -179,13 +174,12 @@ export class Search extends Component {
               name='am'
               >
               <option
-                value='true'
-                selected
+                value={true}
               >
                 am
               </option>
               <option
-                value='false'>
+                value={false}>
                 pm
               </option>
             </select>
