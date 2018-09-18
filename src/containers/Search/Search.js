@@ -12,7 +12,7 @@ import './Search.css';
 import { itineraryUrl } from '../../constants/urlGenerator';
 
 export class Search extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       hours: this.getTime().hours,
@@ -68,7 +68,7 @@ export class Search extends Component {
     };
     const options = {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(bodyObj)
     };
     const fetchObject = {
@@ -78,13 +78,13 @@ export class Search extends Component {
     postItineraryThunk(fetchObject);
     history.push(routes.ITINERARY);
   };
-  
-  
+
+
   minuteOptions = () => {
-    
+
   };
-  
-  render(){
+
+  render() {
 
     const hourOptions = hours.map((hour, index) => (
       <option key={index} value={hour}>{hour}</option>
@@ -99,46 +99,46 @@ export class Search extends Component {
         <h2 className='search-title'>
           Search for a connection:
         </h2>
-        <form 
+        <form
           className='time'
           onSubmit={this.handleSubmit}
         >
           <StartAddressInput />
           <EndAddressInput />
           <div className='time-select-container'>
-            <div 
+            <div
               className='radio-container'
               name='departing'
               onChange={this.handleChange}
             >
-              <input 
+              <input
                 name='departing'
                 id='departing'
                 type='radio'
                 defaultChecked
                 value={true}
               />
-              <label 
+              <label
                 htmlFor='departing'
                 className='radio-label'
               >
-            departing
+                departing
               </label>
               <input
                 name='departing'
-                id='arriving' 
+                id='arriving'
                 type='radio'
                 value={false}
               />
-              <label 
+              <label
                 htmlFor='arriving'
                 className='radio-label'
               >
-            arriving
+                arriving
               </label>
               <p id='at'>at</p>
             </div>
-            <input 
+            <input
               className='time-select'
               name='hours'
               onChange={this.handleChange}
@@ -146,14 +146,14 @@ export class Search extends Component {
               list='hours'
               id='hours'
             />
-            <datalist 
+            <datalist
               className='time-datalist'
               id='hours'
             >
               {hourOptions}
             </datalist>
             :
-            <input 
+            <input
               className='time-select'
               name='minutes'
               onChange={this.handleChange}
@@ -161,7 +161,7 @@ export class Search extends Component {
               list='minutes'
               id='minutes'
             />
-            <datalist 
+            <datalist
               className='time-datalist'
               id='minutes'
               value={this.state.minutes}

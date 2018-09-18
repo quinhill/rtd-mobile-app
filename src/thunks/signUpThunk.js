@@ -1,11 +1,8 @@
-import { isLoading, hasErrored, signUpUser } from '../actions';
+import { isLoading, hasErrored, signUpUser } from "../actions";
 
-const signUpThunk = (fetchObj) => {
-  const {
-    url,
-    options
-  } = fetchObj;
-  return (dispatch) => {
+export const signUpThunk = fetchObj => {
+  const { url, options } = fetchObj;
+  return dispatch => {
     dispatch(isLoading(true));
     fetch(url, options)
       .then(response => {

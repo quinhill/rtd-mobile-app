@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react'; 
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -13,20 +14,20 @@ export class SignUpPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      email: '',
-      passwordOne: '',
-      passwordTwo: '',
+      username: "",
+      email: "",
+      passwordOne: "",
+      passwordTwo: "",
       error: null
     };
   }
 
-  createUser = (userInfo) => ({
-    url: 'http://rtd-revamp-api.herokuapp.com/api/v1/users',
+  createUser = userInfo => ({
+    url: "http://rtd-revamp-api.herokuapp.com/api/v1/users",
     options: {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         username: this.state.username,
@@ -34,41 +35,39 @@ export class SignUpPage extends Component {
         email: userInfo.user.email
       })
     }
-  })
-  
+  });
+
   resetForm = () => {
     this.setState({
-      username: '',
-      email: '',
-      passwordOne: '',
-      passwordTwo: '',
+      username: "",
+      email: "",
+      passwordOne: "",
+      passwordTwo: "",
       error: null
     });
-  }
+  };
 
-  onSubmit = (event) => {
+  onSubmit = event => {
     event.preventDefault();
 
-    const {
-      email,
-      passwordOne
-    } = this.state;
-    
+    const { email, passwordOne } = this.state;
+
     const { history, signUpThunk } = this.props;
-    
-    auth.doCreateUserWithEmailAndPassword(email, passwordOne)
+
+    auth
+      .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         const newUser = this.createUser(authUser);
         return signUpThunk(newUser);
       })
       .catch(error => {
-        this.setState({error: error});
+        this.setState({ error: error });
       });
     this.resetForm();
     history.push(routes.HOME);
-  }
+  };
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
@@ -76,21 +75,54 @@ export class SignUpPage extends Component {
   };
 
   render() {
-    const {
-      username,
-      email,
-      passwordOne,
-      passwordTwo,
-      error
-    } = this.state;
+    const { username, email, passwordOne, passwordTwo, error } = this.state;
 
     const isInvalid =
-    passwordOne !== passwordTwo ||
-    passwordOne === '' ||
-    email === '' ||
-    username === '';
+      passwordOne !== passwordTwo ||
+      passwordOne === "" ||
+      email === "" ||
+      username === "";
 
     return (
+<<<<<<< HEAD
+      <div className="sign-up-container">
+        <form onSubmit={this.onSubmit}>
+          <input
+            name="username"
+            value={username}
+            onChange={this.handleChange}
+            type="text"
+            placeholder="Full Name"
+          />
+          <input
+            name="email"
+            value={email}
+            onChange={this.handleChange}
+            type="email"
+            placeholder="Email Address"
+          />
+          <input
+            name="passwordOne"
+            value={passwordOne}
+            onChange={this.handleChange}
+            type="password"
+            placeholder="Password"
+          />
+          <input
+            name="passwordTwo"
+            value={passwordTwo}
+            onChange={this.handleChange}
+            type="password"
+            placeholder="Confirm Password"
+          />
+          <button type="submit" disabled={isInvalid}>
+            Sign Up
+          </button>
+
+          {error && <p>{error.message}</p>}
+        </form>
+        <SignInLink />
+=======
       <div className='sign-up-page'>
         <div className='sign-up-container'>
           <form 
@@ -145,6 +177,7 @@ export class SignUpPage extends Component {
           </form>
           <SignInLink />
         </div>
+>>>>>>> master
       </div>
     );
   }
@@ -153,6 +186,9 @@ export class SignUpPage extends Component {
 const SignUpLink = () => {
   return (
     <p>
+<<<<<<< HEAD
+      Don't have an account? <Link to={routes.SIGN_UP}>Sign Up</Link>
+=======
     Don't have an account?
       {' '}
       <Link 
@@ -161,20 +197,23 @@ const SignUpLink = () => {
       >
         Sign Up
       </Link>
+>>>>>>> master
     </p>
   );
-
 };
 
 export const mapDispatchToProps = dispatch => ({
-  signUpThunk: (userInfo) => dispatch(signUpThunk(userInfo))
+  signUpThunk: userInfo => dispatch(signUpThunk(userInfo))
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(SignUpPage));
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(SignUpPage)
+);
 
-export {
-  SignUpLink
-};
+export { SignUpLink };
 
 SignUpPage.propTypes = {
   signUpThunk: PropTypes.func,
