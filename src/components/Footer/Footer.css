@@ -25,7 +25,7 @@ footer {
 }
 
 #home {
-  background-image: url('/home.svg');
+  background-image: url('/search.svg');
   background-size: 30%;
   background-position: center;
   background-repeat: no-repeat;

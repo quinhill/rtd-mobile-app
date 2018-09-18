@@ -3,6 +3,8 @@ import PlacesAutocomplete from 'react-places-autocomplete';
 import { connect } from "react-redux";
 import { storeEndAddress} from '../../actions';
 import PropTypes from 'prop-types';
+
+import '../Search/Search.css';
  
 export class EndAddressInput extends Component {
   constructor(props) {
@@ -37,7 +39,8 @@ export class EndAddressInput extends Component {
                 value={this.state.endAddress}
                 {...getInputProps({
                   placeholder: 'Search ending Point ...',
-                  className: 'location-search-input-end'
+                  className: 'location-search-input',
+                  id: 'end-address-input'
                 })}
               />
               <div className="autocomplete-dropdown-container">

@@ -6,6 +6,7 @@ import StartAddressInput from '../../containers/StartAddressInput/StartAddressIn
 import EndAddressInput from '../../containers/EndAddressInput/EndAddressInput';
 import postItineraryThunk from '../../thunks/postItineraryThunk';
 import * as routes from '../../constants/routes';
+import { hours, minutes } from '../../constants/timeArrays';
 
 import './Search.css';
 import { itineraryUrl } from '../../constants/urlGenerator';
@@ -78,79 +79,99 @@ export class Search extends Component {
     history.push(routes.ITINERARY);
   };
   
+  
+  minuteOptions = () => {
+    
+  };
+  
   render(){
+
+    const hourOptions = hours.map((hour, index) => (
+      <option key={index} value={hour}>{hour}</option>
+    ));
+
+    const minuteOptions = minutes.map((minute, index) => (
+      <option key={index} value={minute}>{minute}</option>
+    ));
+
     return (
       <div className="search_container">
-        <StartAddressInput />
-        <EndAddressInput />
+        <h2 className='search-title'>
+          Search for a connection:
+        </h2>
         <form 
           className='time'
           onSubmit={this.handleSubmit}
         >
-          <select 
-            name='hours'
-            onChange={this.handleChange}
-            value={this.state.hours}
-          >
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-            <option value='3'>3</option>
-            <option value='4'>4</option>
-            <option value='5'>5</option>
-            <option value='6'>6</option>
-            <option value='7'>7</option>
-            <option value='8'>8</option>
-            <option value='9'>9</option>
-            <option value='10'>10</option>
-            <option value='11'>11</option>
-            <option value='12'>12</option>
-          </select>
-          <select 
-            name='minutes'
-            onChange={this.handleChange}
-            value={this.state.minutes}
-          >
-            <option value='00'>00</option>
-            <option value='05'>05</option>
-            <option value='10'>10</option>
-            <option value='15'>15</option>
-            <option value='20'>20</option>
-            <option value='25'>25</option>
-            <option value='30'>30</option>
-            <option value='35'>35</option>
-            <option value='40'>40</option>
-            <option value='45'>45</option>
-            <option value='50'>50</option>
-            <option value='55'>55</option>
-          </select>
-          <div 
-            name='departing'
-            onChange={this.handleChange}
-          >
-            <input 
+          <StartAddressInput />
+          <EndAddressInput />
+          <div className='time-select-container'>
+            <div 
+              className='radio-container'
               name='departing'
-              id='departing'
-              type='radio'
-              defaultChecked
-              value={true}
-            />
-            <label htmlFor='departing'>
+              onChange={this.handleChange}
+            >
+              <input 
+                name='departing'
+                id='departing'
+                type='radio'
+                defaultChecked
+                value={true}
+              />
+              <label 
+                htmlFor='departing'
+                className='radio-label'
+              >
             departing
-            </label>
-            <input
-              name='departing'
-              id='arriving' 
-              type='radio'
-              value={false}
-            />
-            <label htmlFor='arriving'>
+              </label>
+              <input
+                name='departing'
+                id='arriving' 
+                type='radio'
+                value={false}
+              />
+              <label 
+                htmlFor='arriving'
+                className='radio-label'
+              >
             arriving
-            </label>
-            <p>at</p>
+              </label>
+              <p id='at'>at</p>
+            </div>
+            <input 
+              className='time-select'
+              name='hours'
+              onChange={this.handleChange}
+              value={this.state.hours}
+              list='hours'
+              id='hours'
+            />
+            <datalist 
+              className='time-datalist'
+              id='hours'
+            >
+              {hourOptions}
+            </datalist>
+            :
+            <input 
+              className='time-select'
+              name='minutes'
+              onChange={this.handleChange}
+              value={this.state.minutes}
+              list='minutes'
+              id='minutes'
+            />
+            <datalist 
+              className='time-datalist'
+              id='minutes'
+              value={this.state.minutes}
+            >
+              {minuteOptions}
+            </datalist>
           </div>
           <button
             type='submit'
-            className='itinerary-search-button'
+            className='search-button'
           >
             Search
           </button >

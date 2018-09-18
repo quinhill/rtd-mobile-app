@@ -75,6 +75,7 @@ class SignInPage extends Component {
 
     return (
       <div className='sign-in-container'>
+        <h2 id='sign-in-title'>Sign In</h2>
         <form 
           className='sign-in-form'
           onSubmit={this.onSubmit}
@@ -106,8 +107,8 @@ class SignInPage extends Component {
 
           { error && <p>{error.message}</p> }
         </form>
-        <SignUpLink />
         <PasswordForgetLink />
+        <SignUpLink />
       </div>
     );
   }

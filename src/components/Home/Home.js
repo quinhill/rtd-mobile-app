@@ -11,16 +11,16 @@ import * as routes from '../../constants/routes';
 
 export class HomePage extends Component {
 
-  componentDidMount() {
-    setTimeout(() => this.checkForUser(), 2000);
-  }
+  // componentDidMount() {
+  //   setTimeout(() => this.checkForUser(), 4000);
+  // }
 
-  checkForUser = () => {
-    const {history, user} = this.props;
-    if (!user.uid) {
-      history.push(routes.SIGN_IN);
-    }
-  }
+  // checkForUser = () => {
+  //   const {history, user} = this.props;
+  //   if (!user.uid) {
+  //     history.push(routes.SIGN_IN);
+  //   }
+  // }
 
   componentDidUpdate() {
     if (this.props.user) {
