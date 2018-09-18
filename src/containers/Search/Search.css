@@ -43,6 +43,15 @@
   z-index: 19;
 }
 
+#start {
+  border-bottom: none;
+}
+
+#end {
+  border-bottom: none;
+  border-top: none;
+}
+
 .time-select-container {
   display: flex;
   align-items: center;
@@ -76,9 +85,5 @@
   border: none;
   background: #c02d34;
   border: none;
-}
-
-div .location-input {
-  /* width: 150%; */
 }
 

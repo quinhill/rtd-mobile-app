@@ -40,7 +40,7 @@ export class EndAddressInput extends Component {
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => {
           return (
             <div className='form'>
-              <div className= 'input-container last-input-container'>
+              <div className= 'input-container last-input-container' id='end'>
                 <input
                   value={this.state.endAddress}
                   {...getInputProps({

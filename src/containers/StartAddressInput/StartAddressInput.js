@@ -42,7 +42,7 @@ export class StartAddressInput extends Component {
   
           return (
             <div className='form'>
-              <div className="input-container search-container">
+              <div className="input-container search-container" id='start'>
                 <input
                   value={this.state.startAddress}
                   {...getInputProps({
