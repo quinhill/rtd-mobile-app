@@ -7,6 +7,7 @@ import { auth } from '../../firebase';
 import PropTypes from 'prop-types';
 import { SignInLink } from '../SignIn/SignIn';
 
+import './SignUp.css';
 
 class SignUpPage extends Component {
   constructor(props) {
@@ -90,46 +91,60 @@ class SignUpPage extends Component {
     username === '';
 
     return (
-      <div className='sign-up-container'>
-        <form onSubmit={this.onSubmit}>
-          <input
-            name='username'
-            value={username}
-            onChange={this.handleChange}
-            type='text'
-            placeholder='Full Name'
-          />
-          <input
-            name='email'
-            value={email}
-            onChange={this.handleChange}
-            type='email'
-            placeholder='Email Address'
-          />
-          <input
-            name='passwordOne'
-            value={passwordOne}
-            onChange={this.handleChange}
-            type='password'
-            placeholder='Password'
-          />
-          <input
-            name='passwordTwo'
-            value={passwordTwo}
-            onChange={this.handleChange}
-            type='password'
-            placeholder='Confirm Password'
-          />
-          <button 
-            type='submit'
-            disabled={isInvalid}
+      <div className='sign-up-page'>
+        <div className='sign-up-container'>
+          <form 
+            className='sign-up-form'
+            onSubmit={this.onSubmit}
           >
+            <p className='sign-up-title'>
+            Sign Up
+            </p>
+            <input
+              className='sign-up-input'
+              name='username'
+              value={username}
+              onChange={this.handleChange}
+              type='text'
+              placeholder='Full Name'
+            />
+            <input
+              className='sign-up-input'
+              name='email'
+              value={email}
+              onChange={this.handleChange}
+              type='email'
+              placeholder='Email Address'
+            />
+            <input
+              className='sign-up-input'
+              name='passwordOne'
+              value={passwordOne}
+              onChange={this.handleChange}
+              type='password'
+              placeholder='Password'
+            />
+            <input
+              className='sign-up-input'
+              id='password-two'
+              name='passwordTwo'
+              value={passwordTwo}
+              onChange={this.handleChange}
+              type='password'
+              placeholder='Confirm Password'
+            />
+            <button 
+              className='button'
+              type='submit'
+              disabled={isInvalid}
+            >
         Sign Up
-          </button>
+            </button>
 
-          { error && <p>{error.message}</p> }
-        </form>
-        <SignInLink />
+            { error && <p>{error.message}</p> }
+          </form>
+          <SignInLink />
+        </div>
       </div>
     );
   }
@@ -140,7 +155,12 @@ const SignUpLink = () => {
     <p>
     Don't have an account?
       {' '}
-      <Link to={routes.SIGN_UP}>Sign Up</Link>
+      <Link 
+        className='link'
+        to={routes.SIGN_UP}
+      >
+        Sign Up
+      </Link>
     </p>
   );
 
