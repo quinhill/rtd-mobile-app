@@ -84,17 +84,17 @@ export class SignUpPage extends Component {
       username === "";
 
     return (
-      <div className='sign-up-page'>
-        <div className='sign-up-container'>
+      <div className='page'>
+        <div className='container'>
           <form 
-            className='sign-up-form'
+            className='form'
             onSubmit={this.onSubmit}
           >
-            <p className='sign-up-title'>
+            <p className='title'>
             Sign Up
             </p>
             <input
-              className='sign-up-input'
+              className='input'
               name='username'
               value={username}
               onChange={this.handleChange}
@@ -102,7 +102,7 @@ export class SignUpPage extends Component {
               placeholder='Full Name'
             />
             <input
-              className='sign-up-input'
+              className='input'
               name='email'
               value={email}
               onChange={this.handleChange}
@@ -110,7 +110,7 @@ export class SignUpPage extends Component {
               placeholder='Email Address'
             />
             <input
-              className='sign-up-input'
+              className='input'
               name='passwordOne'
               value={passwordOne}
               onChange={this.handleChange}
@@ -118,7 +118,7 @@ export class SignUpPage extends Component {
               placeholder='Password'
             />
             <input
-              className='sign-up-input'
+              className='input'
               id='password-two'
               name='passwordTwo'
               value={passwordTwo}

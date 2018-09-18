@@ -36,9 +36,11 @@
   border: 1px solid gray;
 }
 
-#sign-in-password {
-  border-top: none;
-}
+/* #sign-in-password {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+
+} */
 
 .sign-in-button {
   height: 30px;
