@@ -69,15 +69,17 @@ p {
   width: 90%;
   border: none;
   font-size: 15px;
-  padding: 0 0 0 10px;
+  padding: 0 10px;
 }
 
 .input-container {
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-template-columns: 1fr 30px;
   border: 1px solid hsl(0, 0%, 50%);
   border-bottom: none;
   width: 90%;
+  /* padding: 0 5px; */
 }
 
 .last-input-container {
@@ -85,4 +87,12 @@ p {
 }
 
 .delete-button {
+  background: transparent;
+  background-image: url('/delete-button.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  height: 15px;
+  width: 15px;
+
 }
