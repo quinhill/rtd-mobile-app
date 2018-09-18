@@ -95,16 +95,16 @@ export class Search extends Component {
     ));
 
     return (
-      <div className="search_container">
-        <h2 className='search-title'>
+      <div className="container">
+        <h2 className='title'>
           Search for a connection:
         </h2>
-        <form
-          className='time'
-          onSubmit={this.handleSubmit}
-        >
           <StartAddressInput />
           <EndAddressInput />
+        <form
+          className='form'
+          onSubmit={this.handleSubmit}
+        >
           <div className='time-select-container'>
             <div
               className='radio-container'
@@ -171,7 +171,7 @@ export class Search extends Component {
           </div>
           <button
             type='submit'
-            className='search-button'
+            className='button'
           >
             Search
           </button >

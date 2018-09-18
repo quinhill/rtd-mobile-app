@@ -15,7 +15,7 @@
   margin: 20px;
 }
 
-form {
+.form {
   width: 100%;
 }
 
@@ -29,12 +29,18 @@ form {
 
 .autocomplete-dropdown-container {
   position: absolute;
+  top: 40px;
   left: 20px;
-  width: 89%;
+  width: 89.75%;
+  background: #FFF;
+  z-index: 20;
+  border: 1px solid #808080;
+  border-top: none;
 }
 
-#end-address-input {
+#end-address {
   border-top: none;
+  z-index: 19;
 }
 
 .time-select-container {
@@ -70,5 +76,9 @@ form {
   border: none;
   background: #c02d34;
   border: none;
+}
+
+div .location-input {
+  /* width: 150%; */
 }
 
