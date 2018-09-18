@@ -3,6 +3,7 @@ import { shallow } from "enzyme";
 import { SignUpPage, mapDispatchToProps } from "../SignUp/SignUp";
 import * as actions from "../../actions";
 import { signUpThunk } from "../../thunks/signUpThunk";
+import { createSecureServer } from "http2";
 
 describe("SignUpPage", () => {
   let wrapper;
@@ -21,11 +22,35 @@ describe("SignUpPage", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  // describe("CreateUser", () => {
-  //   it("should have an initial state of no user info", () => {
-  //     const wrapper = shallow(<SignUpPage />);
-  //   });
-  // });
+  describe("CreateUser", () => {
+    it("should have an initial state of no user info", () => {
+      const userInfo = {
+        user: {
+          uid: "1",
+          email: "mock@email.com"
+        }
+      };
+
+      const expected = {
+        url: "http://rtd-revamp-api.herokuapp.com/api/v1/users",
+        options: {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            username: "",
+            uid: "1",
+            email: "mock@email.com"
+          })
+        }
+      };
+
+      const createUser = wrapper.instance().createUser(userInfo);
+
+      expect(createUser).toEqual(expected);
+    });
+  });
 
   describe("resetForm", () => {
     it("reset the state", () => {
@@ -97,7 +122,7 @@ describe("SignUpPage", () => {
   });
 
   describe("mapDispatchToProps", () => {
-    it("calls dispatch with the correct params on signUpThunk", () => {
+    it.skip("calls dispatch with the correct params on signUpThunk", () => {
       const mockDispatch = jest.fn();
       const userInfo = {
         username: "mockUserName",
@@ -110,5 +135,4 @@ describe("SignUpPage", () => {
       expect(mockDispatch).toHaveBeenCalledWith(mockAction);
     });
   });
-;
 });
