@@ -17,7 +17,7 @@ const INITIAL_STATE = {
   error: null
 };
 
-class PasswordForgetForm extends Component {
+export class PasswordForgetPage extends Component {
   constructor(props) {
     super(props);
     this.state = { ...INITIAL_STATE };
@@ -45,6 +45,10 @@ class PasswordForgetForm extends Component {
   }
 
   render() {
+    <div> 
+      <h1>PasswordForget</h1>
+    </div>;
+
     const {
       email,
       error
@@ -82,7 +86,3 @@ export const PasswordForgetLink = () =>
 
 export default PasswordForgetPage;
 
-export {
-  PasswordForgetForm
-  // PasswordForgetLink
-};

@@ -26,6 +26,7 @@ export class StartAddressInput extends Component {
   render() {
     return (
       <PlacesAutocomplete
+        className='start-address-input' 
         name='startAddress'
         value={this.state.startAddress}
         onChange={this.handleChange}
