@@ -6,21 +6,13 @@ import * as routes from '../../constants/routes';
 
 import './PasswordForget.css';
 
-const PasswordForgetPage = () =>
-  <div> 
-    <h1>PasswordForget</h1>
-    <PasswordForgetForm />
-  </div>;
-
-const INITIAL_STATE = {
-  email: '',
-  error: null
-};
-
 export class PasswordForgetPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { ...INITIAL_STATE };
+    this.state = {
+      email: '',
+      error: null 
+    };
   }
 
   handleChange = (event) => {
@@ -30,12 +22,19 @@ export class PasswordForgetPage extends Component {
     });
   }
 
+  resetState = () => {
+    this.setState({
+      email: '',
+      error: null
+    })
+  }
+
   onSubmit = (event) => {
     const { email } = this.state;
 
     auth.doPasswordReset(email)
       .then(() => {
-        this.setState({ ...INITIAL_STATE });
+        this.resetState()
       })
       .catch(error => {
         this.setState({error: error});
@@ -46,7 +45,7 @@ export class PasswordForgetPage extends Component {
 
   render() {
     <div> 
-      <h1>PasswordForget</h1>
+      <h1>Reset your password</h1>
     </div>;
 
     const {
@@ -57,21 +56,31 @@ export class PasswordForgetPage extends Component {
     const isInvalid = email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          className='password-forget'
-          name="email"
-          value={email}
-          onChange={this.handleChange}
-          type="email"
-          placeholder="Email Address"
-        />
-        <button disabled={isInvalid} type="submit">
-          Reset My Password
-        </button>
+      <div className='page'>
+        <div className='container'>
+          <form 
+            className='form'
+            onSubmit={this.onSubmit}>
+            <input
+              className='password-forget'
+              name="email"
+              value={email}
+              onChange={this.handleChange}
+              type="email"
+              placeholder="Email Address"
+              />
+            <button
+              className='button'
+              disabled={isInvalid} 
+              type="submit"
+              >
+              Reset My Password
+            </button>
 
-        { error && <p>{error.message}</p> }
-      </form>
+            { error && <p>{error.message}</p> }
+          </form>
+        </div>
+      </div>
     );
   }
 }
