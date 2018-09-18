@@ -84,45 +84,6 @@ export class SignUpPage extends Component {
       username === "";
 
     return (
-<<<<<<< HEAD
-      <div className="sign-up-container">
-        <form onSubmit={this.onSubmit}>
-          <input
-            name="username"
-            value={username}
-            onChange={this.handleChange}
-            type="text"
-            placeholder="Full Name"
-          />
-          <input
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-            type="email"
-            placeholder="Email Address"
-          />
-          <input
-            name="passwordOne"
-            value={passwordOne}
-            onChange={this.handleChange}
-            type="password"
-            placeholder="Password"
-          />
-          <input
-            name="passwordTwo"
-            value={passwordTwo}
-            onChange={this.handleChange}
-            type="password"
-            placeholder="Confirm Password"
-          />
-          <button type="submit" disabled={isInvalid}>
-            Sign Up
-          </button>
-
-          {error && <p>{error.message}</p>}
-        </form>
-        <SignInLink />
-=======
       <div className='sign-up-page'>
         <div className='sign-up-container'>
           <form 
@@ -177,7 +138,6 @@ export class SignUpPage extends Component {
           </form>
           <SignInLink />
         </div>
->>>>>>> master
       </div>
     );
   }
@@ -186,9 +146,6 @@ export class SignUpPage extends Component {
 const SignUpLink = () => {
   return (
     <p>
-<<<<<<< HEAD
-      Don't have an account? <Link to={routes.SIGN_UP}>Sign Up</Link>
-=======
     Don't have an account?
       {' '}
       <Link 
@@ -197,7 +154,7 @@ const SignUpLink = () => {
       >
         Sign Up
       </Link>
->>>>>>> master
+
     </p>
   );
 };
