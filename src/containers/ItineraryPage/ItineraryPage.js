@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ItineraryCard from    '../../components/ItineraryCard/ItineraryCard';
 import PropTypes from 'prop-types';
-import {mockItinerary} from '../../__mocks__/mockItinerary';
 import { postFavoriteUrl } from '../../constants/urlGenerator';
 import addFavoriteThunk from '../../thunks/addFavoriteThunk';
+
+import './ItineraryPage.css';
 
 class ItineraryPage extends Component {
 
@@ -12,7 +13,6 @@ class ItineraryPage extends Component {
     const { id, value } = event.target;
     const idcheck = this.props.favorites.filter(favorite => (
       favorite.id === id));
-    console.log(idcheck)
     const url = postFavoriteUrl(value, id);
     const fetchObject = {
       url,
@@ -42,7 +42,7 @@ class ItineraryPage extends Component {
       );
     });
     return (
-      <div>
+      <div className='itinerary-page'>
         {itineraries}
       </div>
     );

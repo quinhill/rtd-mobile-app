@@ -1,8 +1,9 @@
 .itinerary-card {
-  height: 20%;
+  height: 25%;
   width: 100%;
   background: white;
   box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.5);
+  padding: 5px 10px 0 10px;
 }
 
 .top-container {
@@ -27,8 +28,29 @@
   margin: 0 5px 0 5px;
 }
 
-.add-favorite {
-  border: 1px solid black;
+.favorited {
+  background: none;
+  background-image: url('/favorite-full.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  position: absolute;
+  margin-top: 5px;
+  right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.unfavorited {
+  background: none;
+  background-image: url('/favorite-empty.svg');
+  background-repeat: no-repeat;
+  border: none;
+  position: absolute;
+  margin-top: 5px;
+  right: 10px;
+  height: 20px;
+  width: 20px;
 }
 
 .line-id {
@@ -42,6 +64,13 @@
   justify-items: center;
 }
 
+.duration-line-container {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 10px 1fr;
+  align-items: center;
+}
+
 .dot {
   height: 10px;
   width: 10px;
@@ -50,6 +79,7 @@
 }
 
 .duration-line {
+  width: 100%;
   grid-column: 2 / 3;
   border: 1px solid black;
 }
