@@ -12,3 +12,16 @@ h2 {
 p {
   margin: 0;
 }
+
+.link {
+  color: #222222;
+}
+
+.button {
+  width: 90%;
+  height: 30px;
+  background: #c02d34;
+  border: none;
+  color: white;
+  font-size: 15px;
+}
