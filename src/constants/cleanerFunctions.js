@@ -59,6 +59,9 @@ export const cleanStep = step => {
     num_stops,
     short_name
   } = step;
+  const line = short_name === 'MALLRIDE'
+    ? 'MR'
+    : short_name;
   return {
     imgUrl,
     arrival_stop,
@@ -70,7 +73,7 @@ export const cleanStep = step => {
     headsign,
     instructions,
     num_stops,
-    short_name
+    line
   };
 };
 

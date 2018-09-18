@@ -30,7 +30,6 @@ class ItineraryCard extends Component {
     ? 'favorited'
     : 'unfavorited';
     
-    console.log(isFavorite);
     const {
       itinerary_id,
       arrival_time,
@@ -44,8 +43,6 @@ class ItineraryCard extends Component {
     } = this.props;
 
     const info = infoCleaner(steps);
-
-    console.log(info.line)
 
     const lineStyles = {
       background: info.color

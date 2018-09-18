@@ -34,6 +34,7 @@ export class Favorite extends Component {
 
     return (
       <button
+        className='favorite-button'
         id={itinerary_id}
         onClick={this.handleClick}
       >
