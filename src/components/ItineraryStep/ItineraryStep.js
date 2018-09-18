@@ -14,7 +14,7 @@ const ItineraryStep = ({handleClick, data}) => {
     headsign,
     imgUrl,
     instructions,
-    short_name
+    line
   } = data;
 
   const styles = {
@@ -56,7 +56,7 @@ const ItineraryStep = ({handleClick, data}) => {
               style={styles}
             >
               <p className='line-id'>
-                {short_name}
+                {line}
               </p>
             </div>
           </div>

@@ -3,6 +3,8 @@ import Favorite from '../Favorite/Favorite';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import './FavoritesContainer.css';
+
 
 export class FavoritesContainer extends Component {
   
@@ -26,7 +28,10 @@ export class FavoritesContainer extends Component {
     });
     return (
       <div className='favorite_card-container'>
-        {favoritesData}
+        <div className='favorites-div'>
+          <h2 className='favorites-title'>Favorites</h2>
+          {favoritesData}
+        </div>
       </div>
     );
   }

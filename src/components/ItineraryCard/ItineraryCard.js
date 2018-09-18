@@ -10,7 +10,8 @@ class ItineraryCard extends Component {
   constructor(props){
     super(props);
     this.state = {
-      showMore: false
+      showMore: false,
+      favorite: this.props.itinerary.favorite
     };
   }
 
@@ -25,6 +26,10 @@ class ItineraryCard extends Component {
   }
 
   render(){
+    const isFavorite = this.state.favorite
+    ? 'favorited'
+    : 'unfavorited';
+    
     const {
       itinerary_id,
       arrival_time,
@@ -72,28 +77,28 @@ class ItineraryCard extends Component {
               style={lineStyles}
             >
               <p className='line-id'>
-                {info.short_name}
+                {info.line}
               </p>
             </div>
             <h2>
               Towards {info.headsign}
             </h2>
             <button
-              className='add-favorite'
+              className={isFavorite}
               onClick={addFavorite}
               id={itinerary_id}
               value={uid}
             >
-              Add to Favorites
             </button>
           </div>
           <div className='trip-detail-row'>
             <h3 className="time-depart">
               {info.departure_time}
             </h3>
-            <DurationLine
-              totalSteps={info.totalSteps} 
-            />
+            <div className='duration-line-container' >
+              <span className='dot'></span>
+              <hr className='duration-line' />
+            </div>
             <h3 className="time-depart">
               {arrival_time}
             </h3>
