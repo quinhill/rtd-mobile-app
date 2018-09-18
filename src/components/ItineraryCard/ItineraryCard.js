@@ -45,6 +45,8 @@ class ItineraryCard extends Component {
 
     const info = infoCleaner(steps);
 
+    console.log(info.line)
+
     const lineStyles = {
       background: info.color
     };
@@ -78,7 +80,7 @@ class ItineraryCard extends Component {
               style={lineStyles}
             >
               <p className='line-id'>
-                {info.short_name}
+                {info.line}
               </p>
             </div>
             <h2>

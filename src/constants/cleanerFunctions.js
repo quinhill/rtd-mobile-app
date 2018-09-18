@@ -29,13 +29,16 @@ export const infoCleaner = steps => {
     departure_time,
     short_name
   } = firstVehicle;
+  const line = short_name === 'MALLRIDE'
+    ? 'MR'
+    : short_name;
   return {
     imgUrl,
     color,
     headsign,
     departure_stop,
     departure_time,
-    short_name,
+    line,
     totalSteps
   };
 };
