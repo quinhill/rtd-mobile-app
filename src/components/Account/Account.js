@@ -1,15 +1,40 @@
 import React from 'react';
-import AuthUserContext from '../AuthUserContext';
 import PasswordChangeForm from '../PasswordChange/PasswordChange';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import SignOutButton from '../../containers/SignOut/SignOut';
+import SignInPage from '../../containers/SignIn/SignIn';
 
-export const AccountPage = () =>
-  <AuthUserContext.Consumer>
-    {authUser =>
-      <div>
-        <h1>Account: {authUser.email}</h1>
-        <PasswordChangeForm />
+import './Account.css';
+
+export const AccountPage = (props) => {
+  if (props.user.email) {
+    return (
+      <div className='account-page-container'>
+        <div className='account-container'>
+          <h3>Hi, {props.user.email}</h3>
+          <SignOutButton />
+          <PasswordChangeForm />
+        </div>
       </div>
-    }
-  </AuthUserContext.Consumer>;
+    );
+  } else {
+    return (
+      <div className='account-page-container'>
+        <div className='account-container'>
+          <SignInPage />
+        </div>
+      </div>
+    );
+  }
+};
 
-export default AccountPage;
+export const mapStateToProps = state => ({
+  user: state.user
+});
+
+export default connect(mapStateToProps)(AccountPage);
+
+AccountPage.propTypes = {
+  user: PropTypes.object
+};

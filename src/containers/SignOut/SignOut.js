@@ -5,6 +5,8 @@ import { signOutUser } from '../../actions';
 
 import { auth } from '../../firebase';
 
+import './SignOut.css';
+
 const SignOutButton = (props) => {
   const signOut = () => {
     auth.doSignOut();

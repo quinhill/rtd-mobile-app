@@ -14,6 +14,8 @@ import { signInUrl } from '../../constants/urlGenerator';
 
 import PropTypes from 'prop-types';
 
+import './SignIn.css';
+
 class SignInPage extends Component {
   constructor(props) {
     super(props);
@@ -72,33 +74,43 @@ class SignInPage extends Component {
     email === '';
 
     return (
-      <div className='sign-in-container'>
-        <form onSubmit={this.onSubmit}>
-          <input
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-            type="email"
-            placeholder="Email Address"
-          />
-          <input
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-            type="password"
-            placeholder="Password"
-          />
-          <button 
-            type="submit"
-            disabled={isInvalid}
+      <div className='sign-in-page'>
+        <div className='sign-in-container'>
+          <h2 id='sign-in-title'>Sign In</h2>
+          <form 
+            className='sign-in-form'
+            onSubmit={this.onSubmit}
           >
+            <input
+              className='sign-in-input'
+              name='email'
+              value={email}
+              onChange={this.handleChange}
+              type='email'
+              placeholder='Email Address'
+            />
+            <input
+              className='sign-in-input'
+              id='sign-in-password'
+              name='password'
+              value={password}
+              onChange={this.handleChange}
+              type='password'
+              placeholder='Password'
+            />
+            <button 
+              className='sign-in-button'
+              type='submit'
+              disabled={isInvalid}
+            >
             Sign In
-          </button>
+            </button>
 
-          { error && <p>{error.message}</p> }
-        </form>
-        <SignUpLink />
-        <PasswordForgetLink />
+            { error && <p>{error.message}</p> }
+          </form>
+          <PasswordForgetLink />
+          <SignUpLink />
+        </div>
       </div>
     );
   }
@@ -110,7 +122,12 @@ export const SignInLink = () => {
       <p>
         Already have an account?
       </p>
-      <Link to={routes.SIGN_IN}>Sign In</Link>
+      <Link 
+        className='link'
+        to={routes.SIGN_IN}
+      >
+        Sign In
+      </Link>
     </div>
   );
 };

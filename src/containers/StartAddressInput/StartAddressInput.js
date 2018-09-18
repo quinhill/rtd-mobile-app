@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import { storeStartAddress } from '../../actions';
 import { connect } from "react-redux";
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
+
+import '../Search/Search.css';
  
 export class StartAddressInput extends Component {
   constructor(props) {
@@ -18,6 +20,7 @@ export class StartAddressInput extends Component {
  
   handleSelect = address => {
     this.props.storeStartAddress(address);
+    this.setState({startAddress: address});
   };
  
   render() {
@@ -37,7 +40,7 @@ export class StartAddressInput extends Component {
                 value={this.state.startAddress}
                 {...getInputProps({
                   placeholder: 'Search Starting Point ...',
-                  className: 'location-search-input-start'
+                  className: 'location-search-input'
                 })}
               />
               <div className="autocomplete-dropdown-container">
