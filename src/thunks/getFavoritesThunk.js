@@ -19,4 +19,4 @@ const getFavoritesThunk = (url) => {
   };
 };
 
-export default getFavoritesThunk;
+export default getFavoritesThunk; 
