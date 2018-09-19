@@ -82,12 +82,6 @@ ShallowWrapper {
                     Towards 
                     Central Park 65 via Monaco
           </h2>
-          <button
-                    className="unfavorited"
-                    id={59}
-                    onClick={[Function]}
-                    value="3"
-          />
 </div>,
         <div
           className="trip-detail-row"
@@ -160,12 +154,6 @@ ShallowWrapper {
               Towards 
               Central Park 65 via Monaco
 </h2>,
-            <button
-              className="unfavorited"
-              id={59}
-              onClick={[Function]}
-              value="3"
-/>,
           ],
           "className": "top-container",
         },
@@ -230,20 +218,6 @@ ShallowWrapper {
               "Central Park 65 via Monaco",
             ],
             "type": "h2",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "className": "unfavorited",
-              "id": 59,
-              "onClick": [Function],
-              "value": "3",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "button",
           },
         ],
         "type": "div",
@@ -433,12 +407,6 @@ ShallowWrapper {
                         Towards 
                         Central Park 65 via Monaco
             </h2>
-            <button
-                        className="unfavorited"
-                        id={59}
-                        onClick={[Function]}
-                        value="3"
-            />
 </div>,
           <div
             className="trip-detail-row"
@@ -511,12 +479,6 @@ ShallowWrapper {
                 Towards 
                 Central Park 65 via Monaco
 </h2>,
-              <button
-                className="unfavorited"
-                id={59}
-                onClick={[Function]}
-                value="3"
-/>,
             ],
             "className": "top-container",
           },
@@ -581,20 +543,6 @@ ShallowWrapper {
                 "Central Park 65 via Monaco",
               ],
               "type": "h2",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "className": "unfavorited",
-                "id": 59,
-                "onClick": [Function],
-                "value": "3",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "button",
             },
           ],
           "type": "div",
@@ -856,12 +804,6 @@ ShallowWrapper {
                     Towards 
                     Central Park 65 via Monaco
           </h2>
-          <button
-                    className="favorited"
-                    id={59}
-                    onClick={[Function]}
-                    value="3"
-          />
 </div>,
         <div
           className="trip-detail-row"
@@ -934,12 +876,6 @@ ShallowWrapper {
               Towards 
               Central Park 65 via Monaco
 </h2>,
-            <button
-              className="favorited"
-              id={59}
-              onClick={[Function]}
-              value="3"
-/>,
           ],
           "className": "top-container",
         },
@@ -1004,20 +940,6 @@ ShallowWrapper {
               "Central Park 65 via Monaco",
             ],
             "type": "h2",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "className": "favorited",
-              "id": 59,
-              "onClick": [Function],
-              "value": "3",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "button",
           },
         ],
         "type": "div",
@@ -1207,12 +1129,6 @@ ShallowWrapper {
                         Towards 
                         Central Park 65 via Monaco
             </h2>
-            <button
-                        className="favorited"
-                        id={59}
-                        onClick={[Function]}
-                        value="3"
-            />
 </div>,
           <div
             className="trip-detail-row"
@@ -1285,12 +1201,6 @@ ShallowWrapper {
                 Towards 
                 Central Park 65 via Monaco
 </h2>,
-              <button
-                className="favorited"
-                id={59}
-                onClick={[Function]}
-                value="3"
-/>,
             ],
             "className": "top-container",
           },
@@ -1355,20 +1265,6 @@ ShallowWrapper {
                 "Central Park 65 via Monaco",
               ],
               "type": "h2",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "className": "favorited",
-                "id": 59,
-                "onClick": [Function],
-                "value": "3",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "button",
             },
           ],
           "type": "div",

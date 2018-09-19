@@ -104,23 +104,34 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <ItineraryCard
-          addFavorite={[Function]}
-          itinerary={
-                    Object {
-                              "arrival_time": "11:12am",
-                              "departure_time": "11:02am",
-                              "distance": "0.8 mi",
-                              "duration": "10 mins",
-                              "end_address": "650 15th St, Denver, CO 80202, USA",
-                              "favorite": false,
-                              "itinerary_id": 92,
-                              "start_address": "LoDo, Denver, CO 80202, USA",
-                              "title": null,
-                            }
-          }
-          uid="12"
+        <div
+          className="favorite-button-container"
+>
+          add from: LoDo to: 650 15th St to favorites?
+          <button
+                    className="unfavorited"
+                    onClick={[Function]}
+                    value="12"
+          />
+</div>,
+        Array [
+          <ItineraryCard
+            itinerary={
+                        Object {
+                                    "arrival_time": "11:12am",
+                                    "departure_time": "11:02am",
+                                    "distance": "0.8 mi",
+                                    "duration": "10 mins",
+                                    "end_address": "650 15th St, Denver, CO 80202, USA",
+                                    "favorite": false,
+                                    "itinerary_id": 92,
+                                    "start_address": "LoDo, Denver, CO 80202, USA",
+                                    "title": null,
+                                  }
+            }
+            uid="12"
 />,
+        ],
       ],
       "className": "itinerary-page",
     },
@@ -128,10 +139,43 @@ ShallowWrapper {
     "rendered": Array [
       Object {
         "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "add from: LoDo to: 650 15th St to favorites?",
+            <button
+              className="unfavorited"
+              onClick={[Function]}
+              value="12"
+/>,
+          ],
+          "className": "favorite-button-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          "add from: LoDo to: 650 15th St to favorites?",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "unfavorited",
+              "onClick": [Function],
+              "value": "12",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
         "key": "0",
         "nodeType": "class",
         "props": Object {
-          "addFavorite": [Function],
           "itinerary": Object {
             "arrival_time": "11:12am",
             "departure_time": "11:02am",
@@ -159,23 +203,34 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <ItineraryCard
-            addFavorite={[Function]}
-            itinerary={
-                        Object {
-                                    "arrival_time": "11:12am",
-                                    "departure_time": "11:02am",
-                                    "distance": "0.8 mi",
-                                    "duration": "10 mins",
-                                    "end_address": "650 15th St, Denver, CO 80202, USA",
-                                    "favorite": false,
-                                    "itinerary_id": 92,
-                                    "start_address": "LoDo, Denver, CO 80202, USA",
-                                    "title": null,
-                                  }
-            }
-            uid="12"
+          <div
+            className="favorite-button-container"
+>
+            add from: LoDo to: 650 15th St to favorites?
+            <button
+                        className="unfavorited"
+                        onClick={[Function]}
+                        value="12"
+            />
+</div>,
+          Array [
+            <ItineraryCard
+              itinerary={
+                            Object {
+                                          "arrival_time": "11:12am",
+                                          "departure_time": "11:02am",
+                                          "distance": "0.8 mi",
+                                          "duration": "10 mins",
+                                          "end_address": "650 15th St, Denver, CO 80202, USA",
+                                          "favorite": false,
+                                          "itinerary_id": 92,
+                                          "start_address": "LoDo, Denver, CO 80202, USA",
+                                          "title": null,
+                                        }
+              }
+              uid="12"
 />,
+          ],
         ],
         "className": "itinerary-page",
       },
@@ -183,10 +238,43 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "add from: LoDo to: 650 15th St to favorites?",
+              <button
+                className="unfavorited"
+                onClick={[Function]}
+                value="12"
+/>,
+            ],
+            "className": "favorite-button-container",
+          },
+          "ref": null,
+          "rendered": Array [
+            "add from: LoDo to: 650 15th St to favorites?",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "unfavorited",
+                "onClick": [Function],
+                "value": "12",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
           "key": "0",
           "nodeType": "class",
           "props": Object {
-            "addFavorite": [Function],
             "itinerary": Object {
               "arrival_time": "11:12am",
               "departure_time": "11:02am",

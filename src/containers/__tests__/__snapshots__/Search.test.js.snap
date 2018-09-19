@@ -5,8 +5,8 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Search
     endAddress="Overland Golf Course"
-    startAddress="Union Station"
     uid="12"
+    ustartAddress="Union Station"
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -72,170 +72,177 @@ ShallowWrapper {
                                         at
                               </p>
                     </div>
-                    <input
-                              className="time-select"
-                              list="hours"
-                              name="hours"
-                              onChange={[Function]}
-                              value={10}
-                    />
-                    <datalist
-                              id="hours"
+                    <div
+                              className="time-container"
                     >
-                              <option
+                              <input
+                                        className="time-select"
+                                        list="hours"
+                                        name="hours"
+                                        onChange={[Function]}
                                         value={1}
+                              />
+                              <datalist
+                                        id="hours"
                               >
-                                        1
-                              </option>
-                              <option
+                                        <option
+                                                  value={1}
+                                        >
+                                                  1
+                                        </option>
+                                        <option
+                                                  value={2}
+                                        >
+                                                  2
+                                        </option>
+                                        <option
+                                                  value={3}
+                                        >
+                                                  3
+                                        </option>
+                                        <option
+                                                  value={4}
+                                        >
+                                                  4
+                                        </option>
+                                        <option
+                                                  value={5}
+                                        >
+                                                  5
+                                        </option>
+                                        <option
+                                                  value={6}
+                                        >
+                                                  6
+                                        </option>
+                                        <option
+                                                  value={7}
+                                        >
+                                                  7
+                                        </option>
+                                        <option
+                                                  value={8}
+                                        >
+                                                  8
+                                        </option>
+                                        <option
+                                                  value={9}
+                                        >
+                                                  9
+                                        </option>
+                                        <option
+                                                  value={10}
+                                        >
+                                                  10
+                                        </option>
+                                        <option
+                                                  value={11}
+                                        >
+                                                  11
+                                        </option>
+                                        <option
+                                                  value={12}
+                                        >
+                                                  12
+                                        </option>
+                              </datalist>
+                              :
+                              <input
+                                        className="time-select"
+                                        list="minutes"
+                                        name="minutes"
+                                        onChange={[Function]}
                                         value={2}
+                              />
+                              <datalist
+                                        id="minutes"
                               >
-                                        2
-                              </option>
-                              <option
-                                        value={3}
-                              >
-                                        3
-                              </option>
-                              <option
-                                        value={4}
-                              >
-                                        4
-                              </option>
-                              <option
-                                        value={5}
-                              >
-                                        5
-                              </option>
-                              <option
-                                        value={6}
-                              >
-                                        6
-                              </option>
-                              <option
-                                        value={7}
-                              >
-                                        7
-                              </option>
-                              <option
-                                        value={8}
-                              >
-                                        8
-                              </option>
-                              <option
-                                        value={9}
-                              >
-                                        9
-                              </option>
-                              <option
-                                        value={10}
-                              >
-                                        10
-                              </option>
-                              <option
-                                        value={11}
-                              >
-                                        11
-                              </option>
-                              <option
-                                        value={12}
-                              >
-                                        12
-                              </option>
-                    </datalist>
-                    :
-                    <input
-                              className="time-select"
-                              list="minutes"
-                              name="minutes"
-                              onChange={[Function]}
-                              value={27}
-                    />
-                    <datalist
-                              id="minutes"
-                    >
-                              <option
-                                        value="00"
-                              >
-                                        00
-                              </option>
-                              <option
-                                        value="05"
-                              >
-                                        05
-                              </option>
-                              <option
-                                        value="10"
-                              >
-                                        10
-                              </option>
-                              <option
-                                        value="15"
-                              >
-                                        15
-                              </option>
-                              <option
-                                        value="20"
-                              >
-                                        20
-                              </option>
-                              <option
-                                        value="25"
-                              >
-                                        25
-                              </option>
-                              <option
-                                        value="30"
-                              >
-                                        30
-                              </option>
-                              <option
-                                        value="35"
-                              >
-                                        35
-                              </option>
-                              <option
-                                        value="40"
-                              >
-                                        40
-                              </option>
-                              <option
-                                        value="45"
-                              >
-                                        45
-                              </option>
-                              <option
-                                        value="50"
-                              >
-                                        50
-                              </option>
-                              <option
-                                        value="55"
-                              >
-                                        55
-                              </option>
-                              <option
-                                        value="60"
-                              >
-                                        60
-                              </option>
-                    </datalist>
-                    <select
-                              name="am"
-                              onChange={[Function]}
-                              value={true}
-                    >
-                              <option
+                                        <option
+                                                  value="00"
+                                        >
+                                                  00
+                                        </option>
+                                        <option
+                                                  value="05"
+                                        >
+                                                  05
+                                        </option>
+                                        <option
+                                                  value="10"
+                                        >
+                                                  10
+                                        </option>
+                                        <option
+                                                  value="15"
+                                        >
+                                                  15
+                                        </option>
+                                        <option
+                                                  value="20"
+                                        >
+                                                  20
+                                        </option>
+                                        <option
+                                                  value="25"
+                                        >
+                                                  25
+                                        </option>
+                                        <option
+                                                  value="30"
+                                        >
+                                                  30
+                                        </option>
+                                        <option
+                                                  value="35"
+                                        >
+                                                  35
+                                        </option>
+                                        <option
+                                                  value="40"
+                                        >
+                                                  40
+                                        </option>
+                                        <option
+                                                  value="45"
+                                        >
+                                                  45
+                                        </option>
+                                        <option
+                                                  value="50"
+                                        >
+                                                  50
+                                        </option>
+                                        <option
+                                                  value="55"
+                                        >
+                                                  55
+                                        </option>
+                                        <option
+                                                  value="60"
+                                        >
+                                                  60
+                                        </option>
+                              </datalist>
+                              <div
+                                        className="amPm"
+                                        name="am"
+                                        onClick={[Function]}
                                         value={true}
                               >
-                                        am
-                              </option>
-                              <option
-                                        value={false}
-                              >
-                                        pm
-                              </option>
-                    </select>
+                                        <p
+                                                  className="am"
+                                                  id="am"
+                                        >
+                                                  am
+                                        </p>
+                                        <p
+                                                  className="pm"
+                                                  id="pm"
+                                        >
+                                                  pm
+                                        </p>
+                              </div>
+                    </div>
           </div>
           <button
                     className="button"
@@ -324,170 +331,177 @@ ShallowWrapper {
                                           at
                             </p>
               </div>
-              <input
-                            className="time-select"
-                            list="hours"
-                            name="hours"
-                            onChange={[Function]}
-                            value={10}
-              />
-              <datalist
-                            id="hours"
+              <div
+                            className="time-container"
               >
-                            <option
+                            <input
+                                          className="time-select"
+                                          list="hours"
+                                          name="hours"
+                                          onChange={[Function]}
                                           value={1}
+                            />
+                            <datalist
+                                          id="hours"
                             >
-                                          1
-                            </option>
-                            <option
+                                          <option
+                                                        value={1}
+                                          >
+                                                        1
+                                          </option>
+                                          <option
+                                                        value={2}
+                                          >
+                                                        2
+                                          </option>
+                                          <option
+                                                        value={3}
+                                          >
+                                                        3
+                                          </option>
+                                          <option
+                                                        value={4}
+                                          >
+                                                        4
+                                          </option>
+                                          <option
+                                                        value={5}
+                                          >
+                                                        5
+                                          </option>
+                                          <option
+                                                        value={6}
+                                          >
+                                                        6
+                                          </option>
+                                          <option
+                                                        value={7}
+                                          >
+                                                        7
+                                          </option>
+                                          <option
+                                                        value={8}
+                                          >
+                                                        8
+                                          </option>
+                                          <option
+                                                        value={9}
+                                          >
+                                                        9
+                                          </option>
+                                          <option
+                                                        value={10}
+                                          >
+                                                        10
+                                          </option>
+                                          <option
+                                                        value={11}
+                                          >
+                                                        11
+                                          </option>
+                                          <option
+                                                        value={12}
+                                          >
+                                                        12
+                                          </option>
+                            </datalist>
+                            :
+                            <input
+                                          className="time-select"
+                                          list="minutes"
+                                          name="minutes"
+                                          onChange={[Function]}
                                           value={2}
+                            />
+                            <datalist
+                                          id="minutes"
                             >
-                                          2
-                            </option>
-                            <option
-                                          value={3}
-                            >
-                                          3
-                            </option>
-                            <option
-                                          value={4}
-                            >
-                                          4
-                            </option>
-                            <option
-                                          value={5}
-                            >
-                                          5
-                            </option>
-                            <option
-                                          value={6}
-                            >
-                                          6
-                            </option>
-                            <option
-                                          value={7}
-                            >
-                                          7
-                            </option>
-                            <option
-                                          value={8}
-                            >
-                                          8
-                            </option>
-                            <option
-                                          value={9}
-                            >
-                                          9
-                            </option>
-                            <option
-                                          value={10}
-                            >
-                                          10
-                            </option>
-                            <option
-                                          value={11}
-                            >
-                                          11
-                            </option>
-                            <option
-                                          value={12}
-                            >
-                                          12
-                            </option>
-              </datalist>
-              :
-              <input
-                            className="time-select"
-                            list="minutes"
-                            name="minutes"
-                            onChange={[Function]}
-                            value={27}
-              />
-              <datalist
-                            id="minutes"
-              >
-                            <option
-                                          value="00"
-                            >
-                                          00
-                            </option>
-                            <option
-                                          value="05"
-                            >
-                                          05
-                            </option>
-                            <option
-                                          value="10"
-                            >
-                                          10
-                            </option>
-                            <option
-                                          value="15"
-                            >
-                                          15
-                            </option>
-                            <option
-                                          value="20"
-                            >
-                                          20
-                            </option>
-                            <option
-                                          value="25"
-                            >
-                                          25
-                            </option>
-                            <option
-                                          value="30"
-                            >
-                                          30
-                            </option>
-                            <option
-                                          value="35"
-                            >
-                                          35
-                            </option>
-                            <option
-                                          value="40"
-                            >
-                                          40
-                            </option>
-                            <option
-                                          value="45"
-                            >
-                                          45
-                            </option>
-                            <option
-                                          value="50"
-                            >
-                                          50
-                            </option>
-                            <option
-                                          value="55"
-                            >
-                                          55
-                            </option>
-                            <option
-                                          value="60"
-                            >
-                                          60
-                            </option>
-              </datalist>
-              <select
-                            name="am"
-                            onChange={[Function]}
-                            value={true}
-              >
-                            <option
+                                          <option
+                                                        value="00"
+                                          >
+                                                        00
+                                          </option>
+                                          <option
+                                                        value="05"
+                                          >
+                                                        05
+                                          </option>
+                                          <option
+                                                        value="10"
+                                          >
+                                                        10
+                                          </option>
+                                          <option
+                                                        value="15"
+                                          >
+                                                        15
+                                          </option>
+                                          <option
+                                                        value="20"
+                                          >
+                                                        20
+                                          </option>
+                                          <option
+                                                        value="25"
+                                          >
+                                                        25
+                                          </option>
+                                          <option
+                                                        value="30"
+                                          >
+                                                        30
+                                          </option>
+                                          <option
+                                                        value="35"
+                                          >
+                                                        35
+                                          </option>
+                                          <option
+                                                        value="40"
+                                          >
+                                                        40
+                                          </option>
+                                          <option
+                                                        value="45"
+                                          >
+                                                        45
+                                          </option>
+                                          <option
+                                                        value="50"
+                                          >
+                                                        50
+                                          </option>
+                                          <option
+                                                        value="55"
+                                          >
+                                                        55
+                                          </option>
+                                          <option
+                                                        value="60"
+                                          >
+                                                        60
+                                          </option>
+                            </datalist>
+                            <div
+                                          className="amPm"
+                                          name="am"
+                                          onClick={[Function]}
                                           value={true}
                             >
-                                          am
-                            </option>
-                            <option
-                                          value={false}
-                            >
-                                          pm
-                            </option>
-              </select>
+                                          <p
+                                                        className="am"
+                                                        id="am"
+                                          >
+                                                        am
+                                          </p>
+                                          <p
+                                                        className="pm"
+                                                        id="pm"
+                                          >
+                                                        pm
+                                          </p>
+                            </div>
+              </div>
 </div>,
             <button
               className="button"
@@ -543,170 +557,177 @@ ShallowWrapper {
                                     at
                   </p>
 </div>,
-                <input
-                  className="time-select"
-                  list="hours"
-                  name="hours"
-                  onChange={[Function]}
-                  value={10}
-/>,
-                <datalist
-                  id="hours"
+                <div
+                  className="time-container"
 >
-                  <option
+                  <input
+                                    className="time-select"
+                                    list="hours"
+                                    name="hours"
+                                    onChange={[Function]}
                                     value={1}
+                  />
+                  <datalist
+                                    id="hours"
                   >
-                                    1
-                  </option>
-                  <option
+                                    <option
+                                                      value={1}
+                                    >
+                                                      1
+                                    </option>
+                                    <option
+                                                      value={2}
+                                    >
+                                                      2
+                                    </option>
+                                    <option
+                                                      value={3}
+                                    >
+                                                      3
+                                    </option>
+                                    <option
+                                                      value={4}
+                                    >
+                                                      4
+                                    </option>
+                                    <option
+                                                      value={5}
+                                    >
+                                                      5
+                                    </option>
+                                    <option
+                                                      value={6}
+                                    >
+                                                      6
+                                    </option>
+                                    <option
+                                                      value={7}
+                                    >
+                                                      7
+                                    </option>
+                                    <option
+                                                      value={8}
+                                    >
+                                                      8
+                                    </option>
+                                    <option
+                                                      value={9}
+                                    >
+                                                      9
+                                    </option>
+                                    <option
+                                                      value={10}
+                                    >
+                                                      10
+                                    </option>
+                                    <option
+                                                      value={11}
+                                    >
+                                                      11
+                                    </option>
+                                    <option
+                                                      value={12}
+                                    >
+                                                      12
+                                    </option>
+                  </datalist>
+                  :
+                  <input
+                                    className="time-select"
+                                    list="minutes"
+                                    name="minutes"
+                                    onChange={[Function]}
                                     value={2}
+                  />
+                  <datalist
+                                    id="minutes"
                   >
-                                    2
-                  </option>
-                  <option
-                                    value={3}
-                  >
-                                    3
-                  </option>
-                  <option
-                                    value={4}
-                  >
-                                    4
-                  </option>
-                  <option
-                                    value={5}
-                  >
-                                    5
-                  </option>
-                  <option
-                                    value={6}
-                  >
-                                    6
-                  </option>
-                  <option
-                                    value={7}
-                  >
-                                    7
-                  </option>
-                  <option
-                                    value={8}
-                  >
-                                    8
-                  </option>
-                  <option
-                                    value={9}
-                  >
-                                    9
-                  </option>
-                  <option
-                                    value={10}
-                  >
-                                    10
-                  </option>
-                  <option
-                                    value={11}
-                  >
-                                    11
-                  </option>
-                  <option
-                                    value={12}
-                  >
-                                    12
-                  </option>
-</datalist>,
-                ":",
-                <input
-                  className="time-select"
-                  list="minutes"
-                  name="minutes"
-                  onChange={[Function]}
-                  value={27}
-/>,
-                <datalist
-                  id="minutes"
->
-                  <option
-                                    value="00"
-                  >
-                                    00
-                  </option>
-                  <option
-                                    value="05"
-                  >
-                                    05
-                  </option>
-                  <option
-                                    value="10"
-                  >
-                                    10
-                  </option>
-                  <option
-                                    value="15"
-                  >
-                                    15
-                  </option>
-                  <option
-                                    value="20"
-                  >
-                                    20
-                  </option>
-                  <option
-                                    value="25"
-                  >
-                                    25
-                  </option>
-                  <option
-                                    value="30"
-                  >
-                                    30
-                  </option>
-                  <option
-                                    value="35"
-                  >
-                                    35
-                  </option>
-                  <option
-                                    value="40"
-                  >
-                                    40
-                  </option>
-                  <option
-                                    value="45"
-                  >
-                                    45
-                  </option>
-                  <option
-                                    value="50"
-                  >
-                                    50
-                  </option>
-                  <option
-                                    value="55"
-                  >
-                                    55
-                  </option>
-                  <option
-                                    value="60"
-                  >
-                                    60
-                  </option>
-</datalist>,
-                <select
-                  name="am"
-                  onChange={[Function]}
-                  value={true}
->
-                  <option
+                                    <option
+                                                      value="00"
+                                    >
+                                                      00
+                                    </option>
+                                    <option
+                                                      value="05"
+                                    >
+                                                      05
+                                    </option>
+                                    <option
+                                                      value="10"
+                                    >
+                                                      10
+                                    </option>
+                                    <option
+                                                      value="15"
+                                    >
+                                                      15
+                                    </option>
+                                    <option
+                                                      value="20"
+                                    >
+                                                      20
+                                    </option>
+                                    <option
+                                                      value="25"
+                                    >
+                                                      25
+                                    </option>
+                                    <option
+                                                      value="30"
+                                    >
+                                                      30
+                                    </option>
+                                    <option
+                                                      value="35"
+                                    >
+                                                      35
+                                    </option>
+                                    <option
+                                                      value="40"
+                                    >
+                                                      40
+                                    </option>
+                                    <option
+                                                      value="45"
+                                    >
+                                                      45
+                                    </option>
+                                    <option
+                                                      value="50"
+                                    >
+                                                      50
+                                    </option>
+                                    <option
+                                                      value="55"
+                                    >
+                                                      55
+                                    </option>
+                                    <option
+                                                      value="60"
+                                    >
+                                                      60
+                                    </option>
+                  </datalist>
+                  <div
+                                    className="amPm"
+                                    name="am"
+                                    onClick={[Function]}
                                     value={true}
                   >
-                                    am
-                  </option>
-                  <option
-                                    value={false}
-                  >
-                                    pm
-                  </option>
-</select>,
+                                    <p
+                                                      className="am"
+                                                      id="am"
+                                    >
+                                                      am
+                                    </p>
+                                    <p
+                                                      className="pm"
+                                                      id="pm"
+                                    >
+                                                      pm
+                                    </p>
+                  </div>
+</div>,
               ],
               "className": "time-select-container",
             },
@@ -830,534 +851,720 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "className": "time-select",
-                  "list": "hours",
-                  "name": "hours",
-                  "onChange": [Function],
-                  "value": 10,
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "input",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
                   "children": Array [
-                    <option
+                    <input
+                      className="time-select"
+                      list="hours"
+                      name="hours"
+                      onChange={[Function]}
                       value={1}
+/>,
+                    <datalist
+                      id="hours"
 >
-                      1
-</option>,
-                    <option
+                      <option
+                                            value={1}
+                      >
+                                            1
+                      </option>
+                      <option
+                                            value={2}
+                      >
+                                            2
+                      </option>
+                      <option
+                                            value={3}
+                      >
+                                            3
+                      </option>
+                      <option
+                                            value={4}
+                      >
+                                            4
+                      </option>
+                      <option
+                                            value={5}
+                      >
+                                            5
+                      </option>
+                      <option
+                                            value={6}
+                      >
+                                            6
+                      </option>
+                      <option
+                                            value={7}
+                      >
+                                            7
+                      </option>
+                      <option
+                                            value={8}
+                      >
+                                            8
+                      </option>
+                      <option
+                                            value={9}
+                      >
+                                            9
+                      </option>
+                      <option
+                                            value={10}
+                      >
+                                            10
+                      </option>
+                      <option
+                                            value={11}
+                      >
+                                            11
+                      </option>
+                      <option
+                                            value={12}
+                      >
+                                            12
+                      </option>
+</datalist>,
+                    ":",
+                    <input
+                      className="time-select"
+                      list="minutes"
+                      name="minutes"
+                      onChange={[Function]}
                       value={2}
+/>,
+                    <datalist
+                      id="minutes"
 >
-                      2
-</option>,
-                    <option
-                      value={3}
+                      <option
+                                            value="00"
+                      >
+                                            00
+                      </option>
+                      <option
+                                            value="05"
+                      >
+                                            05
+                      </option>
+                      <option
+                                            value="10"
+                      >
+                                            10
+                      </option>
+                      <option
+                                            value="15"
+                      >
+                                            15
+                      </option>
+                      <option
+                                            value="20"
+                      >
+                                            20
+                      </option>
+                      <option
+                                            value="25"
+                      >
+                                            25
+                      </option>
+                      <option
+                                            value="30"
+                      >
+                                            30
+                      </option>
+                      <option
+                                            value="35"
+                      >
+                                            35
+                      </option>
+                      <option
+                                            value="40"
+                      >
+                                            40
+                      </option>
+                      <option
+                                            value="45"
+                      >
+                                            45
+                      </option>
+                      <option
+                                            value="50"
+                      >
+                                            50
+                      </option>
+                      <option
+                                            value="55"
+                      >
+                                            55
+                      </option>
+                      <option
+                                            value="60"
+                      >
+                                            60
+                      </option>
+</datalist>,
+                    <div
+                      className="amPm"
+                      name="am"
+                      onClick={[Function]}
+                      value={true}
 >
-                      3
-</option>,
-                    <option
-                      value={4}
->
-                      4
-</option>,
-                    <option
-                      value={5}
->
-                      5
-</option>,
-                    <option
-                      value={6}
->
-                      6
-</option>,
-                    <option
-                      value={7}
->
-                      7
-</option>,
-                    <option
-                      value={8}
->
-                      8
-</option>,
-                    <option
-                      value={9}
->
-                      9
-</option>,
-                    <option
-                      value={10}
->
-                      10
-</option>,
-                    <option
-                      value={11}
->
-                      11
-</option>,
-                    <option
-                      value={12}
->
-                      12
-</option>,
+                      <p
+                                            className="am"
+                                            id="am"
+                      >
+                                            am
+                      </p>
+                      <p
+                                            className="pm"
+                                            id="pm"
+                      >
+                                            pm
+                      </p>
+</div>,
                   ],
-                  "id": "hours",
+                  "className": "time-container",
                 },
                 "ref": null,
                 "rendered": Array [
                   Object {
                     "instance": null,
-                    "key": "0",
+                    "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": 1,
+                      "className": "time-select",
+                      "list": "hours",
+                      "name": "hours",
+                      "onChange": [Function],
                       "value": 1,
                     },
                     "ref": null,
-                    "rendered": 1,
-                    "type": "option",
+                    "rendered": null,
+                    "type": "input",
                   },
                   Object {
                     "instance": null,
-                    "key": "1",
+                    "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": 2,
+                      "children": Array [
+                        <option
+                          value={1}
+>
+                          1
+</option>,
+                        <option
+                          value={2}
+>
+                          2
+</option>,
+                        <option
+                          value={3}
+>
+                          3
+</option>,
+                        <option
+                          value={4}
+>
+                          4
+</option>,
+                        <option
+                          value={5}
+>
+                          5
+</option>,
+                        <option
+                          value={6}
+>
+                          6
+</option>,
+                        <option
+                          value={7}
+>
+                          7
+</option>,
+                        <option
+                          value={8}
+>
+                          8
+</option>,
+                        <option
+                          value={9}
+>
+                          9
+</option>,
+                        <option
+                          value={10}
+>
+                          10
+</option>,
+                        <option
+                          value={11}
+>
+                          11
+</option>,
+                        <option
+                          value={12}
+>
+                          12
+</option>,
+                      ],
+                      "id": "hours",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": "0",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 1,
+                          "value": 1,
+                        },
+                        "ref": null,
+                        "rendered": 1,
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "1",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 2,
+                          "value": 2,
+                        },
+                        "ref": null,
+                        "rendered": 2,
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "2",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 3,
+                          "value": 3,
+                        },
+                        "ref": null,
+                        "rendered": 3,
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "3",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 4,
+                          "value": 4,
+                        },
+                        "ref": null,
+                        "rendered": 4,
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "4",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 5,
+                          "value": 5,
+                        },
+                        "ref": null,
+                        "rendered": 5,
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "5",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 6,
+                          "value": 6,
+                        },
+                        "ref": null,
+                        "rendered": 6,
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "6",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 7,
+                          "value": 7,
+                        },
+                        "ref": null,
+                        "rendered": 7,
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "7",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 8,
+                          "value": 8,
+                        },
+                        "ref": null,
+                        "rendered": 8,
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "8",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 9,
+                          "value": 9,
+                        },
+                        "ref": null,
+                        "rendered": 9,
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "9",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 10,
+                          "value": 10,
+                        },
+                        "ref": null,
+                        "rendered": 10,
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "10",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 11,
+                          "value": 11,
+                        },
+                        "ref": null,
+                        "rendered": 11,
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "11",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": 12,
+                          "value": 12,
+                        },
+                        "ref": null,
+                        "rendered": 12,
+                        "type": "option",
+                      },
+                    ],
+                    "type": "datalist",
+                  },
+                  ":",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "time-select",
+                      "list": "minutes",
+                      "name": "minutes",
+                      "onChange": [Function],
                       "value": 2,
                     },
                     "ref": null,
-                    "rendered": 2,
-                    "type": "option",
+                    "rendered": null,
+                    "type": "input",
                   },
-                  Object {
-                    "instance": null,
-                    "key": "2",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": 3,
-                      "value": 3,
-                    },
-                    "ref": null,
-                    "rendered": 3,
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "3",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": 4,
-                      "value": 4,
-                    },
-                    "ref": null,
-                    "rendered": 4,
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "4",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": 5,
-                      "value": 5,
-                    },
-                    "ref": null,
-                    "rendered": 5,
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "5",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": 6,
-                      "value": 6,
-                    },
-                    "ref": null,
-                    "rendered": 6,
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "6",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": 7,
-                      "value": 7,
-                    },
-                    "ref": null,
-                    "rendered": 7,
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "7",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": 8,
-                      "value": 8,
-                    },
-                    "ref": null,
-                    "rendered": 8,
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "8",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": 9,
-                      "value": 9,
-                    },
-                    "ref": null,
-                    "rendered": 9,
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "9",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": 10,
-                      "value": 10,
-                    },
-                    "ref": null,
-                    "rendered": 10,
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "10",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": 11,
-                      "value": 11,
-                    },
-                    "ref": null,
-                    "rendered": 11,
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "11",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": 12,
-                      "value": 12,
-                    },
-                    "ref": null,
-                    "rendered": 12,
-                    "type": "option",
-                  },
-                ],
-                "type": "datalist",
-              },
-              ":",
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "className": "time-select",
-                  "list": "minutes",
-                  "name": "minutes",
-                  "onChange": [Function],
-                  "value": 27,
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "input",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    <option
-                      value="00"
->
-                      00
-</option>,
-                    <option
-                      value="05"
->
-                      05
-</option>,
-                    <option
-                      value="10"
->
-                      10
-</option>,
-                    <option
-                      value="15"
->
-                      15
-</option>,
-                    <option
-                      value="20"
->
-                      20
-</option>,
-                    <option
-                      value="25"
->
-                      25
-</option>,
-                    <option
-                      value="30"
->
-                      30
-</option>,
-                    <option
-                      value="35"
->
-                      35
-</option>,
-                    <option
-                      value="40"
->
-                      40
-</option>,
-                    <option
-                      value="45"
->
-                      45
-</option>,
-                    <option
-                      value="50"
->
-                      50
-</option>,
-                    <option
-                      value="55"
->
-                      55
-</option>,
-                    <option
-                      value="60"
->
-                      60
-</option>,
-                  ],
-                  "id": "minutes",
-                },
-                "ref": null,
-                "rendered": Array [
-                  Object {
-                    "instance": null,
-                    "key": "0",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "00",
-                      "value": "00",
-                    },
-                    "ref": null,
-                    "rendered": "00",
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "1",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "05",
-                      "value": "05",
-                    },
-                    "ref": null,
-                    "rendered": "05",
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "2",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "10",
-                      "value": "10",
-                    },
-                    "ref": null,
-                    "rendered": "10",
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "3",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "15",
-                      "value": "15",
-                    },
-                    "ref": null,
-                    "rendered": "15",
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "4",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "20",
-                      "value": "20",
-                    },
-                    "ref": null,
-                    "rendered": "20",
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "5",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "25",
-                      "value": "25",
-                    },
-                    "ref": null,
-                    "rendered": "25",
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "6",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "30",
-                      "value": "30",
-                    },
-                    "ref": null,
-                    "rendered": "30",
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "7",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "35",
-                      "value": "35",
-                    },
-                    "ref": null,
-                    "rendered": "35",
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "8",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "40",
-                      "value": "40",
-                    },
-                    "ref": null,
-                    "rendered": "40",
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "9",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "45",
-                      "value": "45",
-                    },
-                    "ref": null,
-                    "rendered": "45",
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "10",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "50",
-                      "value": "50",
-                    },
-                    "ref": null,
-                    "rendered": "50",
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "11",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "55",
-                      "value": "55",
-                    },
-                    "ref": null,
-                    "rendered": "55",
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": "12",
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "60",
-                      "value": "60",
-                    },
-                    "ref": null,
-                    "rendered": "60",
-                    "type": "option",
-                  },
-                ],
-                "type": "datalist",
-              },
-              Object {
-                "instance": null,
-                "key": undefined,
-                "nodeType": "host",
-                "props": Object {
-                  "children": Array [
-                    <option
-                      value={true}
->
-                      am
-</option>,
-                    <option
-                      value={false}
->
-                      pm
-</option>,
-                  ],
-                  "name": "am",
-                  "onChange": [Function],
-                  "value": true,
-                },
-                "ref": null,
-                "rendered": Array [
                   Object {
                     "instance": null,
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "am",
+                      "children": Array [
+                        <option
+                          value="00"
+>
+                          00
+</option>,
+                        <option
+                          value="05"
+>
+                          05
+</option>,
+                        <option
+                          value="10"
+>
+                          10
+</option>,
+                        <option
+                          value="15"
+>
+                          15
+</option>,
+                        <option
+                          value="20"
+>
+                          20
+</option>,
+                        <option
+                          value="25"
+>
+                          25
+</option>,
+                        <option
+                          value="30"
+>
+                          30
+</option>,
+                        <option
+                          value="35"
+>
+                          35
+</option>,
+                        <option
+                          value="40"
+>
+                          40
+</option>,
+                        <option
+                          value="45"
+>
+                          45
+</option>,
+                        <option
+                          value="50"
+>
+                          50
+</option>,
+                        <option
+                          value="55"
+>
+                          55
+</option>,
+                        <option
+                          value="60"
+>
+                          60
+</option>,
+                      ],
+                      "id": "minutes",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": "0",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "00",
+                          "value": "00",
+                        },
+                        "ref": null,
+                        "rendered": "00",
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "1",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "05",
+                          "value": "05",
+                        },
+                        "ref": null,
+                        "rendered": "05",
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "2",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "10",
+                          "value": "10",
+                        },
+                        "ref": null,
+                        "rendered": "10",
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "3",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "15",
+                          "value": "15",
+                        },
+                        "ref": null,
+                        "rendered": "15",
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "4",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "20",
+                          "value": "20",
+                        },
+                        "ref": null,
+                        "rendered": "20",
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "5",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "25",
+                          "value": "25",
+                        },
+                        "ref": null,
+                        "rendered": "25",
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "6",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "30",
+                          "value": "30",
+                        },
+                        "ref": null,
+                        "rendered": "30",
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "7",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "35",
+                          "value": "35",
+                        },
+                        "ref": null,
+                        "rendered": "35",
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "8",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "40",
+                          "value": "40",
+                        },
+                        "ref": null,
+                        "rendered": "40",
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "9",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "45",
+                          "value": "45",
+                        },
+                        "ref": null,
+                        "rendered": "45",
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "10",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "50",
+                          "value": "50",
+                        },
+                        "ref": null,
+                        "rendered": "50",
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "11",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "55",
+                          "value": "55",
+                        },
+                        "ref": null,
+                        "rendered": "55",
+                        "type": "option",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": "12",
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "60",
+                          "value": "60",
+                        },
+                        "ref": null,
+                        "rendered": "60",
+                        "type": "option",
+                      },
+                    ],
+                    "type": "datalist",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <p
+                          className="am"
+                          id="am"
+>
+                          am
+</p>,
+                        <p
+                          className="pm"
+                          id="pm"
+>
+                          pm
+</p>,
+                      ],
+                      "className": "amPm",
+                      "name": "am",
+                      "onClick": [Function],
                       "value": true,
                     },
                     "ref": null,
-                    "rendered": "am",
-                    "type": "option",
-                  },
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "host",
-                    "props": Object {
-                      "children": "pm",
-                      "value": false,
-                    },
-                    "ref": null,
-                    "rendered": "pm",
-                    "type": "option",
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "am",
+                          "className": "am",
+                          "id": "am",
+                        },
+                        "ref": null,
+                        "rendered": "am",
+                        "type": "p",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "pm",
+                          "className": "pm",
+                          "id": "pm",
+                        },
+                        "ref": null,
+                        "rendered": "pm",
+                        "type": "p",
+                      },
+                    ],
+                    "type": "div",
                   },
                 ],
-                "type": "select",
+                "type": "div",
               },
             ],
             "type": "div",
@@ -1438,170 +1645,177 @@ ShallowWrapper {
                                                 at
                                     </p>
                         </div>
-                        <input
-                                    className="time-select"
-                                    list="hours"
-                                    name="hours"
-                                    onChange={[Function]}
-                                    value={10}
-                        />
-                        <datalist
-                                    id="hours"
+                        <div
+                                    className="time-container"
                         >
-                                    <option
+                                    <input
+                                                className="time-select"
+                                                list="hours"
+                                                name="hours"
+                                                onChange={[Function]}
                                                 value={1}
+                                    />
+                                    <datalist
+                                                id="hours"
                                     >
-                                                1
-                                    </option>
-                                    <option
+                                                <option
+                                                            value={1}
+                                                >
+                                                            1
+                                                </option>
+                                                <option
+                                                            value={2}
+                                                >
+                                                            2
+                                                </option>
+                                                <option
+                                                            value={3}
+                                                >
+                                                            3
+                                                </option>
+                                                <option
+                                                            value={4}
+                                                >
+                                                            4
+                                                </option>
+                                                <option
+                                                            value={5}
+                                                >
+                                                            5
+                                                </option>
+                                                <option
+                                                            value={6}
+                                                >
+                                                            6
+                                                </option>
+                                                <option
+                                                            value={7}
+                                                >
+                                                            7
+                                                </option>
+                                                <option
+                                                            value={8}
+                                                >
+                                                            8
+                                                </option>
+                                                <option
+                                                            value={9}
+                                                >
+                                                            9
+                                                </option>
+                                                <option
+                                                            value={10}
+                                                >
+                                                            10
+                                                </option>
+                                                <option
+                                                            value={11}
+                                                >
+                                                            11
+                                                </option>
+                                                <option
+                                                            value={12}
+                                                >
+                                                            12
+                                                </option>
+                                    </datalist>
+                                    :
+                                    <input
+                                                className="time-select"
+                                                list="minutes"
+                                                name="minutes"
+                                                onChange={[Function]}
                                                 value={2}
+                                    />
+                                    <datalist
+                                                id="minutes"
                                     >
-                                                2
-                                    </option>
-                                    <option
-                                                value={3}
-                                    >
-                                                3
-                                    </option>
-                                    <option
-                                                value={4}
-                                    >
-                                                4
-                                    </option>
-                                    <option
-                                                value={5}
-                                    >
-                                                5
-                                    </option>
-                                    <option
-                                                value={6}
-                                    >
-                                                6
-                                    </option>
-                                    <option
-                                                value={7}
-                                    >
-                                                7
-                                    </option>
-                                    <option
-                                                value={8}
-                                    >
-                                                8
-                                    </option>
-                                    <option
-                                                value={9}
-                                    >
-                                                9
-                                    </option>
-                                    <option
-                                                value={10}
-                                    >
-                                                10
-                                    </option>
-                                    <option
-                                                value={11}
-                                    >
-                                                11
-                                    </option>
-                                    <option
-                                                value={12}
-                                    >
-                                                12
-                                    </option>
-                        </datalist>
-                        :
-                        <input
-                                    className="time-select"
-                                    list="minutes"
-                                    name="minutes"
-                                    onChange={[Function]}
-                                    value={27}
-                        />
-                        <datalist
-                                    id="minutes"
-                        >
-                                    <option
-                                                value="00"
-                                    >
-                                                00
-                                    </option>
-                                    <option
-                                                value="05"
-                                    >
-                                                05
-                                    </option>
-                                    <option
-                                                value="10"
-                                    >
-                                                10
-                                    </option>
-                                    <option
-                                                value="15"
-                                    >
-                                                15
-                                    </option>
-                                    <option
-                                                value="20"
-                                    >
-                                                20
-                                    </option>
-                                    <option
-                                                value="25"
-                                    >
-                                                25
-                                    </option>
-                                    <option
-                                                value="30"
-                                    >
-                                                30
-                                    </option>
-                                    <option
-                                                value="35"
-                                    >
-                                                35
-                                    </option>
-                                    <option
-                                                value="40"
-                                    >
-                                                40
-                                    </option>
-                                    <option
-                                                value="45"
-                                    >
-                                                45
-                                    </option>
-                                    <option
-                                                value="50"
-                                    >
-                                                50
-                                    </option>
-                                    <option
-                                                value="55"
-                                    >
-                                                55
-                                    </option>
-                                    <option
-                                                value="60"
-                                    >
-                                                60
-                                    </option>
-                        </datalist>
-                        <select
-                                    name="am"
-                                    onChange={[Function]}
-                                    value={true}
-                        >
-                                    <option
+                                                <option
+                                                            value="00"
+                                                >
+                                                            00
+                                                </option>
+                                                <option
+                                                            value="05"
+                                                >
+                                                            05
+                                                </option>
+                                                <option
+                                                            value="10"
+                                                >
+                                                            10
+                                                </option>
+                                                <option
+                                                            value="15"
+                                                >
+                                                            15
+                                                </option>
+                                                <option
+                                                            value="20"
+                                                >
+                                                            20
+                                                </option>
+                                                <option
+                                                            value="25"
+                                                >
+                                                            25
+                                                </option>
+                                                <option
+                                                            value="30"
+                                                >
+                                                            30
+                                                </option>
+                                                <option
+                                                            value="35"
+                                                >
+                                                            35
+                                                </option>
+                                                <option
+                                                            value="40"
+                                                >
+                                                            40
+                                                </option>
+                                                <option
+                                                            value="45"
+                                                >
+                                                            45
+                                                </option>
+                                                <option
+                                                            value="50"
+                                                >
+                                                            50
+                                                </option>
+                                                <option
+                                                            value="55"
+                                                >
+                                                            55
+                                                </option>
+                                                <option
+                                                            value="60"
+                                                >
+                                                            60
+                                                </option>
+                                    </datalist>
+                                    <div
+                                                className="amPm"
+                                                name="am"
+                                                onClick={[Function]}
                                                 value={true}
                                     >
-                                                am
-                                    </option>
-                                    <option
-                                                value={false}
-                                    >
-                                                pm
-                                    </option>
-                        </select>
+                                                <p
+                                                            className="am"
+                                                            id="am"
+                                                >
+                                                            am
+                                                </p>
+                                                <p
+                                                            className="pm"
+                                                            id="pm"
+                                                >
+                                                            pm
+                                                </p>
+                                    </div>
+                        </div>
             </div>
             <button
                         className="button"
@@ -1690,170 +1904,177 @@ ShallowWrapper {
                                                 at
                                 </p>
                 </div>
-                <input
-                                className="time-select"
-                                list="hours"
-                                name="hours"
-                                onChange={[Function]}
-                                value={10}
-                />
-                <datalist
-                                id="hours"
+                <div
+                                className="time-container"
                 >
-                                <option
+                                <input
+                                                className="time-select"
+                                                list="hours"
+                                                name="hours"
+                                                onChange={[Function]}
                                                 value={1}
+                                />
+                                <datalist
+                                                id="hours"
                                 >
-                                                1
-                                </option>
-                                <option
+                                                <option
+                                                                value={1}
+                                                >
+                                                                1
+                                                </option>
+                                                <option
+                                                                value={2}
+                                                >
+                                                                2
+                                                </option>
+                                                <option
+                                                                value={3}
+                                                >
+                                                                3
+                                                </option>
+                                                <option
+                                                                value={4}
+                                                >
+                                                                4
+                                                </option>
+                                                <option
+                                                                value={5}
+                                                >
+                                                                5
+                                                </option>
+                                                <option
+                                                                value={6}
+                                                >
+                                                                6
+                                                </option>
+                                                <option
+                                                                value={7}
+                                                >
+                                                                7
+                                                </option>
+                                                <option
+                                                                value={8}
+                                                >
+                                                                8
+                                                </option>
+                                                <option
+                                                                value={9}
+                                                >
+                                                                9
+                                                </option>
+                                                <option
+                                                                value={10}
+                                                >
+                                                                10
+                                                </option>
+                                                <option
+                                                                value={11}
+                                                >
+                                                                11
+                                                </option>
+                                                <option
+                                                                value={12}
+                                                >
+                                                                12
+                                                </option>
+                                </datalist>
+                                :
+                                <input
+                                                className="time-select"
+                                                list="minutes"
+                                                name="minutes"
+                                                onChange={[Function]}
                                                 value={2}
+                                />
+                                <datalist
+                                                id="minutes"
                                 >
-                                                2
-                                </option>
-                                <option
-                                                value={3}
-                                >
-                                                3
-                                </option>
-                                <option
-                                                value={4}
-                                >
-                                                4
-                                </option>
-                                <option
-                                                value={5}
-                                >
-                                                5
-                                </option>
-                                <option
-                                                value={6}
-                                >
-                                                6
-                                </option>
-                                <option
-                                                value={7}
-                                >
-                                                7
-                                </option>
-                                <option
-                                                value={8}
-                                >
-                                                8
-                                </option>
-                                <option
-                                                value={9}
-                                >
-                                                9
-                                </option>
-                                <option
-                                                value={10}
-                                >
-                                                10
-                                </option>
-                                <option
-                                                value={11}
-                                >
-                                                11
-                                </option>
-                                <option
-                                                value={12}
-                                >
-                                                12
-                                </option>
-                </datalist>
-                :
-                <input
-                                className="time-select"
-                                list="minutes"
-                                name="minutes"
-                                onChange={[Function]}
-                                value={27}
-                />
-                <datalist
-                                id="minutes"
-                >
-                                <option
-                                                value="00"
-                                >
-                                                00
-                                </option>
-                                <option
-                                                value="05"
-                                >
-                                                05
-                                </option>
-                                <option
-                                                value="10"
-                                >
-                                                10
-                                </option>
-                                <option
-                                                value="15"
-                                >
-                                                15
-                                </option>
-                                <option
-                                                value="20"
-                                >
-                                                20
-                                </option>
-                                <option
-                                                value="25"
-                                >
-                                                25
-                                </option>
-                                <option
-                                                value="30"
-                                >
-                                                30
-                                </option>
-                                <option
-                                                value="35"
-                                >
-                                                35
-                                </option>
-                                <option
-                                                value="40"
-                                >
-                                                40
-                                </option>
-                                <option
-                                                value="45"
-                                >
-                                                45
-                                </option>
-                                <option
-                                                value="50"
-                                >
-                                                50
-                                </option>
-                                <option
-                                                value="55"
-                                >
-                                                55
-                                </option>
-                                <option
-                                                value="60"
-                                >
-                                                60
-                                </option>
-                </datalist>
-                <select
-                                name="am"
-                                onChange={[Function]}
-                                value={true}
-                >
-                                <option
+                                                <option
+                                                                value="00"
+                                                >
+                                                                00
+                                                </option>
+                                                <option
+                                                                value="05"
+                                                >
+                                                                05
+                                                </option>
+                                                <option
+                                                                value="10"
+                                                >
+                                                                10
+                                                </option>
+                                                <option
+                                                                value="15"
+                                                >
+                                                                15
+                                                </option>
+                                                <option
+                                                                value="20"
+                                                >
+                                                                20
+                                                </option>
+                                                <option
+                                                                value="25"
+                                                >
+                                                                25
+                                                </option>
+                                                <option
+                                                                value="30"
+                                                >
+                                                                30
+                                                </option>
+                                                <option
+                                                                value="35"
+                                                >
+                                                                35
+                                                </option>
+                                                <option
+                                                                value="40"
+                                                >
+                                                                40
+                                                </option>
+                                                <option
+                                                                value="45"
+                                                >
+                                                                45
+                                                </option>
+                                                <option
+                                                                value="50"
+                                                >
+                                                                50
+                                                </option>
+                                                <option
+                                                                value="55"
+                                                >
+                                                                55
+                                                </option>
+                                                <option
+                                                                value="60"
+                                                >
+                                                                60
+                                                </option>
+                                </datalist>
+                                <div
+                                                className="amPm"
+                                                name="am"
+                                                onClick={[Function]}
                                                 value={true}
                                 >
-                                                am
-                                </option>
-                                <option
-                                                value={false}
-                                >
-                                                pm
-                                </option>
-                </select>
+                                                <p
+                                                                className="am"
+                                                                id="am"
+                                                >
+                                                                am
+                                                </p>
+                                                <p
+                                                                className="pm"
+                                                                id="pm"
+                                                >
+                                                                pm
+                                                </p>
+                                </div>
+                </div>
 </div>,
               <button
                 className="button"
@@ -1909,170 +2130,177 @@ ShallowWrapper {
                                         at
                     </p>
 </div>,
-                  <input
-                    className="time-select"
-                    list="hours"
-                    name="hours"
-                    onChange={[Function]}
-                    value={10}
-/>,
-                  <datalist
-                    id="hours"
+                  <div
+                    className="time-container"
 >
-                    <option
+                    <input
+                                        className="time-select"
+                                        list="hours"
+                                        name="hours"
+                                        onChange={[Function]}
                                         value={1}
+                    />
+                    <datalist
+                                        id="hours"
                     >
-                                        1
-                    </option>
-                    <option
+                                        <option
+                                                            value={1}
+                                        >
+                                                            1
+                                        </option>
+                                        <option
+                                                            value={2}
+                                        >
+                                                            2
+                                        </option>
+                                        <option
+                                                            value={3}
+                                        >
+                                                            3
+                                        </option>
+                                        <option
+                                                            value={4}
+                                        >
+                                                            4
+                                        </option>
+                                        <option
+                                                            value={5}
+                                        >
+                                                            5
+                                        </option>
+                                        <option
+                                                            value={6}
+                                        >
+                                                            6
+                                        </option>
+                                        <option
+                                                            value={7}
+                                        >
+                                                            7
+                                        </option>
+                                        <option
+                                                            value={8}
+                                        >
+                                                            8
+                                        </option>
+                                        <option
+                                                            value={9}
+                                        >
+                                                            9
+                                        </option>
+                                        <option
+                                                            value={10}
+                                        >
+                                                            10
+                                        </option>
+                                        <option
+                                                            value={11}
+                                        >
+                                                            11
+                                        </option>
+                                        <option
+                                                            value={12}
+                                        >
+                                                            12
+                                        </option>
+                    </datalist>
+                    :
+                    <input
+                                        className="time-select"
+                                        list="minutes"
+                                        name="minutes"
+                                        onChange={[Function]}
                                         value={2}
+                    />
+                    <datalist
+                                        id="minutes"
                     >
-                                        2
-                    </option>
-                    <option
-                                        value={3}
-                    >
-                                        3
-                    </option>
-                    <option
-                                        value={4}
-                    >
-                                        4
-                    </option>
-                    <option
-                                        value={5}
-                    >
-                                        5
-                    </option>
-                    <option
-                                        value={6}
-                    >
-                                        6
-                    </option>
-                    <option
-                                        value={7}
-                    >
-                                        7
-                    </option>
-                    <option
-                                        value={8}
-                    >
-                                        8
-                    </option>
-                    <option
-                                        value={9}
-                    >
-                                        9
-                    </option>
-                    <option
-                                        value={10}
-                    >
-                                        10
-                    </option>
-                    <option
-                                        value={11}
-                    >
-                                        11
-                    </option>
-                    <option
-                                        value={12}
-                    >
-                                        12
-                    </option>
-</datalist>,
-                  ":",
-                  <input
-                    className="time-select"
-                    list="minutes"
-                    name="minutes"
-                    onChange={[Function]}
-                    value={27}
-/>,
-                  <datalist
-                    id="minutes"
->
-                    <option
-                                        value="00"
-                    >
-                                        00
-                    </option>
-                    <option
-                                        value="05"
-                    >
-                                        05
-                    </option>
-                    <option
-                                        value="10"
-                    >
-                                        10
-                    </option>
-                    <option
-                                        value="15"
-                    >
-                                        15
-                    </option>
-                    <option
-                                        value="20"
-                    >
-                                        20
-                    </option>
-                    <option
-                                        value="25"
-                    >
-                                        25
-                    </option>
-                    <option
-                                        value="30"
-                    >
-                                        30
-                    </option>
-                    <option
-                                        value="35"
-                    >
-                                        35
-                    </option>
-                    <option
-                                        value="40"
-                    >
-                                        40
-                    </option>
-                    <option
-                                        value="45"
-                    >
-                                        45
-                    </option>
-                    <option
-                                        value="50"
-                    >
-                                        50
-                    </option>
-                    <option
-                                        value="55"
-                    >
-                                        55
-                    </option>
-                    <option
-                                        value="60"
-                    >
-                                        60
-                    </option>
-</datalist>,
-                  <select
-                    name="am"
-                    onChange={[Function]}
-                    value={true}
->
-                    <option
+                                        <option
+                                                            value="00"
+                                        >
+                                                            00
+                                        </option>
+                                        <option
+                                                            value="05"
+                                        >
+                                                            05
+                                        </option>
+                                        <option
+                                                            value="10"
+                                        >
+                                                            10
+                                        </option>
+                                        <option
+                                                            value="15"
+                                        >
+                                                            15
+                                        </option>
+                                        <option
+                                                            value="20"
+                                        >
+                                                            20
+                                        </option>
+                                        <option
+                                                            value="25"
+                                        >
+                                                            25
+                                        </option>
+                                        <option
+                                                            value="30"
+                                        >
+                                                            30
+                                        </option>
+                                        <option
+                                                            value="35"
+                                        >
+                                                            35
+                                        </option>
+                                        <option
+                                                            value="40"
+                                        >
+                                                            40
+                                        </option>
+                                        <option
+                                                            value="45"
+                                        >
+                                                            45
+                                        </option>
+                                        <option
+                                                            value="50"
+                                        >
+                                                            50
+                                        </option>
+                                        <option
+                                                            value="55"
+                                        >
+                                                            55
+                                        </option>
+                                        <option
+                                                            value="60"
+                                        >
+                                                            60
+                                        </option>
+                    </datalist>
+                    <div
+                                        className="amPm"
+                                        name="am"
+                                        onClick={[Function]}
                                         value={true}
                     >
-                                        am
-                    </option>
-                    <option
-                                        value={false}
-                    >
-                                        pm
-                    </option>
-</select>,
+                                        <p
+                                                            className="am"
+                                                            id="am"
+                                        >
+                                                            am
+                                        </p>
+                                        <p
+                                                            className="pm"
+                                                            id="pm"
+                                        >
+                                                            pm
+                                        </p>
+                    </div>
+</div>,
                 ],
                 "className": "time-select-container",
               },
@@ -2196,534 +2424,720 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "className": "time-select",
-                    "list": "hours",
-                    "name": "hours",
-                    "onChange": [Function],
-                    "value": 10,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "input",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
                     "children": Array [
-                      <option
+                      <input
+                        className="time-select"
+                        list="hours"
+                        name="hours"
+                        onChange={[Function]}
                         value={1}
+/>,
+                      <datalist
+                        id="hours"
 >
-                        1
-</option>,
-                      <option
+                        <option
+                                                value={1}
+                        >
+                                                1
+                        </option>
+                        <option
+                                                value={2}
+                        >
+                                                2
+                        </option>
+                        <option
+                                                value={3}
+                        >
+                                                3
+                        </option>
+                        <option
+                                                value={4}
+                        >
+                                                4
+                        </option>
+                        <option
+                                                value={5}
+                        >
+                                                5
+                        </option>
+                        <option
+                                                value={6}
+                        >
+                                                6
+                        </option>
+                        <option
+                                                value={7}
+                        >
+                                                7
+                        </option>
+                        <option
+                                                value={8}
+                        >
+                                                8
+                        </option>
+                        <option
+                                                value={9}
+                        >
+                                                9
+                        </option>
+                        <option
+                                                value={10}
+                        >
+                                                10
+                        </option>
+                        <option
+                                                value={11}
+                        >
+                                                11
+                        </option>
+                        <option
+                                                value={12}
+                        >
+                                                12
+                        </option>
+</datalist>,
+                      ":",
+                      <input
+                        className="time-select"
+                        list="minutes"
+                        name="minutes"
+                        onChange={[Function]}
                         value={2}
+/>,
+                      <datalist
+                        id="minutes"
 >
-                        2
-</option>,
-                      <option
-                        value={3}
+                        <option
+                                                value="00"
+                        >
+                                                00
+                        </option>
+                        <option
+                                                value="05"
+                        >
+                                                05
+                        </option>
+                        <option
+                                                value="10"
+                        >
+                                                10
+                        </option>
+                        <option
+                                                value="15"
+                        >
+                                                15
+                        </option>
+                        <option
+                                                value="20"
+                        >
+                                                20
+                        </option>
+                        <option
+                                                value="25"
+                        >
+                                                25
+                        </option>
+                        <option
+                                                value="30"
+                        >
+                                                30
+                        </option>
+                        <option
+                                                value="35"
+                        >
+                                                35
+                        </option>
+                        <option
+                                                value="40"
+                        >
+                                                40
+                        </option>
+                        <option
+                                                value="45"
+                        >
+                                                45
+                        </option>
+                        <option
+                                                value="50"
+                        >
+                                                50
+                        </option>
+                        <option
+                                                value="55"
+                        >
+                                                55
+                        </option>
+                        <option
+                                                value="60"
+                        >
+                                                60
+                        </option>
+</datalist>,
+                      <div
+                        className="amPm"
+                        name="am"
+                        onClick={[Function]}
+                        value={true}
 >
-                        3
-</option>,
-                      <option
-                        value={4}
->
-                        4
-</option>,
-                      <option
-                        value={5}
->
-                        5
-</option>,
-                      <option
-                        value={6}
->
-                        6
-</option>,
-                      <option
-                        value={7}
->
-                        7
-</option>,
-                      <option
-                        value={8}
->
-                        8
-</option>,
-                      <option
-                        value={9}
->
-                        9
-</option>,
-                      <option
-                        value={10}
->
-                        10
-</option>,
-                      <option
-                        value={11}
->
-                        11
-</option>,
-                      <option
-                        value={12}
->
-                        12
-</option>,
+                        <p
+                                                className="am"
+                                                id="am"
+                        >
+                                                am
+                        </p>
+                        <p
+                                                className="pm"
+                                                id="pm"
+                        >
+                                                pm
+                        </p>
+</div>,
                     ],
-                    "id": "hours",
+                    "className": "time-container",
                   },
                   "ref": null,
                   "rendered": Array [
                     Object {
                       "instance": null,
-                      "key": "0",
+                      "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": 1,
+                        "className": "time-select",
+                        "list": "hours",
+                        "name": "hours",
+                        "onChange": [Function],
                         "value": 1,
                       },
                       "ref": null,
-                      "rendered": 1,
-                      "type": "option",
+                      "rendered": null,
+                      "type": "input",
                     },
                     Object {
                       "instance": null,
-                      "key": "1",
+                      "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": 2,
+                        "children": Array [
+                          <option
+                            value={1}
+>
+                            1
+</option>,
+                          <option
+                            value={2}
+>
+                            2
+</option>,
+                          <option
+                            value={3}
+>
+                            3
+</option>,
+                          <option
+                            value={4}
+>
+                            4
+</option>,
+                          <option
+                            value={5}
+>
+                            5
+</option>,
+                          <option
+                            value={6}
+>
+                            6
+</option>,
+                          <option
+                            value={7}
+>
+                            7
+</option>,
+                          <option
+                            value={8}
+>
+                            8
+</option>,
+                          <option
+                            value={9}
+>
+                            9
+</option>,
+                          <option
+                            value={10}
+>
+                            10
+</option>,
+                          <option
+                            value={11}
+>
+                            11
+</option>,
+                          <option
+                            value={12}
+>
+                            12
+</option>,
+                        ],
+                        "id": "hours",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": "0",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 1,
+                            "value": 1,
+                          },
+                          "ref": null,
+                          "rendered": 1,
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "1",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 2,
+                            "value": 2,
+                          },
+                          "ref": null,
+                          "rendered": 2,
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "2",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 3,
+                            "value": 3,
+                          },
+                          "ref": null,
+                          "rendered": 3,
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "3",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 4,
+                            "value": 4,
+                          },
+                          "ref": null,
+                          "rendered": 4,
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "4",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 5,
+                            "value": 5,
+                          },
+                          "ref": null,
+                          "rendered": 5,
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "5",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 6,
+                            "value": 6,
+                          },
+                          "ref": null,
+                          "rendered": 6,
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "6",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 7,
+                            "value": 7,
+                          },
+                          "ref": null,
+                          "rendered": 7,
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "7",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 8,
+                            "value": 8,
+                          },
+                          "ref": null,
+                          "rendered": 8,
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "8",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 9,
+                            "value": 9,
+                          },
+                          "ref": null,
+                          "rendered": 9,
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "9",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 10,
+                            "value": 10,
+                          },
+                          "ref": null,
+                          "rendered": 10,
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "10",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 11,
+                            "value": 11,
+                          },
+                          "ref": null,
+                          "rendered": 11,
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "11",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": 12,
+                            "value": 12,
+                          },
+                          "ref": null,
+                          "rendered": 12,
+                          "type": "option",
+                        },
+                      ],
+                      "type": "datalist",
+                    },
+                    ":",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "className": "time-select",
+                        "list": "minutes",
+                        "name": "minutes",
+                        "onChange": [Function],
                         "value": 2,
                       },
                       "ref": null,
-                      "rendered": 2,
-                      "type": "option",
+                      "rendered": null,
+                      "type": "input",
                     },
-                    Object {
-                      "instance": null,
-                      "key": "2",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": 3,
-                        "value": 3,
-                      },
-                      "ref": null,
-                      "rendered": 3,
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "3",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": 4,
-                        "value": 4,
-                      },
-                      "ref": null,
-                      "rendered": 4,
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "4",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": 5,
-                        "value": 5,
-                      },
-                      "ref": null,
-                      "rendered": 5,
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "5",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": 6,
-                        "value": 6,
-                      },
-                      "ref": null,
-                      "rendered": 6,
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "6",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": 7,
-                        "value": 7,
-                      },
-                      "ref": null,
-                      "rendered": 7,
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "7",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": 8,
-                        "value": 8,
-                      },
-                      "ref": null,
-                      "rendered": 8,
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "8",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": 9,
-                        "value": 9,
-                      },
-                      "ref": null,
-                      "rendered": 9,
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "9",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": 10,
-                        "value": 10,
-                      },
-                      "ref": null,
-                      "rendered": 10,
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "10",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": 11,
-                        "value": 11,
-                      },
-                      "ref": null,
-                      "rendered": 11,
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "11",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": 12,
-                        "value": 12,
-                      },
-                      "ref": null,
-                      "rendered": 12,
-                      "type": "option",
-                    },
-                  ],
-                  "type": "datalist",
-                },
-                ":",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "className": "time-select",
-                    "list": "minutes",
-                    "name": "minutes",
-                    "onChange": [Function],
-                    "value": 27,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "input",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": Array [
-                      <option
-                        value="00"
->
-                        00
-</option>,
-                      <option
-                        value="05"
->
-                        05
-</option>,
-                      <option
-                        value="10"
->
-                        10
-</option>,
-                      <option
-                        value="15"
->
-                        15
-</option>,
-                      <option
-                        value="20"
->
-                        20
-</option>,
-                      <option
-                        value="25"
->
-                        25
-</option>,
-                      <option
-                        value="30"
->
-                        30
-</option>,
-                      <option
-                        value="35"
->
-                        35
-</option>,
-                      <option
-                        value="40"
->
-                        40
-</option>,
-                      <option
-                        value="45"
->
-                        45
-</option>,
-                      <option
-                        value="50"
->
-                        50
-</option>,
-                      <option
-                        value="55"
->
-                        55
-</option>,
-                      <option
-                        value="60"
->
-                        60
-</option>,
-                    ],
-                    "id": "minutes",
-                  },
-                  "ref": null,
-                  "rendered": Array [
-                    Object {
-                      "instance": null,
-                      "key": "0",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "00",
-                        "value": "00",
-                      },
-                      "ref": null,
-                      "rendered": "00",
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "1",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "05",
-                        "value": "05",
-                      },
-                      "ref": null,
-                      "rendered": "05",
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "2",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "10",
-                        "value": "10",
-                      },
-                      "ref": null,
-                      "rendered": "10",
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "3",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "15",
-                        "value": "15",
-                      },
-                      "ref": null,
-                      "rendered": "15",
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "4",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "20",
-                        "value": "20",
-                      },
-                      "ref": null,
-                      "rendered": "20",
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "5",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "25",
-                        "value": "25",
-                      },
-                      "ref": null,
-                      "rendered": "25",
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "6",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "30",
-                        "value": "30",
-                      },
-                      "ref": null,
-                      "rendered": "30",
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "7",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "35",
-                        "value": "35",
-                      },
-                      "ref": null,
-                      "rendered": "35",
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "8",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "40",
-                        "value": "40",
-                      },
-                      "ref": null,
-                      "rendered": "40",
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "9",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "45",
-                        "value": "45",
-                      },
-                      "ref": null,
-                      "rendered": "45",
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "10",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "50",
-                        "value": "50",
-                      },
-                      "ref": null,
-                      "rendered": "50",
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "11",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "55",
-                        "value": "55",
-                      },
-                      "ref": null,
-                      "rendered": "55",
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": "12",
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "60",
-                        "value": "60",
-                      },
-                      "ref": null,
-                      "rendered": "60",
-                      "type": "option",
-                    },
-                  ],
-                  "type": "datalist",
-                },
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "host",
-                  "props": Object {
-                    "children": Array [
-                      <option
-                        value={true}
->
-                        am
-</option>,
-                      <option
-                        value={false}
->
-                        pm
-</option>,
-                    ],
-                    "name": "am",
-                    "onChange": [Function],
-                    "value": true,
-                  },
-                  "ref": null,
-                  "rendered": Array [
                     Object {
                       "instance": null,
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": "am",
+                        "children": Array [
+                          <option
+                            value="00"
+>
+                            00
+</option>,
+                          <option
+                            value="05"
+>
+                            05
+</option>,
+                          <option
+                            value="10"
+>
+                            10
+</option>,
+                          <option
+                            value="15"
+>
+                            15
+</option>,
+                          <option
+                            value="20"
+>
+                            20
+</option>,
+                          <option
+                            value="25"
+>
+                            25
+</option>,
+                          <option
+                            value="30"
+>
+                            30
+</option>,
+                          <option
+                            value="35"
+>
+                            35
+</option>,
+                          <option
+                            value="40"
+>
+                            40
+</option>,
+                          <option
+                            value="45"
+>
+                            45
+</option>,
+                          <option
+                            value="50"
+>
+                            50
+</option>,
+                          <option
+                            value="55"
+>
+                            55
+</option>,
+                          <option
+                            value="60"
+>
+                            60
+</option>,
+                        ],
+                        "id": "minutes",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": "0",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "00",
+                            "value": "00",
+                          },
+                          "ref": null,
+                          "rendered": "00",
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "1",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "05",
+                            "value": "05",
+                          },
+                          "ref": null,
+                          "rendered": "05",
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "2",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "10",
+                            "value": "10",
+                          },
+                          "ref": null,
+                          "rendered": "10",
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "3",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "15",
+                            "value": "15",
+                          },
+                          "ref": null,
+                          "rendered": "15",
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "4",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "20",
+                            "value": "20",
+                          },
+                          "ref": null,
+                          "rendered": "20",
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "5",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "25",
+                            "value": "25",
+                          },
+                          "ref": null,
+                          "rendered": "25",
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "6",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "30",
+                            "value": "30",
+                          },
+                          "ref": null,
+                          "rendered": "30",
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "7",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "35",
+                            "value": "35",
+                          },
+                          "ref": null,
+                          "rendered": "35",
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "8",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "40",
+                            "value": "40",
+                          },
+                          "ref": null,
+                          "rendered": "40",
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "9",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "45",
+                            "value": "45",
+                          },
+                          "ref": null,
+                          "rendered": "45",
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "10",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "50",
+                            "value": "50",
+                          },
+                          "ref": null,
+                          "rendered": "50",
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "11",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "55",
+                            "value": "55",
+                          },
+                          "ref": null,
+                          "rendered": "55",
+                          "type": "option",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": "12",
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "60",
+                            "value": "60",
+                          },
+                          "ref": null,
+                          "rendered": "60",
+                          "type": "option",
+                        },
+                      ],
+                      "type": "datalist",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <p
+                            className="am"
+                            id="am"
+>
+                            am
+</p>,
+                          <p
+                            className="pm"
+                            id="pm"
+>
+                            pm
+</p>,
+                        ],
+                        "className": "amPm",
+                        "name": "am",
+                        "onClick": [Function],
                         "value": true,
                       },
                       "ref": null,
-                      "rendered": "am",
-                      "type": "option",
-                    },
-                    Object {
-                      "instance": null,
-                      "key": undefined,
-                      "nodeType": "host",
-                      "props": Object {
-                        "children": "pm",
-                        "value": false,
-                      },
-                      "ref": null,
-                      "rendered": "pm",
-                      "type": "option",
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "am",
+                            "className": "am",
+                            "id": "am",
+                          },
+                          "ref": null,
+                          "rendered": "am",
+                          "type": "p",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "pm",
+                            "className": "pm",
+                            "id": "pm",
+                          },
+                          "ref": null,
+                          "rendered": "pm",
+                          "type": "p",
+                        },
+                      ],
+                      "type": "div",
                     },
                   ],
-                  "type": "select",
+                  "type": "div",
                 },
               ],
               "type": "div",
