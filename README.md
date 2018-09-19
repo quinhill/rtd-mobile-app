@@ -30,5 +30,23 @@ __Front End__
  
  in your command line, run:
  
- `git clone 
+ `git clone git@github.com:Awiedenman/rtd-mobile-app.git`
+ 
+ cd into the repo and in your command line run:
+ 
+ `npm install`
+ 
+ once the dependencies have been installed, to view the app, run:
+ 
+ `npm start`
+ 
+ ## Authors
+ 
+ __Front End__
+ * Austin Wiedenman [GitHub profile](https://github.com/Awiedenman) [Turing profile](https://alumni.turing.io/alumni/austin-wiedenman)
+ * Quinlan Hill [GitHub profile](https://github.com/quinhill) [Turing profile](https://alumni.turing.io/alumni/quinlan-hill)
+ 
+ __Back End__
+ * Jamison Ordway [GitHub profile](https://github.com/jamisonordway) [Turing profile](https://alumni.turing.io/alumni/jamison-ordway)
+ * James Nelson [GitHub profile](https://github.com/jamesrnelson) [Turing profile](https://alumni.turing.io/alumni/jimmy-nelson)
  
