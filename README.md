@@ -43,10 +43,10 @@ __Front End__
  ## Authors
  
  __Front End__
- * Austin Wiedenman [GitHub profile](https://github.com/Awiedenman) [Turing profile](https://alumni.turing.io/alumni/austin-wiedenman)
- * Quinlan Hill [GitHub profile](https://github.com/quinhill) [Turing profile](https://alumni.turing.io/alumni/quinlan-hill)
+ * Austin Wiedenman [GitHub profile](https://github.com/Awiedenman)/[Turing profile](https://alumni.turing.io/alumni/austin-wiedenman)
+ * Quinlan Hill [GitHub profile](https://github.com/quinhill)/[Turing profile](https://alumni.turing.io/alumni/quinlan-hill)
  
  __Back End__
- * Jamison Ordway [GitHub profile](https://github.com/jamisonordway) [Turing profile](https://alumni.turing.io/alumni/jamison-ordway)
- * James Nelson [GitHub profile](https://github.com/jamesrnelson) [Turing profile](https://alumni.turing.io/alumni/jimmy-nelson)
+ * Jamison Ordway [GitHub profile](https://github.com/jamisonordway)/[Turing profile](https://alumni.turing.io/alumni/jamison-ordway)
+ * James Nelson [GitHub profile](https://github.com/jamesrnelson)/[Turing profile](https://alumni.turing.io/alumni/jimmy-nelson)
  
