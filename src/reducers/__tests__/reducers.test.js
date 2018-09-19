@@ -84,7 +84,7 @@ describe('Reducers', () => {
 
   describe('itineraryReducer', () => {
     it('should return the default state if nothing is passed in', () => {
-      const expected = {};
+      const expected = [];
       const result = itinerary(undefined, '');
 
       expect(result).toEqual(expected);

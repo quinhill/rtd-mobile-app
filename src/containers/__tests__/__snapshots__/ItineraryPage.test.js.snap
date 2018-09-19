@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItineraryPage should match snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ItineraryPage
+    addFavorite={[Function]}
+    favorites={
+        Array [
+            Object {
+              "arrival_time": "6:33am",
+              "departure_time": "5:51am",
+              "distance": "8.1 mi",
+              "duration": "42 mins",
+              "end_address": "Columbine St, Denver, CO, USA",
+              "favorite": false,
+              "itinerary_id": 59,
+              "start_address": "S Monaco Pkwy, Colorado, USA",
+              "steps": Array [
+                Object {
+                  "arrival_stop": "Monaco Pkwy & 29th Ave",
+                  "arrival_time": "6:07am",
+                  "color": "#0277bd",
+                  "credit_name": "Regional Transportation District",
+                  "credit_url": "http://rtd-denver.com/",
+                  "departure_stop": "S Monaco Pkwy & Evans Ave",
+                  "departure_time": "5:51am",
+                  "distance": "5.5 mi",
+                  "duration": "16 mins",
+                  "headsign": "Central Park 65 via Monaco",
+                  "id": 656,
+                  "instructions": "Bus towards Central Park 65 via Monaco",
+                  "name": "Monaco Parkway",
+                  "num_stops": 24,
+                  "possible_route_id": 169,
+                  "short_name": "65",
+                  "travel_mode": "TRANSIT",
+                  "vehicle_type": "Bus",
+                },
+                Object {
+                  "arrival_time": "6:33am",
+                  "departure_time": "5:51am",
+                  "distance": "8.1 mi",
+                  "duration": "42 mins",
+                  "end_address": "Columbine St, Denver, CO, USA",
+                  "favorite": false,
+                  "itinerary_id": 59,
+                  "start_address": "S Monaco Pkwy, Colorado, USA",
+                  "steps": Array [
+                    Object {
+                      "arrival_stop": "Monaco Pkwy & 29th Ave",
+                      "arrival_time": "6:07am",
+                      "color": "#0277bd",
+                      "credit_name": "Regional Transportation District",
+                      "credit_url": "http://rtd-denver.com/",
+                      "departure_stop": "S Monaco Pkwy & Evans Ave",
+                      "departure_time": "5:51am",
+                      "distance": "5.5 mi",
+                      "duration": "16 mins",
+                      "headsign": "Central Park 65 via Monaco",
+                      "id": 656,
+                      "instructions": "Bus towards Central Park 65 via Monaco",
+                      "name": "Monaco Parkway",
+                      "num_stops": 24,
+                      "possible_route_id": 169,
+                      "short_name": "65",
+                      "travel_mode": "TRANSIT",
+                      "vehicle_type": "Bus",
+                    },
+                  ],
+                },
+              ],
+            },
+          ]
+    }
+    itinerary={
+        Array [
+            Object {
+              "arrival_time": "11:12am",
+              "departure_time": "11:02am",
+              "distance": "0.8 mi",
+              "duration": "10 mins",
+              "end_address": "650 15th St, Denver, CO 80202, USA",
+              "favorite": false,
+              "itinerary_id": 92,
+              "start_address": "LoDo, Denver, CO 80202, USA",
+              "title": null,
+            },
+          ]
+    }
+    uid="12"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <ItineraryCard
+          addFavorite={[Function]}
+          itinerary={
+                    Object {
+                              "arrival_time": "11:12am",
+                              "departure_time": "11:02am",
+                              "distance": "0.8 mi",
+                              "duration": "10 mins",
+                              "end_address": "650 15th St, Denver, CO 80202, USA",
+                              "favorite": false,
+                              "itinerary_id": 92,
+                              "start_address": "LoDo, Denver, CO 80202, USA",
+                              "title": null,
+                            }
+          }
+          uid="12"
+/>,
+      ],
+      "className": "itinerary-page",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "0",
+        "nodeType": "class",
+        "props": Object {
+          "addFavorite": [Function],
+          "itinerary": Object {
+            "arrival_time": "11:12am",
+            "departure_time": "11:02am",
+            "distance": "0.8 mi",
+            "duration": "10 mins",
+            "end_address": "650 15th St, Denver, CO 80202, USA",
+            "favorite": false,
+            "itinerary_id": 92,
+            "start_address": "LoDo, Denver, CO 80202, USA",
+            "title": null,
+          },
+          "uid": "12",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <ItineraryCard
+            addFavorite={[Function]}
+            itinerary={
+                        Object {
+                                    "arrival_time": "11:12am",
+                                    "departure_time": "11:02am",
+                                    "distance": "0.8 mi",
+                                    "duration": "10 mins",
+                                    "end_address": "650 15th St, Denver, CO 80202, USA",
+                                    "favorite": false,
+                                    "itinerary_id": 92,
+                                    "start_address": "LoDo, Denver, CO 80202, USA",
+                                    "title": null,
+                                  }
+            }
+            uid="12"
+/>,
+        ],
+        "className": "itinerary-page",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "class",
+          "props": Object {
+            "addFavorite": [Function],
+            "itinerary": Object {
+              "arrival_time": "11:12am",
+              "departure_time": "11:02am",
+              "distance": "0.8 mi",
+              "duration": "10 mins",
+              "end_address": "650 15th St, Denver, CO 80202, USA",
+              "favorite": false,
+              "itinerary_id": 92,
+              "start_address": "LoDo, Denver, CO 80202, USA",
+              "title": null,
+            },
+            "uid": "12",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;

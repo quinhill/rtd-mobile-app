@@ -43,4 +43,4 @@ describe('EndAddressInput', () => {
       expect(wrapper.state('endAddress')).toEqual(mockEndAddress)
     });
   });
-});
+}); 

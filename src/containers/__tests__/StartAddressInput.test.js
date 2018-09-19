@@ -4,20 +4,26 @@ import { shallow } from 'enzyme';
 import { storeEndAddress } from '../../actions';
 
 describe('StartAddressInput', () => {
-  it('should match snapshot', () => {
-    const wrapper =  shallow(
-      <StartAddressInput/>);
+  let wrapper;
+  let mockStoreStartAddress;
 
+  beforeEach(() => {
+    mockStoreStartAddress= jest.fn();
+    wrapper = shallow(
+      <StartAddressInput
+        storeStartAddress={mockStoreStartAddress}
+      />);
+  });
+  it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
   
   describe('handleChange', () => {
     it('should update the state of "startAddress" on change of the input field', () => {
-      const wrapper = shallow(<StartAddressInput />);
+      const mockStartAddress = 'Union Station, Denver, CO, USA';
 
-      wrapper.instance().handleChange('');
-
-      expect(wrapper.state('startAddress')).toEqual('unions station');
+      wrapper.instance().handleChange(mockStartAddress);
+      expect(wrapper.state('startAddress')).toEqual(mockStartAddress);
     });
   });
 

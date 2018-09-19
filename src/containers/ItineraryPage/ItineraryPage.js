@@ -7,7 +7,7 @@ import addFavoriteThunk from '../../thunks/addFavoriteThunk';
 
 import './ItineraryPage.css';
 
-class ItineraryPage extends Component {
+export class ItineraryPage extends Component {
 
   addFavorite = (event) => {
     const { id, value } = event.target;
