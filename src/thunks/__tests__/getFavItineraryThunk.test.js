@@ -1,8 +1,8 @@
-import { addFavoriteThunk } from '../addFavoriteThunk';
+import { getFavItineraryThunk } from '../getFavItineraryThunk';
 import { hasErrored, isLoading, storeItinerary } from "../../actions";
 
 
-describe('addFavoriteThunk', () => {
+describe('getFavItineraryThunk', () => {
   let mockUrl;
   let mockDispatch;
 
@@ -12,7 +12,7 @@ describe('addFavoriteThunk', () => {
   })
 
   it("calls dispatch with the isLoading action ", () => {
-    const thunk = addFavoriteThunk(mockUrl);
+    const thunk = getFavItineraryThunk(mockUrl);
 
     thunk(mockDispatch);
 
@@ -25,7 +25,7 @@ describe('addFavoriteThunk', () => {
       ok: false
     }));
 
-    const thunk = addFavoriteThunk(mockUrl);
+    const thunk = getFavItineraryThunk(mockUrl);
 
     await thunk(mockDispatch);
 
@@ -38,12 +38,11 @@ describe('addFavoriteThunk', () => {
       ok: true
     }));
 
-    const thunk = addFavoriteThunk(mockUrl);
+    const thunk = getFavItineraryThunk(mockUrl);
 
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
   });
-
 
 });

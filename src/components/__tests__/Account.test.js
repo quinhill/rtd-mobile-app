@@ -4,7 +4,12 @@ import { AccountPage } from '../Account/Account';
 
 describe('Account', () => {
   it('should match Snapshot', () => {
-    const wrapper = shallow(<AccountPage />);
+    const mockEmail =' a@.com';
+    const mockUid = '12';
+    const wrapper = shallow(
+      <AccountPage 
+        user={{mockEmail, mockUid}}
+      />);
 
     expect(wrapper).toMatchSnapshot();
   });

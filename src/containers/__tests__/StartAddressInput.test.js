@@ -4,40 +4,45 @@ import { shallow } from 'enzyme';
 import { storeEndAddress } from '../../actions';
 
 describe('StartAddressInput', () => {
-  it('should match snapshot', () => {
-    const wrapper =  shallow(
-      <StartAddressInput/>);
+  let wrapper;
+  let mockStoreStartAddress;
 
+  beforeEach(() => {
+    mockStoreStartAddress= jest.fn();
+    wrapper = shallow(
+      <StartAddressInput
+        storeStartAddress={mockStoreStartAddress}
+      />);
+  });
+  it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
   
   describe('handleChange', () => {
     it('should update the state of "startAddress" on change of the input field', () => {
-      const wrapper = shallow(<StartAddressInput />);
+      const mockStartAddress = 'Union Station, Denver, CO, USA';
 
-      wrapper.instance().handleChange('');
-
-      expect(wrapper.state('startAddress')).toEqual('unions station');
+      wrapper.instance().handleChange(mockStartAddress);
+      expect(wrapper.state('startAddress')).toEqual(mockStartAddress);
     });
   });
 
   describe('handleSelect', () => {
     it('should call storeAddress on the select of the input form ', () => {
-      const wrapper = shallow(<StartAddressInput />);
-      const handleSelect = jest.fn();
-      const { storeStartAddress } = jest.fn();
-      const event = {
-        target : {
-          name: 'startAdress',
-          value: 'union station'
-        }
-      };
+      const mockStartAddress = "Union Station, Denver, CO, USA";
+      
+      wrapper.instance().handleSelect(mockStartAddress);
 
-      handleSelect();
-
-      wrapper.find('.start-address-input').simulate('select', event);
-
-      expect(storeStartAddress).toHaveBeenCalled();
+      expect(mockStoreStartAddress).toHaveBeenCalledWith(mockStartAddress);
     });
   });
+
+  it('should set the state with a new start address', () => {
+    const mockStartAddress = "Union Station, Denver, CO, USA";
+
+    wrapper.instance().handleSelect(mockStartAddress);
+
+    expect(wrapper.state('startAddress')).toEqual(mockStartAddress);
+  });
+  
 });

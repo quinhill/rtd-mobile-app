@@ -10,7 +10,8 @@ import { infoCleaner, cleanStep } from '../../constants/cleanerFunctions';
 
 import './ItineraryPage.css';
 
-class ItineraryPage extends Component {
+
+export class ItineraryPage extends Component {
   constructor(props) {
     super(props)
     this.state = {

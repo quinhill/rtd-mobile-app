@@ -1,35 +1,35 @@
-import { addFavoriteThunk } from '../addFavoriteThunk';
 import { hasErrored, isLoading, storeItinerary } from "../../actions";
+import getFavoritesThunk from "../getFavoritesThunk";
+// import { mockItinerary } from "../../__mocks__/mockItinerary";
 
 
-describe('addFavoriteThunk', () => {
+describe('getFavoritesThunk', () => {
   let mockUrl;
   let mockDispatch;
 
   beforeEach(() => {
-    mockUrl = 'www.mockUrl.com';
+    mockUrl = 'www.someurl.com';
     mockDispatch = jest.fn();
-  })
+  });
 
-  it("calls dispatch with the isLoading action ", () => {
-    const thunk = addFavoriteThunk(mockUrl);
+  it('calls dispatch with the isLoading action ', () => {
+    const thunk = getFavoritesThunk(mockUrl);
 
     thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
   });
 
-
   it('should dispatch hasErrored(true) if the response is not ok', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: false
     }));
-
-    const thunk = addFavoriteThunk(mockUrl);
-
+  
+    const thunk = getFavoritesThunk(mockUrl); 
+  
     await thunk(mockDispatch);
-
-    expect(mockDispatch).toHaveBeenCalledWith(({ "isLoading": true, "type": "IS_LOADING" }));
+  
+    expect(mockDispatch).toHaveBeenCalledWith(({"isLoading": true, "type": "IS_LOADING"}));
     expect(mockDispatch).not.toHaveBeenCalledWith(isLoading(false));
   });
 
@@ -37,13 +37,11 @@ describe('addFavoriteThunk', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true
     }));
-
-    const thunk = addFavoriteThunk(mockUrl);
-
+  
+    const thunk = getFavoritesThunk(mockUrl); 
+  
     await thunk(mockDispatch);
-
+  
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
   });
-
-
 });

@@ -44,7 +44,7 @@ describe('signInThunk', () => {
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
   });
 
-  it('should dispatch storeItinerary with the correct param', async () => {
+  it.skip('should dispatch storeItinerary with the correct param', async () => {
     const mockUser = {
       created_at : "2018-09-16T17:17:43.318Z",
       email : "www@wwww.com",

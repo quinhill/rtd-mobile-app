@@ -1,6 +1,6 @@
 import { isLoading, hasErrored, storeItinerary } from '../actions';
 
-const getFavItineraryThunk = (url) => {
+export const getFavItineraryThunk = (url) => {
   return (dispatch) => {
     dispatch(isLoading(true));
     fetch(url)

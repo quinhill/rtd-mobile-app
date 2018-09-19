@@ -26,7 +26,7 @@ export class StartAddressInput extends Component {
   deleteInput = (event) => {
     event.preventDefault();
     const { name } = event.target;
-    this.setState({ [name]: '' })
+    this.setState({ [name]: '' });
   }
  
   render() {

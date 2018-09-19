@@ -8,6 +8,6 @@ describe('Header', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
-});
+}); 
 
 

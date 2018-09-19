@@ -3,7 +3,7 @@
 exports[`DurationLine should match the snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Unknown
+  Symbol(enzyme.__unrendered__): <DurationLines
     totalSteps={
         Object {
             "duration": 20,
@@ -53,6 +53,7 @@ ShallowWrapper {
       ],
       "className": "line-container",
       "style": Object {
+        "display": "flex",
         "width": "100%",
       },
     },
@@ -149,6 +150,7 @@ ShallowWrapper {
         ],
         "className": "line-container",
         "style": Object {
+          "display": "flex",
           "width": "100%",
         },
       },

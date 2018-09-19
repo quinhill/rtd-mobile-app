@@ -11,7 +11,7 @@ describe('EndAddressInput', () => {
       <EndAddressInput  
         storeEndAddress={mockStoreEndAddress}
       />);
-  });
+  }); 
    
   test('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
@@ -40,7 +40,7 @@ describe('EndAddressInput', () => {
       
       wrapper.instance().handleSelect(mockEndAddress);
 
-      expect(wrapper.state('endAddress')).toEqual(mockEndAddress)
+      expect(wrapper.state('endAddress')).toEqual(mockEndAddress);
     });
   });
-});
+}); 
