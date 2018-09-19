@@ -41,6 +41,12 @@ export class Search extends Component {
     };
   }
 
+  handleClick = () => {
+    this.setState({
+      am: !this.state.am
+    })
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
     if ( this.props.uid) {
@@ -99,6 +105,13 @@ export class Search extends Component {
       return <option key={index} value={minute}>{minute}</option>
     });
 
+    const am = this.state.am
+      ? 'am'
+      : 'pm';
+    const pm = this.state.am
+      ? 'pm'
+      : 'am';
+
     return (
       <div className="container">
         <h2 className='title'>
@@ -143,51 +156,47 @@ export class Search extends Component {
               </label>
               <p id='at'>at</p>
             </div>
-            <input
-              className='time-select'
-              name='hours'
-              onChange={this.handleChange}
-              value={this.state.hours}
-              list='hours'
-            />
-            <datalist
-              id='hours'
-            >
-              {hourOptions}
-            </datalist>
-            :
-            <input
-              className='time-select'
-              name='minutes'
-              onChange={this.handleChange}
-              value={this.state.minutes}
-              list='minutes'
-            />
-            <datalist
-              id='minutes'
-            >
-              {minuteOptions}
-            </datalist>
-            <select 
-              onChange={this.handleChange}
-              value={this.state.am}
-              name='am'
-              >
-              <option
-                value={true}
-              >
-                am
-              </option>
-              <option
-                value={false}>
-                pm
-              </option>
-            </select>
+            <div className='time-container'>
+              <input
+                className='time-select'
+                name='hours'
+                onChange={this.handleChange}
+                value={this.state.hours}
+                list='hours'
+                />
+              <datalist
+                id='hours'
+                >
+                {hourOptions}
+              </datalist>
+              :
+              <input
+                className='time-select'
+                name='minutes'
+                onChange={this.handleChange}
+                value={this.state.minutes}
+                list='minutes'
+                />
+              <datalist
+                id='minutes'
+                >
+                {minuteOptions}
+              </datalist>
+              <div
+                className='amPm'
+                name='am'
+                value={this.state.am}
+                onClick={this.handleClick}
+                >
+                <p className={am}>am</p>
+                <p className={pm}>pm</p>
+              </div>
+            </div>
           </div>
           <button
             type='submit'
             className='button'
-          >
+            >
             Search
           </button >
         </form>
