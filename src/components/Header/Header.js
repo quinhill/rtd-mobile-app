@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
   
-const Header = () => {
+export const Header = () => {
 
   return (
     <header>

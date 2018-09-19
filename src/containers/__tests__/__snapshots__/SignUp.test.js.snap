@@ -24,225 +24,184 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <form
-          onSubmit={[Function]}
+      "children": <div
+        className="container"
 >
-          <input
-                    name="username"
-                    onChange={[Function]}
-                    placeholder="Full Name"
-                    type="text"
-                    value=""
-          />
-          <input
-                    name="email"
-                    onChange={[Function]}
-                    placeholder="Email Address"
-                    type="email"
-                    value=""
-          />
-          <input
-                    name="passwordOne"
-                    onChange={[Function]}
-                    placeholder="Password"
-                    type="password"
-                    value=""
-          />
-          <input
-                    name="passwordTwo"
-                    onChange={[Function]}
-                    placeholder="Confirm Password"
-                    type="password"
-                    value=""
-          />
-          <button
-                    disabled={true}
-                    type="submit"
-          >
-                    Sign Up
-          </button>
-</form>,
-        <Unknown />,
-      ],
-      "className": "sign-up-container",
+        <form
+                className="form"
+                onSubmit={[Function]}
+        >
+                <p
+                        className="title"
+                >
+                        Sign Up
+                </p>
+                <div
+                        className="input-container"
+                >
+                        <input
+                                className="input"
+                                name="username"
+                                onChange={[Function]}
+                                placeholder="Full Name"
+                                type="text"
+                                value=""
+                        />
+                        <button
+                                className="delete-button"
+                                name="username"
+                                onClick={[Function]}
+                        />
+                </div>
+                <div
+                        className="input-container"
+                >
+                        <input
+                                className="input"
+                                name="email"
+                                onChange={[Function]}
+                                placeholder="Email Address"
+                                type="email"
+                                value=""
+                        />
+                        <button
+                                className="delete-button"
+                                name="email"
+                                onClick={[Function]}
+                        />
+                </div>
+                <div
+                        className="input-container"
+                >
+                        <input
+                                className="input"
+                                name="passwordOne"
+                                onChange={[Function]}
+                                placeholder="Password"
+                                type="password"
+                                value=""
+                        />
+                        <button
+                                className="delete-button"
+                                name="paswordOne"
+                                onClick={[Function]}
+                        />
+                </div>
+                <div
+                        className="input-container last-input-container"
+                >
+                        <input
+                                className="input"
+                                name="passwordTwo"
+                                onChange={[Function]}
+                                placeholder="Confirm Password"
+                                type="password"
+                                value=""
+                        />
+                        <button
+                                className="delete-button"
+                                name="passwordTwo"
+                                onClick={[Function]}
+                        />
+                </div>
+                <button
+                        className="button"
+                        disabled={true}
+                        type="submit"
+                >
+                        Sign Up
+                </button>
+        </form>
+        <Unknown />
+</div>,
+      "className": "page",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <input
-              name="username"
-              onChange={[Function]}
-              placeholder="Full Name"
-              type="text"
-              value=""
-/>,
-            <input
-              name="email"
-              onChange={[Function]}
-              placeholder="Email Address"
-              type="email"
-              value=""
-/>,
-            <input
-              name="passwordOne"
-              onChange={[Function]}
-              placeholder="Password"
-              type="password"
-              value=""
-/>,
-            <input
-              name="passwordTwo"
-              onChange={[Function]}
-              placeholder="Confirm Password"
-              type="password"
-              value=""
-/>,
-            <button
-              disabled={true}
-              type="submit"
->
-              Sign Up
-</button>,
-            null,
-          ],
-          "onSubmit": [Function],
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "name": "username",
-              "onChange": [Function],
-              "placeholder": "Full Name",
-              "type": "text",
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "input",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "name": "email",
-              "onChange": [Function],
-              "placeholder": "Email Address",
-              "type": "email",
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "input",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "name": "passwordOne",
-              "onChange": [Function],
-              "placeholder": "Password",
-              "type": "password",
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "input",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "name": "passwordTwo",
-              "onChange": [Function],
-              "placeholder": "Confirm Password",
-              "type": "password",
-              "value": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "input",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Sign Up",
-              "disabled": true,
-              "type": "submit",
-            },
-            "ref": null,
-            "rendered": "Sign Up",
-            "type": "button",
-          },
-          null,
-        ],
-        "type": "form",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
       "props": Object {
         "children": Array [
           <form
+            className="form"
             onSubmit={[Function]}
 >
-            <input
-                        name="username"
-                        onChange={[Function]}
-                        placeholder="Full Name"
-                        type="text"
-                        value=""
-            />
-            <input
-                        name="email"
-                        onChange={[Function]}
-                        placeholder="Email Address"
-                        type="email"
-                        value=""
-            />
-            <input
-                        name="passwordOne"
-                        onChange={[Function]}
-                        placeholder="Password"
-                        type="password"
-                        value=""
-            />
-            <input
-                        name="passwordTwo"
-                        onChange={[Function]}
-                        placeholder="Confirm Password"
-                        type="password"
-                        value=""
-            />
+            <p
+                        className="title"
+            >
+                        Sign Up
+            </p>
+            <div
+                        className="input-container"
+            >
+                        <input
+                                    className="input"
+                                    name="username"
+                                    onChange={[Function]}
+                                    placeholder="Full Name"
+                                    type="text"
+                                    value=""
+                        />
+                        <button
+                                    className="delete-button"
+                                    name="username"
+                                    onClick={[Function]}
+                        />
+            </div>
+            <div
+                        className="input-container"
+            >
+                        <input
+                                    className="input"
+                                    name="email"
+                                    onChange={[Function]}
+                                    placeholder="Email Address"
+                                    type="email"
+                                    value=""
+                        />
+                        <button
+                                    className="delete-button"
+                                    name="email"
+                                    onClick={[Function]}
+                        />
+            </div>
+            <div
+                        className="input-container"
+            >
+                        <input
+                                    className="input"
+                                    name="passwordOne"
+                                    onChange={[Function]}
+                                    placeholder="Password"
+                                    type="password"
+                                    value=""
+                        />
+                        <button
+                                    className="delete-button"
+                                    name="paswordOne"
+                                    onClick={[Function]}
+                        />
+            </div>
+            <div
+                        className="input-container last-input-container"
+            >
+                        <input
+                                    className="input"
+                                    name="passwordTwo"
+                                    onChange={[Function]}
+                                    placeholder="Confirm Password"
+                                    type="password"
+                                    value=""
+                        />
+                        <button
+                                    className="delete-button"
+                                    name="passwordTwo"
+                                    onClick={[Function]}
+                        />
+            </div>
             <button
+                        className="button"
                         disabled={true}
                         type="submit"
             >
@@ -251,7 +210,7 @@ ShallowWrapper {
 </form>,
           <Unknown />,
         ],
-        "className": "sign-up-container",
+        "className": "container",
       },
       "ref": null,
       "rendered": Array [
@@ -261,35 +220,81 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <input
-                name="username"
-                onChange={[Function]}
-                placeholder="Full Name"
-                type="text"
-                value=""
-/>,
-              <input
-                name="email"
-                onChange={[Function]}
-                placeholder="Email Address"
-                type="email"
-                value=""
-/>,
-              <input
-                name="passwordOne"
-                onChange={[Function]}
-                placeholder="Password"
-                type="password"
-                value=""
-/>,
-              <input
-                name="passwordTwo"
-                onChange={[Function]}
-                placeholder="Confirm Password"
-                type="password"
-                value=""
-/>,
+              <p
+                className="title"
+>
+                Sign Up
+</p>,
+              <div
+                className="input-container"
+>
+                <input
+                                className="input"
+                                name="username"
+                                onChange={[Function]}
+                                placeholder="Full Name"
+                                type="text"
+                                value=""
+                />
+                <button
+                                className="delete-button"
+                                name="username"
+                                onClick={[Function]}
+                />
+</div>,
+              <div
+                className="input-container"
+>
+                <input
+                                className="input"
+                                name="email"
+                                onChange={[Function]}
+                                placeholder="Email Address"
+                                type="email"
+                                value=""
+                />
+                <button
+                                className="delete-button"
+                                name="email"
+                                onClick={[Function]}
+                />
+</div>,
+              <div
+                className="input-container"
+>
+                <input
+                                className="input"
+                                name="passwordOne"
+                                onChange={[Function]}
+                                placeholder="Password"
+                                type="password"
+                                value=""
+                />
+                <button
+                                className="delete-button"
+                                name="paswordOne"
+                                onClick={[Function]}
+                />
+</div>,
+              <div
+                className="input-container last-input-container"
+>
+                <input
+                                className="input"
+                                name="passwordTwo"
+                                onChange={[Function]}
+                                placeholder="Confirm Password"
+                                type="password"
+                                value=""
+                />
+                <button
+                                className="delete-button"
+                                name="passwordTwo"
+                                onClick={[Function]}
+                />
+</div>,
               <button
+                className="button"
                 disabled={true}
                 type="submit"
 >
@@ -297,6 +302,7 @@ ShallowWrapper {
 </button>,
               null,
             ],
+            "className": "form",
             "onSubmit": [Function],
           },
           "ref": null,
@@ -306,60 +312,236 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "name": "username",
-                "onChange": [Function],
-                "placeholder": "Full Name",
-                "type": "text",
-                "value": "",
+                "children": "Sign Up",
+                "className": "title",
               },
               "ref": null,
-              "rendered": null,
-              "type": "input",
+              "rendered": "Sign Up",
+              "type": "p",
             },
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "name": "email",
-                "onChange": [Function],
-                "placeholder": "Email Address",
-                "type": "email",
-                "value": "",
+                "children": Array [
+                  <input
+                    className="input"
+                    name="username"
+                    onChange={[Function]}
+                    placeholder="Full Name"
+                    type="text"
+                    value=""
+/>,
+                  <button
+                    className="delete-button"
+                    name="username"
+                    onClick={[Function]}
+/>,
+                ],
+                "className": "input-container",
               },
               "ref": null,
-              "rendered": null,
-              "type": "input",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "input",
+                    "name": "username",
+                    "onChange": [Function],
+                    "placeholder": "Full Name",
+                    "type": "text",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "delete-button",
+                    "name": "username",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "button",
+                },
+              ],
+              "type": "div",
             },
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "name": "passwordOne",
-                "onChange": [Function],
-                "placeholder": "Password",
-                "type": "password",
-                "value": "",
+                "children": Array [
+                  <input
+                    className="input"
+                    name="email"
+                    onChange={[Function]}
+                    placeholder="Email Address"
+                    type="email"
+                    value=""
+/>,
+                  <button
+                    className="delete-button"
+                    name="email"
+                    onClick={[Function]}
+/>,
+                ],
+                "className": "input-container",
               },
               "ref": null,
-              "rendered": null,
-              "type": "input",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "input",
+                    "name": "email",
+                    "onChange": [Function],
+                    "placeholder": "Email Address",
+                    "type": "email",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "delete-button",
+                    "name": "email",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "button",
+                },
+              ],
+              "type": "div",
             },
             Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "name": "passwordTwo",
-                "onChange": [Function],
-                "placeholder": "Confirm Password",
-                "type": "password",
-                "value": "",
+                "children": Array [
+                  <input
+                    className="input"
+                    name="passwordOne"
+                    onChange={[Function]}
+                    placeholder="Password"
+                    type="password"
+                    value=""
+/>,
+                  <button
+                    className="delete-button"
+                    name="paswordOne"
+                    onClick={[Function]}
+/>,
+                ],
+                "className": "input-container",
               },
               "ref": null,
-              "rendered": null,
-              "type": "input",
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "input",
+                    "name": "passwordOne",
+                    "onChange": [Function],
+                    "placeholder": "Password",
+                    "type": "password",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "delete-button",
+                    "name": "paswordOne",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <input
+                    className="input"
+                    name="passwordTwo"
+                    onChange={[Function]}
+                    placeholder="Confirm Password"
+                    type="password"
+                    value=""
+/>,
+                  <button
+                    className="delete-button"
+                    name="passwordTwo"
+                    onClick={[Function]}
+/>,
+                ],
+                "className": "input-container last-input-container",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "input",
+                    "name": "passwordTwo",
+                    "onChange": [Function],
+                    "placeholder": "Confirm Password",
+                    "type": "password",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "delete-button",
+                    "name": "passwordTwo",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "button",
+                },
+              ],
+              "type": "div",
             },
             Object {
               "instance": null,
@@ -367,6 +549,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Sign Up",
+                "className": "button",
                 "disabled": true,
                 "type": "submit",
               },
@@ -388,6 +571,565 @@ ShallowWrapper {
           "type": [Function],
         },
       ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="container"
+>
+          <form
+                    className="form"
+                    onSubmit={[Function]}
+          >
+                    <p
+                              className="title"
+                    >
+                              Sign Up
+                    </p>
+                    <div
+                              className="input-container"
+                    >
+                              <input
+                                        className="input"
+                                        name="username"
+                                        onChange={[Function]}
+                                        placeholder="Full Name"
+                                        type="text"
+                                        value=""
+                              />
+                              <button
+                                        className="delete-button"
+                                        name="username"
+                                        onClick={[Function]}
+                              />
+                    </div>
+                    <div
+                              className="input-container"
+                    >
+                              <input
+                                        className="input"
+                                        name="email"
+                                        onChange={[Function]}
+                                        placeholder="Email Address"
+                                        type="email"
+                                        value=""
+                              />
+                              <button
+                                        className="delete-button"
+                                        name="email"
+                                        onClick={[Function]}
+                              />
+                    </div>
+                    <div
+                              className="input-container"
+                    >
+                              <input
+                                        className="input"
+                                        name="passwordOne"
+                                        onChange={[Function]}
+                                        placeholder="Password"
+                                        type="password"
+                                        value=""
+                              />
+                              <button
+                                        className="delete-button"
+                                        name="paswordOne"
+                                        onClick={[Function]}
+                              />
+                    </div>
+                    <div
+                              className="input-container last-input-container"
+                    >
+                              <input
+                                        className="input"
+                                        name="passwordTwo"
+                                        onChange={[Function]}
+                                        placeholder="Confirm Password"
+                                        type="password"
+                                        value=""
+                              />
+                              <button
+                                        className="delete-button"
+                                        name="passwordTwo"
+                                        onClick={[Function]}
+                              />
+                    </div>
+                    <button
+                              className="button"
+                              disabled={true}
+                              type="submit"
+                    >
+                              Sign Up
+                    </button>
+          </form>
+          <Unknown />
+</div>,
+        "className": "page",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <form
+              className="form"
+              onSubmit={[Function]}
+>
+              <p
+                            className="title"
+              >
+                            Sign Up
+              </p>
+              <div
+                            className="input-container"
+              >
+                            <input
+                                          className="input"
+                                          name="username"
+                                          onChange={[Function]}
+                                          placeholder="Full Name"
+                                          type="text"
+                                          value=""
+                            />
+                            <button
+                                          className="delete-button"
+                                          name="username"
+                                          onClick={[Function]}
+                            />
+              </div>
+              <div
+                            className="input-container"
+              >
+                            <input
+                                          className="input"
+                                          name="email"
+                                          onChange={[Function]}
+                                          placeholder="Email Address"
+                                          type="email"
+                                          value=""
+                            />
+                            <button
+                                          className="delete-button"
+                                          name="email"
+                                          onClick={[Function]}
+                            />
+              </div>
+              <div
+                            className="input-container"
+              >
+                            <input
+                                          className="input"
+                                          name="passwordOne"
+                                          onChange={[Function]}
+                                          placeholder="Password"
+                                          type="password"
+                                          value=""
+                            />
+                            <button
+                                          className="delete-button"
+                                          name="paswordOne"
+                                          onClick={[Function]}
+                            />
+              </div>
+              <div
+                            className="input-container last-input-container"
+              >
+                            <input
+                                          className="input"
+                                          name="passwordTwo"
+                                          onChange={[Function]}
+                                          placeholder="Confirm Password"
+                                          type="password"
+                                          value=""
+                            />
+                            <button
+                                          className="delete-button"
+                                          name="passwordTwo"
+                                          onClick={[Function]}
+                            />
+              </div>
+              <button
+                            className="button"
+                            disabled={true}
+                            type="submit"
+              >
+                            Sign Up
+              </button>
+</form>,
+            <Unknown />,
+          ],
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p
+                  className="title"
+>
+                  Sign Up
+</p>,
+                <div
+                  className="input-container"
+>
+                  <input
+                                    className="input"
+                                    name="username"
+                                    onChange={[Function]}
+                                    placeholder="Full Name"
+                                    type="text"
+                                    value=""
+                  />
+                  <button
+                                    className="delete-button"
+                                    name="username"
+                                    onClick={[Function]}
+                  />
+</div>,
+                <div
+                  className="input-container"
+>
+                  <input
+                                    className="input"
+                                    name="email"
+                                    onChange={[Function]}
+                                    placeholder="Email Address"
+                                    type="email"
+                                    value=""
+                  />
+                  <button
+                                    className="delete-button"
+                                    name="email"
+                                    onClick={[Function]}
+                  />
+</div>,
+                <div
+                  className="input-container"
+>
+                  <input
+                                    className="input"
+                                    name="passwordOne"
+                                    onChange={[Function]}
+                                    placeholder="Password"
+                                    type="password"
+                                    value=""
+                  />
+                  <button
+                                    className="delete-button"
+                                    name="paswordOne"
+                                    onClick={[Function]}
+                  />
+</div>,
+                <div
+                  className="input-container last-input-container"
+>
+                  <input
+                                    className="input"
+                                    name="passwordTwo"
+                                    onChange={[Function]}
+                                    placeholder="Confirm Password"
+                                    type="password"
+                                    value=""
+                  />
+                  <button
+                                    className="delete-button"
+                                    name="passwordTwo"
+                                    onClick={[Function]}
+                  />
+</div>,
+                <button
+                  className="button"
+                  disabled={true}
+                  type="submit"
+>
+                  Sign Up
+</button>,
+                null,
+              ],
+              "className": "form",
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Sign Up",
+                  "className": "title",
+                },
+                "ref": null,
+                "rendered": "Sign Up",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <input
+                      className="input"
+                      name="username"
+                      onChange={[Function]}
+                      placeholder="Full Name"
+                      type="text"
+                      value=""
+/>,
+                    <button
+                      className="delete-button"
+                      name="username"
+                      onClick={[Function]}
+/>,
+                  ],
+                  "className": "input-container",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "input",
+                      "name": "username",
+                      "onChange": [Function],
+                      "placeholder": "Full Name",
+                      "type": "text",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "delete-button",
+                      "name": "username",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <input
+                      className="input"
+                      name="email"
+                      onChange={[Function]}
+                      placeholder="Email Address"
+                      type="email"
+                      value=""
+/>,
+                    <button
+                      className="delete-button"
+                      name="email"
+                      onClick={[Function]}
+/>,
+                  ],
+                  "className": "input-container",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "input",
+                      "name": "email",
+                      "onChange": [Function],
+                      "placeholder": "Email Address",
+                      "type": "email",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "delete-button",
+                      "name": "email",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <input
+                      className="input"
+                      name="passwordOne"
+                      onChange={[Function]}
+                      placeholder="Password"
+                      type="password"
+                      value=""
+/>,
+                    <button
+                      className="delete-button"
+                      name="paswordOne"
+                      onClick={[Function]}
+/>,
+                  ],
+                  "className": "input-container",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "input",
+                      "name": "passwordOne",
+                      "onChange": [Function],
+                      "placeholder": "Password",
+                      "type": "password",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "delete-button",
+                      "name": "paswordOne",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <input
+                      className="input"
+                      name="passwordTwo"
+                      onChange={[Function]}
+                      placeholder="Confirm Password"
+                      type="password"
+                      value=""
+/>,
+                    <button
+                      className="delete-button"
+                      name="passwordTwo"
+                      onClick={[Function]}
+/>,
+                  ],
+                  "className": "input-container last-input-container",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "input",
+                      "name": "passwordTwo",
+                      "onChange": [Function],
+                      "placeholder": "Confirm Password",
+                      "type": "password",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "input",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "className": "delete-button",
+                      "name": "passwordTwo",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "button",
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Sign Up",
+                  "className": "button",
+                  "disabled": true,
+                  "type": "submit",
+                },
+                "ref": null,
+                "rendered": "Sign Up",
+                "type": "button",
+              },
+              null,
+            ],
+            "type": "form",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
       "type": "div",
     },
   ],

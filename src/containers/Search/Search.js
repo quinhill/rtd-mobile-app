@@ -7,7 +7,7 @@ import EndAddressInput from '../../containers/EndAddressInput/EndAddressInput';
 import postItineraryThunk from '../../thunks/postItineraryThunk';
 import * as routes from '../../constants/routes';
 import { hours, minutes } from '../../constants/timeArrays';
-import { timeCleaner } from '../../constants/cleanerFunctions'
+import { timeCleaner } from '../../constants/cleanerFunctions';
 
 import './Search.css';
 import { itineraryUrl } from '../../constants/urlGenerator';
@@ -27,7 +27,7 @@ export class Search extends Component {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
-
+ 
   getTime = () => {
     const time = new Date();
     let hours = time.getHours();

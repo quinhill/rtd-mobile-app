@@ -19,4 +19,4 @@ describe('addFavoriteThunk', () => {
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
   });
 
-})
+});

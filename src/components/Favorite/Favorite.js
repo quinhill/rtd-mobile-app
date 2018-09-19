@@ -43,7 +43,7 @@ export class Favorite extends Component {
       </button>
     );
   }
-};
+}
 
 export const mapPropsToState = state => ({
   uid: state.user.uid
@@ -57,6 +57,6 @@ export default withRouter(connect(mapPropsToState, mapDispatchToState)(Favorite)
 
 Favorite.propTypes = {
   name: PropTypes.string,
-  favData: PropTypes.object,
+  favData: PropTypes.array,
   history: PropTypes.object
 }; 

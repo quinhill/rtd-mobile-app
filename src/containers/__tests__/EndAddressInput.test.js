@@ -11,7 +11,7 @@ describe('EndAddressInput', () => {
       <EndAddressInput  
         storeEndAddress={mockStoreEndAddress}
       />);
-  });
+  }); 
    
   test('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
