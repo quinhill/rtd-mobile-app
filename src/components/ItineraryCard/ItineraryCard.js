@@ -6,7 +6,7 @@ import DurationLine from '../DurationLine/DurationLine';
 
 import './ItineraryCard.css';
 
-class ItineraryCard extends Component {
+export class ItineraryCard extends Component {
   constructor(props){
     super(props);
     this.state = {

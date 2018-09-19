@@ -32,6 +32,7 @@ class ItineraryPage extends Component {
       uid
     } = this.props;
     const itineraries = itinerary.map((itinerary, index) => {
+      console.log(itinerary)
       return (
         <ItineraryCard 
           key={index} 

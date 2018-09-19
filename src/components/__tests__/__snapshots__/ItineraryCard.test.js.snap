@@ -1,0 +1,1549 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItineraryCard should match snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ItineraryCard
+    addFavorite={[Function]}
+    itinerary={
+        Object {
+            "arrival_time": "6:33am",
+            "departure_time": "5:51am",
+            "distance": "8.1 mi",
+            "duration": "42 mins",
+            "end_address": "Columbine St, Denver, CO, USA",
+            "favorite": false,
+            "itinerary_id": 59,
+            "start_address": "S Monaco Pkwy, Colorado, USA",
+            "steps": Array [
+              Object {
+                "arrival_stop": "Monaco Pkwy & 29th Ave",
+                "arrival_time": "6:07am",
+                "color": "#0277bd",
+                "credit_name": "Regional Transportation District",
+                "credit_url": "http://rtd-denver.com/",
+                "departure_stop": "S Monaco Pkwy & Evans Ave",
+                "departure_time": "5:51am",
+                "distance": "5.5 mi",
+                "duration": "16 mins",
+                "headsign": "Central Park 65 via Monaco",
+                "id": 656,
+                "instructions": "Bus towards Central Park 65 via Monaco",
+                "name": "Monaco Parkway",
+                "num_stops": 24,
+                "possible_route_id": 169,
+                "short_name": "65",
+                "travel_mode": "TRANSIT",
+                "vehicle_type": "Bus",
+              },
+            ],
+            "title": null,
+          }
+    }
+    uid="3"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="top-container"
+>
+          <img
+                    alt="transit-icon"
+                    className="transit-icon"
+                    src="bus.png"
+          />
+          <div
+                    className="line-id-container"
+                    style={
+                              Object {
+                                        "background": "#0277bd",
+                                      }
+                    }
+          >
+                    <p
+                              className="line-id"
+                    >
+                              65
+                    </p>
+          </div>
+          <h2>
+                    Towards 
+                    Central Park 65 via Monaco
+          </h2>
+          <button
+                    className="unfavorited"
+                    id={59}
+                    onClick={[Function]}
+                    value="3"
+          />
+</div>,
+        <div
+          className="trip-detail-row"
+>
+          <h3
+                    className="time-depart"
+          >
+                    5:51am
+          </h3>
+          <div
+                    className="duration-line-container"
+          >
+                    <span
+                              className="dot"
+                    />
+                    <hr
+                              className="duration-line"
+                    />
+          </div>
+          <h3
+                    className="time-depart"
+          >
+                    6:33am
+          </h3>
+</div>,
+        <div
+          className="bottom-container"
+>
+          <h2>
+                    From 
+                    S Monaco Pkwy & Evans Ave
+          </h2>
+          <h2>
+                    42 mins
+          </h2>
+</div>,
+      ],
+      "className": "itinerary-card",
+      "id": 59,
+      "onClick": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <img
+              alt="transit-icon"
+              className="transit-icon"
+              src="bus.png"
+/>,
+            <div
+              className="line-id-container"
+              style={
+                            Object {
+                                          "background": "#0277bd",
+                                        }
+              }
+>
+              <p
+                            className="line-id"
+              >
+                            65
+              </p>
+</div>,
+            <h2>
+              Towards 
+              Central Park 65 via Monaco
+</h2>,
+            <button
+              className="unfavorited"
+              id={59}
+              onClick={[Function]}
+              value="3"
+/>,
+          ],
+          "className": "top-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "transit-icon",
+              "className": "transit-icon",
+              "src": "bus.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <p
+                className="line-id"
+>
+                65
+</p>,
+              "className": "line-id-container",
+              "style": Object {
+                "background": "#0277bd",
+              },
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "65",
+                "className": "line-id",
+              },
+              "ref": null,
+              "rendered": "65",
+              "type": "p",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Towards ",
+                "Central Park 65 via Monaco",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Towards ",
+              "Central Park 65 via Monaco",
+            ],
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "unfavorited",
+              "id": 59,
+              "onClick": [Function],
+              "value": "3",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3
+              className="time-depart"
+>
+              5:51am
+</h3>,
+            <div
+              className="duration-line-container"
+>
+              <span
+                            className="dot"
+              />
+              <hr
+                            className="duration-line"
+              />
+</div>,
+            <h3
+              className="time-depart"
+>
+              6:33am
+</h3>,
+          ],
+          "className": "trip-detail-row",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "5:51am",
+              "className": "time-depart",
+            },
+            "ref": null,
+            "rendered": "5:51am",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <span
+                  className="dot"
+/>,
+                <hr
+                  className="duration-line"
+/>,
+              ],
+              "className": "duration-line-container",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "dot",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "duration-line",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "hr",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "6:33am",
+              "className": "time-depart",
+            },
+            "ref": null,
+            "rendered": "6:33am",
+            "type": "h3",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h2>
+              From 
+              S Monaco Pkwy & Evans Ave
+</h2>,
+            <h2>
+              42 mins
+</h2>,
+          ],
+          "className": "bottom-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "From ",
+                "S Monaco Pkwy & Evans Ave",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "From ",
+              "S Monaco Pkwy & Evans Ave",
+            ],
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "42 mins",
+            },
+            "ref": null,
+            "rendered": "42 mins",
+            "type": "h2",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="top-container"
+>
+            <img
+                        alt="transit-icon"
+                        className="transit-icon"
+                        src="bus.png"
+            />
+            <div
+                        className="line-id-container"
+                        style={
+                                    Object {
+                                                "background": "#0277bd",
+                                              }
+                        }
+            >
+                        <p
+                                    className="line-id"
+                        >
+                                    65
+                        </p>
+            </div>
+            <h2>
+                        Towards 
+                        Central Park 65 via Monaco
+            </h2>
+            <button
+                        className="unfavorited"
+                        id={59}
+                        onClick={[Function]}
+                        value="3"
+            />
+</div>,
+          <div
+            className="trip-detail-row"
+>
+            <h3
+                        className="time-depart"
+            >
+                        5:51am
+            </h3>
+            <div
+                        className="duration-line-container"
+            >
+                        <span
+                                    className="dot"
+                        />
+                        <hr
+                                    className="duration-line"
+                        />
+            </div>
+            <h3
+                        className="time-depart"
+            >
+                        6:33am
+            </h3>
+</div>,
+          <div
+            className="bottom-container"
+>
+            <h2>
+                        From 
+                        S Monaco Pkwy & Evans Ave
+            </h2>
+            <h2>
+                        42 mins
+            </h2>
+</div>,
+        ],
+        "className": "itinerary-card",
+        "id": 59,
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <img
+                alt="transit-icon"
+                className="transit-icon"
+                src="bus.png"
+/>,
+              <div
+                className="line-id-container"
+                style={
+                                Object {
+                                                "background": "#0277bd",
+                                              }
+                }
+>
+                <p
+                                className="line-id"
+                >
+                                65
+                </p>
+</div>,
+              <h2>
+                Towards 
+                Central Park 65 via Monaco
+</h2>,
+              <button
+                className="unfavorited"
+                id={59}
+                onClick={[Function]}
+                value="3"
+/>,
+            ],
+            "className": "top-container",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "transit-icon",
+                "className": "transit-icon",
+                "src": "bus.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <p
+                  className="line-id"
+>
+                  65
+</p>,
+                "className": "line-id-container",
+                "style": Object {
+                  "background": "#0277bd",
+                },
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "65",
+                  "className": "line-id",
+                },
+                "ref": null,
+                "rendered": "65",
+                "type": "p",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Towards ",
+                  "Central Park 65 via Monaco",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Towards ",
+                "Central Park 65 via Monaco",
+              ],
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "unfavorited",
+                "id": 59,
+                "onClick": [Function],
+                "value": "3",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3
+                className="time-depart"
+>
+                5:51am
+</h3>,
+              <div
+                className="duration-line-container"
+>
+                <span
+                                className="dot"
+                />
+                <hr
+                                className="duration-line"
+                />
+</div>,
+              <h3
+                className="time-depart"
+>
+                6:33am
+</h3>,
+            ],
+            "className": "trip-detail-row",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "5:51am",
+                "className": "time-depart",
+              },
+              "ref": null,
+              "rendered": "5:51am",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span
+                    className="dot"
+/>,
+                  <hr
+                    className="duration-line"
+/>,
+                ],
+                "className": "duration-line-container",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "dot",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "duration-line",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "hr",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "6:33am",
+                "className": "time-depart",
+              },
+              "ref": null,
+              "rendered": "6:33am",
+              "type": "h3",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h2>
+                From 
+                S Monaco Pkwy & Evans Ave
+</h2>,
+              <h2>
+                42 mins
+</h2>,
+            ],
+            "className": "bottom-container",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "From ",
+                  "S Monaco Pkwy & Evans Ave",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "From ",
+                "S Monaco Pkwy & Evans Ave",
+              ],
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "42 mins",
+              },
+              "ref": null,
+              "rendered": "42 mins",
+              "type": "h2",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
+exports[`ItineraryCard should match teh snapshot if a favorite is truthy 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ItineraryCard
+    addFavorite={[Function]}
+    itinerary={
+        Object {
+            "arrival_time": "6:33am",
+            "departure_time": "5:51am",
+            "distance": "8.1 mi",
+            "duration": "42 mins",
+            "end_address": "Columbine St, Denver, CO, USA",
+            "favorite": false,
+            "itinerary_id": 59,
+            "start_address": "S Monaco Pkwy, Colorado, USA",
+            "steps": Array [
+              Object {
+                "arrival_stop": "Monaco Pkwy & 29th Ave",
+                "arrival_time": "6:07am",
+                "color": "#0277bd",
+                "credit_name": "Regional Transportation District",
+                "credit_url": "http://rtd-denver.com/",
+                "departure_stop": "S Monaco Pkwy & Evans Ave",
+                "departure_time": "5:51am",
+                "distance": "5.5 mi",
+                "duration": "16 mins",
+                "headsign": "Central Park 65 via Monaco",
+                "id": 656,
+                "instructions": "Bus towards Central Park 65 via Monaco",
+                "name": "Monaco Parkway",
+                "num_stops": 24,
+                "possible_route_id": 169,
+                "short_name": "65",
+                "travel_mode": "TRANSIT",
+                "vehicle_type": "Bus",
+              },
+            ],
+            "title": null,
+          }
+    }
+    uid="3"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="top-container"
+>
+          <img
+                    alt="transit-icon"
+                    className="transit-icon"
+                    src="bus.png"
+          />
+          <div
+                    className="line-id-container"
+                    style={
+                              Object {
+                                        "background": "#0277bd",
+                                      }
+                    }
+          >
+                    <p
+                              className="line-id"
+                    >
+                              65
+                    </p>
+          </div>
+          <h2>
+                    Towards 
+                    Central Park 65 via Monaco
+          </h2>
+          <button
+                    className="favorited"
+                    id={59}
+                    onClick={[Function]}
+                    value="3"
+          />
+</div>,
+        <div
+          className="trip-detail-row"
+>
+          <h3
+                    className="time-depart"
+          >
+                    5:51am
+          </h3>
+          <div
+                    className="duration-line-container"
+          >
+                    <span
+                              className="dot"
+                    />
+                    <hr
+                              className="duration-line"
+                    />
+          </div>
+          <h3
+                    className="time-depart"
+          >
+                    6:33am
+          </h3>
+</div>,
+        <div
+          className="bottom-container"
+>
+          <h2>
+                    From 
+                    S Monaco Pkwy & Evans Ave
+          </h2>
+          <h2>
+                    42 mins
+          </h2>
+</div>,
+      ],
+      "className": "itinerary-card",
+      "id": 59,
+      "onClick": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <img
+              alt="transit-icon"
+              className="transit-icon"
+              src="bus.png"
+/>,
+            <div
+              className="line-id-container"
+              style={
+                            Object {
+                                          "background": "#0277bd",
+                                        }
+              }
+>
+              <p
+                            className="line-id"
+              >
+                            65
+              </p>
+</div>,
+            <h2>
+              Towards 
+              Central Park 65 via Monaco
+</h2>,
+            <button
+              className="favorited"
+              id={59}
+              onClick={[Function]}
+              value="3"
+/>,
+          ],
+          "className": "top-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "transit-icon",
+              "className": "transit-icon",
+              "src": "bus.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <p
+                className="line-id"
+>
+                65
+</p>,
+              "className": "line-id-container",
+              "style": Object {
+                "background": "#0277bd",
+              },
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "65",
+                "className": "line-id",
+              },
+              "ref": null,
+              "rendered": "65",
+              "type": "p",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Towards ",
+                "Central Park 65 via Monaco",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Towards ",
+              "Central Park 65 via Monaco",
+            ],
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "favorited",
+              "id": 59,
+              "onClick": [Function],
+              "value": "3",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "button",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3
+              className="time-depart"
+>
+              5:51am
+</h3>,
+            <div
+              className="duration-line-container"
+>
+              <span
+                            className="dot"
+              />
+              <hr
+                            className="duration-line"
+              />
+</div>,
+            <h3
+              className="time-depart"
+>
+              6:33am
+</h3>,
+          ],
+          "className": "trip-detail-row",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "5:51am",
+              "className": "time-depart",
+            },
+            "ref": null,
+            "rendered": "5:51am",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <span
+                  className="dot"
+/>,
+                <hr
+                  className="duration-line"
+/>,
+              ],
+              "className": "duration-line-container",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "dot",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "duration-line",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "hr",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "6:33am",
+              "className": "time-depart",
+            },
+            "ref": null,
+            "rendered": "6:33am",
+            "type": "h3",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h2>
+              From 
+              S Monaco Pkwy & Evans Ave
+</h2>,
+            <h2>
+              42 mins
+</h2>,
+          ],
+          "className": "bottom-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "From ",
+                "S Monaco Pkwy & Evans Ave",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "From ",
+              "S Monaco Pkwy & Evans Ave",
+            ],
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "42 mins",
+            },
+            "ref": null,
+            "rendered": "42 mins",
+            "type": "h2",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="top-container"
+>
+            <img
+                        alt="transit-icon"
+                        className="transit-icon"
+                        src="bus.png"
+            />
+            <div
+                        className="line-id-container"
+                        style={
+                                    Object {
+                                                "background": "#0277bd",
+                                              }
+                        }
+            >
+                        <p
+                                    className="line-id"
+                        >
+                                    65
+                        </p>
+            </div>
+            <h2>
+                        Towards 
+                        Central Park 65 via Monaco
+            </h2>
+            <button
+                        className="favorited"
+                        id={59}
+                        onClick={[Function]}
+                        value="3"
+            />
+</div>,
+          <div
+            className="trip-detail-row"
+>
+            <h3
+                        className="time-depart"
+            >
+                        5:51am
+            </h3>
+            <div
+                        className="duration-line-container"
+            >
+                        <span
+                                    className="dot"
+                        />
+                        <hr
+                                    className="duration-line"
+                        />
+            </div>
+            <h3
+                        className="time-depart"
+            >
+                        6:33am
+            </h3>
+</div>,
+          <div
+            className="bottom-container"
+>
+            <h2>
+                        From 
+                        S Monaco Pkwy & Evans Ave
+            </h2>
+            <h2>
+                        42 mins
+            </h2>
+</div>,
+        ],
+        "className": "itinerary-card",
+        "id": 59,
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <img
+                alt="transit-icon"
+                className="transit-icon"
+                src="bus.png"
+/>,
+              <div
+                className="line-id-container"
+                style={
+                                Object {
+                                                "background": "#0277bd",
+                                              }
+                }
+>
+                <p
+                                className="line-id"
+                >
+                                65
+                </p>
+</div>,
+              <h2>
+                Towards 
+                Central Park 65 via Monaco
+</h2>,
+              <button
+                className="favorited"
+                id={59}
+                onClick={[Function]}
+                value="3"
+/>,
+            ],
+            "className": "top-container",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "transit-icon",
+                "className": "transit-icon",
+                "src": "bus.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <p
+                  className="line-id"
+>
+                  65
+</p>,
+                "className": "line-id-container",
+                "style": Object {
+                  "background": "#0277bd",
+                },
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "65",
+                  "className": "line-id",
+                },
+                "ref": null,
+                "rendered": "65",
+                "type": "p",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Towards ",
+                  "Central Park 65 via Monaco",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Towards ",
+                "Central Park 65 via Monaco",
+              ],
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "favorited",
+                "id": 59,
+                "onClick": [Function],
+                "value": "3",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3
+                className="time-depart"
+>
+                5:51am
+</h3>,
+              <div
+                className="duration-line-container"
+>
+                <span
+                                className="dot"
+                />
+                <hr
+                                className="duration-line"
+                />
+</div>,
+              <h3
+                className="time-depart"
+>
+                6:33am
+</h3>,
+            ],
+            "className": "trip-detail-row",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "5:51am",
+                "className": "time-depart",
+              },
+              "ref": null,
+              "rendered": "5:51am",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span
+                    className="dot"
+/>,
+                  <hr
+                    className="duration-line"
+/>,
+                ],
+                "className": "duration-line-container",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "dot",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "duration-line",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "hr",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "6:33am",
+                "className": "time-depart",
+              },
+              "ref": null,
+              "rendered": "6:33am",
+              "type": "h3",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h2>
+                From 
+                S Monaco Pkwy & Evans Ave
+</h2>,
+              <h2>
+                42 mins
+</h2>,
+            ],
+            "className": "bottom-container",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "From ",
+                  "S Monaco Pkwy & Evans Ave",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "From ",
+                "S Monaco Pkwy & Evans Ave",
+              ],
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "42 mins",
+              },
+              "ref": null,
+              "rendered": "42 mins",
+              "type": "h2",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
