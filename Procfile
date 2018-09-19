@@ -1,1 +1,0 @@
-web: open public/index.html
