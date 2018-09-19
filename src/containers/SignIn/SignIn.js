@@ -15,7 +15,7 @@ import PropTypes from "prop-types";
 
 import "./SignIn.css";
 
-class SignInPage extends Component {
+export class SignInPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
