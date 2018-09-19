@@ -46,8 +46,8 @@ export const mockItinerary =[{
     credit_name: "Regional Transportation District",
     credit_url: "http://rtd-denver.com/",
     travel_mode: "TRANSIT"
-},
-{
+  },
+  {
     id: 28,
     possible_route_id: 7,
     headsign: null,
@@ -67,5 +67,4 @@ export const mockItinerary =[{
     credit_url: null,
     travel_mode: "Walking"
   }]
-
-}]
+}];

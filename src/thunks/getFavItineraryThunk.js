@@ -1,5 +1,4 @@
 import { isLoading, hasErrored, storeItinerary } from '../actions';
-import itinerary from '../reducers/itineraryReducer';
 
 const getFavItineraryThunk = (url) => {
   return (dispatch) => {
