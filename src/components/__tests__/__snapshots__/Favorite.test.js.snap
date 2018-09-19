@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorite should match snapShot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Favorite
+    favData={
+        Array [
+            Array [
+              Object {
+                "arrival_time": "4:11pm",
+                "departure_time": "3:51pm",
+                "distance": "3.0 mi",
+                "duration": "20 mins",
+                "end_address": "366 Broadway, Denver, CO 80203, USA",
+                "favorite": false,
+                "itinerary_id": 7,
+                "start_address": "Denver, CO 80202, USA",
+                "steps": Array [
+                  Object {
+                    "arrival_stop": null,
+                    "arrival_time": null,
+                    "color": null,
+                    "credit_name": null,
+                    "credit_url": null,
+                    "departure_stop": null,
+                    "departure_time": null,
+                    "distance": "1 ft",
+                    "duration": "1 min",
+                    "headsign": null,
+                    "id": 26,
+                    "instructions": "Walk to Union Station",
+                    "name": null,
+                    "num_stops": null,
+                    "possible_route_id": 7,
+                    "short_name": null,
+                    "travel_mode": "Walking",
+                    "vehicle_type": null,
+                  },
+                  Object {
+                    "arrival_stop": "Broadway & 4th Ave",
+                    "arrival_time": "4:11pm",
+                    "color": "#0277bd",
+                    "credit_name": "Regional Transportation District",
+                    "credit_url": "http://rtd-denver.com/",
+                    "departure_stop": "Union Station",
+                    "departure_time": "3:52pm",
+                    "distance": "3.0 mi",
+                    "duration": "20 mins",
+                    "headsign": "Highlands Ranch",
+                    "id": 27,
+                    "instructions": "Bus towards Highlands Ranch",
+                    "name": "South Broadway",
+                    "num_stops": 11,
+                    "possible_route_id": 7,
+                    "short_name": "0",
+                    "travel_mode": "TRANSIT",
+                    "vehicle_type": "Bus",
+                  },
+                  Object {
+                    "arrival_stop": null,
+                    "arrival_time": null,
+                    "color": null,
+                    "credit_name": null,
+                    "credit_url": null,
+                    "departure_stop": null,
+                    "departure_time": null,
+                    "distance": "108 ft",
+                    "duration": "1 min",
+                    "headsign": null,
+                    "id": 28,
+                    "instructions": "Walk to 366 Broadway, Denver, CO 80203, USA",
+                    "name": null,
+                    "num_stops": null,
+                    "possible_route_id": 7,
+                    "short_name": null,
+                    "travel_mode": "Walking",
+                    "vehicle_type": null,
+                  },
+                ],
+              },
+            ],
+          ]
+    }
+    name="austin"
+    startAddress="union station, denver, co"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": "from: undefined to: undefined",
+      "className": "favorite-button",
+      "id": undefined,
+      "onClick": [Function],
+    },
+    "ref": null,
+    "rendered": "from: undefined to: undefined",
+    "type": "button",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "from: undefined to: undefined",
+        "className": "favorite-button",
+        "id": undefined,
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": "from: undefined to: undefined",
+      "type": "button",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;

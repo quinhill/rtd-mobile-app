@@ -13,19 +13,18 @@ import './ItineraryPage.css';
 
 export class ItineraryPage extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       favorite: null
-    }
+    };
   }
 
   componentDidMount() {
     const { itinerary } = this.props;
     if (itinerary.length) {
-      console.log(itinerary[0].favorite)
       this.setState({
         favorite: itinerary[0].favorite
-      })
+      });
     }
   }
 
@@ -62,15 +61,14 @@ export class ItineraryPage extends Component {
       endAddress = itinerary[0].end_address.split(',')[0];
     }
     const isFavorite = this.state.favorite
-    ? 'favorited'
-    : 'unfavorited';
+      ? 'favorited'
+      : 'unfavorited';
 
     const favoriteText = isFavorite === 'favorited'
       ? ''
-      : `add from: ${startAddress} to: ${endAddress} to favorites?`
+      : `add from: ${startAddress} to: ${endAddress} to favorites?`;
 
     const itineraries = itinerary.map((itinerary, index) => {
-      console.log(itinerary)
       return (
         <ItineraryCard
           key={index}
@@ -83,7 +81,7 @@ export class ItineraryPage extends Component {
     return (
       <div className='itinerary-page'>
         <div className='favorite-button-container'>
-        {favoriteText}
+          {favoriteText}
           <button
             className={isFavorite}
             onClick={this.addFavorite}
@@ -100,7 +98,7 @@ export class ItineraryPage extends Component {
 export const mapStateToProps = state => ({
   favorites: state.favorites,
   itinerary: state.itinerary,
-  uid: state.user.uid,
+  uid: state.user.uid
 });
 
 export const mapDispatchToProps = dispatch => ({

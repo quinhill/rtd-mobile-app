@@ -15,6 +15,6 @@ describe('Favorite', () => {
         favData={[mockData]}
         startAddress ={mockStart}
       />);
-    expect(wrapper).toMatchSnapShot();
+    expect(wrapper).toMatchSnapshot();
   });
 });
