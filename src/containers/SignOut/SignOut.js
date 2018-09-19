@@ -7,7 +7,7 @@ import { auth } from '../../firebase';
 
 import './SignOut.css';
 
-const SignOutButton = (props) => {
+export const SignOutButton = (props) => {
   const signOut = () => {
     auth.doSignOut();
     props.signOutUser();
