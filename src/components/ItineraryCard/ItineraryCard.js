@@ -11,7 +11,6 @@ class ItineraryCard extends Component {
     super(props);
     this.state = {
       showMore: false,
-      favorite: this.props.itinerary.favorite
     };
   }
 
@@ -26,9 +25,6 @@ class ItineraryCard extends Component {
   }
 
   render(){
-    const isFavorite = this.state.favorite
-    ? 'favorited'
-    : 'unfavorited';
     
     const {
       itinerary_id,
@@ -83,13 +79,6 @@ class ItineraryCard extends Component {
             <h2>
               Towards {info.headsign}
             </h2>
-            <button
-              className={isFavorite}
-              onClick={addFavorite}
-              id={itinerary_id}
-              value={uid}
-            >
-            </button>
           </div>
           <div className='trip-detail-row'>
             <h3 className="time-depart">

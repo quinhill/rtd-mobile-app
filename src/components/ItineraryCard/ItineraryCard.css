@@ -28,31 +28,6 @@
   margin: 0 5px 0 5px;
 }
 
-.favorited {
-  background: none;
-  background-image: url('/favorite-full.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: none;
-  position: absolute;
-  margin-top: 5px;
-  right: 10px;
-  height: 20px;
-  width: 20px;
-}
-
-.unfavorited {
-  background: none;
-  background-image: url('/favorite-empty.svg');
-  background-repeat: no-repeat;
-  border: none;
-  position: absolute;
-  margin-top: 5px;
-  right: 10px;
-  height: 20px;
-  width: 20px;
-}
-
 .line-id {
   color: white;
 }
