@@ -11,17 +11,6 @@ import * as routes from '../../constants/routes';
 
 export class HomePage extends Component {
 
-  // componentDidMount() {
-  //   setTimeout(() => this.checkForUser(), 4000);
-  // }
-
-  // checkForUser = () => {
-  //   const {history, user} = this.props;
-  //   if (!user.uid) {
-  //     history.push(routes.SIGN_IN);
-  //   }
-  // }
-
   componentDidUpdate() {
     if (this.props.user) {
       const { user } = this.props;
@@ -45,11 +34,11 @@ export const mapStateToProps = state => ({
 
 });
 
-export const mapDispatchToState = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getFavorites: (url) => dispatch(getFavoritesThunk(url))
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToState)(HomePage));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomePage));
 
 HomePage.propTypes = {
   user: PropTypes.object,

@@ -1,0 +1,579 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Itinerary ItineraryStep should match snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    data={
+        Object {
+            "arrival_stop": "Monaco Pkwy & 29th Ave",
+            "arrival_time": "6:07am",
+            "color": "#0277bd",
+            "credit_name": "Regional Transportation District",
+            "credit_url": "http://rtd-denver.com/",
+            "departure_stop": "S Monaco Pkwy & Evans Ave",
+            "departure_time": "5:51am",
+            "distance": "5.5 mi",
+            "duration": "16 mins",
+            "headsign": "Central Park 65 via Monaco",
+            "id": 656,
+            "instructions": "Bus towards Central Park 65 via Monaco",
+            "name": "Monaco Parkway",
+            "num_stops": 24,
+            "possible_route_id": 169,
+            "short_name": "65",
+            "travel_mode": "TRANSIT",
+            "vehicle_type": "Bus",
+          }
+    }
+    handleClick={undefined}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="step-time-data"
+>
+          <p
+                    className="depart-time"
+          >
+                    5:51am
+          </p>
+          <p
+                    className="arrive-time"
+          >
+                    6:07am
+          </p>
+</div>,
+        <hr />,
+        <div
+          className="step-locations-container"
+>
+          <h3
+                    className="depart-stop"
+          >
+                    S Monaco Pkwy & Evans Ave
+          </h3>
+          <div
+                    className="line-info-container"
+          >
+                    <img
+                              className="transit-icon"
+                              src="undefined"
+                    />
+                    <div
+                              className="line-id-container"
+                              style={
+                                        Object {
+                                                  "background": "#0277bd",
+                                                }
+                              }
+                    >
+                              <p
+                                        className="line-id"
+                              />
+                    </div>
+          </div>
+          <h3
+                    className="arrive-stop"
+          >
+                    Monaco Pkwy & 29th Ave
+          </h3>
+</div>,
+      ],
+      "className": "transit-leg-container",
+      "onClick": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p
+              className="depart-time"
+>
+              5:51am
+</p>,
+            <p
+              className="arrive-time"
+>
+              6:07am
+</p>,
+          ],
+          "className": "step-time-data",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "5:51am",
+              "className": "depart-time",
+            },
+            "ref": null,
+            "rendered": "5:51am",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "6:07am",
+              "className": "arrive-time",
+            },
+            "ref": null,
+            "rendered": "6:07am",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "hr",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3
+              className="depart-stop"
+>
+              S Monaco Pkwy & Evans Ave
+</h3>,
+            <div
+              className="line-info-container"
+>
+              <img
+                            className="transit-icon"
+                            src="undefined"
+              />
+              <div
+                            className="line-id-container"
+                            style={
+                                          Object {
+                                                        "background": "#0277bd",
+                                                      }
+                            }
+              >
+                            <p
+                                          className="line-id"
+                            />
+              </div>
+</div>,
+            <h3
+              className="arrive-stop"
+>
+              Monaco Pkwy & 29th Ave
+</h3>,
+          ],
+          "className": "step-locations-container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "S Monaco Pkwy & Evans Ave",
+              "className": "depart-stop",
+            },
+            "ref": null,
+            "rendered": "S Monaco Pkwy & Evans Ave",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <img
+                  className="transit-icon"
+                  src="undefined"
+/>,
+                <div
+                  className="line-id-container"
+                  style={
+                                    Object {
+                                                      "background": "#0277bd",
+                                                    }
+                  }
+>
+                  <p
+                                    className="line-id"
+                  />
+</div>,
+              ],
+              "className": "line-info-container",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "transit-icon",
+                  "src": "undefined",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <p
+                    className="line-id"
+/>,
+                  "className": "line-id-container",
+                  "style": Object {
+                    "background": "#0277bd",
+                  },
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                    "className": "line-id",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "p",
+                },
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Monaco Pkwy & 29th Ave",
+              "className": "arrive-stop",
+            },
+            "ref": null,
+            "rendered": "Monaco Pkwy & 29th Ave",
+            "type": "h3",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="step-time-data"
+>
+            <p
+                        className="depart-time"
+            >
+                        5:51am
+            </p>
+            <p
+                        className="arrive-time"
+            >
+                        6:07am
+            </p>
+</div>,
+          <hr />,
+          <div
+            className="step-locations-container"
+>
+            <h3
+                        className="depart-stop"
+            >
+                        S Monaco Pkwy & Evans Ave
+            </h3>
+            <div
+                        className="line-info-container"
+            >
+                        <img
+                                    className="transit-icon"
+                                    src="undefined"
+                        />
+                        <div
+                                    className="line-id-container"
+                                    style={
+                                                Object {
+                                                            "background": "#0277bd",
+                                                          }
+                                    }
+                        >
+                                    <p
+                                                className="line-id"
+                                    />
+                        </div>
+            </div>
+            <h3
+                        className="arrive-stop"
+            >
+                        Monaco Pkwy & 29th Ave
+            </h3>
+</div>,
+        ],
+        "className": "transit-leg-container",
+        "onClick": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p
+                className="depart-time"
+>
+                5:51am
+</p>,
+              <p
+                className="arrive-time"
+>
+                6:07am
+</p>,
+            ],
+            "className": "step-time-data",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "5:51am",
+                "className": "depart-time",
+              },
+              "ref": null,
+              "rendered": "5:51am",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "6:07am",
+                "className": "arrive-time",
+              },
+              "ref": null,
+              "rendered": "6:07am",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "hr",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3
+                className="depart-stop"
+>
+                S Monaco Pkwy & Evans Ave
+</h3>,
+              <div
+                className="line-info-container"
+>
+                <img
+                                className="transit-icon"
+                                src="undefined"
+                />
+                <div
+                                className="line-id-container"
+                                style={
+                                                Object {
+                                                                "background": "#0277bd",
+                                                              }
+                                }
+                >
+                                <p
+                                                className="line-id"
+                                />
+                </div>
+</div>,
+              <h3
+                className="arrive-stop"
+>
+                Monaco Pkwy & 29th Ave
+</h3>,
+            ],
+            "className": "step-locations-container",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "S Monaco Pkwy & Evans Ave",
+                "className": "depart-stop",
+              },
+              "ref": null,
+              "rendered": "S Monaco Pkwy & Evans Ave",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <img
+                    className="transit-icon"
+                    src="undefined"
+/>,
+                  <div
+                    className="line-id-container"
+                    style={
+                                        Object {
+                                                            "background": "#0277bd",
+                                                          }
+                    }
+>
+                    <p
+                                        className="line-id"
+                    />
+</div>,
+                ],
+                "className": "line-info-container",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "transit-icon",
+                    "src": "undefined",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <p
+                      className="line-id"
+/>,
+                    "className": "line-id-container",
+                    "style": Object {
+                      "background": "#0277bd",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": undefined,
+                      "className": "line-id",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "p",
+                  },
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Monaco Pkwy & 29th Ave",
+                "className": "arrive-stop",
+              },
+              "ref": null,
+              "rendered": "Monaco Pkwy & 29th Ave",
+              "type": "h3",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;

@@ -4,51 +4,43 @@ import {  shallow } from 'enzyme';
 
 describe('EndAddressInput', () => {
   let wrapper;
+  let mockStoreEndAddress;
   beforeEach(() => {
-    wrapper = shallow( <EndAddressInput />);
+    mockStoreEndAddress=jest.fn();
+    wrapper = shallow( 
+      <EndAddressInput  
+        storeEndAddress={mockStoreEndAddress}
+      />);
   });
-  
+   
   test('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
   describe('handleChange', () => {
-    test.skip('should call handleChange of change of the input field ', () => {
-      const wrapper = shallow( <EndAddressInput />);
+    test('should call handleChange of change of the input field ', () => {
       const mockEndAddress = 'Union Station, Denver, CO, USA';
-      const handleChange = jest.fn();
-      const event = {
-        preventDefault() {},
-        target: {
-          value: 'Union Station, Denver, CO, USA'
-        }
-      };
       
-      handleChange(event);
-
-      wrapper.find('input').simulate('change', event);
-      expect(handleChange).toHaveBeenCalled();
-      expect(wrapper.state('.location-search-input-end')).toEqual(mockEndAddress);
+      wrapper.instance().handleChange(mockEndAddress);
+      expect(wrapper.state('endAddress')).toEqual(mockEndAddress);
     });
   });
 
   describe('handleSelect', () => {
-    it.skip('should call handleSelect on submit', () => {
-      const wrapper = shallow( <EndAddressInput />);
+    it('should call handleSelect on submit with the correct params', () => {
       const mockEndAddress = 'Union Station, Denver, CO, USA';
-      const handleSelect= jest.fn();
-      const event = {
-        // preventDefault() {},
-        target: {
-          value: 'mockEndAddress'
-        }
-      };
       
-      handleChange(mockEndAddress);
+      wrapper.instance().handleSelect(mockEndAddress);
 
-      wrapper.find('input').simulate('select', event);
-      expect(handleSelect).toHaveBeenCalled();
+      expect(mockStoreEndAddress).toHaveBeenCalledWith(mockEndAddress);
+    });
+
+    it('should set the endAddress state', () => {
+      const mockEndAddress = 'Union Station, Denver, CO, USA';
+      
+      wrapper.instance().handleSelect(mockEndAddress);
+
+      expect(wrapper.state('endAddress')).toEqual(mockEndAddress)
     });
   });
-
 });

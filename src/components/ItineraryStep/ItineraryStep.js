@@ -2,7 +2,7 @@ import React from 'react';
 
 import './ItineraryStep.css';
 
-const ItineraryStep = ({handleClick, data}) => {
+export const ItineraryStep = ({handleClick, data}) => {
 
   const {
     arrival_stop,
