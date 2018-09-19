@@ -45,7 +45,6 @@ describe('postItineraries', () => {
   });
 
   it('should dispatch storeItinerary with the correct param', async () => {
-    // const itinerary = mockItinerary;
 
     window.fetch = jest.fn().mockImplpementation(() => Promise.resolve({
       ok: true,
