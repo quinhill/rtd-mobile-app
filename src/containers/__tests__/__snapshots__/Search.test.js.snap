@@ -152,7 +152,7 @@ ShallowWrapper {
                                         list="minutes"
                                         name="minutes"
                                         onChange={[Function]}
-                                        value={16}
+                                        value={22}
                               />
                               <datalist
                                         id="minutes"
@@ -411,7 +411,7 @@ ShallowWrapper {
                                           list="minutes"
                                           name="minutes"
                                           onChange={[Function]}
-                                          value={16}
+                                          value={22}
                             />
                             <datalist
                                           id="minutes"
@@ -637,7 +637,7 @@ ShallowWrapper {
                                     list="minutes"
                                     name="minutes"
                                     onChange={[Function]}
-                                    value={16}
+                                    value={22}
                   />
                   <datalist
                                     id="minutes"
@@ -929,7 +929,7 @@ ShallowWrapper {
                       list="minutes"
                       name="minutes"
                       onChange={[Function]}
-                      value={16}
+                      value={22}
 />,
                     <datalist
                       id="minutes"
@@ -1267,7 +1267,7 @@ ShallowWrapper {
                       "list": "minutes",
                       "name": "minutes",
                       "onChange": [Function],
-                      "value": 16,
+                      "value": 22,
                     },
                     "ref": null,
                     "rendered": null,
@@ -1725,7 +1725,7 @@ ShallowWrapper {
                                                 list="minutes"
                                                 name="minutes"
                                                 onChange={[Function]}
-                                                value={16}
+                                                value={22}
                                     />
                                     <datalist
                                                 id="minutes"
@@ -1984,7 +1984,7 @@ ShallowWrapper {
                                                 list="minutes"
                                                 name="minutes"
                                                 onChange={[Function]}
-                                                value={16}
+                                                value={22}
                                 />
                                 <datalist
                                                 id="minutes"
@@ -2210,7 +2210,7 @@ ShallowWrapper {
                                         list="minutes"
                                         name="minutes"
                                         onChange={[Function]}
-                                        value={16}
+                                        value={22}
                     />
                     <datalist
                                         id="minutes"
@@ -2502,7 +2502,7 @@ ShallowWrapper {
                         list="minutes"
                         name="minutes"
                         onChange={[Function]}
-                        value={16}
+                        value={22}
 />,
                       <datalist
                         id="minutes"
@@ -2840,7 +2840,7 @@ ShallowWrapper {
                         "list": "minutes",
                         "name": "minutes",
                         "onChange": [Function],
-                        "value": 16,
+                        "value": 22,
                       },
                       "ref": null,
                       "rendered": null,
