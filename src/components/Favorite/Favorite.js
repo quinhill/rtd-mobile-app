@@ -29,8 +29,14 @@ export class Favorite extends Component {
       itinerary_id
     } = favData;
 
-    const startName = start_address.split(',')[0];
-    const endName = end_address.split(',')[0];
+    let startName;
+    let endName;
+    if (start_address) {
+      startName = start_address.split(',')[0];
+      endName = end_address.split(',')[0];
+    }
+
+    const favoriteText = `from: ${startName} to: ${endName}`
 
     return (
       <button
@@ -38,8 +44,7 @@ export class Favorite extends Component {
         id={itinerary_id}
         onClick={this.handleClick}
       >
-        {startName}
-        {endName}
+        {favoriteText}
       </button>
     );
   }

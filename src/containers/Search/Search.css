@@ -54,8 +54,9 @@
 
 .time-select-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin: 20px 0 20px 10%;
+  margin: 20px 0 20px 0;
 }
 
 .radio-container {
@@ -71,8 +72,12 @@
   font-size: 15px;
 }
 
+.time-container {
+  display: flex;
+  margin-top: 10px;
+}
+
 .time-select {
-  margin: 5px;
   width: 45px;
   height: 30px;
   border: 1px solid gray;
@@ -80,8 +85,42 @@
   padding-left: 5px;
 }
 
-datalist {
-  top: -5;
+.amPm {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 5px;
+  align-items: center;
+  height: 30px;
+  width: 60px;
+  justify-content: center;
+}
+
+.am {
+  background: #c02d34;
+  color: white;
+  height: 100%;
+  width: 50%;
+  padding-top: 2px;
+}
+
+#am {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 4px;
+  border: 1px solid #c02d34;
+}
+
+.pm {
+  background: white;
+  color: #555555;
+  height: 100%;
+  width: 50%;
+  padding-top: 2px;
+}
+
+#pm {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #c02d34;
 }
 
 .search-button {
