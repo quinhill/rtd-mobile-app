@@ -29,21 +29,20 @@ describe('StartAddressInput', () => {
 
   describe('handleSelect', () => {
     it('should call storeAddress on the select of the input form ', () => {
-      const wrapper = shallow(<StartAddressInput />);
-      const handleSelect = jest.fn();
-      const { storeStartAddress } = jest.fn();
-      const event = {
-        target : {
-          name: 'startAdress',
-          value: 'union station'
-        }
-      };
+      const mockStartAddress = "Union Station, Denver, CO, USA";
+      
+      wrapper.instance().handleSelect(mockStartAddress);
 
-      handleSelect();
-
-      wrapper.find('.start-address-input').simulate('select', event);
-
-      expect(storeStartAddress).toHaveBeenCalled();
+      expect(mockStoreStartAddress).toHaveBeenCalledWith(mockStartAddress);
     });
   });
+
+  it('should set the state with a new start address', () => {
+    const mockStartAddress = "Union Station, Denver, CO, USA";
+
+    wrapper.instance().handleSelect(mockStartAddress);
+
+    expect(wrapper.state('startAddress')).toEqual(mockStartAddress);
+  });
+  
 });

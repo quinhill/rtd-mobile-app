@@ -40,7 +40,7 @@ describe('EndAddressInput', () => {
       
       wrapper.instance().handleSelect(mockEndAddress);
 
-      expect(wrapper.state('endAddress')).toEqual(mockEndAddress)
+      expect(wrapper.state('endAddress')).toEqual(mockEndAddress);
     });
   });
 }); 
