@@ -1,6 +1,6 @@
 import { isLoading, hasErrored, addFavorite } from '../actions';
 
-const addFavoriteThunk = (fetchObj) => {
+export const addFavoriteThunk = (fetchObj) => {
   const {
     url,
     options
