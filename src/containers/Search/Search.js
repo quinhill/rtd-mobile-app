@@ -188,8 +188,18 @@ export class Search extends Component {
                 value={this.state.am}
                 onClick={this.handleClick}
                 >
-                <p className={am}>am</p>
-                <p className={pm}>pm</p>
+                <p 
+                  className={am}
+                  id='am'
+                >
+                am
+                </p>
+                <p 
+                  className={pm}
+                  id='pm'
+                >
+                pm
+                </p>
               </div>
             </div>
           </div>
