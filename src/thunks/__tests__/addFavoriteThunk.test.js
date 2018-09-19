@@ -19,4 +19,18 @@ describe('addFavoriteThunk', () => {
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
   });
 
+
+  it('should dispatch hasErrored(true) if the response is not ok', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: false
+    }));
+
+    const thunk = addFavoriteThunk(mockUrl);
+
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(({ "isLoading": true, "type": "IS_LOADING" }));
+    expect(mockDispatch).not.toHaveBeenCalledWith(isLoading(false));
+  });
+
 });
