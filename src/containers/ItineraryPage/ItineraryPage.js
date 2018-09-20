@@ -68,7 +68,7 @@ export class ItineraryPage extends Component {
       ? ''
       : `add from: ${startAddress} to: ${endAddress} to favorites?`;
 
-    const itineraries = itinerary.map((itinerary, index) => {
+    const itineraries = itinerary.reverse().map((itinerary, index) => {
       return (
         <ItineraryCard
           key={index}

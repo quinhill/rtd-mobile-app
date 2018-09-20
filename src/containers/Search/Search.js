@@ -32,7 +32,7 @@ export class Search extends Component {
     const time = new Date();
     let hours = time.getHours();
     if (hours > 12) {
-      hours -= 12
+      hours -= 12;
     }
     const minutes = time.getMinutes();
     return {
@@ -44,12 +44,12 @@ export class Search extends Component {
   handleClick = () => {
     this.setState({
       am: !this.state.am
-    })
+    });
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if ( this.props.uid) {
+    if (this.props.uid) {
       const {
         hours,
         minutes,
@@ -98,11 +98,11 @@ export class Search extends Component {
   render() {
     
     const hourOptions = hours.map((hour, index) => {
-      return <option key={index} value={hour}>{hour}</option>
+      return <option key={index} value={hour}>{hour}</option>;
     });
 
     const minuteOptions = minutes.map((minute, index) => {
-      return <option key={index} value={minute}>{minute}</option>
+      return <option key={index} value={minute}>{minute}</option>;
     });
 
     const am = this.state.am
@@ -117,8 +117,8 @@ export class Search extends Component {
         <h2 className='title'>
           Search for a connection:
         </h2>
-          <StartAddressInput />
-          <EndAddressInput />
+        <StartAddressInput />
+        <EndAddressInput />
         <form
           className='form'
           onSubmit={this.handleSubmit}
@@ -163,10 +163,10 @@ export class Search extends Component {
                 onChange={this.handleChange}
                 value={this.state.hours}
                 list='hours'
-                />
+              />
               <datalist
                 id='hours'
-                >
+              >
                 {hourOptions}
               </datalist>
               :
@@ -176,10 +176,10 @@ export class Search extends Component {
                 onChange={this.handleChange}
                 value={this.state.minutes}
                 list='minutes'
-                />
+              />
               <datalist
                 id='minutes'
-                >
+              >
                 {minuteOptions}
               </datalist>
               <div
@@ -187,7 +187,7 @@ export class Search extends Component {
                 name='am'
                 value={this.state.am}
                 onClick={this.handleClick}
-                >
+              >
                 <p 
                   className={am}
                   id='am'
@@ -206,7 +206,7 @@ export class Search extends Component {
           <button
             type='submit'
             className='button'
-            >
+          >
             Search
           </button >
         </form>
