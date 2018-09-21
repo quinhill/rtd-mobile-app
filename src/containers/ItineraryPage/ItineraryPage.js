@@ -6,6 +6,7 @@ import { postFavoriteUrl, getFavoritesUrl } from '../../constants/urlGenerator';
 import addFavoriteThunk from '../../thunks/addFavoriteThunk';
 import getFavoritesThunk from '../../thunks/getFavoritesThunk';
 import { infoCleaner, cleanStep } from '../../constants/cleanerFunctions';
+import LoadingPage from '../../components/Loading/Loading';
 
 
 import './ItineraryPage.css';
@@ -51,7 +52,8 @@ export class ItineraryPage extends Component {
   render() {
     const {
       itinerary,
-      uid
+      uid,
+      isLoading
     } = this.props;
 
     let startAddress;
@@ -78,27 +80,34 @@ export class ItineraryPage extends Component {
       );
     });
 
-    return (
-      <div className='itinerary-page'>
-        <div className='favorite-button-container'>
-          {favoriteText}
-          <button
-            className={isFavorite}
-            onClick={this.addFavorite}
-            value={uid}
-          >
-          </button>
+    if (isLoading) {
+      return (
+        <LoadingPage />
+      );
+    } else {
+      return (
+        <div className='itinerary-page'>
+          <div className='favorite-button-container'>
+            {favoriteText}
+            <button
+              className={isFavorite}
+              onClick={this.addFavorite}
+              value={uid}
+            >
+            </button>
+          </div>
+          {itineraries}
         </div>
-        {itineraries}
-      </div>
-    );
+      );
+    }
   }
 }
 
 export const mapStateToProps = state => ({
   favorites: state.favorites,
   itinerary: state.itinerary,
-  uid: state.user.uid
+  uid: state.user.uid,
+  isLoading: state.isLoading
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -112,5 +121,6 @@ ItineraryPage.propTypes = {
   favorites: PropTypes.array,
   itinerary: PropTypes.array,
   uid: PropTypes.string,
-  addFavorite: PropTypes.func
+  addFavorite: PropTypes.func,
+  isLoading: PropTypes.bool
 };

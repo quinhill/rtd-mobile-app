@@ -66,9 +66,15 @@ export class SignInPage extends Component {
   }
 
   render() {
-    const { email, password, error } = this.state;
+    const { 
+      email, 
+      password, 
+      error 
+    } = this.state;
 
     const isInvalid = password === "" || email === "";
+
+
 
     return (
       <div className="page">
@@ -129,6 +135,10 @@ export const SignInLink = () => {
   );
 };
 
+export const mapStateToProps = state => ({
+  isLoading: state.isLoading
+});
+
 export const mapDispatchToProps = dispatch => ({
   signIn: url => dispatch(signInThunk(url)),
   getFavorites: url => dispatch(getFavoritesThunk(url))
@@ -136,7 +146,7 @@ export const mapDispatchToProps = dispatch => ({
 
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
   )(SignInPage)
 );

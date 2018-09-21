@@ -8,9 +8,9 @@ import postItineraryThunk from '../../thunks/postItineraryThunk';
 import * as routes from '../../constants/routes';
 import { hours, minutes } from '../../constants/timeArrays';
 import { timeCleaner } from '../../constants/cleanerFunctions';
+import { itineraryUrl } from '../../constants/urlGenerator';
 
 import './Search.css';
-import { itineraryUrl } from '../../constants/urlGenerator';
 
 export class Search extends Component {
   constructor(props) {
@@ -69,6 +69,7 @@ export class Search extends Component {
   }
 
   makeOptions = (timeData) => {
+
     const {
       startAddress,
       endAddress,
@@ -76,6 +77,7 @@ export class Search extends Component {
       history,
       uid
     } = this.props;
+
     const url = itineraryUrl(uid);
     const bodyObj = {
       start_address: startAddress,
@@ -96,7 +98,8 @@ export class Search extends Component {
   };
 
   render() {
-    
+    const { isLoading } = this.props;
+
     const hourOptions = hours.map((hour, index) => {
       return <option key={index} value={hour}>{hour}</option>;
     });
@@ -111,11 +114,11 @@ export class Search extends Component {
     const pm = this.state.am
       ? 'pm'
       : 'am';
-
+    
     return (
       <div className="container">
         <h2 className='title'>
-          Search for a connection:
+            Search for a connection:
         </h2>
         <StartAddressInput />
         <EndAddressInput />
@@ -140,7 +143,7 @@ export class Search extends Component {
                 htmlFor='departing'
                 className='radio-label'
               >
-                departing
+                  departing
               </label>
               <input
                 name='departing'
@@ -152,7 +155,7 @@ export class Search extends Component {
                 htmlFor='arriving'
                 className='radio-label'
               >
-                arriving
+                  arriving
               </label>
               <p id='at'>at</p>
             </div>
@@ -169,7 +172,7 @@ export class Search extends Component {
               >
                 {hourOptions}
               </datalist>
-              :
+                :
               <input
                 className='time-select'
                 name='minutes'
@@ -192,13 +195,13 @@ export class Search extends Component {
                   className={am}
                   id='am'
                 >
-                am
+                  am
                 </p>
                 <p 
                   className={pm}
                   id='pm'
                 >
-                pm
+                  pm
                 </p>
               </div>
             </div>
@@ -207,18 +210,20 @@ export class Search extends Component {
             type='submit'
             className='button'
           >
-            Search
+              Search
           </button >
         </form>
       </div>
     );
   }
+
 }
 
 export const mapStateToProps = state => ({
   startAddress: state.startAddress,
   endAddress: state.endAddress,
-  uid: state.user.uid
+  uid: state.user.uid,
+  isLoading: state.isLoading
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -233,5 +238,6 @@ Search.propTypes = {
   startAddress: PropTypes.string,
   endAddress: PropTypes.string,
   history: PropTypes.object,
-  uid: PropTypes.string
+  uid: PropTypes.string,
+  isLoading: PropTypes.bool
 };
