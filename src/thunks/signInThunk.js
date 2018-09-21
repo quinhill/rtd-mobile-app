@@ -12,9 +12,7 @@ export const signInThunk = (url) => {
         return response;
       })
       .then(response => response.json())
-      .then(userInfo => {
-        dispatch(signInUser(userInfo));
-      })
+      .then(userInfo => dispatch(signInUser(userInfo)))
       .catch(() => dispatch(hasErrored(true)));
   };
 };

@@ -1,0 +1,6 @@
+.loading-page {
+  height: 100vh;
+  width: 100%;
+  background-color: #c02d34;
+  background-image: url('/spinner.svg');
+}
