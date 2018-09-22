@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import getFavItineraryThunk from '../../thunks/getFavItineraryThunk';
 import LoadingPage from '../../components/Loading/Loading';
 
 import './Favorite.css'; 
@@ -50,12 +47,7 @@ export class Favorite extends Component {
   }
 }
 
-
-export const mapDispatchToState = dispatch => ({
-  getFavItinerary: (url) => dispatch(getFavItineraryThunk(url))
-});
-
-export default withRouter(connect(null, mapDispatchToState)(Favorite));
+export default Favorite;
 
 Favorite.propTypes = {
   name: PropTypes.string,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Favorite from '../Favorite/Favorite';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { getFavUrl } from '../../constants/urlGenerator';
 import { getFavItineraryThunk } from '../../thunks/getFavItineraryThunk';
@@ -67,7 +68,7 @@ export const mapDispatchToState = dispatch => ({
   getFavItinerary: url => dispatch(getFavItineraryThunk(url))
 });
 
-export default connect(mapStateToProps)(FavoritesContainer);
+export default withRouter(connect(mapStateToProps, mapDispatchToState)(FavoritesContainer));
 
 FavoritesContainer.propTypes = {
   favorites: PropTypes.array,
