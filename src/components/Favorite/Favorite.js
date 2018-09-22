@@ -1,28 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-
-import './Favorite.css'; 
 import { connect } from 'react-redux';
 import getFavItineraryThunk from '../../thunks/getFavItineraryThunk';
-import { getFavUrl } from '../../constants/urlGenerator';
-import * as routes from '../../constants/routes';
+import LoadingPage from '../../components/Loading/Loading';
+
+import './Favorite.css'; 
 
 export class Favorite extends Component {
   
-  handleClick = (event) => {
-    const { id } = event.target;
-    const { 
-      uid, 
-      getFavItinerary, 
-      history } = this.props;
-    const url = getFavUrl(uid, id);
-    getFavItinerary(url);
-    history.push(routes.ITINERARY);
-  }
+  
 
   render() {
-    const { favData } = this.props;
+    const { 
+      favData, 
+      isLoading,
+      handleClick
+    } = this.props;
     const {
       start_address,
       end_address,
@@ -36,32 +30,36 @@ export class Favorite extends Component {
       endName = end_address.split(',')[0];
     }
 
-    const favoriteText = `from: ${startName} to: ${endName}`
+    const favoriteText = `from: ${startName} to: ${endName}`;
 
-    return (
-      <button
-        className='favorite-button'
-        id={itinerary_id}
-        onClick={this.handleClick}
-      >
-        {favoriteText}
-      </button>
-    );
+    if (isLoading) {
+      return (
+        <LoadingPage type='favorites' />
+      );
+    } else { 
+      return (
+        <button
+          className='favorite-button'
+          id={itinerary_id}
+          onClick={handleClick}
+        >
+          {favoriteText}
+        </button>
+      );
+    }
   }
 }
 
-export const mapPropsToState = state => ({
-  uid: state.user.uid
-});
 
 export const mapDispatchToState = dispatch => ({
   getFavItinerary: (url) => dispatch(getFavItineraryThunk(url))
 });
 
-export default withRouter(connect(mapPropsToState, mapDispatchToState)(Favorite));
+export default withRouter(connect(null, mapDispatchToState)(Favorite));
 
 Favorite.propTypes = {
   name: PropTypes.string,
   favData: PropTypes.array,
-  history: PropTypes.object
+  isLoading: PropTypes.bool,
+  handleClick: PropTypes.func
 }; 
