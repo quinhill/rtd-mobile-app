@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { getFavUrl } from '../../constants/urlGenerator';
 import { getFavItineraryThunk } from '../../thunks/getFavItineraryThunk';
 import * as routes from '../../constants/routes';
+import LoadingPage from '../../components/Loading/Loading';
 
 import './FavoritesContainer.css';
 
@@ -29,6 +30,9 @@ export class FavoritesContainer extends Component {
       favorites
     } = this.props;
 
+    
+    const loading = <LoadingPage type='favorites' />;
+
     const favoriteIds = favorites.reduce((favoritesObj, favorite) => {
       if (!favoritesObj[favorite.itinerary_id]) {
         favoritesObj[favorite.itinerary_id] = {...favorite};
@@ -50,17 +54,18 @@ export class FavoritesContainer extends Component {
       <div className='favorite_card-container'>
         <div className='favorites-div'>
           <h2 className='favorites-title'>Favorites</h2>
-          {favoritesData}
+          {favorites.length 
+            ? favoritesData
+            : loading}
         </div>
       </div>
     );
   }
-  
+
 }
 
 export const mapStateToProps = state => ({
   favorites: state.favorites,
-  isLoading: state.isLoading,
   uid: state.user.uid
 });
 
@@ -72,7 +77,6 @@ export default withRouter(connect(mapStateToProps, mapDispatchToState)(Favorites
 
 FavoritesContainer.propTypes = {
   favorites: PropTypes.array,
-  isLoading: PropTypes.bool,
   uid: PropTypes.string,
   getFavItinerary: PropTypes.func,
   history: PropTypes.object

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import LoadingPage from '../../components/Loading/Loading';
 
 import './Favorite.css'; 
 
@@ -29,21 +28,15 @@ export class Favorite extends Component {
 
     const favoriteText = `from: ${startName} to: ${endName}`;
 
-    if (isLoading) {
-      return (
-        <LoadingPage type='favorites' />
-      );
-    } else { 
-      return (
-        <button
-          className='favorite-button'
-          id={itinerary_id}
-          onClick={handleClick}
-        >
-          {favoriteText}
-        </button>
-      );
-    }
+    return (
+      <button
+        className='favorite-button'
+        id={itinerary_id}
+        onClick={handleClick}
+      >
+        {favoriteText}
+      </button>
+    );
   }
 }
 
@@ -51,7 +44,7 @@ export default Favorite;
 
 Favorite.propTypes = {
   name: PropTypes.string,
-  favData: PropTypes.array,
+  favData: PropTypes.object,
   isLoading: PropTypes.bool,
   handleClick: PropTypes.func
 }; 
