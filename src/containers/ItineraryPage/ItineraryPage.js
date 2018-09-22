@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ItineraryCard from '../../components/ItineraryCard/ItineraryCard';
 import PropTypes from 'prop-types';
-import { postFavoriteUrl, getFavoritesUrl } from '../../constants/urlGenerator';
+import { postFavoriteUrl } from '../../constants/urlGenerator';
 import addFavoriteThunk from '../../thunks/addFavoriteThunk';
 import getFavoritesThunk from '../../thunks/getFavoritesThunk';
-import { infoCleaner, cleanStep } from '../../constants/cleanerFunctions';
 import LoadingPage from '../../components/Loading/Loading';
 
 

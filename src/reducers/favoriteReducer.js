@@ -5,6 +5,9 @@ export const favorites = (state = [], action) => {
 
     case 'GET_FAVORITES':
       return action.favorites;
+
+    case 'SIGN_OUT_USER':
+      return [];
   
     default:
       return state;
