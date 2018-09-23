@@ -46,3 +46,8 @@ export const getFavorites = (favorites) => ({
   type: 'GET_FAVORITES',
   favorites
 });
+
+export const deleteFavorite = (id) => ({
+  type: 'DELETE_FAVORITE',
+  id
+});

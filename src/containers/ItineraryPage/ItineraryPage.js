@@ -81,7 +81,7 @@ export class ItineraryPage extends Component {
 
     if (isLoading) {
       return (
-        <LoadingPage type='itinerary' />
+        <LoadingPage type='loading-page' />
       );
     } else {
       return (

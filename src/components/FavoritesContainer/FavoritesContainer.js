@@ -3,8 +3,12 @@ import Favorite from '../Favorite/Favorite';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { getFavUrl } from '../../constants/urlGenerator';
-import { getFavItineraryThunk } from '../../thunks/getFavItineraryThunk';
+import { 
+  getFavUrl,
+  deleteFavUrl
+} from '../../constants/urlGenerator';
+import getFavItineraryThunk from '../../thunks/getFavItineraryThunk';
+import deleteFavItineraryThunk from '../../thunks/deleteFavItineraryThunk';
 import * as routes from '../../constants/routes';
 import LoadingPage from '../../components/Loading/Loading';
 
@@ -13,16 +17,26 @@ import './FavoritesContainer.css';
 
 export class FavoritesContainer extends Component {
 
-  handleClick = (event) => {
-    const { id } = event.target;
+  searchFavorite = async (event) => {
+    const { value } = event.target;
     const { 
       uid, 
       getFavItinerary, 
       history 
     } = this.props;
-    const url = getFavUrl(uid, id);
-    getFavItinerary(url);
+    const url = getFavUrl(uid, value);
+    await getFavItinerary(url);
     history.push(routes.ITINERARY);
+  }
+
+  deleteFavorite = async (event) => {
+    const { value } = event.target;
+    const {
+      uid,
+      deleteFavItinerary
+    } = this.props;
+    const fetchObj = deleteFavUrl(uid, value);
+    await deleteFavItinerary(fetchObj);
   }
 
   render(){
@@ -31,7 +45,7 @@ export class FavoritesContainer extends Component {
     } = this.props;
 
     
-    const loading = <LoadingPage type='favorites' />;
+    const loading = <LoadingPage type='loading-container' />;
 
     const favoriteIds = favorites.reduce((favoritesObj, favorite) => {
       if (!favoritesObj[favorite.itinerary_id]) {
@@ -42,11 +56,11 @@ export class FavoritesContainer extends Component {
       
     const favoritesData = Object.keys(favoriteIds).map((id, index) => {
       return (
-        <Favorite 
-          isLoading={this.props.isLoading}
+        <Favorite
           favData={favoriteIds[id]}
           key={index}
-          handleClick={this.handleClick}
+          searchFavorite={this.searchFavorite}
+          deleteFavorite={this.deleteFavorite}
         />
       );
     });
@@ -70,7 +84,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToState = dispatch => ({
-  getFavItinerary: url => dispatch(getFavItineraryThunk(url))
+  getFavItinerary: url => dispatch(getFavItineraryThunk(url)),
+  deleteFavItinerary: fetchObj => dispatch(deleteFavItineraryThunk(fetchObj))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToState)(FavoritesContainer));
@@ -79,5 +94,6 @@ FavoritesContainer.propTypes = {
   favorites: PropTypes.array,
   uid: PropTypes.string,
   getFavItinerary: PropTypes.func,
-  history: PropTypes.object
+  history: PropTypes.object,
+  deleteFavItinerary: PropTypes.func
 };

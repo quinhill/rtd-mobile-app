@@ -74,8 +74,6 @@ export class SignInPage extends Component {
 
     const isInvalid = password === "" || email === "";
 
-
-
     return (
       <div className="page">
         <div className="container">

@@ -5,15 +5,15 @@ import PropTypes from 'prop-types';
 const LoadingPage = (props) => {
   const { type } = props;
 
-  if (type === 'itinerary') {
+  if (type === 'loading-page') {
     return (
-      <div className='itinerary-loading'>
+      <div className='loading-page'>
         <img src='/spinner-white.svg' />
       </div>
     );
-  } else if (type === 'favorites') {
+  } else if (type === 'loading-container') {
     return (
-      <div className='favorites-loading'>
+      <div className='loading-container'>
         <img src='/spinner-red.svg' />
       </div>
     );

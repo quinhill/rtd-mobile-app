@@ -10,7 +10,7 @@ export class ItineraryCard extends Component {
   constructor(props){
     super(props);
     this.state = {
-      showMore: false,
+      showMore: false
     };
   }
 
@@ -32,11 +32,6 @@ export class ItineraryCard extends Component {
       duration,
       steps
     } = this.props.itinerary;
-
-    const {
-      addFavorite,
-      uid
-    } = this.props;
 
     const info = infoCleaner(steps);
 

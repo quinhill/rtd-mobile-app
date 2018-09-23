@@ -1,4 +1,4 @@
-.itinerary-loading {
+.loading-page {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,9 +7,9 @@
   background-color: #c02d34;
 }
 
-.favorites-loading {
+.loading-container {
   height: 100%;
-  width: 90%;
+  width: 100%;
   background-color: white;
   display: flex;
   align-items: center;

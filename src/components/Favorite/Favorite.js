@@ -10,8 +10,8 @@ export class Favorite extends Component {
   render() {
     const { 
       favData, 
-      isLoading,
-      handleClick
+      searchFavorite,
+      deleteFavorite
     } = this.props;
     const {
       start_address,
@@ -29,13 +29,22 @@ export class Favorite extends Component {
     const favoriteText = `from: ${startName} to: ${endName}`;
 
     return (
-      <button
-        className='favorite-button'
-        id={itinerary_id}
-        onClick={handleClick}
-      >
-        {favoriteText}
-      </button>
+      <div className='favorite-button-container'>
+        <button
+          className='favorite-button'
+          value={itinerary_id}
+          onClick={searchFavorite}
+        >
+          {favoriteText}
+        </button>
+        <button 
+          className='favorite-delete-button'
+          onClick={deleteFavorite}
+          value={itinerary_id}
+        >
+          Delete
+        </button>
+      </div>
     );
   }
 }
@@ -46,5 +55,6 @@ Favorite.propTypes = {
   name: PropTypes.string,
   favData: PropTypes.object,
   isLoading: PropTypes.bool,
-  handleClick: PropTypes.func
+  searchFavorite: PropTypes.func,
+  deleteFavorite: PropTypes.func
 }; 

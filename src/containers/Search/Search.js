@@ -11,6 +11,7 @@ import { timeCleaner } from '../../constants/cleanerFunctions';
 import { itineraryUrl } from '../../constants/urlGenerator';
 
 import './Search.css';
+import LoadingPage from '../../components/Loading/Loading';
 
 export class Search extends Component {
   constructor(props) {
@@ -98,7 +99,7 @@ export class Search extends Component {
   };
 
   render() {
-    const { isLoading } = this.props;
+    const { uid } = this.props;
 
     const hourOptions = hours.map((hour, index) => {
       return <option key={index} value={hour}>{hour}</option>;
@@ -115,108 +116,115 @@ export class Search extends Component {
       ? 'pm'
       : 'am';
     
-    return (
-      <div className="container">
-        <h2 className='title'>
-            Search for a connection:
-        </h2>
-        <StartAddressInput />
-        <EndAddressInput />
-        <form
-          className='form'
-          onSubmit={this.handleSubmit}
-        >
-          <div className='time-select-container'>
-            <div
-              className='radio-container'
-              name='departing'
-              onChange={this.handleChange}
-            >
-              <input
-                name='departing'
-                id='departing'
-                type='radio'
-                defaultChecked
-                value={true}
-              />
-              <label
-                htmlFor='departing'
-                className='radio-label'
-              >
-                  departing
-              </label>
-              <input
-                name='departing'
-                id='arriving'
-                type='radio'
-                value={false}
-              />
-              <label
-                htmlFor='arriving'
-                className='radio-label'
-              >
-                  arriving
-              </label>
-              <p id='at'>at</p>
-            </div>
-            <div className='time-container'>
-              <input
-                className='time-select'
-                name='hours'
-                onChange={this.handleChange}
-                value={this.state.hours}
-                list='hours'
-              />
-              <datalist
-                id='hours'
-              >
-                {hourOptions}
-              </datalist>
-                :
-              <input
-                className='time-select'
-                name='minutes'
-                onChange={this.handleChange}
-                value={this.state.minutes}
-                list='minutes'
-              />
-              <datalist
-                id='minutes'
-              >
-                {minuteOptions}
-              </datalist>
+    if (!uid) {
+      return (
+        <div className='container'>
+          <LoadingPage type='loading-container' />
+        </div>
+      );
+    } else {
+      return (
+        <div className="container">
+          <h2 className='title'>
+              Search for a connection:
+          </h2>
+          <StartAddressInput />
+          <EndAddressInput />
+          <form
+            className='form'
+            onSubmit={this.handleSubmit}
+          >
+            <div className='time-select-container'>
               <div
-                className='amPm'
-                name='am'
-                value={this.state.am}
-                onClick={this.handleClick}
+                className='radio-container'
+                name='departing'
+                onChange={this.handleChange}
               >
-                <p 
-                  className={am}
-                  id='am'
+                <input
+                  name='departing'
+                  id='departing'
+                  type='radio'
+                  defaultChecked
+                  value={true}
+                />
+                <label
+                  htmlFor='departing'
+                  className='radio-label'
                 >
-                  am
-                </p>
-                <p 
-                  className={pm}
-                  id='pm'
+                    departing
+                </label>
+                <input
+                  name='departing'
+                  id='arriving'
+                  type='radio'
+                  value={false}
+                />
+                <label
+                  htmlFor='arriving'
+                  className='radio-label'
                 >
-                  pm
-                </p>
+                    arriving
+                </label>
+                <p id='at'>at</p>
+              </div>
+              <div className='time-container'>
+                <input
+                  className='time-select'
+                  name='hours'
+                  onChange={this.handleChange}
+                  value={this.state.hours}
+                  list='hours'
+                />
+                <datalist
+                  id='hours'
+                >
+                  {hourOptions}
+                </datalist>
+                  :
+                <input
+                  className='time-select'
+                  name='minutes'
+                  onChange={this.handleChange}
+                  value={this.state.minutes}
+                  list='minutes'
+                />
+                <datalist
+                  id='minutes'
+                >
+                  {minuteOptions}
+                </datalist>
+                <div
+                  className='amPm'
+                  name='am'
+                  value={this.state.am}
+                  onClick={this.handleClick}
+                >
+                  <p 
+                    className={am}
+                    id='am'
+                  >
+                    am
+                  </p>
+                  <p 
+                    className={pm}
+                    id='pm'
+                  >
+                    pm
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <button
-            type='submit'
-            className='button'
-          >
-              Search
-          </button >
-        </form>
-      </div>
-    );
+            <button
+              type='submit'
+              className='button'
+            >
+                Search
+            </button >
+          </form>
+        </div>
+      );
+    }
   }
-
 }
 
 export const mapStateToProps = state => ({

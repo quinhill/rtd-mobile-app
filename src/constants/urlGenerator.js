@@ -24,3 +24,16 @@ export const getFavoritesUrl = (uid) => (
 export const getFavUrl = (uid, id) => (
   `${base}${uid}/favorites/${id}`
 );
+
+export const deleteFavUrl = (uid, id) => {
+  const url = `${base}${uid}/favorites/${id}`;
+  return {
+    url,
+    options: {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+  };
+};
