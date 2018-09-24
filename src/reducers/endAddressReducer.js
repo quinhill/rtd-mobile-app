@@ -1,11 +1,14 @@
 const endAddress = (state = '', action) => {
   switch (action.type) {
   
-  case 'STORE_END_ADDRESS':
-    return action.endAddress;
+    case 'STORE_END_ADDRESS':
+      return action.endAddress;
 
-  default:
-    return state;
+    case 'SIGN_OUT_USER':
+      return '';
+
+    default:
+      return state;
   }
 };
 

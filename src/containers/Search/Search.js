@@ -8,9 +8,10 @@ import postItineraryThunk from '../../thunks/postItineraryThunk';
 import * as routes from '../../constants/routes';
 import { hours, minutes } from '../../constants/timeArrays';
 import { timeCleaner } from '../../constants/cleanerFunctions';
+import { itineraryUrl } from '../../constants/urlGenerator';
 
 import './Search.css';
-import { itineraryUrl } from '../../constants/urlGenerator';
+import LoadingPage from '../../components/Loading/Loading';
 
 export class Search extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ export class Search extends Component {
     const time = new Date();
     let hours = time.getHours();
     if (hours > 12) {
-      hours -= 12
+      hours -= 12;
     }
     const minutes = time.getMinutes();
     return {
@@ -44,12 +45,12 @@ export class Search extends Component {
   handleClick = () => {
     this.setState({
       am: !this.state.am
-    })
+    });
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if ( this.props.uid) {
+    if (this.props.uid) {
       const {
         hours,
         minutes,
@@ -69,6 +70,7 @@ export class Search extends Component {
   }
 
   makeOptions = (timeData) => {
+
     const {
       startAddress,
       endAddress,
@@ -76,6 +78,7 @@ export class Search extends Component {
       history,
       uid
     } = this.props;
+
     const url = itineraryUrl(uid);
     const bodyObj = {
       start_address: startAddress,
@@ -96,13 +99,14 @@ export class Search extends Component {
   };
 
   render() {
-    
+    const { uid } = this.props;
+
     const hourOptions = hours.map((hour, index) => {
-      return <option key={index} value={hour}>{hour}</option>
+      return <option key={index} value={hour}>{hour}</option>;
     });
 
     const minuteOptions = minutes.map((minute, index) => {
-      return <option key={index} value={minute}>{minute}</option>
+      return <option key={index} value={minute}>{minute}</option>;
     });
 
     const am = this.state.am
@@ -111,114 +115,123 @@ export class Search extends Component {
     const pm = this.state.am
       ? 'pm'
       : 'am';
-
-    return (
-      <div className="container">
-        <h2 className='title'>
-          Search for a connection:
-        </h2>
+    
+    if (!uid) {
+      return (
+        <div className='container'>
+          <LoadingPage type='loading-container' />
+        </div>
+      );
+    } else {
+      return (
+        <div className="container">
+          <h2 className='title'>
+              Search for a connection:
+          </h2>
           <StartAddressInput />
           <EndAddressInput />
-        <form
-          className='form'
-          onSubmit={this.handleSubmit}
-        >
-          <div className='time-select-container'>
-            <div
-              className='radio-container'
-              name='departing'
-              onChange={this.handleChange}
-            >
-              <input
-                name='departing'
-                id='departing'
-                type='radio'
-                defaultChecked
-                value={true}
-              />
-              <label
-                htmlFor='departing'
-                className='radio-label'
-              >
-                departing
-              </label>
-              <input
-                name='departing'
-                id='arriving'
-                type='radio'
-                value={false}
-              />
-              <label
-                htmlFor='arriving'
-                className='radio-label'
-              >
-                arriving
-              </label>
-              <p id='at'>at</p>
-            </div>
-            <div className='time-container'>
-              <input
-                className='time-select'
-                name='hours'
-                onChange={this.handleChange}
-                value={this.state.hours}
-                list='hours'
-                />
-              <datalist
-                id='hours'
-                >
-                {hourOptions}
-              </datalist>
-              :
-              <input
-                className='time-select'
-                name='minutes'
-                onChange={this.handleChange}
-                value={this.state.minutes}
-                list='minutes'
-                />
-              <datalist
-                id='minutes'
-                >
-                {minuteOptions}
-              </datalist>
+          <form
+            className='form'
+            onSubmit={this.handleSubmit}
+          >
+            <div className='time-select-container'>
               <div
-                className='amPm'
-                name='am'
-                value={this.state.am}
-                onClick={this.handleClick}
+                className='radio-container'
+                name='departing'
+                onChange={this.handleChange}
+              >
+                <input
+                  name='departing'
+                  id='departing'
+                  type='radio'
+                  defaultChecked
+                  value={true}
+                />
+                <label
+                  htmlFor='departing'
+                  className='radio-label'
                 >
-                <p 
-                  className={am}
-                  id='am'
+                    departing
+                </label>
+                <input
+                  name='departing'
+                  id='arriving'
+                  type='radio'
+                  value={false}
+                />
+                <label
+                  htmlFor='arriving'
+                  className='radio-label'
                 >
-                am
-                </p>
-                <p 
-                  className={pm}
-                  id='pm'
+                    arriving
+                </label>
+                <p id='at'>at</p>
+              </div>
+              <div className='time-container'>
+                <input
+                  className='time-select'
+                  name='hours'
+                  onChange={this.handleChange}
+                  value={this.state.hours}
+                  list='hours'
+                />
+                <datalist
+                  id='hours'
                 >
-                pm
-                </p>
+                  {hourOptions}
+                </datalist>
+                  :
+                <input
+                  className='time-select'
+                  name='minutes'
+                  onChange={this.handleChange}
+                  value={this.state.minutes}
+                  list='minutes'
+                />
+                <datalist
+                  id='minutes'
+                >
+                  {minuteOptions}
+                </datalist>
+                <div
+                  className='amPm'
+                  name='am'
+                  value={this.state.am}
+                  onClick={this.handleClick}
+                >
+                  <p 
+                    className={am}
+                    id='am'
+                  >
+                    am
+                  </p>
+                  <p 
+                    className={pm}
+                    id='pm'
+                  >
+                    pm
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <button
-            type='submit'
-            className='button'
+            <button
+              type='submit'
+              className='button'
             >
-            Search
-          </button >
-        </form>
-      </div>
-    );
+                Search
+            </button >
+          </form>
+        </div>
+      );
+    }
   }
 }
 
 export const mapStateToProps = state => ({
   startAddress: state.startAddress,
   endAddress: state.endAddress,
-  uid: state.user.uid
+  uid: state.user.uid,
+  isLoading: state.isLoading
 });
 
 export const mapDispatchToProps = dispatch => ({
@@ -233,5 +246,6 @@ Search.propTypes = {
   startAddress: PropTypes.string,
   endAddress: PropTypes.string,
   history: PropTypes.object,
-  uid: PropTypes.string
+  uid: PropTypes.string,
+  isLoading: PropTypes.bool
 };

@@ -1,28 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 
 import './Favorite.css'; 
-import { connect } from 'react-redux';
-import getFavItineraryThunk from '../../thunks/getFavItineraryThunk';
-import { getFavUrl } from '../../constants/urlGenerator';
-import * as routes from '../../constants/routes';
 
 export class Favorite extends Component {
   
-  handleClick = (event) => {
-    const { id } = event.target;
-    const { 
-      uid, 
-      getFavItinerary, 
-      history } = this.props;
-    const url = getFavUrl(uid, id);
-    getFavItinerary(url);
-    history.push(routes.ITINERARY);
-  }
+  
 
   render() {
-    const { favData } = this.props;
+    const { 
+      favData, 
+      searchFavorite,
+      deleteFavorite
+    } = this.props;
     const {
       start_address,
       end_address,
@@ -36,32 +26,35 @@ export class Favorite extends Component {
       endName = end_address.split(',')[0];
     }
 
-    const favoriteText = `from: ${startName} to: ${endName}`
+    const favoriteText = `from: ${startName} to: ${endName}`;
 
     return (
-      <button
-        className='favorite-button'
-        id={itinerary_id}
-        onClick={this.handleClick}
-      >
-        {favoriteText}
-      </button>
+      <div className='favorite-button-container'>
+        <button
+          className='favorite-button'
+          value={itinerary_id}
+          onClick={searchFavorite}
+        >
+          {favoriteText}
+        </button>
+        <button 
+          className='favorite-delete-button'
+          onClick={deleteFavorite}
+          value={itinerary_id}
+        >
+          Delete
+        </button>
+      </div>
     );
   }
 }
 
-export const mapPropsToState = state => ({
-  uid: state.user.uid
-});
-
-export const mapDispatchToState = dispatch => ({
-  getFavItinerary: (url) => dispatch(getFavItineraryThunk(url))
-});
-
-export default withRouter(connect(mapPropsToState, mapDispatchToState)(Favorite));
+export default Favorite;
 
 Favorite.propTypes = {
   name: PropTypes.string,
-  favData: PropTypes.array,
-  history: PropTypes.object
+  favData: PropTypes.object,
+  isLoading: PropTypes.bool,
+  searchFavorite: PropTypes.func,
+  deleteFavorite: PropTypes.func
 }; 

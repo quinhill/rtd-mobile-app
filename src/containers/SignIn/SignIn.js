@@ -1,16 +1,13 @@
 import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
-
 import { auth } from "../../firebase";
 import { SignUpLink } from "../SignUp/SignUp";
 import { PasswordForgetLink } from "../../components/PasswordForget/PasswordForget";
-
 import { connect } from "react-redux";
 import signInThunk from "../../thunks/signInThunk";
-
+import getFavoritesThunk from "../../thunks/getFavoritesThunk";
 import * as routes from "../../constants/routes";
 import { signInUrl } from "../../constants/urlGenerator";
-
 import PropTypes from "prop-types";
 
 import "./SignIn.css";
@@ -33,21 +30,24 @@ export class SignInPage extends Component {
     });
   };
 
-  onSubmit = event => {
+  onSubmit = async event => {
     event.preventDefault();
     const { email, password } = this.state;
 
     const { history } = this.props;
 
-    auth
-      .doSignInWithEmailAndPassword(email, password)
-      .then(authUser => {
-        const url = signInUrl(authUser.user.uid);
-        return this.props.signInThunk(url);
-      })
-      .catch(error => {
-        this.setState({ error: error });
-      });
+    try {
+      const authUser = await auth
+        .doSignInWithEmailAndPassword(email, password);
+      const {
+        userUrl,
+        favoritesUrl
+      } = signInUrl(authUser.user.uid);
+      await this.props.signIn(userUrl);
+      await this.props.getFavorites(favoritesUrl);
+    } catch (error) {
+      this.setState({ error: error });
+    }
     this.resetForm();
     history.push(routes.HOME);
   };
@@ -62,11 +62,15 @@ export class SignInPage extends Component {
   deleteInput = (event) => {
     event.preventDefault();
     const { name } = event.target;
-    this.setState({[name]: ''})
+    this.setState({[name]: ''});
   }
 
   render() {
-    const { email, password, error } = this.state;
+    const { 
+      email, 
+      password, 
+      error 
+    } = this.state;
 
     const isInvalid = password === "" || email === "";
 
@@ -129,18 +133,24 @@ export const SignInLink = () => {
   );
 };
 
+export const mapStateToProps = state => ({
+  isLoading: state.isLoading
+});
+
 export const mapDispatchToProps = dispatch => ({
-  signInThunk: user => dispatch(signInThunk(user))
+  signIn: url => dispatch(signInThunk(url)),
+  getFavorites: url => dispatch(getFavoritesThunk(url))
 });
 
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
   )(SignInPage)
 );
 
 SignInPage.propTypes = {
-  signInThunk: PropTypes.func,
+  signIn: PropTypes.func,
+  getFavorites: PropTypes.func,
   history: PropTypes.object
 };

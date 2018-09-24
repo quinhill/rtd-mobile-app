@@ -98,14 +98,56 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "from: undefined to: undefined",
-      "className": "favorite-button",
-      "id": undefined,
-      "onClick": [Function],
+      "children": Array [
+        <button
+          className="favorite-button"
+          onClick={undefined}
+          value={undefined}
+>
+          from: undefined to: undefined
+</button>,
+        <button
+          className="favorite-delete-button"
+          onClick={undefined}
+          value={undefined}
+>
+          Delete
+</button>,
+      ],
+      "className": "favorite-button-container",
     },
     "ref": null,
-    "rendered": "from: undefined to: undefined",
-    "type": "button",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "from: undefined to: undefined",
+          "className": "favorite-button",
+          "onClick": undefined,
+          "value": undefined,
+        },
+        "ref": null,
+        "rendered": "from: undefined to: undefined",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Delete",
+          "className": "favorite-delete-button",
+          "onClick": undefined,
+          "value": undefined,
+        },
+        "ref": null,
+        "rendered": "Delete",
+        "type": "button",
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -113,14 +155,56 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "from: undefined to: undefined",
-        "className": "favorite-button",
-        "id": undefined,
-        "onClick": [Function],
+        "children": Array [
+          <button
+            className="favorite-button"
+            onClick={undefined}
+            value={undefined}
+>
+            from: undefined to: undefined
+</button>,
+          <button
+            className="favorite-delete-button"
+            onClick={undefined}
+            value={undefined}
+>
+            Delete
+</button>,
+        ],
+        "className": "favorite-button-container",
       },
       "ref": null,
-      "rendered": "from: undefined to: undefined",
-      "type": "button",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "from: undefined to: undefined",
+            "className": "favorite-button",
+            "onClick": undefined,
+            "value": undefined,
+          },
+          "ref": null,
+          "rendered": "from: undefined to: undefined",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Delete",
+            "className": "favorite-delete-button",
+            "onClick": undefined,
+            "value": undefined,
+          },
+          "ref": null,
+          "rendered": "Delete",
+          "type": "button",
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {

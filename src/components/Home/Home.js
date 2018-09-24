@@ -5,19 +5,9 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';
 import './Home.css';
-import { getFavoritesUrl } from '../../constants/urlGenerator';
 import getFavoritesThunk from '../../thunks/getFavoritesThunk';
-import * as routes from '../../constants/routes';
 
 export class HomePage extends Component {
-
-  componentDidUpdate() {
-    if (this.props.user) {
-      const { user } = this.props;
-      const url = getFavoritesUrl(user.uid);
-      this.props.getFavorites(url);
-    }
-  }
 
   render(){
     return (

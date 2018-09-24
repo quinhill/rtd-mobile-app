@@ -5,6 +5,14 @@ export const favorites = (state = [], action) => {
 
     case 'GET_FAVORITES':
       return action.favorites;
+
+    case 'DELETE_FAVORITE':
+      return state.filter(favorite => (
+        favorite.id !== action.id
+      ));
+
+    case 'SIGN_OUT_USER':
+      return [];
   
     default:
       return state;
