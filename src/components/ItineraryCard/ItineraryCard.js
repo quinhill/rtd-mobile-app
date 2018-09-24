@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { infoCleaner, cleanStep } from '../../constants/cleanerFunctions';
 import ItineraryStep from '../ItineraryStep/ItineraryStep';
-import DurationLine from '../DurationLine/DurationLine';
 
 import './ItineraryCard.css';
 

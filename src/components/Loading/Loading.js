@@ -18,7 +18,6 @@ const LoadingPage = (props) => {
       </div>
     );
   }
-
 };
 
 export default LoadingPage;

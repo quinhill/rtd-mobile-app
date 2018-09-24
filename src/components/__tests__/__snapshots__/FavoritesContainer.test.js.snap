@@ -104,7 +104,8 @@ ShallowWrapper {
         >
                 Favorites
         </h2>
-        <withRouter(Connect(Favorite))
+        <Favorite
+                deleteFavorite={[Function]}
                 favData={
                         Object {
                                 "0": Object {
@@ -181,6 +182,7 @@ ShallowWrapper {
                                 },
                               }
                 }
+                searchFavorite={[Function]}
         />
 </div>,
       "className": "favorite_card-container",
@@ -198,7 +200,8 @@ ShallowWrapper {
             Favorites
 </h2>,
           Array [
-            <withRouter(Connect(Favorite))
+            <Favorite
+              deleteFavorite={[Function]}
               favData={
                             Object {
                                           "0": Object {
@@ -275,6 +278,7 @@ ShallowWrapper {
                                           },
                                         }
               }
+              searchFavorite={[Function]}
 />,
           ],
         ],
@@ -297,8 +301,9 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": "0",
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
+            "deleteFavorite": [Function],
             "favData": Object {
               "0": Object {
                 "arrival_time": "4:11pm",
@@ -373,6 +378,7 @@ ShallowWrapper {
                 ],
               },
             },
+            "searchFavorite": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -397,7 +403,8 @@ ShallowWrapper {
           >
                     Favorites
           </h2>
-          <withRouter(Connect(Favorite))
+          <Favorite
+                    deleteFavorite={[Function]}
                     favData={
                               Object {
                                         "0": Object {
@@ -474,6 +481,7 @@ ShallowWrapper {
                                         },
                                       }
                     }
+                    searchFavorite={[Function]}
           />
 </div>,
         "className": "favorite_card-container",
@@ -491,7 +499,8 @@ ShallowWrapper {
               Favorites
 </h2>,
             Array [
-              <withRouter(Connect(Favorite))
+              <Favorite
+                deleteFavorite={[Function]}
                 favData={
                                 Object {
                                                 "0": Object {
@@ -568,6 +577,7 @@ ShallowWrapper {
                                                 },
                                               }
                 }
+                searchFavorite={[Function]}
 />,
             ],
           ],
@@ -590,8 +600,9 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": "0",
-            "nodeType": "function",
+            "nodeType": "class",
             "props": Object {
+              "deleteFavorite": [Function],
               "favData": Object {
                 "0": Object {
                   "arrival_time": "4:11pm",
@@ -666,6 +677,7 @@ ShallowWrapper {
                   ],
                 },
               },
+              "searchFavorite": [Function],
             },
             "ref": null,
             "rendered": null,
