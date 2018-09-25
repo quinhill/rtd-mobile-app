@@ -12,6 +12,7 @@ import { itineraryUrl } from '../../constants/urlGenerator';
 
 import './Search.css';
 import LoadingPage from '../../components/Loading/Loading';
+import { geocode } from '../../constants/geocoder';
 
 export class Search extends Component {
   constructor(props) {
@@ -24,11 +25,12 @@ export class Search extends Component {
     };
   }
 
+  
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
- 
+  
   getTime = () => {
     const time = new Date();
     let hours = time.getHours();
@@ -41,13 +43,13 @@ export class Search extends Component {
       minutes
     };
   }
-
+  
   handleClick = () => {
     this.setState({
       am: !this.state.am
     });
   }
-
+  
   handleSubmit = (event) => {
     event.preventDefault();
     if (this.props.uid) {
@@ -58,8 +60,8 @@ export class Search extends Component {
         am
       } = this.state;
       const depOrArr = departing
-        ? 'departure_time'
-        : 'arrival_time';
+      ? 'departure_time'
+      : 'arrival_time';
       const timeData = {
         [depOrArr]: timeCleaner(hours, minutes, am)
       };
@@ -68,9 +70,25 @@ export class Search extends Component {
       this.props.history.push(routes.SIGN_UP);
     }
   }
-
+  
   makeOptions = (timeData) => {
 
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    const success = (pos) => {
+      const crd = pos.coords;
+      const address = geocode(crd.latitude, longitude);
+      console.log(address);
+    }
+
+    const error = (err) => {
+      
+    }
+    
     const {
       startAddress,
       endAddress,
@@ -78,7 +96,7 @@ export class Search extends Component {
       history,
       uid
     } = this.props;
-
+    
     const url = itineraryUrl(uid);
     const bodyObj = {
       start_address: startAddress,
@@ -97,8 +115,9 @@ export class Search extends Component {
     postItineraryThunk(fetchObject);
     history.push(routes.ITINERARY);
   };
-
+  
   render() {
+
     const { uid } = this.props;
 
     const hourOptions = hours.map((hour, index) => {
