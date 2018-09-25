@@ -111,7 +111,10 @@ ShallowWrapper {
           onClick={undefined}
           value={undefined}
 >
-          Delete
+          <img
+                    className="delete-icon"
+                    src="delete.svg"
+          />
 </button>,
       ],
       "className": "favorite-button-container",
@@ -137,13 +140,27 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Delete",
+          "children": <img
+            className="delete-icon"
+            src="delete.svg"
+/>,
           "className": "favorite-delete-button",
           "onClick": undefined,
           "value": undefined,
         },
         "ref": null,
-        "rendered": "Delete",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "delete-icon",
+            "src": "delete.svg",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
         "type": "button",
       },
     ],
@@ -168,7 +185,10 @@ ShallowWrapper {
             onClick={undefined}
             value={undefined}
 >
-            Delete
+            <img
+                        className="delete-icon"
+                        src="delete.svg"
+            />
 </button>,
         ],
         "className": "favorite-button-container",
@@ -194,13 +214,27 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Delete",
+            "children": <img
+              className="delete-icon"
+              src="delete.svg"
+/>,
             "className": "favorite-delete-button",
             "onClick": undefined,
             "value": undefined,
           },
           "ref": null,
-          "rendered": "Delete",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "delete-icon",
+              "src": "delete.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
           "type": "button",
         },
       ],
