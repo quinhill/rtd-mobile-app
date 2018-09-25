@@ -8,13 +8,17 @@ const LoadingPage = (props) => {
   if (type === 'loading-page') {
     return (
       <div className='loading-page'>
-        <img src='/spinner-white.svg' />
+        <img
+          className='loading-icon-white' 
+          src='/spinner-white.svg' />
       </div>
     );
   } else if (type === 'loading-container') {
     return (
       <div className='loading-container'>
-        <img src='/spinner-red.svg' />
+        <img 
+          className='loading-icon-red'
+          src='/spinner-red.svg' />
       </div>
     );
   }

@@ -66,8 +66,10 @@ export class FavoritesContainer extends Component {
     });
     return (
       <div className='favorite_card-container'>
-        <div className='favorites-div'>
+        <div className='favorites-title-container'>
           <h2 className='favorites-title'>Favorites</h2>
+        </div>
+        <div className='favorites-div'>
           {favorites.length 
             ? favoritesData
             : loading}

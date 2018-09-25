@@ -1,8 +1,30 @@
-.favorite-button {
+.favorite-button-container {
   height: 40px;
+  margin-top: 5px;
+  width: 95%;
+  border-radius: 5px;
+}
+
+.favorite-button {
+  height: 100%;
   font-size: 15px;
   background: white;
-  width: 95%;
-  margin-top: 5px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border: none;
+}
+
+.favorite-delete-button {
+  background-color: #c02d34;
+  height: 100%;
+  width: 10%;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border: none;
+}
+
+.delete-icon {
+  height: 20px;
+  width: auto;
 }
