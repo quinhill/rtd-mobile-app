@@ -19,7 +19,6 @@ export class Favorite extends Component {
       itinerary_id
     } = favData;
 
-    console.log(itinerary_id);
     let startName;
     let endName;
     if (start_address) {
