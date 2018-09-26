@@ -30,10 +30,7 @@ export const deleteFavUrl = (uid, id) => {
   return {
     url,
     options: {
-      method: 'DELETE',
-      headers: JSON.stringify({
-        'Content-Type': 'application/json'
-      })
+      method: 'DELETE'
     }
   };
 };

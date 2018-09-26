@@ -23,7 +23,9 @@ const deleteFavItineraryThunk = (fetchObj) => {
       .then(favorite => {
         dispatch(deleteFavorite(favorite));
       })
-      .catch(() => dispatch(hasErrored(true)));
+      .catch((err) => {
+        console.log(err)
+        dispatch(hasErrored(true))});
   };
 };
 
