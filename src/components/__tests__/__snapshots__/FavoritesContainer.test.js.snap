@@ -96,313 +96,19 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <div
-        className="favorites-div"
->
-        <h2
-                className="favorites-title"
-        >
-                Favorites
-        </h2>
-        <Favorite
-                deleteFavorite={[Function]}
-                favData={
-                        Object {
-                                "0": Object {
-                                  "arrival_time": "4:11pm",
-                                  "departure_time": "3:51pm",
-                                  "distance": "3.0 mi",
-                                  "duration": "20 mins",
-                                  "end_address": "366 Broadway, Denver, CO 80203, USA",
-                                  "favorite": false,
-                                  "itinerary_id": 7,
-                                  "start_address": "Denver, CO 80202, USA",
-                                  "steps": Array [
-                                    Object {
-                                      "arrival_stop": null,
-                                      "arrival_time": null,
-                                      "color": null,
-                                      "credit_name": null,
-                                      "credit_url": null,
-                                      "departure_stop": null,
-                                      "departure_time": null,
-                                      "distance": "1 ft",
-                                      "duration": "1 min",
-                                      "headsign": null,
-                                      "id": 26,
-                                      "instructions": "Walk to Union Station",
-                                      "name": null,
-                                      "num_stops": null,
-                                      "possible_route_id": 7,
-                                      "short_name": null,
-                                      "travel_mode": "Walking",
-                                      "vehicle_type": null,
-                                    },
-                                    Object {
-                                      "arrival_stop": "Broadway & 4th Ave",
-                                      "arrival_time": "4:11pm",
-                                      "color": "#0277bd",
-                                      "credit_name": "Regional Transportation District",
-                                      "credit_url": "http://rtd-denver.com/",
-                                      "departure_stop": "Union Station",
-                                      "departure_time": "3:52pm",
-                                      "distance": "3.0 mi",
-                                      "duration": "20 mins",
-                                      "headsign": "Highlands Ranch",
-                                      "id": 27,
-                                      "instructions": "Bus towards Highlands Ranch",
-                                      "name": "South Broadway",
-                                      "num_stops": 11,
-                                      "possible_route_id": 7,
-                                      "short_name": "0",
-                                      "travel_mode": "TRANSIT",
-                                      "vehicle_type": "Bus",
-                                    },
-                                    Object {
-                                      "arrival_stop": null,
-                                      "arrival_time": null,
-                                      "color": null,
-                                      "credit_name": null,
-                                      "credit_url": null,
-                                      "departure_stop": null,
-                                      "departure_time": null,
-                                      "distance": "108 ft",
-                                      "duration": "1 min",
-                                      "headsign": null,
-                                      "id": 28,
-                                      "instructions": "Walk to 366 Broadway, Denver, CO 80203, USA",
-                                      "name": null,
-                                      "num_stops": null,
-                                      "possible_route_id": 7,
-                                      "short_name": null,
-                                      "travel_mode": "Walking",
-                                      "vehicle_type": null,
-                                    },
-                                  ],
-                                },
-                              }
-                }
-                searchFavorite={[Function]}
-        />
-</div>,
-      "className": "favorite_card-container",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          <h2
-            className="favorites-title"
->
-            Favorites
-</h2>,
-          Array [
-            <Favorite
-              deleteFavorite={[Function]}
-              favData={
-                            Object {
-                                          "0": Object {
-                                            "arrival_time": "4:11pm",
-                                            "departure_time": "3:51pm",
-                                            "distance": "3.0 mi",
-                                            "duration": "20 mins",
-                                            "end_address": "366 Broadway, Denver, CO 80203, USA",
-                                            "favorite": false,
-                                            "itinerary_id": 7,
-                                            "start_address": "Denver, CO 80202, USA",
-                                            "steps": Array [
-                                              Object {
-                                                "arrival_stop": null,
-                                                "arrival_time": null,
-                                                "color": null,
-                                                "credit_name": null,
-                                                "credit_url": null,
-                                                "departure_stop": null,
-                                                "departure_time": null,
-                                                "distance": "1 ft",
-                                                "duration": "1 min",
-                                                "headsign": null,
-                                                "id": 26,
-                                                "instructions": "Walk to Union Station",
-                                                "name": null,
-                                                "num_stops": null,
-                                                "possible_route_id": 7,
-                                                "short_name": null,
-                                                "travel_mode": "Walking",
-                                                "vehicle_type": null,
-                                              },
-                                              Object {
-                                                "arrival_stop": "Broadway & 4th Ave",
-                                                "arrival_time": "4:11pm",
-                                                "color": "#0277bd",
-                                                "credit_name": "Regional Transportation District",
-                                                "credit_url": "http://rtd-denver.com/",
-                                                "departure_stop": "Union Station",
-                                                "departure_time": "3:52pm",
-                                                "distance": "3.0 mi",
-                                                "duration": "20 mins",
-                                                "headsign": "Highlands Ranch",
-                                                "id": 27,
-                                                "instructions": "Bus towards Highlands Ranch",
-                                                "name": "South Broadway",
-                                                "num_stops": 11,
-                                                "possible_route_id": 7,
-                                                "short_name": "0",
-                                                "travel_mode": "TRANSIT",
-                                                "vehicle_type": "Bus",
-                                              },
-                                              Object {
-                                                "arrival_stop": null,
-                                                "arrival_time": null,
-                                                "color": null,
-                                                "credit_name": null,
-                                                "credit_url": null,
-                                                "departure_stop": null,
-                                                "departure_time": null,
-                                                "distance": "108 ft",
-                                                "duration": "1 min",
-                                                "headsign": null,
-                                                "id": 28,
-                                                "instructions": "Walk to 366 Broadway, Denver, CO 80203, USA",
-                                                "name": null,
-                                                "num_stops": null,
-                                                "possible_route_id": 7,
-                                                "short_name": null,
-                                                "travel_mode": "Walking",
-                                                "vehicle_type": null,
-                                              },
-                                            ],
-                                          },
-                                        }
-              }
-              searchFavorite={[Function]}
-/>,
-          ],
-        ],
-        "className": "favorites-div",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Favorites",
-            "className": "favorites-title",
-          },
-          "ref": null,
-          "rendered": "Favorites",
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": "0",
-          "nodeType": "class",
-          "props": Object {
-            "deleteFavorite": [Function],
-            "favData": Object {
-              "0": Object {
-                "arrival_time": "4:11pm",
-                "departure_time": "3:51pm",
-                "distance": "3.0 mi",
-                "duration": "20 mins",
-                "end_address": "366 Broadway, Denver, CO 80203, USA",
-                "favorite": false,
-                "itinerary_id": 7,
-                "start_address": "Denver, CO 80202, USA",
-                "steps": Array [
-                  Object {
-                    "arrival_stop": null,
-                    "arrival_time": null,
-                    "color": null,
-                    "credit_name": null,
-                    "credit_url": null,
-                    "departure_stop": null,
-                    "departure_time": null,
-                    "distance": "1 ft",
-                    "duration": "1 min",
-                    "headsign": null,
-                    "id": 26,
-                    "instructions": "Walk to Union Station",
-                    "name": null,
-                    "num_stops": null,
-                    "possible_route_id": 7,
-                    "short_name": null,
-                    "travel_mode": "Walking",
-                    "vehicle_type": null,
-                  },
-                  Object {
-                    "arrival_stop": "Broadway & 4th Ave",
-                    "arrival_time": "4:11pm",
-                    "color": "#0277bd",
-                    "credit_name": "Regional Transportation District",
-                    "credit_url": "http://rtd-denver.com/",
-                    "departure_stop": "Union Station",
-                    "departure_time": "3:52pm",
-                    "distance": "3.0 mi",
-                    "duration": "20 mins",
-                    "headsign": "Highlands Ranch",
-                    "id": 27,
-                    "instructions": "Bus towards Highlands Ranch",
-                    "name": "South Broadway",
-                    "num_stops": 11,
-                    "possible_route_id": 7,
-                    "short_name": "0",
-                    "travel_mode": "TRANSIT",
-                    "vehicle_type": "Bus",
-                  },
-                  Object {
-                    "arrival_stop": null,
-                    "arrival_time": null,
-                    "color": null,
-                    "credit_name": null,
-                    "credit_url": null,
-                    "departure_stop": null,
-                    "departure_time": null,
-                    "distance": "108 ft",
-                    "duration": "1 min",
-                    "headsign": null,
-                    "id": 28,
-                    "instructions": "Walk to 366 Broadway, Denver, CO 80203, USA",
-                    "name": null,
-                    "num_stops": null,
-                    "possible_route_id": 7,
-                    "short_name": null,
-                    "travel_mode": "Walking",
-                    "vehicle_type": null,
-                  },
-                ],
-              },
-            },
-            "searchFavorite": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-      ],
-      "type": "div",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <div
-          className="favorites-div"
+      "children": Array [
+        <div
+          className="favorites-title-container"
 >
           <h2
                     className="favorites-title"
           >
                     Favorites
           </h2>
+</div>,
+        <div
+          className="favorites-div"
+>
           <Favorite
                     deleteFavorite={[Function]}
                     favData={
@@ -484,119 +190,129 @@ ShallowWrapper {
                     searchFavorite={[Function]}
           />
 </div>,
-        "className": "favorite_card-container",
+      ],
+      "className": "favorite_card-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <h2
+            className="favorites-title"
+>
+            Favorites
+</h2>,
+          "className": "favorites-title-container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Favorites",
+            "className": "favorites-title",
+          },
+          "ref": null,
+          "rendered": "Favorites",
+          "type": "h2",
+        },
+        "type": "div",
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <h2
-              className="favorites-title"
->
-              Favorites
-</h2>,
-            Array [
-              <Favorite
-                deleteFavorite={[Function]}
-                favData={
-                                Object {
-                                                "0": Object {
-                                                  "arrival_time": "4:11pm",
-                                                  "departure_time": "3:51pm",
-                                                  "distance": "3.0 mi",
-                                                  "duration": "20 mins",
-                                                  "end_address": "366 Broadway, Denver, CO 80203, USA",
-                                                  "favorite": false,
-                                                  "itinerary_id": 7,
-                                                  "start_address": "Denver, CO 80202, USA",
-                                                  "steps": Array [
-                                                    Object {
-                                                      "arrival_stop": null,
-                                                      "arrival_time": null,
-                                                      "color": null,
-                                                      "credit_name": null,
-                                                      "credit_url": null,
-                                                      "departure_stop": null,
-                                                      "departure_time": null,
-                                                      "distance": "1 ft",
-                                                      "duration": "1 min",
-                                                      "headsign": null,
-                                                      "id": 26,
-                                                      "instructions": "Walk to Union Station",
-                                                      "name": null,
-                                                      "num_stops": null,
-                                                      "possible_route_id": 7,
-                                                      "short_name": null,
-                                                      "travel_mode": "Walking",
-                                                      "vehicle_type": null,
-                                                    },
-                                                    Object {
-                                                      "arrival_stop": "Broadway & 4th Ave",
-                                                      "arrival_time": "4:11pm",
-                                                      "color": "#0277bd",
-                                                      "credit_name": "Regional Transportation District",
-                                                      "credit_url": "http://rtd-denver.com/",
-                                                      "departure_stop": "Union Station",
-                                                      "departure_time": "3:52pm",
-                                                      "distance": "3.0 mi",
-                                                      "duration": "20 mins",
-                                                      "headsign": "Highlands Ranch",
-                                                      "id": 27,
-                                                      "instructions": "Bus towards Highlands Ranch",
-                                                      "name": "South Broadway",
-                                                      "num_stops": 11,
-                                                      "possible_route_id": 7,
-                                                      "short_name": "0",
-                                                      "travel_mode": "TRANSIT",
-                                                      "vehicle_type": "Bus",
-                                                    },
-                                                    Object {
-                                                      "arrival_stop": null,
-                                                      "arrival_time": null,
-                                                      "color": null,
-                                                      "credit_name": null,
-                                                      "credit_url": null,
-                                                      "departure_stop": null,
-                                                      "departure_time": null,
-                                                      "distance": "108 ft",
-                                                      "duration": "1 min",
-                                                      "headsign": null,
-                                                      "id": 28,
-                                                      "instructions": "Walk to 366 Broadway, Denver, CO 80203, USA",
-                                                      "name": null,
-                                                      "num_stops": null,
-                                                      "possible_route_id": 7,
-                                                      "short_name": null,
-                                                      "travel_mode": "Walking",
-                                                      "vehicle_type": null,
-                                                    },
-                                                  ],
-                                                },
-                                              }
-                }
-                searchFavorite={[Function]}
+            <Favorite
+              deleteFavorite={[Function]}
+              favData={
+                            Object {
+                                          "0": Object {
+                                            "arrival_time": "4:11pm",
+                                            "departure_time": "3:51pm",
+                                            "distance": "3.0 mi",
+                                            "duration": "20 mins",
+                                            "end_address": "366 Broadway, Denver, CO 80203, USA",
+                                            "favorite": false,
+                                            "itinerary_id": 7,
+                                            "start_address": "Denver, CO 80202, USA",
+                                            "steps": Array [
+                                              Object {
+                                                "arrival_stop": null,
+                                                "arrival_time": null,
+                                                "color": null,
+                                                "credit_name": null,
+                                                "credit_url": null,
+                                                "departure_stop": null,
+                                                "departure_time": null,
+                                                "distance": "1 ft",
+                                                "duration": "1 min",
+                                                "headsign": null,
+                                                "id": 26,
+                                                "instructions": "Walk to Union Station",
+                                                "name": null,
+                                                "num_stops": null,
+                                                "possible_route_id": 7,
+                                                "short_name": null,
+                                                "travel_mode": "Walking",
+                                                "vehicle_type": null,
+                                              },
+                                              Object {
+                                                "arrival_stop": "Broadway & 4th Ave",
+                                                "arrival_time": "4:11pm",
+                                                "color": "#0277bd",
+                                                "credit_name": "Regional Transportation District",
+                                                "credit_url": "http://rtd-denver.com/",
+                                                "departure_stop": "Union Station",
+                                                "departure_time": "3:52pm",
+                                                "distance": "3.0 mi",
+                                                "duration": "20 mins",
+                                                "headsign": "Highlands Ranch",
+                                                "id": 27,
+                                                "instructions": "Bus towards Highlands Ranch",
+                                                "name": "South Broadway",
+                                                "num_stops": 11,
+                                                "possible_route_id": 7,
+                                                "short_name": "0",
+                                                "travel_mode": "TRANSIT",
+                                                "vehicle_type": "Bus",
+                                              },
+                                              Object {
+                                                "arrival_stop": null,
+                                                "arrival_time": null,
+                                                "color": null,
+                                                "credit_name": null,
+                                                "credit_url": null,
+                                                "departure_stop": null,
+                                                "departure_time": null,
+                                                "distance": "108 ft",
+                                                "duration": "1 min",
+                                                "headsign": null,
+                                                "id": 28,
+                                                "instructions": "Walk to 366 Broadway, Denver, CO 80203, USA",
+                                                "name": null,
+                                                "num_stops": null,
+                                                "possible_route_id": 7,
+                                                "short_name": null,
+                                                "travel_mode": "Walking",
+                                                "vehicle_type": null,
+                                              },
+                                            ],
+                                          },
+                                        }
+              }
+              searchFavorite={[Function]}
 />,
-            ],
           ],
           "className": "favorites-div",
         },
         "ref": null,
         "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Favorites",
-              "className": "favorites-title",
-            },
-            "ref": null,
-            "rendered": "Favorites",
-            "type": "h2",
-          },
           Object {
             "instance": null,
             "key": "0",
@@ -686,6 +402,322 @@ ShallowWrapper {
         ],
         "type": "div",
       },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="favorites-title-container"
+>
+            <h2
+                        className="favorites-title"
+            >
+                        Favorites
+            </h2>
+</div>,
+          <div
+            className="favorites-div"
+>
+            <Favorite
+                        deleteFavorite={[Function]}
+                        favData={
+                                    Object {
+                                                "0": Object {
+                                                  "arrival_time": "4:11pm",
+                                                  "departure_time": "3:51pm",
+                                                  "distance": "3.0 mi",
+                                                  "duration": "20 mins",
+                                                  "end_address": "366 Broadway, Denver, CO 80203, USA",
+                                                  "favorite": false,
+                                                  "itinerary_id": 7,
+                                                  "start_address": "Denver, CO 80202, USA",
+                                                  "steps": Array [
+                                                    Object {
+                                                      "arrival_stop": null,
+                                                      "arrival_time": null,
+                                                      "color": null,
+                                                      "credit_name": null,
+                                                      "credit_url": null,
+                                                      "departure_stop": null,
+                                                      "departure_time": null,
+                                                      "distance": "1 ft",
+                                                      "duration": "1 min",
+                                                      "headsign": null,
+                                                      "id": 26,
+                                                      "instructions": "Walk to Union Station",
+                                                      "name": null,
+                                                      "num_stops": null,
+                                                      "possible_route_id": 7,
+                                                      "short_name": null,
+                                                      "travel_mode": "Walking",
+                                                      "vehicle_type": null,
+                                                    },
+                                                    Object {
+                                                      "arrival_stop": "Broadway & 4th Ave",
+                                                      "arrival_time": "4:11pm",
+                                                      "color": "#0277bd",
+                                                      "credit_name": "Regional Transportation District",
+                                                      "credit_url": "http://rtd-denver.com/",
+                                                      "departure_stop": "Union Station",
+                                                      "departure_time": "3:52pm",
+                                                      "distance": "3.0 mi",
+                                                      "duration": "20 mins",
+                                                      "headsign": "Highlands Ranch",
+                                                      "id": 27,
+                                                      "instructions": "Bus towards Highlands Ranch",
+                                                      "name": "South Broadway",
+                                                      "num_stops": 11,
+                                                      "possible_route_id": 7,
+                                                      "short_name": "0",
+                                                      "travel_mode": "TRANSIT",
+                                                      "vehicle_type": "Bus",
+                                                    },
+                                                    Object {
+                                                      "arrival_stop": null,
+                                                      "arrival_time": null,
+                                                      "color": null,
+                                                      "credit_name": null,
+                                                      "credit_url": null,
+                                                      "departure_stop": null,
+                                                      "departure_time": null,
+                                                      "distance": "108 ft",
+                                                      "duration": "1 min",
+                                                      "headsign": null,
+                                                      "id": 28,
+                                                      "instructions": "Walk to 366 Broadway, Denver, CO 80203, USA",
+                                                      "name": null,
+                                                      "num_stops": null,
+                                                      "possible_route_id": 7,
+                                                      "short_name": null,
+                                                      "travel_mode": "Walking",
+                                                      "vehicle_type": null,
+                                                    },
+                                                  ],
+                                                },
+                                              }
+                        }
+                        searchFavorite={[Function]}
+            />
+</div>,
+        ],
+        "className": "favorite_card-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <h2
+              className="favorites-title"
+>
+              Favorites
+</h2>,
+            "className": "favorites-title-container",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Favorites",
+              "className": "favorites-title",
+            },
+            "ref": null,
+            "rendered": "Favorites",
+            "type": "h2",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Favorite
+                deleteFavorite={[Function]}
+                favData={
+                                Object {
+                                                "0": Object {
+                                                  "arrival_time": "4:11pm",
+                                                  "departure_time": "3:51pm",
+                                                  "distance": "3.0 mi",
+                                                  "duration": "20 mins",
+                                                  "end_address": "366 Broadway, Denver, CO 80203, USA",
+                                                  "favorite": false,
+                                                  "itinerary_id": 7,
+                                                  "start_address": "Denver, CO 80202, USA",
+                                                  "steps": Array [
+                                                    Object {
+                                                      "arrival_stop": null,
+                                                      "arrival_time": null,
+                                                      "color": null,
+                                                      "credit_name": null,
+                                                      "credit_url": null,
+                                                      "departure_stop": null,
+                                                      "departure_time": null,
+                                                      "distance": "1 ft",
+                                                      "duration": "1 min",
+                                                      "headsign": null,
+                                                      "id": 26,
+                                                      "instructions": "Walk to Union Station",
+                                                      "name": null,
+                                                      "num_stops": null,
+                                                      "possible_route_id": 7,
+                                                      "short_name": null,
+                                                      "travel_mode": "Walking",
+                                                      "vehicle_type": null,
+                                                    },
+                                                    Object {
+                                                      "arrival_stop": "Broadway & 4th Ave",
+                                                      "arrival_time": "4:11pm",
+                                                      "color": "#0277bd",
+                                                      "credit_name": "Regional Transportation District",
+                                                      "credit_url": "http://rtd-denver.com/",
+                                                      "departure_stop": "Union Station",
+                                                      "departure_time": "3:52pm",
+                                                      "distance": "3.0 mi",
+                                                      "duration": "20 mins",
+                                                      "headsign": "Highlands Ranch",
+                                                      "id": 27,
+                                                      "instructions": "Bus towards Highlands Ranch",
+                                                      "name": "South Broadway",
+                                                      "num_stops": 11,
+                                                      "possible_route_id": 7,
+                                                      "short_name": "0",
+                                                      "travel_mode": "TRANSIT",
+                                                      "vehicle_type": "Bus",
+                                                    },
+                                                    Object {
+                                                      "arrival_stop": null,
+                                                      "arrival_time": null,
+                                                      "color": null,
+                                                      "credit_name": null,
+                                                      "credit_url": null,
+                                                      "departure_stop": null,
+                                                      "departure_time": null,
+                                                      "distance": "108 ft",
+                                                      "duration": "1 min",
+                                                      "headsign": null,
+                                                      "id": 28,
+                                                      "instructions": "Walk to 366 Broadway, Denver, CO 80203, USA",
+                                                      "name": null,
+                                                      "num_stops": null,
+                                                      "possible_route_id": 7,
+                                                      "short_name": null,
+                                                      "travel_mode": "Walking",
+                                                      "vehicle_type": null,
+                                                    },
+                                                  ],
+                                                },
+                                              }
+                }
+                searchFavorite={[Function]}
+/>,
+            ],
+            "className": "favorites-div",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "0",
+              "nodeType": "class",
+              "props": Object {
+                "deleteFavorite": [Function],
+                "favData": Object {
+                  "0": Object {
+                    "arrival_time": "4:11pm",
+                    "departure_time": "3:51pm",
+                    "distance": "3.0 mi",
+                    "duration": "20 mins",
+                    "end_address": "366 Broadway, Denver, CO 80203, USA",
+                    "favorite": false,
+                    "itinerary_id": 7,
+                    "start_address": "Denver, CO 80202, USA",
+                    "steps": Array [
+                      Object {
+                        "arrival_stop": null,
+                        "arrival_time": null,
+                        "color": null,
+                        "credit_name": null,
+                        "credit_url": null,
+                        "departure_stop": null,
+                        "departure_time": null,
+                        "distance": "1 ft",
+                        "duration": "1 min",
+                        "headsign": null,
+                        "id": 26,
+                        "instructions": "Walk to Union Station",
+                        "name": null,
+                        "num_stops": null,
+                        "possible_route_id": 7,
+                        "short_name": null,
+                        "travel_mode": "Walking",
+                        "vehicle_type": null,
+                      },
+                      Object {
+                        "arrival_stop": "Broadway & 4th Ave",
+                        "arrival_time": "4:11pm",
+                        "color": "#0277bd",
+                        "credit_name": "Regional Transportation District",
+                        "credit_url": "http://rtd-denver.com/",
+                        "departure_stop": "Union Station",
+                        "departure_time": "3:52pm",
+                        "distance": "3.0 mi",
+                        "duration": "20 mins",
+                        "headsign": "Highlands Ranch",
+                        "id": 27,
+                        "instructions": "Bus towards Highlands Ranch",
+                        "name": "South Broadway",
+                        "num_stops": 11,
+                        "possible_route_id": 7,
+                        "short_name": "0",
+                        "travel_mode": "TRANSIT",
+                        "vehicle_type": "Bus",
+                      },
+                      Object {
+                        "arrival_stop": null,
+                        "arrival_time": null,
+                        "color": null,
+                        "credit_name": null,
+                        "credit_url": null,
+                        "departure_stop": null,
+                        "departure_time": null,
+                        "distance": "108 ft",
+                        "duration": "1 min",
+                        "headsign": null,
+                        "id": 28,
+                        "instructions": "Walk to 366 Broadway, Denver, CO 80203, USA",
+                        "name": null,
+                        "num_stops": null,
+                        "possible_route_id": 7,
+                        "short_name": null,
+                        "travel_mode": "Walking",
+                        "vehicle_type": null,
+                      },
+                    ],
+                  },
+                },
+                "searchFavorite": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
       "type": "div",
     },
   ],
