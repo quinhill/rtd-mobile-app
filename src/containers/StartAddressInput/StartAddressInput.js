@@ -46,7 +46,7 @@ export class StartAddressInput extends Component {
                 <input
                   value={this.state.startAddress}
                   {...getInputProps({
-                    placeholder: 'Search Starting Point ...',
+                    placeholder: 'Current location',
                     className: 'input'
                   })}
                   />

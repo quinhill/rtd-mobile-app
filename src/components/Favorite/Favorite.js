@@ -19,6 +19,7 @@ export class Favorite extends Component {
       itinerary_id
     } = favData;
 
+    console.log(itinerary_id);
     let startName;
     let endName;
     if (start_address) {
@@ -40,12 +41,8 @@ export class Favorite extends Component {
         <button 
           className='favorite-delete-button'
           onClick={deleteFavorite}
-          value={itinerary_id}
+          id={itinerary_id}
         >
-          <img 
-            src='delete.svg'
-            className='delete-icon'
-          />
         </button>
       </div>
     );
