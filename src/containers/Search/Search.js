@@ -72,22 +72,7 @@ export class Search extends Component {
   }
   
   makeOptions = (timeData) => {
-
-    const options = {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 0
-    };
-
-    const success = (pos) => {
-      const crd = pos.coords;
-      const address = geocode(crd.latitude, longitude);
-      console.log(address);
-    }
-
-    const error = (err) => {
-      
-    }
+    
     
     const {
       startAddress,
@@ -103,6 +88,7 @@ export class Search extends Component {
       end_address: endAddress,
       ...timeData
     };
+    
     const options = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -118,6 +104,26 @@ export class Search extends Component {
   
   render() {
 
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 10000,
+      maximumAge: 0
+    };
+  
+    const success = (pos) => {
+      const crd = pos.coords;
+      const address = geocode(crd.latitude, crd.longitude);
+      console.log(address);
+    };
+  
+    const error = (err) => {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    };
+    
+    if (window.navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(success, error, options)
+    }
+    
     const { uid } = this.props;
 
     const hourOptions = hours.map((hour, index) => {
