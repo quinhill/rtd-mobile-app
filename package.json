@@ -8,6 +8,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-geocode": "^0.1.2",
     "react-places-autocomplete": "^7.2.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",

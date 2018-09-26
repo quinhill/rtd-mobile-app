@@ -40,12 +40,8 @@ export class Favorite extends Component {
         <button 
           className='favorite-delete-button'
           onClick={deleteFavorite}
-          value={itinerary_id}
+          id={itinerary_id}
         >
-          <img 
-            src='delete.svg'
-            className='delete-icon'
-          />
         </button>
       </div>
     );
@@ -56,7 +52,7 @@ export default Favorite;
 
 Favorite.propTypes = {
   name: PropTypes.string,
-  favData: PropTypes.object,
+  favData: PropTypes.array,
   isLoading: PropTypes.bool,
   searchFavorite: PropTypes.func,
   deleteFavorite: PropTypes.func

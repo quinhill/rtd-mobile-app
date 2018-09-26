@@ -19,6 +19,7 @@ export class FavoritesContainer extends Component {
 
   searchFavorite = async (event) => {
     const { value } = event.target;
+    console.log(value)
     const { 
       uid, 
       getFavItinerary, 
@@ -30,12 +31,12 @@ export class FavoritesContainer extends Component {
   }
 
   deleteFavorite = async (event) => {
-    const { value } = event.target;
+    const { id } = event.target;
     const {
       uid,
       deleteFavItinerary
     } = this.props;
-    const fetchObj = deleteFavUrl(uid, value);
+    const fetchObj = deleteFavUrl(uid, id);
     await deleteFavItinerary(fetchObj);
   }
 
