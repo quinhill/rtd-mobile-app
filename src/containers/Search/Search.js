@@ -9,6 +9,7 @@ import * as routes from '../../constants/routes';
 import { hours, minutes } from '../../constants/timeArrays';
 import { timeCleaner } from '../../constants/cleanerFunctions';
 import { itineraryUrl } from '../../constants/urlGenerator';
+import { storeStartAddress } from '../../actions';
 
 import './Search.css';
 import LoadingPage from '../../components/Loading/Loading';
@@ -106,18 +107,18 @@ export class Search extends Component {
 
     const options = {
       enableHighAccuracy: true,
-      timeout: 10000,
+      timeout: 5000,
       maximumAge: 0
     };
-  
-    const success = (pos) => {
+    
+    const success = async (pos) => {
       const crd = pos.coords;
-      const address = geocode(crd.latitude, crd.longitude);
-      console.log(address);
+      const address = await geocode(crd.latitude, crd.longitude);
+      this.props.storeStartAddress(address);
     };
-  
+    
     const error = (err) => {
-      console.warn(`ERROR(${err.code}): ${err.message}`);
+      return `ERROR(${err.code}): ${err.message}`;
     };
     
     if (window.navigator.geolocation) {
@@ -260,6 +261,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
+  storeStartAddress: (address) => dispatch(storeStartAddress(address)),
   postItineraryThunk: (fetchObject) => dispatch(postItineraryThunk(fetchObject))
 });
 
@@ -272,5 +274,6 @@ Search.propTypes = {
   endAddress: PropTypes.string,
   history: PropTypes.object,
   uid: PropTypes.string,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  storeStartAddress: PropTypes.func
 };
