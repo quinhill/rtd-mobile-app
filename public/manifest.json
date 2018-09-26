@@ -2,7 +2,7 @@
   "name": "RTD Mobile App",
   "short_name": "RTD",
   "start_url": "/",
-  "display": "fullscreen",
+  "display": "standalone",
   "background_color": "#2196F3",
   "description": "A mobile app for RTD.",
   "orientation": "portrait-primary",
@@ -11,15 +11,15 @@
     "type": "image/png",
     "sizes": "128x128"
   }, {
-    "src": "https://placebear.com/152/152",
+    "src": "https://i.imgur.com/BmUB9ud.png",
     "type": "image/png",
     "sizes": "152x152"
   }, {
-    "src": "https://placebear.com/144/144",
+    "src": "https://i.imgur.com/BmUB9ud.png",
     "type": "image/png",
     "sizes": "144x144"
   }, {
-    "src": "https://placebear.com/192/192",
+    "src": "https://i.imgur.com/BmUB9ud.png",
     "type": "image/png",
     "sizes": "192x192"
   }]

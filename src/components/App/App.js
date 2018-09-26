@@ -12,7 +12,7 @@ import withAuthentication from '../withAuthentication';
 import ItineraryPage from '../../containers/ItineraryPage/ItineraryPage';
  
 import * as routes from '../../constants/routes';
-
+ 
 import './App.css';
 
 export const App = () => {
