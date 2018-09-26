@@ -42,7 +42,10 @@ export class Favorite extends Component {
           onClick={deleteFavorite}
           value={itinerary_id}
         >
-          Delete
+          <img 
+            src='delete.svg'
+            className='delete-icon'
+          />
         </button>
       </div>
     );
