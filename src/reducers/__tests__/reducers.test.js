@@ -347,8 +347,28 @@ describe('Reducers', () => {
         });
         expect(result).toEqual(expected);
       });
-      
     });
+
+    describe('DELETE_FAVORITES', () => {
+      it('should delete the selected favorite if the favorite id === action id', () => {
+        const fav1 = {
+          id: 5
+        };
+        const fav2 = {
+          id: 6
+        };
+        const currentState = [fav1, fav2];
+        const expected = [fav1];
+        const result = favorites(currentState, {
+          type: 'DELETE_FAVORITE',
+          id: 6
+        });
+
+        expect(result).toEqual(expected)
+      })
+      
+    })
+    
     
   });
   
