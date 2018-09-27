@@ -43,6 +43,16 @@ describe('Reducers', () => {
 
       expect(expected).toEqual(result);
     });
+
+    it('should reset the state to empty when the user signs out', () => {
+      const expected = '';
+      const result = startAddress(
+        {startAddress: 'union station'}, 
+        {type: 'SIGN_OUT_USER'}
+      );
+
+      expect(result).toEqual(expected);
+    })
   });
 
   describe('hasErroredReducer', () => {
