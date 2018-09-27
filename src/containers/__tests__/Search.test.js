@@ -33,6 +33,10 @@ describe('Search', () => {
     )
   })
 
+  it('should match snapshot test', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
   it("should match snapshot test if this.state.am is ", () => {
 
     wrapper.setState({am: true});
