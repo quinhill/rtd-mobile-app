@@ -1,6 +1,8 @@
 import React from 'react';
 import { EndAddressInput } from "../EndAddressInput/EndAddressInput";
 import {  shallow } from 'enzyme';
+import * as actions from '../../actions';
+import { mapDispatchToProps } from '../EndAddressInput/EndAddressInput';
 
 describe('EndAddressInput', () => {
   let wrapper;
@@ -57,7 +59,21 @@ describe('EndAddressInput', () => {
 
       expect(wrapper.state('endAddress')).toEqual('');
     })
+  })
+
+  describe('mapDispatchToProps', () => {
+    it('should call dispatch with the correct params', () => {
+      const mockDispatch = jest.fn();
+      const mockUrl = 'www.iliketrains.com';
+      const actionToDispatch = actions.storeEndAddress(mockUrl);
+      const mappedProps = mapDispatchToProps(mockDispatch);
+
+      mappedProps.storeEndAddress(mockUrl);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    })
     
   })
+  
   
 }); 
