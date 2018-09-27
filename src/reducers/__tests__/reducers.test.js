@@ -126,6 +126,19 @@ describe('Reducers', () => {
 
       expect(expected).toEqual(result);
     });
+
+    describe('SIGN_OUT_USER', () => {
+      it('should return update state with an empty array when a user signs out', () => {
+        const expected = [];
+        const result = itinerary(undefined, {
+          type: 'SIGN_OUT_USER'
+        })
+
+        expect(result).toEqual(expected);
+      })
+      
+    })
+    
   });
 
   describe('userReducer', () => {
