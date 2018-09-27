@@ -58,17 +58,42 @@ describe('Search', () => {
       const event = {
         target: {
           name: 'departing',
-          value: true
+          value: false
         }
       } 
-      const expected = true;
+      const expected = false;
 
       wrapper.instance().handleChange(event);
 
       expect(wrapper.state('departing')).toEqual(expected)
     })
+  })
+
+  describe('handleClick', () => {
+    test('should change the state of am from true to false on click', () => {
+      const expected = false;
+
+      wrapper.instance().handleClick();
+
+      expect(wrapper.state('am')).toEqual(expected)
+    })
     
   })
+  
+  
+  // describe('makeOptions', () => {
+  //   test('should call postItineraryThunk', () => {
+  //     const mockTimeData = {
+  //       hours: 1,
+  //       minutes: 30,
+  //       departing: true,
+  //       am: true
+  //     }
+
+  //     wrapper.instance().makeOptions(mockTimeData)
+  //   })
+    
+  // })
   
 })
  
