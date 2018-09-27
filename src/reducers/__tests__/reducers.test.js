@@ -188,6 +188,11 @@ describe('Reducers', () => {
   });
 
   describe('favoriteReducer', () => {
+    it('should return a defalut state of an empty array if no action type is met', () => {
+      const expected = [];
+      const result = favorites(undefined, '')
+    })
+    
     describe('ADD_FAVORITE', () => {    
       it('should return an array of favorites if the type is ADD_FAVORITE', () => {
         const expected =[{
