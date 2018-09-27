@@ -349,7 +349,7 @@ describe('Reducers', () => {
       });
     });
 
-    describe('DELETE_FAVORITES', () => {
+    describe('DELETE_FAVORITE', () => {
       it('should delete the selected favorite if the favorite id === action id', () => {
         const fav1 = {
           id: 5
@@ -365,11 +365,23 @@ describe('Reducers', () => {
         });
 
         expect(result).toEqual(expected)
-      })
-      
+      }) 
     })
-    
-    
+
+    describe('SIGN_OUT_USER', () => {
+      it('should return an empty state when a user signs out', () => {
+        const fav1 = {
+          id: 5
+        };
+        const fav2 = {
+          id: 6
+        };
+        const currentState = [fav1, fav2];
+        const expected = [];
+        const result = favorites(currentState, {
+          type: 'SIGN_OUT_USER'
+        });
+      });
+    });
   });
-  
 });
