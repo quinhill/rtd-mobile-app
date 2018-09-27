@@ -64,11 +64,11 @@ describe('EndAddressInput', () => {
   describe('mapDispatchToProps', () => {
     it('should call dispatch with the correct params', () => {
       const mockDispatch = jest.fn();
-      const mockUrl = 'www.iliketrains.com';
-      const actionToDispatch = actions.storeEndAddress(mockUrl);
+      const mockEndAddress = 'Union Station';
+      const actionToDispatch = actions.storeEndAddress(mockEndAddress);
       const mappedProps = mapDispatchToProps(mockDispatch);
 
-      mappedProps.storeEndAddress(mockUrl);
+      mappedProps.storeEndAddress(mockEndAddress);
 
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     })

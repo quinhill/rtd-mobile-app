@@ -1,7 +1,8 @@
 import React from 'react';
 import { StartAddressInput } from '../StartAddressInput/StartAddressInput';
 import { shallow } from 'enzyme'; 
-import { storeEndAddress } from '../../actions';
+import * as actions from '../../actions';
+import { mapDispatchToProps } from '../StartAddressInput/StartAddressInput';
 
 describe('StartAddressInput', () => {
   let wrapper;
@@ -58,4 +59,18 @@ describe('StartAddressInput', () => {
       expect(wrapper.state('startAddress')).toEqual('');
     })
   })
+
+  describe('mapDispatchToProps', () => {
+    test('should ', () => {
+      const mockDispatch = jest.fn();
+      const mockStartAddress = 'Union Station';
+      const actionToDispatch = actions.storeStartAddress(mockStartAddress)
+      const mappedProps = mapDispatchToProps(mockDispatch);
+  
+      mappedProps.storeStartAddress(mockStartAddress);
+  
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    })
+  })
 });
+
