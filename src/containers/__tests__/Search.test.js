@@ -53,7 +53,7 @@ describe('Search', () => {
   });
 
   describe('handleChange', () => {
-    it('should change the value of', () => {
+    it('should change the value of this.state.departing it ', () => {
 
       const event = {
         target: {
@@ -76,6 +76,12 @@ describe('Search', () => {
       wrapper.instance().handleClick();
 
       expect(wrapper.state('am')).toEqual(expected)
+    })
+  })
+  
+  describe('handleSubmit', () => {
+    test('should ', () => {
+      
     })
     
   })
