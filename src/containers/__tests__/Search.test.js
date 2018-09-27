@@ -53,10 +53,23 @@ describe('Search', () => {
   });
 
   describe('handleChange', () => {
-    it('should ', () => {
-      
+    it('should change the value of', () => {
+
+      const event = {
+        target: {
+          name: 'departing',
+          value: true
+        }
+      } 
+      const expected = true;
+
+      wrapper.instance().handleChange(event);
+
+      expect(wrapper.state('departing')).toEqual(expected)
     })
     
   })
   
 })
+ 
+

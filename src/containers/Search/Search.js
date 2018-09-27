@@ -21,7 +21,7 @@ export class Search extends Component {
       minutes: this.getTime().minutes,
       departing: true,
       am: true
-    };
+    }; 
   }
 
   handleChange = (event) => {
