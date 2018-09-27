@@ -59,7 +59,7 @@ export class SignInPage extends Component {
     });
   };
 
-  deleteInput = (event) => {
+  deleteInput = (event) => { 
     event.preventDefault();
     const { name } = event.target;
     this.setState({[name]: ''});

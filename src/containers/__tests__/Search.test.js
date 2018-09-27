@@ -92,8 +92,7 @@ describe('Search', () => {
     })
   })
   
-  describe('handleSubmit', () => {
-  
+  describe.skip('handleSubmit', () => {
 
     it('should call makeOptions', () => {
       const event = {
@@ -108,7 +107,7 @@ describe('Search', () => {
     
   })
   
-  describe('makeOptions', () => {
+  describe.skip('makeOptions', () => {
     test('should call itineraryUrl with coorect params', () => {
       const uid = mockUid;
       const itineraryUrl = jest.fn;
