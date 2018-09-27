@@ -35,14 +35,27 @@ describe('StartAddressInput', () => {
 
       expect(mockStoreStartAddress).toHaveBeenCalledWith(mockStartAddress);
     });
+    
+    it('should set the state with a new start address', () => {
+      const mockStartAddress = "Union Station, Denver, CO, USA";
+      
+      wrapper.instance().handleSelect(mockStartAddress);
+      
+      expect(wrapper.state('startAddress')).toEqual(mockStartAddress);
+    });
   });
 
-  it('should set the state with a new start address', () => {
-    const mockStartAddress = "Union Station, Denver, CO, USA";
-
-    wrapper.instance().handleSelect(mockStartAddress);
-
-    expect(wrapper.state('startAddress')).toEqual(mockStartAddress);
-  });
+  describe('deleteInput', () => {
+    it('should update the state of the start address on click', () => {
+      const event = {
+        preventDefault() {},
+        target: {
+          name: 'startAddress'
+        }
+      }
+      wrapper.instance().deleteInput(event);
   
+      expect(wrapper.state('startAddress')).toEqual('');
+    })
+  })
 });

@@ -72,8 +72,5 @@ describe('EndAddressInput', () => {
 
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     })
-    
   })
-  
-  
 }); 
