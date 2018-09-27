@@ -239,7 +239,7 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
-
+ 
 Search.propTypes = {
   postItineraryThunk: PropTypes.func,
   storeUserSearch: PropTypes.func,

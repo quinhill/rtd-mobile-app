@@ -55,7 +55,7 @@ describe('ItineraryCard', () => {
 
     expect(wrapper).toMatchSnapshot();
   })
-  
+   
   describe('handleClick', () => {
     it('should toggle the showMore state', () => {
       const expected= true;
