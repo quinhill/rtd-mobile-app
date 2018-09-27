@@ -27,7 +27,7 @@ describe('EndAddressInput', () => {
   });
 
   describe('handleSelect', () => {
-    it('should call handleSelect on submit with the correct params', () => {
+    it('should call storeEndAddress with the correct params', () => {
       const mockEndAddress = 'Union Station, Denver, CO, USA';
       
       wrapper.instance().handleSelect(mockEndAddress);
@@ -43,4 +43,21 @@ describe('EndAddressInput', () => {
       expect(wrapper.state('endAddress')).toEqual(mockEndAddress);
     });
   });
+
+  describe('deleteInput', () => {
+    it('should delete input from endAddress input field on click', () => {
+      const event = {
+        preventDefault() {},
+        target : {
+          name: 'endAddress'
+        }
+      };
+
+      wrapper.instance().deleteInput(event);
+
+      expect(wrapper.state('endAddress')).toEqual('');
+    })
+    
+  })
+  
 }); 

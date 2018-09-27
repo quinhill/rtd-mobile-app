@@ -70,7 +70,6 @@ export class Search extends Component {
   }
 
   makeOptions = (timeData) => {
-
     const {
       startAddress,
       endAddress,
