@@ -1,18 +1,29 @@
-import { getFavItineraryThunk } from '../getFavItineraryThunk';
+
+import { deleteFavItineraryThunk } from '../deleteFavItineraryThunk';
 import { hasErrored, isLoading, storeItinerary } from "../../actions";
 
  
-describe('getFavItineraryThunk', () => {
+describe('deleteFavItineraryThunk', () => {
   let mockUrl;
   let mockDispatch;
+  let mockOptions;
+  let mockFetchObj;
 
   beforeEach(() => {
     mockUrl = 'www.mockUrl.com';
+    mockOptions = {
+      uid: '123456abcdefg',
+      favData: 12
+    }
     mockDispatch = jest.fn();
+    mockFetchObj = {
+      mockUrl,
+      mockOptions
+    }
   })
 
   it("calls dispatch with the isLoading action ", () => {
-    const thunk = getFavItineraryThunk(mockUrl);
+    const thunk = deleteFavItineraryThunk(mockFetchObj);
 
     thunk(mockDispatch);
 
@@ -25,7 +36,7 @@ describe('getFavItineraryThunk', () => {
       ok: false
     }));
 
-    const thunk = getFavItineraryThunk(mockUrl);
+    const thunk = deleteFavItineraryThunk(mockFetchObj);
 
     await thunk(mockDispatch);
 
@@ -38,7 +49,7 @@ describe('getFavItineraryThunk', () => {
       ok: true
     }));
 
-    const thunk = getFavItineraryThunk(mockUrl);
+    const thunk = deleteFavItineraryThunk(mockFetchObj);
 
     await thunk(mockDispatch);
 

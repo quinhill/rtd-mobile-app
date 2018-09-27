@@ -93,11 +93,7 @@ describe('Search', () => {
   })
   
   describe('handleSubmit', () => {
-    // it('should match the snapshot if departing is true', () => {
-    //   wrapper.setState({ departing: true })
-
-    //   expect(wrapper).toMatchSnapshot();
-    // })
+  
 
     it('should call makeOptions', () => {
       const event = {

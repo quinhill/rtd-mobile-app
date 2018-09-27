@@ -4,7 +4,7 @@ import {
   deleteFavorite 
 } from '../actions';
 
-const deleteFavItineraryThunk = (fetchObj) => {
+export const deleteFavItineraryThunk = (fetchObj) => {
   const {
     url,
     options
