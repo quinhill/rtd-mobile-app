@@ -29,6 +29,7 @@ describe('Search', () => {
         uid = {mockUid}
         isLoading = {mockIsLoading}
         am={false}
+        departing={false}
       />
     )
   })
@@ -43,13 +44,19 @@ describe('Search', () => {
  
     expect(wrapper).toMatchSnapshot();
   });
-  
 
-  // describe('handleChange', () => {
-  //   it('should ', () => {
+  it("should match snapshot test if this.state.departing is true ", () => {
+
+    wrapper.setState({ departing: true });
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  describe('handleChange', () => {
+    it('should ', () => {
       
-  //   })
+    })
     
-  // })
+  })
   
 })
