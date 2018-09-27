@@ -8,7 +8,7 @@ describe('Search', () => {
   let mockPostItineraryThunk;
   let mockStartAddress;
   let mockEndAddress;
-  let mockHistory;
+  // let mockHistory;
   let mockUid;
   let mockIsLoading;
 
@@ -19,7 +19,7 @@ describe('Search', () => {
     mockEndAddress = 'Ruby Hill Park, Denver, CO'
     // mockHistory = jest.fn();
     mockUid= '123456abcdefg'
-    mockIsLoading=false
+    mockIsLoading=false 
     wrapper = shallow(
       <Search
         postItineraryThunk = {mockPostItineraryThunk}
@@ -30,27 +30,29 @@ describe('Search', () => {
         isLoading = {mockIsLoading}
         am={false}
         departing={false}
+        hours={10}
+        minutes={30}
       />
-    )
+    )  
   })
 
-  it('should match snapshot test', () => {
-    expect(wrapper).toMatchSnapshot();
-  })
+  // it('should match snapshot test', () => {
+  //   expect(wrapper).toMatchSnapshot();
+  // })
 
-  it("should match snapshot test if this.state.am is ", () => {
-
-    wrapper.setState({am: true});
+  // it("should match snapshot test if this.state.am is ", () => {
+    
+  //   wrapper.setState({am: true});
  
-    expect(wrapper).toMatchSnapshot();
-  });
+  //   expect(wrapper).toMatchSnapshot();
+  // });
 
-  it("should match snapshot test if this.state.departing is true ", () => {
+  // it("should match snapshot test if this.state.departing is true ", () => {
 
-    wrapper.setState({ departing: true });
+  //   wrapper.setState({ departing: true });
 
-    expect(wrapper).toMatchSnapshot();
-  });
+  //   expect(wrapper).toMatchSnapshot();
+  // });
 
   describe('handleChange', () => {
     it('should change the value of this.state.departing it ', () => {
