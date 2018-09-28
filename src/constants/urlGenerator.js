@@ -1,13 +1,8 @@
 const base = 'https://rtd-revamp-api.herokuapp.com/api/v1/users/';
 
-export const signInUrl = (uid) => {
-  const userUrl = `${base}${uid}`;
-  const favoritesUrl = `${base}${uid}/itineraries`;
-  return {
-    userUrl,
-    favoritesUrl
-  };
-};
+export const signInUrl = (uid) => (
+  `${base}${uid}`
+);
 
 export const itineraryUrl = (uid) => (
   `${base}${uid}/itineraries`

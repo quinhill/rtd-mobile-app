@@ -6,10 +6,26 @@ import PropTypes from 'prop-types';
 import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';
 import './Home.css';
 import getFavoritesThunk from '../../thunks/getFavoritesThunk';
+import * as routes from '../../constants/routes';
+import { signInThunk } from '../../thunks/signInThunk';
+import { firebase } from '../../firebase';
+import { signInUrl } from '../../constants/urlGenerator';
 
 export class HomePage extends Component {
 
-  render(){
+  componentDidMount() {
+    firebase.auth.onAuthStateChanged(async authUser => {
+      if (authUser) {
+        const url = signInUrl(authUser.uid);
+        console.log(url)
+        await this.props.signIn(url);
+      } else {
+        this.history.push(routes.ACCOUNT);
+      }
+    });
+  }
+
+  render() {
     return (
       <div className='home-container'>
         <Search />
@@ -25,7 +41,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  getFavorites: (url) => dispatch(getFavoritesThunk(url))
+  getFavorites: (url) => dispatch(getFavoritesThunk(url)),
+  signIn: (url) => dispatch(signInThunk(url))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomePage));
