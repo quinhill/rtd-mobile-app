@@ -6,11 +6,11 @@ import { getFavoritesUrl } from '../../constants/urlGenerator';
 jest.mock('../../constants/urlGenerator');
 jest.mock("../../thunks/getFavoritesThunk");
 
-describe('Home', () => {
-  it('should match snapshot', () => {
-    const wrapper = shallow(<HomePage/>);
-    expect(wrapper).toMatchSnapshot();
-  });
+// describe('Home', () => {
+//   it('should match snapshot', () => {
+//     const wrapper = shallow(<HomePage/>);
+//     expect(wrapper).toMatchSnapshot();
+//   });
 
   describe('mapStateToProps', () => {
     test('should return an object with the user information', () => {
@@ -54,4 +54,4 @@ describe('Home', () => {
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     }); 
   });
-});
+// });

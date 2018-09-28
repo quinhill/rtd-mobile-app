@@ -1,27 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PasswordChangeForm from '../PasswordChange/PasswordChange';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SignOutButton from '../../containers/SignOut/SignOut';
 import SignInPage from '../../containers/SignIn/SignIn';
 
+
 import './Account.css';
 
-export const AccountPage = (props) => {
-  if (props.user.email) {
-    return (
-      <div className='account-page-container'>
-          <h3>Hi, {props.user.email}</h3>
-          <SignOutButton />
-          <PasswordChangeForm />
-      </div>
-    );
-  } else {
-    return (
-      <div className='account-page-container'>
-          <SignInPage />
-      </div>
-    );
+export class AccountPage extends Component {
+
+  render() {
+
+    const { authUser } = this.props;
+
+    if (authUser) {
+      return (
+        <div className='account-page-container'>
+            <h3>Hi</h3>
+            <SignOutButton />
+            <PasswordChangeForm />
+        </div>
+      );
+    } else {
+      return (
+        <div className='account-page-container'>
+            <SignInPage />
+        </div>
+      );
+    }
   }
 };
 
