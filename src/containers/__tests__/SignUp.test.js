@@ -32,7 +32,7 @@ describe("SignUpPage", () => {
       };
 
       const expected = {
-        url: "http://rtd-revamp-api.herokuapp.com/api/v1/users",
+        url: "https://rtd-revamp-api.herokuapp.com/api/v1/users",
         options: {
           method: "POST",
           headers: {

@@ -23,7 +23,7 @@ export class SignUpPage extends Component {
   }
 
   createUser = userInfo => ({
-    url: "http://rtd-revamp-api.herokuapp.com/api/v1/users",
+    url: "https://rtd-revamp-api.herokuapp.com/api/v1/users",
     options: {
       method: "POST",
       headers: {
@@ -140,7 +140,7 @@ export class SignUpPage extends Component {
               />
               <button
                 className="delete-button"
-                name='paswordOne'
+                name='passwordOne'
                 onClick={this.deleteInput}
               />
             </div>

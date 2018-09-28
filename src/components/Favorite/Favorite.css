@@ -17,6 +17,10 @@
 
 .favorite-delete-button {
   background-color: #c02d34;
+  background-image: url('/delete.svg');
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 100%;
   width: 10%;
   border-bottom-right-radius: 5px;

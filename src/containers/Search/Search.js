@@ -9,9 +9,11 @@ import * as routes from '../../constants/routes';
 import { hours, minutes } from '../../constants/timeArrays';
 import { timeCleaner } from '../../constants/cleanerFunctions';
 import { itineraryUrl } from '../../constants/urlGenerator';
+import { storeStartAddress } from '../../actions';
 
 import './Search.css';
 import LoadingPage from '../../components/Loading/Loading';
+import { geocode } from '../../constants/geocoder';
 
 export class Search extends Component {
   constructor(props) {
@@ -24,11 +26,12 @@ export class Search extends Component {
     }; 
   }
 
+  
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
- 
+  
   getTime = () => {
     const time = new Date();
     let hours = time.getHours();
@@ -41,13 +44,13 @@ export class Search extends Component {
       minutes
     };
   }
-
+  
   handleClick = () => {
     this.setState({
       am: !this.state.am
     });
   }
-
+  
   handleSubmit = (event) => {
     event.preventDefault();
     if (this.props.uid) {
@@ -58,8 +61,8 @@ export class Search extends Component {
         am
       } = this.state;
       const depOrArr = departing
-        ? 'departure_time'
-        : 'arrival_time';
+      ? 'departure_time'
+      : 'arrival_time';
       const timeData = {
         [depOrArr]: timeCleaner(hours, minutes, am)
       };
@@ -68,7 +71,7 @@ export class Search extends Component {
       this.props.history.push(routes.SIGN_UP);
     }
   }
-
+  
   makeOptions = (timeData) => {
     const {
       startAddress,
@@ -77,13 +80,14 @@ export class Search extends Component {
       history,
       uid
     } = this.props;
-
+    
     const url = itineraryUrl(uid);
     const bodyObj = {
       start_address: startAddress,
       end_address: endAddress,
       ...timeData
     };
+    
     const options = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -96,8 +100,29 @@ export class Search extends Component {
     postItineraryThunk(fetchObject);
     history.push(routes.ITINERARY);
   };
-
+  
   render() {
+
+    const options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+    
+    const success = async (pos) => {
+      const crd = pos.coords;
+      const address = await geocode(crd.latitude, crd.longitude);
+      this.props.storeStartAddress(address);
+    };
+    
+    const error = (err) => {
+      return `ERROR(${err.code}): ${err.message}`;
+    };
+    
+    if (window.navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(success, error, options)
+    }
+    
     const { uid } = this.props;
 
     const hourOptions = hours.map((hour, index) => {
@@ -234,6 +259,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
+  storeStartAddress: (address) => dispatch(storeStartAddress(address)),
   postItineraryThunk: (fetchObject) => dispatch(postItineraryThunk(fetchObject))
 });
 
@@ -246,5 +272,6 @@ Search.propTypes = {
   endAddress: PropTypes.string,
   history: PropTypes.object,
   uid: PropTypes.string,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  storeStartAddress: PropTypes.func
 };

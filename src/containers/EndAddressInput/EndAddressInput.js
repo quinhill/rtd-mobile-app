@@ -44,7 +44,7 @@ export class EndAddressInput extends Component {
                 <input
                   value={this.state.endAddress}
                   {...getInputProps({
-                    placeholder: 'Search ending Point ...',
+                    placeholder: 'Search end point...',
                     className: 'input'
                   })}
                 />

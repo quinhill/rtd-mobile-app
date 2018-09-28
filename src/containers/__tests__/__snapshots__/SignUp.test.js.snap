@@ -83,7 +83,7 @@ ShallowWrapper {
                         />
                         <button
                                 className="delete-button"
-                                name="paswordOne"
+                                name="passwordOne"
                                 onClick={[Function]}
                         />
                 </div>
@@ -179,7 +179,7 @@ ShallowWrapper {
                         />
                         <button
                                     className="delete-button"
-                                    name="paswordOne"
+                                    name="passwordOne"
                                     onClick={[Function]}
                         />
             </div>
@@ -272,7 +272,7 @@ ShallowWrapper {
                 />
                 <button
                                 className="delete-button"
-                                name="paswordOne"
+                                name="passwordOne"
                                 onClick={[Function]}
                 />
 </div>,
@@ -447,7 +447,7 @@ ShallowWrapper {
 />,
                   <button
                     className="delete-button"
-                    name="paswordOne"
+                    name="passwordOne"
                     onClick={[Function]}
 />,
                 ],
@@ -477,7 +477,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "className": "delete-button",
-                    "name": "paswordOne",
+                    "name": "passwordOne",
                     "onClick": [Function],
                   },
                   "ref": null,
@@ -640,7 +640,7 @@ ShallowWrapper {
                               />
                               <button
                                         className="delete-button"
-                                        name="paswordOne"
+                                        name="passwordOne"
                                         onClick={[Function]}
                               />
                     </div>
@@ -736,7 +736,7 @@ ShallowWrapper {
                             />
                             <button
                                           className="delete-button"
-                                          name="paswordOne"
+                                          name="passwordOne"
                                           onClick={[Function]}
                             />
               </div>
@@ -829,7 +829,7 @@ ShallowWrapper {
                   />
                   <button
                                     className="delete-button"
-                                    name="paswordOne"
+                                    name="passwordOne"
                                     onClick={[Function]}
                   />
 </div>,
@@ -1004,7 +1004,7 @@ ShallowWrapper {
 />,
                     <button
                       className="delete-button"
-                      name="paswordOne"
+                      name="passwordOne"
                       onClick={[Function]}
 />,
                   ],
@@ -1034,7 +1034,7 @@ ShallowWrapper {
                     "nodeType": "host",
                     "props": Object {
                       "className": "delete-button",
-                      "name": "paswordOne",
+                      "name": "passwordOne",
                       "onClick": [Function],
                     },
                     "ref": null,
