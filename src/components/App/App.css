@@ -1,13 +1,10 @@
 .App {
   text-align: center;
-  background-image: url('https://i.imgur.com/bGGpunC.jpg');
-  background-size: inherit;
-  background-repeat: no-repeat;
+  background: white;
   height: 100vh;
 }
 
 .overlay {
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
 }
