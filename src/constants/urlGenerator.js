@@ -25,7 +25,7 @@ export const deleteFavUrl = (uid, id) => {
   return {
     url,
     options: {
-      method: 'DELETE'
+      method: 'DELETE',
     }
   };
 };
