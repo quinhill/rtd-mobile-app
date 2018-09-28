@@ -52,7 +52,7 @@ export default Favorite;
 
 Favorite.propTypes = {
   name: PropTypes.string,
-  favData: PropTypes.array,
+  favData: PropTypes.object,
   isLoading: PropTypes.bool,
   searchFavorite: PropTypes.func,
   deleteFavorite: PropTypes.func
