@@ -8,29 +8,24 @@ import SignInPage from '../../containers/SignIn/SignIn';
 
 import './Account.css';
 
-export class AccountPage extends Component {
+export const AccountPage = (props) => {
 
-  render() {
-
-    const { authUser } = this.props;
-
-    if (authUser) {
-      return (
-        <div className='account-page-container'>
-            <h3>Hi</h3>
-            <SignOutButton />
-            <PasswordChangeForm />
-        </div>
-      );
-    } else {
-      return (
-        <div className='account-page-container'>
-            <SignInPage />
-        </div>
-      );
-    }
+  if (props.user.uid) {
+    return (
+      <div className='account-page-container'>
+          <h3>Hi</h3>
+          <SignOutButton />
+          <PasswordChangeForm />
+      </div>
+    );
+  } else {
+    return (
+      <div className='account-page-container'>
+          <SignInPage />
+      </div>
+    );
   }
-};
+}
 
 export const mapStateToProps = state => ({
   user: state.user

@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import './Favorite.css'; 
 
 export class Favorite extends Component {
-  
-  
 
   render() {
     const { 
@@ -17,7 +15,7 @@ export class Favorite extends Component {
     const {
       start_address,
       end_address,
-      itinerary_id
+      id
     } = favData;
 
     let startName;
@@ -33,7 +31,7 @@ export class Favorite extends Component {
       <div className='favorite-button-container'>
         <button
           className='favorite-button'
-          value={itinerary_id}
+          value={id}
           onClick={searchFavorite}
         >
           {favoriteText}
@@ -41,7 +39,7 @@ export class Favorite extends Component {
         <button 
           className='favorite-delete-button'
           onClick={deleteFavorite}
-          id={itinerary_id}
+          id={id}
         >
         </button>
       </div>

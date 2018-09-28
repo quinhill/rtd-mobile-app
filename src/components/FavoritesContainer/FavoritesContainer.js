@@ -19,7 +19,6 @@ export class FavoritesContainer extends Component {
 
   searchFavorite = async (event) => {
     const { value } = event.target;
-    console.log(value)
     const { 
       uid, 
       getFavItinerary, 
