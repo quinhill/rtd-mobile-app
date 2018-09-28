@@ -17,7 +17,7 @@ export class HomePage extends Component {
       </div>
     );
   }
-}
+} 
 
 export const mapStateToProps = state => ({
   user: state.user

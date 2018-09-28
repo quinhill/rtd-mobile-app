@@ -24,6 +24,16 @@ describe('Reducers', () => {
 
       expect(expected).toEqual(result);
     });
+
+    it('should reset the state to empty when the user signs out', () => {
+      const expected = '';
+      const result = endAddress(
+        {startAddress: 'union station'}, 
+        {type: 'SIGN_OUT_USER'}
+      );
+
+      expect(result).toEqual(expected);
+    })
   });
 
   describe('startAddressReducer', () => {
@@ -43,6 +53,16 @@ describe('Reducers', () => {
 
       expect(expected).toEqual(result);
     });
+
+    it('should reset the state to empty when the user signs out', () => {
+      const expected = '';
+      const result = startAddress(
+        {startAddress: 'union station'}, 
+        {type: 'SIGN_OUT_USER'}
+      );
+
+      expect(result).toEqual(expected);
+    })
   });
 
   describe('hasErroredReducer', () => {
@@ -106,6 +126,19 @@ describe('Reducers', () => {
 
       expect(expected).toEqual(result);
     });
+
+    describe('SIGN_OUT_USER', () => {
+      it('should return update state with an empty array when a user signs out', () => {
+        const expected = [];
+        const result = itinerary(undefined, {
+          type: 'SIGN_OUT_USER'
+        })
+
+        expect(result).toEqual(expected);
+      })
+      
+    })
+    
   });
 
   describe('userReducer', () => {
@@ -168,6 +201,11 @@ describe('Reducers', () => {
   });
 
   describe('favoriteReducer', () => {
+    it('should return a defalut state of an empty array if no action type is met', () => {
+      const expected = [];
+      const result = favorites(undefined, '')
+    })
+    
     describe('ADD_FAVORITE', () => {    
       it('should return an array of favorites if the type is ADD_FAVORITE', () => {
         const expected =[{
@@ -327,9 +365,41 @@ describe('Reducers', () => {
         });
         expect(result).toEqual(expected);
       });
-      
     });
-    
+
+    describe('DELETE_FAVORITE', () => {
+      it('should delete the selected favorite if the favorite id === action id', () => {
+        const fav1 = {
+          id: 5
+        };
+        const fav2 = {
+          id: 6
+        };
+        const currentState = [fav1, fav2];
+        const expected = [fav1];
+        const result = favorites(currentState, {
+          type: 'DELETE_FAVORITE',
+          id: 6
+        });
+
+        expect(result).toEqual(expected)
+      }) 
+    })
+
+    describe('SIGN_OUT_USER', () => {
+      it('should return an empty state when a user signs out', () => {
+        const fav1 = {
+          id: 5
+        };
+        const fav2 = {
+          id: 6
+        };
+        const currentState = [fav1, fav2];
+        const expected = [];
+        const result = favorites(currentState, {
+          type: 'SIGN_OUT_USER'
+        });
+      });
+    });
   });
-  
 });
