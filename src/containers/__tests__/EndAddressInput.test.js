@@ -1,6 +1,8 @@
 import React from 'react';
 import { EndAddressInput } from "../EndAddressInput/EndAddressInput";
 import {  shallow } from 'enzyme';
+import * as actions from '../../actions';
+import { mapDispatchToProps } from '../EndAddressInput/EndAddressInput';
 
 describe('EndAddressInput', () => {
   let wrapper;
@@ -27,7 +29,7 @@ describe('EndAddressInput', () => {
   });
 
   describe('handleSelect', () => {
-    it('should call handleSelect on submit with the correct params', () => {
+    it('should call storeEndAddress with the correct params', () => {
       const mockEndAddress = 'Union Station, Denver, CO, USA';
       
       wrapper.instance().handleSelect(mockEndAddress);
@@ -43,4 +45,32 @@ describe('EndAddressInput', () => {
       expect(wrapper.state('endAddress')).toEqual(mockEndAddress);
     });
   });
+
+  describe('deleteInput', () => {
+    it('should delete input from endAddress input field on click', () => {
+      const event = {
+        preventDefault() {},
+        target : {
+          name: 'endAddress'
+        }
+      };
+
+      wrapper.instance().deleteInput(event);
+
+      expect(wrapper.state('endAddress')).toEqual('');
+    })
+  })
+
+  describe('mapDispatchToProps', () => {
+    it('should call dispatch with the correct params', () => {
+      const mockDispatch = jest.fn();
+      const mockEndAddress = 'Union Station';
+      const actionToDispatch = actions.storeEndAddress(mockEndAddress);
+      const mappedProps = mapDispatchToProps(mockDispatch);
+
+      mappedProps.storeEndAddress(mockEndAddress);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    })
+  })
 }); 

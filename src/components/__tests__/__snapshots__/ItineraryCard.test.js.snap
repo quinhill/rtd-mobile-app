@@ -722,7 +722,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`ItineraryCard should match teh snapshot if a favorite is truthy 1`] = `
+exports[`ItineraryCard should match snapshot if a favorite is truthy 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ItineraryCard

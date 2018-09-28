@@ -28,7 +28,7 @@ describe('PasswordChange', () => {
       expect(handleChange).toHaveBeenCalled();
       expect(wrapper.state('passwordOne')).toEqual(mockPassword);
     });
-  });
+  }); 
 
   describe('handleSubmit', () => {
     it('should call handlesubmit of change of the input field ', () => {
