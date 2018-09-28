@@ -30,10 +30,6 @@ export class HomePage extends Component {
       getFavorites
     } = this.props;
 
-    if (user.uid) {
-      const url = getFavoritesUrl(user.uid);
-      getFavorites(url)
-    }
     return (
       <div className='home-container'>
         <Search />
