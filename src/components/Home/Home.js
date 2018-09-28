@@ -17,7 +17,9 @@ export class HomePage extends Component {
     firebase.auth.onAuthStateChanged(async authUser => {
       if (authUser) {
         const url = signInUrl(authUser.uid);
+        const favUrl = getFavoritesUrl(authUser.uid);
         await this.props.signIn(url);
+        await this.props.getFavorites(favUrl);
       } else {
         this.props.history.push(routes.ACCOUNT);
       }
@@ -30,10 +32,6 @@ export class HomePage extends Component {
       getFavorites
     } = this.props;
 
-    if (user.uid) {
-      const url = getFavoritesUrl(user.uid);
-      getFavorites(url)
-    }
     return (
       <div className='home-container'>
         <Search />
