@@ -20,8 +20,8 @@ export const deleteFavItineraryThunk = (fetchObj) => {
         return response;
       })
       .then(response => response.json())
-      .then(favorite => {
-        dispatch(deleteFavorite(favorite));
+      .then(id => {
+        dispatch(deleteFavorite(id));
       })
       .catch(() => dispatch(hasErrored(true)));
   };
