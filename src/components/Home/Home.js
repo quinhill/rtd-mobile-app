@@ -19,7 +19,7 @@ export class HomePage extends Component {
         const url = signInUrl(authUser.uid);
         await this.props.signIn(url);
       } else {
-        this.history.push(routes.ACCOUNT);
+        this.props.history.push(routes.ACCOUNT);
       }
     });
   }
