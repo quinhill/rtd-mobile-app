@@ -47,8 +47,8 @@ export class FavoritesContainer extends Component {
     const loading = <LoadingPage type='loading-container' />;
 
     const favoriteIds = favorites.reduce((favoritesObj, favorite) => {
-      if (!favoritesObj[favorite.itinerary_id]) {
-        favoritesObj[favorite.itinerary_id] = {...favorite};
+      if (!favoritesObj[favorite.id]) {
+        favoritesObj[favorite.id] = {...favorite};
       }
       return favoritesObj;
     }, {});
