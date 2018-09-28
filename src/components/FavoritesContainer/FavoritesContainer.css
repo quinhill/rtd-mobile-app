@@ -7,7 +7,6 @@
 
 .favorites-div {
   width: 100%;
-  background: #a2a2a2;
   padding: 0 5px 10px 5px;
   height: 230px;
   overflow-y: scroll;
@@ -23,6 +22,6 @@
 }
 
 .favorites-title {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 300;
 }
