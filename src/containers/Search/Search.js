@@ -112,7 +112,9 @@ export class Search extends Component {
     const success = async (pos) => {
       const crd = pos.coords;
       const address = await geocode(crd.latitude, crd.longitude);
-      this.props.storeStartAddress(address);
+      if (!this.props.startAddress) {
+        this.props.storeStartAddress(address);
+      }
     };
     
     const error = (err) => {

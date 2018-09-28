@@ -1,4 +1,4 @@
-const base = 'http://rtd-revamp-api.herokuapp.com/api/v1/users/';
+const base = 'https://rtd-revamp-api.herokuapp.com/api/v1/users/';
 
 export const signInUrl = (uid) => (
   `${base}${uid}`
@@ -25,7 +25,7 @@ export const deleteFavUrl = (uid, id) => {
   return {
     url,
     options: {
-      method: 'DELETE'
+      method: 'DELETE',
     }
   };
 };
