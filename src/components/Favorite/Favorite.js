@@ -13,7 +13,7 @@ export class Favorite extends Component {
       searchFavorite,
       deleteFavorite
     } = this.props;
-    console.log(favData)
+
     const {
       start_address,
       end_address,
@@ -53,7 +53,9 @@ export default Favorite;
 
 Favorite.propTypes = {
   name: PropTypes.string,
-  favData: PropTypes.object,
+  start_address: PropTypes.string,
+  end_address: PropTypes.string,
+  itinerary_id: PropTypes.string,
   isLoading: PropTypes.bool,
   searchFavorite: PropTypes.func,
   deleteFavorite: PropTypes.func

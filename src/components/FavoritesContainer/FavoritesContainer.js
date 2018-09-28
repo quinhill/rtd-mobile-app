@@ -45,7 +45,6 @@ export class FavoritesContainer extends Component {
       favorites
     } = this.props;
 
-    
     const loading = <LoadingPage type='loading-container' />;
 
     const favoriteIds = favorites.reduce((favoritesObj, favorite) => {
