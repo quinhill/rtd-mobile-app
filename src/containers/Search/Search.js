@@ -23,7 +23,7 @@ export class Search extends Component {
       minutes: this.getTime().minutes,
       departing: true,
       am: true
-    };
+    }; 
   }
 
   
@@ -73,8 +73,6 @@ export class Search extends Component {
   }
   
   makeOptions = (timeData) => {
-    
-    
     const {
       startAddress,
       endAddress,
@@ -266,7 +264,7 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
-
+ 
 Search.propTypes = {
   postItineraryThunk: PropTypes.func,
   storeUserSearch: PropTypes.func,

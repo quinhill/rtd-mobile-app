@@ -52,6 +52,6 @@ describe('Home', () => {
       mappedProps.getFavorites(mockUrl);
 
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
-    });
+    }); 
   });
 });

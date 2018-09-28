@@ -11,7 +11,7 @@ export class ItineraryCard extends Component {
     this.state = {
       showMore: false
     };
-  }
+  } 
 
   handleClick = () => {
     this.setState({

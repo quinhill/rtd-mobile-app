@@ -2,7 +2,7 @@ import React from 'react';
 import './Loading.css';
 import PropTypes from 'prop-types';
 
-const LoadingPage = (props) => {
+export const LoadingPage = (props) => {
   const { type } = props;
 
   if (type === 'loading-page') {
