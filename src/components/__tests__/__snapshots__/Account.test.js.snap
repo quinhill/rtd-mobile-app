@@ -3,7 +3,7 @@
 exports[`Account should match Snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <AccountPage
+  Symbol(enzyme.__unrendered__): <Unknown
     user={
         Object {
             "mockEmail": " a@.com",
