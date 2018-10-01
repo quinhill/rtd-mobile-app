@@ -19,11 +19,12 @@ export class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hours: '',
-      minutes: '',
-      departing: true,
-      am: true
-    }; 
+      hours: this.props.time.hours,
+      minutes: this.props.time.minutes,
+      am: this.props.time.am,
+      departing: true
+    };
+    console.log(this.props.time)
   }
 
   
@@ -120,9 +121,20 @@ export class Search extends Component {
           <h2 className='title'>
               Search for a connection:
           </h2>
-          <StartAddressInput />
-          <EndAddressInput />
-          <Time />
+          <form
+          className='form'
+          onSubmit={this.handleSubmit}
+          >
+            <StartAddressInput />
+            <EndAddressInput />
+            <Time />
+            <button
+              type='submit'
+              className='button'
+            >
+              Search
+            </button>
+          </form>
         </div>
       );
     }
@@ -133,7 +145,8 @@ export const mapStateToProps = state => ({
   startAddress: state.startAddress,
   endAddress: state.endAddress,
   user: state.user,
-  isLoading: state.isLoading
+  isLoading: state.isLoading,
+  time: state.time
 });
 
 export const mapDispatchToProps = dispatch => ({
