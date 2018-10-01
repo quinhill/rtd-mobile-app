@@ -13,6 +13,7 @@ export class Time extends Component {
       minutes: this.getTime().minutes,
       am: this.getTime().am
     };
+    this.props.setTime(this.state);
   }
   
   getTime = () => {
@@ -31,10 +32,11 @@ export class Time extends Component {
     };
   }
   
-  toggleAm = () => {
-    this.setState({
+  toggleAm = async () => {
+    await this.setState({
       am: !this.state.am
     });
+    this.props.setTime(this.state);
   };
 
   render() {

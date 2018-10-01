@@ -16,15 +16,11 @@ import LoadingPage from '../../components/Loading/Loading';
 import { geocode } from '../../constants/geocoder';
 
 export class Search extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      hours: this.props.time.hours,
-      minutes: this.props.time.minutes,
-      am: this.props.time.am,
       departing: true
     };
-    console.log(this.props.time)
   }
 
   
@@ -33,54 +29,27 @@ export class Search extends Component {
     this.setState({ [name]: value });
   }
   
-  handleSubmit = (event) => {
+  submitSearch = async (event) => {
     event.preventDefault();
     if (this.props.user.uid) {
+      const { departing } = this.state;
       const {
-        hours,
-        minutes,
-        departing,
-        am
-      } = this.state;
+        time,
+        postItineraryThunk,
+        history
+      } = this.props;
       const depOrArr = departing
       ? 'departure_time'
       : 'arrival_time';
       const timeData = {
-        [depOrArr]: timeCleaner(hours, minutes, am)
+        [depOrArr]: timeCleaner(time.hours, time.minutes, time.am)
       };
-      this.makeOptions(timeData);
+      const fetchObject = itineraryUrl({...this.props, timeData});
+      await postItineraryThunk(fetchObject);
+      history.push(routes.ITINERARY);
     } else {
       this.props.history.push(routes.SIGN_UP);
     }
-  }
-  
-  makeOptions = (timeData) => {
-    const {
-      startAddress,
-      endAddress,
-      postItineraryThunk,
-      history,
-      user
-    } = this.props;
-    
-    const url = itineraryUrl(user.uid);
-    const bodyObj = {
-      start_address: startAddress,
-      end_address: endAddress,
-      ...timeData
-    };
-    
-    const options = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(bodyObj)
-    };
-    const fetchObject = {
-      url,
-      options
-    };
-    postItineraryThunk(fetchObject);
-    history.push(routes.ITINERARY);
   };
   
   render() {
@@ -123,7 +92,7 @@ export class Search extends Component {
           </h2>
           <form
           className='form'
-          onSubmit={this.handleSubmit}
+          onSubmit={this.submitSearch}
           >
             <StartAddressInput />
             <EndAddressInput />
