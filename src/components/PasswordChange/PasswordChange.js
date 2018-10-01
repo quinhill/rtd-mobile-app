@@ -35,6 +35,12 @@ export class PasswordChangeForm extends Component {
     });
   }
 
+  deleteInput = (event) => {
+    event.preventDefault();
+    const { name } = event.target;
+    this.setState({ [name]: '' })
+  }
+
   render() {
     const {
       passwordOne,
@@ -47,24 +53,51 @@ export class PasswordChangeForm extends Component {
       passwordOne === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
-          className='password-one'
-          name="passwordOne"
-          value={passwordOne}
-          onChange={this.handleChange}
-          type="password"
-          placeholder="New Password"
-        />
-        <input
-          className='password-two'
-          name="passwordTwo"
-          value={passwordTwo}
-          onChange={this.handleChange}
-          type="password"
-          placeholder="Confirm New Password"
-        />
-        <button disabled={isInvalid} type="submit">
+      <form 
+        className='form'
+        onSubmit={this.onSubmit}
+      >
+        <h3 className='title'>
+          Would you like to change your password?
+        </h3>
+        <div className='input-container'>
+          <input
+            className='input'
+            name='passwordOne'
+            value={passwordOne}
+            onChange={this.handleChange}
+            type='password'
+            placeholder='New Password'
+          />
+          <button 
+            className='delete-button'
+            name='passwordTwo'
+            onClick={this.deleteInput}
+          >
+          </button>
+        </div>
+        <div 
+          className='input-container last-input-container'
+        >
+          <input
+            className='input'
+            name='passwordTwo'
+            value={passwordTwo}
+            onChange={this.handleChange}
+            type='password'
+            placeholder='Confirm New Password'
+          />
+          <button 
+            className='delete-button'
+            name='passwordTwo'
+            onClick={this.deleteInput}
+          >
+          </button>
+        </div>
+        <button 
+          className='button'
+          disabled={isInvalid} 
+          type='submit'>
           Reset My Password
         </button>
 
