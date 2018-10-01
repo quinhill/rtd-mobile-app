@@ -5,6 +5,7 @@ const postItineraryThunk = (fetchObj) => {
     url,
     options
   } = fetchObj;
+  console.log(options)
   return (dispatch) => {
     dispatch(isLoading(true));
     fetch(url, options)
