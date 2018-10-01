@@ -20,11 +20,11 @@ export class FavoritesContainer extends Component {
   searchFavorite = async (event) => {
     const { value } = event.target;
     const { 
-      uid, 
+      user, 
       getFavItinerary, 
       history 
     } = this.props;
-    const url = getFavUrl(uid, value);
+    const url = getFavUrl(user.uid, value);
     await getFavItinerary(url);
     history.push(routes.ITINERARY);
   }
@@ -32,10 +32,10 @@ export class FavoritesContainer extends Component {
   deleteFavorite = async (event) => {
     const { id } = event.target;
     const {
-      uid,
+      user,
       deleteFavItinerary
     } = this.props;
-    const fetchObj = deleteFavUrl(uid, id);
+    const fetchObj = deleteFavUrl(user.uid, id);
     await deleteFavItinerary(fetchObj);
   }
 
@@ -69,9 +69,9 @@ export class FavoritesContainer extends Component {
           <h2 className='favorites-title'>Favorites</h2>
         </div>
         <div className='favorites-div'>
-          {favorites.length 
-            ? favoritesData
-            : loading}
+          {this.props.isLoading 
+            ? loading
+            : favoritesData}
         </div>
       </div>
     );
@@ -81,7 +81,7 @@ export class FavoritesContainer extends Component {
 
 export const mapStateToProps = state => ({
   favorites: state.favorites,
-  uid: state.user.uid
+  user: state.user
 });
 
 export const mapDispatchToState = dispatch => ({
@@ -93,7 +93,7 @@ export default withRouter(connect(mapStateToProps, mapDispatchToState)(Favorites
 
 FavoritesContainer.propTypes = {
   favorites: PropTypes.array,
-  uid: PropTypes.string,
+  user: PropTypes.string,
   getFavItinerary: PropTypes.func,
   history: PropTypes.object,
   deleteFavItinerary: PropTypes.func
