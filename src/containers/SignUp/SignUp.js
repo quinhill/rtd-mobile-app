@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import { SignInLink } from '../SignIn/SignIn';
 
 import './SignUp.css';
+import { signUpUrl } from '../../constants/urlGenerator';
 
 export class SignUpPage extends Component {
   constructor(props) {
@@ -22,21 +23,6 @@ export class SignUpPage extends Component {
     };
   }
 
-  createUser = userInfo => ({
-    url: "https://rtd-revamp-api.herokuapp.com/api/v1/users",
-    options: {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        username: this.state.username,
-        uid: userInfo.user.uid,
-        email: userInfo.user.email
-      })
-    }
-  });
-
   resetForm = () => {
     this.setState({
       username: "",
@@ -47,23 +33,21 @@ export class SignUpPage extends Component {
     });
   };
 
-  onSubmit = event => {
+  onSubmit = async event => {
     event.preventDefault();
-
     const { email, passwordOne } = this.state;
-
     const { history, signUpThunk } = this.props;
 
-    auth
-      .doCreateUserWithEmailAndPassword(email, passwordOne)
-      .then(authUser => {
-        const newUser = this.createUser(authUser);
-        return signUpThunk(newUser);
-      })
-      .catch(error => {
+    try {
+      const authUser = await auth.doCreateUserWithEmailAndPassword(email, passwordOne);
+      const newUser = signUpUrl(this.state, authUser);
+      await signUpThunk(newUser);
+      console.log('sign up complete')
+    } catch(error) {
         this.setState({ error: error });
-      });
+    }
     this.resetForm();
+    console.log('push')
     history.push(routes.HOME);
   };
 

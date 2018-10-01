@@ -53,7 +53,7 @@ export class Search extends Component {
   
   handleSubmit = (event) => {
     event.preventDefault();
-    if (this.props.uid) {
+    if (this.props.user.uid) {
       const {
         hours,
         minutes,
@@ -78,10 +78,10 @@ export class Search extends Component {
       endAddress,
       postItineraryThunk,
       history,
-      uid
+      user
     } = this.props;
     
-    const url = itineraryUrl(uid);
+    const url = itineraryUrl(user.uid);
     const bodyObj = {
       start_address: startAddress,
       end_address: endAddress,
@@ -125,7 +125,7 @@ export class Search extends Component {
       navigator.geolocation.getCurrentPosition(success, error, options)
     }
     
-    const { uid } = this.props;
+    const { user } = this.props;
 
     const hourOptions = hours.map((hour, index) => {
       return <option key={index} value={hour}>{hour}</option>;
@@ -142,7 +142,7 @@ export class Search extends Component {
       ? 'pm'
       : 'am';
     
-    if (!uid) {
+    if (this.props.isLoading) {
       return (
         <div className='container'>
           <LoadingPage type='loading-container' />
@@ -256,7 +256,7 @@ export class Search extends Component {
 export const mapStateToProps = state => ({
   startAddress: state.startAddress,
   endAddress: state.endAddress,
-  uid: state.user.uid,
+  user: state.user,
   isLoading: state.isLoading
 });
 
@@ -273,7 +273,7 @@ Search.propTypes = {
   startAddress: PropTypes.string,
   endAddress: PropTypes.string,
   history: PropTypes.object,
-  uid: PropTypes.string,
+  user: PropTypes.object,
   isLoading: PropTypes.bool,
   storeStartAddress: PropTypes.func
 };

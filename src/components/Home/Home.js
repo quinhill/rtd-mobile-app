@@ -14,16 +14,18 @@ import { signInUrl, getFavoritesUrl } from '../../constants/urlGenerator';
 export class HomePage extends Component {
 
   componentDidMount() {
-    firebase.auth.onAuthStateChanged(async authUser => {
-      if (authUser) {
-        const url = signInUrl(authUser.uid);
-        const favUrl = getFavoritesUrl(authUser.uid);
-        await this.props.signIn(url);
-        await this.props.getFavorites(favUrl);
-      } else {
-        this.props.history.push(routes.ACCOUNT);
-      }
-    });
+    if (!this.props.user.uid) {
+      firebase.auth.onAuthStateChanged(async authUser => {
+        if (authUser) {
+          const url = signInUrl(authUser.uid);
+          const favUrl = getFavoritesUrl(authUser.uid);
+          await this.props.signIn(url);
+          await this.props.getFavorites(favUrl);
+        } else {
+          this.props.history.push(routes.ACCOUNT);
+        }
+      });
+    }
   }
 
   render() {
