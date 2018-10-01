@@ -6,7 +6,7 @@ import StartAddressInput from '../../containers/StartAddressInput/StartAddressIn
 import EndAddressInput from '../../containers/EndAddressInput/EndAddressInput';
 import postItineraryThunk from '../../thunks/postItineraryThunk';
 import * as routes from '../../constants/routes';
-import { hours, minutes } from '../../constants/timeArrays';
+import Time from '../Time/Time';
 import { timeCleaner } from '../../constants/cleanerFunctions';
 import { itineraryUrl } from '../../constants/urlGenerator';
 import { storeStartAddress } from '../../actions';
@@ -19,8 +19,8 @@ export class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hours: this.getTime().hours,
-      minutes: this.getTime().minutes,
+      hours: '',
+      minutes: '',
       departing: true,
       am: true
     }; 
@@ -30,25 +30,6 @@ export class Search extends Component {
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
-  }
-  
-  getTime = () => {
-    const time = new Date();
-    let hours = time.getHours();
-    if (hours > 12) {
-      hours -= 12;
-    }
-    const minutes = time.getMinutes();
-    return {
-      hours,
-      minutes
-    };
-  }
-  
-  handleClick = () => {
-    this.setState({
-      am: !this.state.am
-    });
   }
   
   handleSubmit = (event) => {
@@ -126,21 +107,6 @@ export class Search extends Component {
     }
     
     const { user } = this.props;
-
-    const hourOptions = hours.map((hour, index) => {
-      return <option key={index} value={hour}>{hour}</option>;
-    });
-
-    const minuteOptions = minutes.map((minute, index) => {
-      return <option key={index} value={minute}>{minute}</option>;
-    });
-
-    const am = this.state.am
-      ? 'am'
-      : 'pm';
-    const pm = this.state.am
-      ? 'pm'
-      : 'am';
     
     if (this.props.isLoading) {
       return (
@@ -156,97 +122,7 @@ export class Search extends Component {
           </h2>
           <StartAddressInput />
           <EndAddressInput />
-          <form
-            className='form'
-            onSubmit={this.handleSubmit}
-          >
-            <div className='time-select-container'>
-              <div
-                className='radio-container'
-                name='departing'
-                onChange={this.handleChange}
-              >
-                <input
-                  name='departing'
-                  id='departing'
-                  type='radio'
-                  defaultChecked
-                  value={true}
-                />
-                <label
-                  htmlFor='departing'
-                  className='radio-label'
-                >
-                    departing
-                </label>
-                <input
-                  name='departing'
-                  id='arriving'
-                  type='radio'
-                  value={false}
-                />
-                <label
-                  htmlFor='arriving'
-                  className='radio-label'
-                >
-                    arriving
-                </label>
-                <p id='at'>at</p>
-              </div>
-              <div className='time-container'>
-                <input
-                  className='time-select'
-                  name='hours'
-                  onChange={this.handleChange}
-                  value={this.state.hours}
-                  list='hours'
-                />
-                <datalist
-                  id='hours'
-                >
-                  {hourOptions}
-                </datalist>
-                  :
-                <input
-                  className='time-select'
-                  name='minutes'
-                  onChange={this.handleChange}
-                  value={this.state.minutes}
-                  list='minutes'
-                />
-                <datalist
-                  id='minutes'
-                >
-                  {minuteOptions}
-                </datalist>
-                <div
-                  className='amPm'
-                  name='am'
-                  value={this.state.am}
-                  onClick={this.handleClick}
-                >
-                  <p 
-                    className={am}
-                    id='am'
-                  >
-                    am
-                  </p>
-                  <p 
-                    className={pm}
-                    id='pm'
-                  >
-                    pm
-                  </p>
-                </div>
-              </div>
-            </div>
-            <button
-              type='submit'
-              className='button'
-            >
-                Search
-            </button >
-          </form>
+          <Time />
         </div>
       );
     }
