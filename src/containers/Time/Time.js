@@ -30,7 +30,15 @@ export class Time extends Component {
       minutes,
       am
     };
-  }
+  };
+
+  handleChange = async (event) => {
+    const { name, value } = event.target;
+    await this.setState({
+      [name]: value
+    });
+    this.props.setTime(this.state);
+  };
   
   toggleAm = async () => {
     await this.setState({
@@ -39,9 +47,8 @@ export class Time extends Component {
     this.props.setTime(this.state);
   };
 
-  render() {
-    
-    const hourOptions = hours.map((hour, index) => {
+  makeHours = () => (
+    hours.map((hour, index) => {
       return (
         <option 
           key={index} 
@@ -50,9 +57,11 @@ export class Time extends Component {
           {hour}
         </option>
       );
-    });
+    })
+  );
 
-    const minuteOptions = minutes.map((minute, index) => {
+  makeMinutes = () => (
+    minutes.map((minute, index) => {
       return (
         <option 
           key={index} 
@@ -61,7 +70,13 @@ export class Time extends Component {
           {minute}
         </option>
       );
-    });
+    })
+  );
+
+  render() {
+    
+    const hourOptions = this.makeHours();
+    const minuteOptions = this.makeMinutes();
 
     const am = this.state.am
       ? 'am'

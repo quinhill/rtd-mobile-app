@@ -23,7 +23,6 @@ export class Search extends Component {
     };
   }
 
-  
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -75,8 +74,6 @@ export class Search extends Component {
     if (window.navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(success, error, options)
     }
-    
-    const { user } = this.props;
     
     if (this.props.isLoading) {
       return (
