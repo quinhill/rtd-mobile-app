@@ -14,13 +14,22 @@ export const SignOutButton = (props) => {
   };
 
   return (
-    <button
-      className='sign-out-button'
-      type="button"
-      onClick={signOut}
+    <div 
+      className='form'
+      id='sign-out-container'
     >
-      Sign Out
-    </button>
+      <h3 className='title'>
+        To sign out...
+      </h3>
+      <button
+        className='button'
+        
+        type='button'
+        onClick={signOut}
+      >
+        Sign Out
+      </button>
+    </div>
   );
 };
 

@@ -1,6 +1,4 @@
-.sign-out-button {
-  color: white;
-  background: #8f2926;
-  border-radius: 5px;
-  font-size: 15px;
+#sign-out-container {
+  position: absolute;
+  bottom: 100px;
 }

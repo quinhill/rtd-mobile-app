@@ -13,15 +13,14 @@ export const AccountPage = (props) => {
   if (props.user.uid) {
     return (
       <div className='account-page-container'>
-          <h3>Hi</h3>
-          <SignOutButton />
-          <PasswordChangeForm />
+        <PasswordChangeForm />
+        <SignOutButton />
       </div>
     );
   } else {
     return (
       <div className='account-page-container'>
-          <SignInPage />
+        <SignInPage />
       </div>
     );
   }
