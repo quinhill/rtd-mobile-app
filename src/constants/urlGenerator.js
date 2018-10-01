@@ -21,9 +21,29 @@ export const signUpUrl = (state, authUser) => {
   }
 }
 
-export const itineraryUrl = (uid) => (
-  `${base}${uid}/itineraries`
-);
+export const itineraryUrl = (props) => {
+  const {
+    startAddress,
+    endAddress,
+    user,
+    timeData
+  } = props;
+  const url = `${base}${user.uid}/itineraries`;
+  const bodyObj = {
+    start_address: startAddress,
+    end_address: endAddress,
+    ...timeData
+  };
+  const options = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(bodyObj)
+  };
+  return {
+    url,
+    options
+  };
+};
 
 export const postFavoriteUrl = (value, id) => (
   `${base}${value}/itineraries/${id}`

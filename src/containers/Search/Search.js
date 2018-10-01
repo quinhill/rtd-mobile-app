@@ -6,7 +6,7 @@ import StartAddressInput from '../../containers/StartAddressInput/StartAddressIn
 import EndAddressInput from '../../containers/EndAddressInput/EndAddressInput';
 import postItineraryThunk from '../../thunks/postItineraryThunk';
 import * as routes from '../../constants/routes';
-import { hours, minutes } from '../../constants/timeArrays';
+import Time from '../Time/Time';
 import { timeCleaner } from '../../constants/cleanerFunctions';
 import { itineraryUrl } from '../../constants/urlGenerator';
 import { storeStartAddress } from '../../actions';
@@ -16,89 +16,39 @@ import LoadingPage from '../../components/Loading/Loading';
 import { geocode } from '../../constants/geocoder';
 
 export class Search extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      hours: this.getTime().hours,
-      minutes: this.getTime().minutes,
-      departing: true,
-      am: true
-    }; 
+      departing: true
+    };
   }
 
-  
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
   
-  getTime = () => {
-    const time = new Date();
-    let hours = time.getHours();
-    if (hours > 12) {
-      hours -= 12;
-    }
-    const minutes = time.getMinutes();
-    return {
-      hours,
-      minutes
-    };
-  }
-  
-  handleClick = () => {
-    this.setState({
-      am: !this.state.am
-    });
-  }
-  
-  handleSubmit = (event) => {
+  submitSearch = async (event) => {
     event.preventDefault();
     if (this.props.user.uid) {
+      const { departing } = this.state;
       const {
-        hours,
-        minutes,
-        departing,
-        am
-      } = this.state;
+        time,
+        postItineraryThunk,
+        history
+      } = this.props;
       const depOrArr = departing
       ? 'departure_time'
       : 'arrival_time';
       const timeData = {
-        [depOrArr]: timeCleaner(hours, minutes, am)
+        [depOrArr]: timeCleaner(time.hours, time.minutes, time.am)
       };
-      this.makeOptions(timeData);
+      const fetchObject = itineraryUrl({...this.props, timeData});
+      await postItineraryThunk(fetchObject);
+      history.push(routes.ITINERARY);
     } else {
       this.props.history.push(routes.SIGN_UP);
     }
-  }
-  
-  makeOptions = (timeData) => {
-    const {
-      startAddress,
-      endAddress,
-      postItineraryThunk,
-      history,
-      user
-    } = this.props;
-    
-    const url = itineraryUrl(user.uid);
-    const bodyObj = {
-      start_address: startAddress,
-      end_address: endAddress,
-      ...timeData
-    };
-    
-    const options = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(bodyObj)
-    };
-    const fetchObject = {
-      url,
-      options
-    };
-    postItineraryThunk(fetchObject);
-    history.push(routes.ITINERARY);
   };
   
   render() {
@@ -125,23 +75,6 @@ export class Search extends Component {
       navigator.geolocation.getCurrentPosition(success, error, options)
     }
     
-    const { user } = this.props;
-
-    const hourOptions = hours.map((hour, index) => {
-      return <option key={index} value={hour}>{hour}</option>;
-    });
-
-    const minuteOptions = minutes.map((minute, index) => {
-      return <option key={index} value={minute}>{minute}</option>;
-    });
-
-    const am = this.state.am
-      ? 'am'
-      : 'pm';
-    const pm = this.state.am
-      ? 'pm'
-      : 'am';
-    
     if (this.props.isLoading) {
       return (
         <div className='container'>
@@ -154,98 +87,19 @@ export class Search extends Component {
           <h2 className='title'>
               Search for a connection:
           </h2>
-          <StartAddressInput />
-          <EndAddressInput />
           <form
-            className='form'
-            onSubmit={this.handleSubmit}
+          className='form'
+          onSubmit={this.submitSearch}
           >
-            <div className='time-select-container'>
-              <div
-                className='radio-container'
-                name='departing'
-                onChange={this.handleChange}
-              >
-                <input
-                  name='departing'
-                  id='departing'
-                  type='radio'
-                  defaultChecked
-                  value={true}
-                />
-                <label
-                  htmlFor='departing'
-                  className='radio-label'
-                >
-                    departing
-                </label>
-                <input
-                  name='departing'
-                  id='arriving'
-                  type='radio'
-                  value={false}
-                />
-                <label
-                  htmlFor='arriving'
-                  className='radio-label'
-                >
-                    arriving
-                </label>
-                <p id='at'>at</p>
-              </div>
-              <div className='time-container'>
-                <input
-                  className='time-select'
-                  name='hours'
-                  onChange={this.handleChange}
-                  value={this.state.hours}
-                  list='hours'
-                />
-                <datalist
-                  id='hours'
-                >
-                  {hourOptions}
-                </datalist>
-                  :
-                <input
-                  className='time-select'
-                  name='minutes'
-                  onChange={this.handleChange}
-                  value={this.state.minutes}
-                  list='minutes'
-                />
-                <datalist
-                  id='minutes'
-                >
-                  {minuteOptions}
-                </datalist>
-                <div
-                  className='amPm'
-                  name='am'
-                  value={this.state.am}
-                  onClick={this.handleClick}
-                >
-                  <p 
-                    className={am}
-                    id='am'
-                  >
-                    am
-                  </p>
-                  <p 
-                    className={pm}
-                    id='pm'
-                  >
-                    pm
-                  </p>
-                </div>
-              </div>
-            </div>
+            <StartAddressInput />
+            <EndAddressInput />
+            <Time />
             <button
               type='submit'
               className='button'
             >
-                Search
-            </button >
+              Search
+            </button>
           </form>
         </div>
       );
@@ -257,7 +111,8 @@ export const mapStateToProps = state => ({
   startAddress: state.startAddress,
   endAddress: state.endAddress,
   user: state.user,
-  isLoading: state.isLoading
+  isLoading: state.isLoading,
+  time: state.time
 });
 
 export const mapDispatchToProps = dispatch => ({
