@@ -42,12 +42,10 @@ export class SignUpPage extends Component {
       const authUser = await auth.doCreateUserWithEmailAndPassword(email, passwordOne);
       const newUser = signUpUrl(this.state, authUser);
       await signUpThunk(newUser);
-      console.log('sign up complete')
     } catch(error) {
         this.setState({ error: error });
     }
     this.resetForm();
-    console.log('push')
     history.push(routes.HOME);
   };
 

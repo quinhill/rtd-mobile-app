@@ -93,7 +93,7 @@ export default withRouter(connect(mapStateToProps, mapDispatchToState)(Favorites
 
 FavoritesContainer.propTypes = {
   favorites: PropTypes.array,
-  user: PropTypes.string,
+  user: PropTypes.object,
   getFavItinerary: PropTypes.func,
   history: PropTypes.object,
   deleteFavItinerary: PropTypes.func
