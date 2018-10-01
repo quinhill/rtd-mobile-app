@@ -19,14 +19,53 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "Sign Out",
-      "className": "sign-out-button",
-      "onClick": [Function],
-      "type": "button",
+      "children": Array [
+        <h3
+          className="title"
+>
+          To sign out...
+</h3>,
+        <button
+          className="button"
+          onClick={[Function]}
+          type="button"
+>
+          Sign Out
+</button>,
+      ],
+      "className": "form",
+      "id": "sign-out-container",
     },
     "ref": null,
-    "rendered": "Sign Out",
-    "type": "button",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "To sign out...",
+          "className": "title",
+        },
+        "ref": null,
+        "rendered": "To sign out...",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Sign Out",
+          "className": "button",
+          "onClick": [Function],
+          "type": "button",
+        },
+        "ref": null,
+        "rendered": "Sign Out",
+        "type": "button",
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -34,14 +73,53 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "Sign Out",
-        "className": "sign-out-button",
-        "onClick": [Function],
-        "type": "button",
+        "children": Array [
+          <h3
+            className="title"
+>
+            To sign out...
+</h3>,
+          <button
+            className="button"
+            onClick={[Function]}
+            type="button"
+>
+            Sign Out
+</button>,
+        ],
+        "className": "form",
+        "id": "sign-out-container",
       },
       "ref": null,
-      "rendered": "Sign Out",
-      "type": "button",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "To sign out...",
+            "className": "title",
+          },
+          "ref": null,
+          "rendered": "To sign out...",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Sign Out",
+            "className": "button",
+            "onClick": [Function],
+            "type": "button",
+          },
+          "ref": null,
+          "rendered": "Sign Out",
+          "type": "button",
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
