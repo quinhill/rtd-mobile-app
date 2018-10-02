@@ -22,7 +22,7 @@ ShallowWrapper {
           activeClassName="active"
           aria-current="page"
           className="icon"
-          id="favorites"
+          id="favorites-icon"
           to="/account"
 />,
         <NavLink
@@ -53,7 +53,7 @@ ShallowWrapper {
           "activeClassName": "active",
           "aria-current": "page",
           "className": "icon",
-          "id": "favorites",
+          "id": "favorites-icon",
           "to": "/account",
         },
         "ref": null,
@@ -105,7 +105,7 @@ ShallowWrapper {
             activeClassName="active"
             aria-current="page"
             className="icon"
-            id="favorites"
+            id="favorites-icon"
             to="/account"
 />,
           <NavLink
@@ -136,7 +136,7 @@ ShallowWrapper {
             "activeClassName": "active",
             "aria-current": "page",
             "className": "icon",
-            "id": "favorites",
+            "id": "favorites-icon",
             "to": "/account",
           },
           "ref": null,

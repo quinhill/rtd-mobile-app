@@ -43,7 +43,7 @@ export class SignUpPage extends Component {
       const newUser = signUpUrl(this.state, authUser);
       await signUpThunk(newUser);
     } catch(error) {
-        this.setState({ error: error });
+      this.setState({ error: error });
     }
     this.resetForm();
     history.push(routes.HOME);

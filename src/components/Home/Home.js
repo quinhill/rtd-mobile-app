@@ -10,34 +10,90 @@ import * as routes from '../../constants/routes';
 import { signInThunk } from '../../thunks/signInThunk';
 import { firebase } from '../../firebase';
 import { signInUrl, getFavoritesUrl } from '../../constants/urlGenerator';
+import { getRecentUrl } from '../../constants/urlGenerator';
+import getRecentThunk from '../../thunks/getRecentThunk';
+import RecentSearch from '../../containers/RecentSearch/RecentSearch';
 
 export class HomePage extends Component {
+  constructor() {
+    super()
+    this.state = {
+      favorites: true,
+    }
+  }
 
   componentDidMount() {
-    if (!this.props.user.uid) {
+    const {
+      user,
+      signIn,
+      getFavorites,
+      getRecent
+    } = this.props;
+    if (!user.uid) {
       firebase.auth.onAuthStateChanged(async authUser => {
         if (authUser) {
-          const url = signInUrl(authUser.uid);
-          const favUrl = getFavoritesUrl(authUser.uid);
-          await this.props.signIn(url);
-          await this.props.getFavorites(favUrl);
+          const { uid } = authUser;
+          const url = signInUrl(uid);
+          const favUrl = getFavoritesUrl(uid);
+          const recentUrl = getRecentUrl(uid);
+          await signIn(url);
+          await getFavorites(favUrl);
+          await getRecent(recentUrl);
         } else {
           this.props.history.push(routes.ACCOUNT);
         }
       });
     }
-  }
+  };
+
+  toggleFavorites = () => {
+    this.setState({
+      favorites: !this.state.favorites
+    });
+  };
 
   render() {
+
+    const toggleDisplay = this.state.favorites
+      ? <FavoritesContainer />
+      : <RecentSearch />
+
     const {
       user,
       getFavorites
     } = this.props;
 
+    const favorites = this.state.favorites
+      ? 'favorites'
+      : 'recents';
+
+    const recents = this.state.favorites
+      ? 'recents'
+      : 'favorites';
+
     return (
       <div className='home-container'>
         <Search />
-        <FavoritesContainer />
+        <div
+          className='faveRecent'
+          name='favorites'
+          value={this.state.favorites}
+          onClick={this.toggleFavorites}
+        >
+          <p 
+            className={favorites}
+            id='favorites'
+          >
+            Favorites
+          </p>
+          <p 
+            className={recents}
+            id='recents'
+          >
+            Recent Searches
+          </p>
+        </div>
+        {toggleDisplay}
       </div>
     );
   }
@@ -48,8 +104,9 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  getFavorites: (url) => dispatch(getFavoritesThunk(url)),
-  signIn: (url) => dispatch(signInThunk(url))
+  getFavorites: url => dispatch(getFavoritesThunk(url)),
+  signIn: url => dispatch(signInThunk(url)),
+  getRecent: url => dispatch(getRecentThunk(url))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomePage));

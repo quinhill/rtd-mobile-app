@@ -1,13 +1,9 @@
-import { isLoading, hasErrored, storeItinerary } from '../actions';
+import { isLoading, hasErrored, getRecent } from '../actions';
 
-const postItineraryThunk = (fetchObj) => {
-  const {
-    url,
-    options
-  } = fetchObj;
+const getRecentThunk = (url) => {
   return (dispatch) => {
     dispatch(isLoading(true));
-    fetch(url, options)
+    fetch(url)
       .then(response => {
         if (!response.ok) {
           throw Error();
@@ -16,11 +12,9 @@ const postItineraryThunk = (fetchObj) => {
         return response;
       })
       .then(response => response.json())
-      .then(itinerary => {
-        dispatch(storeItinerary(itinerary));
-      })
+      .then(recentSearches => dispatch(getRecent(recentSearches)))
       .catch(() => dispatch(hasErrored(true)));
   };
 };
 
-export default postItineraryThunk;
+export default getRecentThunk;

@@ -81,6 +81,8 @@ export const timeCleaner = (hours, minutes, am) => {
   const hourValue = am 
     ? hours 
     : parseInt(hours) + 12;
-  console.log(hourValue)
+  const minuteValue = minutes.length < 2
+    ? 0 + minutes
+    : minutes
   return `${hourValue}: ${minutes}`;
 };

@@ -18,15 +18,6 @@ export class Favorite extends Component {
       id
     } = favData;
 
-    let startName;
-    let endName;
-    if (start_address) {
-      startName = start_address.split(',')[0];
-      endName = end_address.split(',')[0];
-    }
-
-    const favoriteText = `from: ${startName} to: ${endName}`;
-
     return (
       <div className='favorite-button-container'>
         <button
@@ -34,7 +25,18 @@ export class Favorite extends Component {
           value={id}
           onClick={searchFavorite}
         >
-          {favoriteText}
+          <div className='address-container'>
+            <p className='from-to'>From:</p>
+            <p className='address'>
+              {start_address.split(',')[0]}
+            </p>
+          </div>
+          <div className='address-container'>
+            <p className='from-to'>To:</p>
+            <p className='address'>
+              {end_address.split(',')[0]}
+            </p>
+          </div>
         </button>
         <button 
           className='favorite-delete-button'

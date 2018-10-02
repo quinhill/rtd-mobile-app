@@ -1,14 +1,14 @@
-.favorite_card-container {
+.card-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.favorites-div {
+.card-div {
   width: 100%;
   padding: 0 5px 10px 5px;
-  height: 230px;
+  height: 210px;
   overflow-y: scroll;
 }
 

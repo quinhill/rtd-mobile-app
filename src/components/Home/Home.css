@@ -3,3 +3,43 @@
   flex-direction: column;
   align-items: center;
 }
+
+.faveRecent {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 10px 0;
+  align-items: center;
+  height: 30px;
+  width: 300px;
+  justify-content: center;
+}
+
+.favorites {
+  background: #c02d34;
+  color: white;
+  height: 100%;
+  width: 50%;
+  padding-top: 2px;
+  transition: ease .5s;
+}
+
+#favorites {
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 4px;
+  border: 1px solid #c02d34;
+}
+
+.recents {
+  background: white;
+  color: #555555;
+  height: 100%;
+  width: 50%;
+  padding-top: 2px;
+  transition: ease .5s;
+}
+
+#recents {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #c02d34;
+}

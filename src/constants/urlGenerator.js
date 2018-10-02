@@ -45,6 +45,23 @@ export const itineraryUrl = (props) => {
   };
 };
 
+export const searchRecentUrl = props => {
+  const {
+    uid,
+    bodyObj
+  } = props;
+  const url = `${base}${uid}/itineraries`;
+  const options = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(bodyObj)
+  };
+  return {
+    url,
+    options
+  };
+};
+
 export const postFavoriteUrl = (value, id) => (
   `${base}${value}/itineraries/${id}`
 );
@@ -66,3 +83,7 @@ export const deleteFavUrl = (uid, id) => {
     }
   };
 };
+
+export const getRecentUrl = (uid) => (
+  `${base}${uid}/itineraries?amount=5`
+);
