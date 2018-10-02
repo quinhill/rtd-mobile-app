@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import './Favorite.css'; 
 
 export class Favorite extends Component {
-  
-  
 
   render() {
     const { 
@@ -13,39 +11,38 @@ export class Favorite extends Component {
       searchFavorite,
       deleteFavorite
     } = this.props;
+
     const {
       start_address,
       end_address,
-      itinerary_id
+      id
     } = favData;
-
-    let startName;
-    let endName;
-    if (start_address) {
-      startName = start_address.split(',')[0];
-      endName = end_address.split(',')[0];
-    }
-
-    const favoriteText = `from: ${startName} to: ${endName}`;
 
     return (
       <div className='favorite-button-container'>
         <button
           className='favorite-button'
-          value={itinerary_id}
+          value={id}
           onClick={searchFavorite}
         >
-          {favoriteText}
+          <div className='address-container'>
+            <p className='from-to'>From:</p>
+            <p className='address'>
+              {start_address.split(',')[0]}
+            </p>
+          </div>
+          <div className='address-container'>
+            <p className='from-to'>To:</p>
+            <p className='address'>
+              {end_address.split(',')[0]}
+            </p>
+          </div>
         </button>
         <button 
           className='favorite-delete-button'
           onClick={deleteFavorite}
-          value={itinerary_id}
+          id={id}
         >
-          <img 
-            src='delete.svg'
-            className='delete-icon'
-          />
         </button>
       </div>
     );
@@ -56,7 +53,9 @@ export default Favorite;
 
 Favorite.propTypes = {
   name: PropTypes.string,
-  favData: PropTypes.object,
+  start_address: PropTypes.string,
+  end_address: PropTypes.string,
+  itinerary_id: PropTypes.string,
   isLoading: PropTypes.bool,
   searchFavorite: PropTypes.func,
   deleteFavorite: PropTypes.func

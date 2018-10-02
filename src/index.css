@@ -49,9 +49,7 @@ p {
   flex-direction: column;
   align-items: center;
   background: white;
-  margin-top: 10px;
-  width: 95%;
-  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.5);
+  width: 100%;
   padding-bottom: 10px;
 }
 
@@ -60,11 +58,11 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-bottom: 20px; */
 }
 
 .title {
   margin: 20px;
+  font-weight: 300;
 }
 
 .input {
@@ -92,7 +90,6 @@ p {
 
 .delete-button {
   background: transparent;
-  background-image: url('/delete-button.svg');
   background-repeat: no-repeat;
   background-size: cover;
   border: none;

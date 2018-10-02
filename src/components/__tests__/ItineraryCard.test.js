@@ -49,7 +49,7 @@ describe('ItineraryCard', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
-  it('should match teh snapshot if a favorite is truthy', () => {
+  it('should match snapshot if a favorite is truthy', () => {
     
     wrapper.setState({favorite: true})
 

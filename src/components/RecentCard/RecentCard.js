@@ -1,0 +1,44 @@
+import React from 'react';
+
+import './RecentCard.css';
+
+const RecentCard = (props) => {
+  const {
+    recentData,
+    searchRecent
+  } = props;
+
+  const handleClick = () => {
+    const {
+      start_address,
+      end_address,
+    } = recentData;
+    const recentInfo = {
+      start_address,
+      end_address
+    }
+    searchRecent(recentInfo);
+  }
+  
+  return (
+    <button
+      className='recent-button'
+      onClick={handleClick}
+    >
+      <div className='address-container'>
+        <p className='from-to'>From:</p>
+        <p className='address'>
+          {recentData.start_address.split(',')[0]}
+        </p>
+      </div>
+      <div className='address-container'>
+        <p className='from-to'>To:</p>
+        <p className='address'>
+          {recentData.end_address.split(',')[0]}
+        </p>
+      </div>
+    </button>
+  );
+};
+
+export default RecentCard;

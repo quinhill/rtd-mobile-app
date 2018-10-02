@@ -7,6 +7,7 @@ footer {
   justify-content: center;
   align-items: center;
   background-color: #c02d34;
+  box-shadow: 1px 1px 0 0 rgba(255, 255, 255, 0.5);
 }
 
 .icon {
@@ -14,9 +15,9 @@ footer {
   width: 25px;
 }
 
-#favorites {
+#favorites-icon {
   background-image: url('/user.svg');
-  background-size: 28%;
+  background-size: 32px;
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;
@@ -26,7 +27,7 @@ footer {
 
 #home {
   background-image: url('/search.svg');
-  background-size: 30%;
+  background-size: 32px;
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;
@@ -36,7 +37,7 @@ footer {
 
 #tickets {
   background-image: url('/tickets.svg');
-  background-size: 30%;
+  background-size: 32px;
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;

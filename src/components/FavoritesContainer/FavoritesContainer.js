@@ -20,22 +20,22 @@ export class FavoritesContainer extends Component {
   searchFavorite = async (event) => {
     const { value } = event.target;
     const { 
-      uid, 
+      user, 
       getFavItinerary, 
       history 
     } = this.props;
-    const url = getFavUrl(uid, value);
+    const url = getFavUrl(user.uid, value);
     await getFavItinerary(url);
     history.push(routes.ITINERARY);
   }
 
   deleteFavorite = async (event) => {
-    const { value } = event.target;
+    const { id } = event.target;
     const {
-      uid,
+      user,
       deleteFavItinerary
     } = this.props;
-    const fetchObj = deleteFavUrl(uid, value);
+    const fetchObj = deleteFavUrl(user.uid, id);
     await deleteFavItinerary(fetchObj);
   }
 
@@ -44,12 +44,11 @@ export class FavoritesContainer extends Component {
       favorites
     } = this.props;
 
-    
     const loading = <LoadingPage type='loading-container' />;
 
     const favoriteIds = favorites.reduce((favoritesObj, favorite) => {
-      if (!favoritesObj[favorite.itinerary_id]) {
-        favoritesObj[favorite.itinerary_id] = {...favorite};
+      if (!favoritesObj[favorite.id]) {
+        favoritesObj[favorite.id] = {...favorite};
       }
       return favoritesObj;
     }, {});
@@ -65,14 +64,11 @@ export class FavoritesContainer extends Component {
       );
     });
     return (
-      <div className='favorite_card-container'>
-        <div className='favorites-title-container'>
-          <h2 className='favorites-title'>Favorites</h2>
-        </div>
-        <div className='favorites-div'>
-          {favorites.length 
-            ? favoritesData
-            : loading}
+      <div className='card-container'>
+        <div className='card-div'>
+          {this.props.isLoading 
+            ? loading
+            : favoritesData}
         </div>
       </div>
     );
@@ -82,7 +78,7 @@ export class FavoritesContainer extends Component {
 
 export const mapStateToProps = state => ({
   favorites: state.favorites,
-  uid: state.user.uid
+  user: state.user
 });
 
 export const mapDispatchToState = dispatch => ({
@@ -94,7 +90,7 @@ export default withRouter(connect(mapStateToProps, mapDispatchToState)(Favorites
 
 FavoritesContainer.propTypes = {
   favorites: PropTypes.array,
-  uid: PropTypes.string,
+  user: PropTypes.object,
   getFavItinerary: PropTypes.func,
   history: PropTypes.object,
   deleteFavItinerary: PropTypes.func

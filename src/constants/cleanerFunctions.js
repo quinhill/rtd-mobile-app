@@ -78,6 +78,11 @@ export const cleanStep = step => {
 };
 
 export const timeCleaner = (hours, minutes, am) => {
-  const result = am ? `${hours}:${minutes}` : `${hours + 12}:${minutes}`;
-  return result;
+  const hourValue = am 
+    ? hours 
+    : parseInt(hours) + 12;
+  const minuteValue = minutes.length < 2
+    ? 0 + minutes
+    : minutes
+  return `${hourValue}: ${minutes}`;
 };

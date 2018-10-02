@@ -23,7 +23,7 @@ export const App = () => {
         <Switch>
           <Route 
             exact path={routes.LANDING} 
-            component={LandingPage} 
+            component={HomePage} 
           />
           <Route 
             exact path={routes.SIGN_UP} 

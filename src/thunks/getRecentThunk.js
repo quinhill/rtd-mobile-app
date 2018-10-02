@@ -1,6 +1,6 @@
-import { isLoading, hasErrored, storeItinerary } from '../actions';
- 
-export const getFavItineraryThunk = (url) => {
+import { isLoading, hasErrored, getRecent } from '../actions';
+
+const getRecentThunk = (url) => {
   return (dispatch) => {
     dispatch(isLoading(true));
     fetch(url)
@@ -12,11 +12,9 @@ export const getFavItineraryThunk = (url) => {
         return response;
       })
       .then(response => response.json())
-      .then(itinerary => {
-        dispatch(storeItinerary(itinerary));
-      })
+      .then(recentSearches => dispatch(getRecent(recentSearches)))
       .catch(() => dispatch(hasErrored(true)));
   };
 };
 
-export default getFavItineraryThunk;
+export default getRecentThunk;

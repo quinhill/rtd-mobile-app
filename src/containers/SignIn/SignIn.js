@@ -33,18 +33,20 @@ export class SignInPage extends Component {
   onSubmit = async event => {
     event.preventDefault();
     const { email, password } = this.state;
-
-    const { history } = this.props;
+    const { 
+      history,
+      signIn,
+      getFavorites
+    } = this.props;
 
     try {
-      const authUser = await auth
-        .doSignInWithEmailAndPassword(email, password);
+      const authUser = await auth.doSignInWithEmailAndPassword(email, password);
       const {
         userUrl,
         favoritesUrl
       } = signInUrl(authUser.user.uid);
-      await this.props.signIn(userUrl);
-      await this.props.getFavorites(favoritesUrl);
+      await signIn(userUrl);
+      await getFavorites(favoritesUrl);
     } catch (error) {
       this.setState({ error: error });
     }
@@ -72,7 +74,8 @@ export class SignInPage extends Component {
       error 
     } = this.state;
 
-    const isInvalid = password === "" || email === "";
+    const isInvalid = password === "" 
+      || email === "";
 
     return (
       <div className="page">

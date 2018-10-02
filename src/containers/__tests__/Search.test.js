@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Search } from '../Search/Search';
+// import { history } from 'react-router-dom'
 
 describe('Search', () => {
   let wrapper;
@@ -8,18 +9,25 @@ describe('Search', () => {
   let mockPostItineraryThunk;
   let mockStartAddress;
   let mockEndAddress;
-  let mockHistory;
   let mockUid;
   let mockIsLoading;
+  let mockHistory;
+  let mockTimeData;
 
   beforeEach(() => {
+    mockTimeData = {
+      hours: 1,
+      minutes: 30,
+      departing: true,
+      am: true
+    }
     mockStoreUserSearch = jest.fn()
     mockPostItineraryThunk = jest.fn()
     mockStartAddress = 'Union Station, Denver, CO';
     mockEndAddress = 'Ruby Hill Park, Denver, CO'
-    // mockHistory = jest.fn();
+    mockHistory = jest.fn();
     mockUid= '123456abcdefg'
-    mockIsLoading=false
+    mockIsLoading=false 
     wrapper = shallow(
       <Search
         postItineraryThunk = {mockPostItineraryThunk}
@@ -30,27 +38,22 @@ describe('Search', () => {
         isLoading = {mockIsLoading}
         am={false}
         departing={false}
+        hours={10}
+        minutes={30}
       />
-    )
+    )  
   })
 
-  it('should match snapshot test', () => {
-    expect(wrapper).toMatchSnapshot();
-  })
+  // it('should match snapshot test', () => {
+  //   expect(wrapper).toMatchSnapshot();
+  // })
 
-  it("should match snapshot test if this.state.am is ", () => {
-
-    wrapper.setState({am: true});
+  // it("should match snapshot test if this.state.am is ", () => {
+    
+  //   wrapper.setState({am: true});
  
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it("should match snapshot test if this.state.departing is true ", () => {
-
-    wrapper.setState({ departing: true });
-
-    expect(wrapper).toMatchSnapshot();
-  });
+  //   expect(wrapper).toMatchSnapshot();
+  // });
 
   describe('handleChange', () => {
     it('should change the value of this.state.departing it ', () => {
@@ -69,8 +72,18 @@ describe('Search', () => {
     })
   })
 
+  // describe('getTime', () => {
+  //   it('should return the correct time', () => {
+  //     const hours = 14;
+
+  //     wrapper.instance().getTime()
+
+  //     expect(wrapper.hours).toEqual(2)
+  //   })
+  // })
+  
   describe('handleClick', () => {
-    test('should change the state of am from true to false on click', () => {
+    test.skip('should change the state of am from true to false on click', () => {
       const expected = false;
 
       wrapper.instance().handleClick();
@@ -79,28 +92,45 @@ describe('Search', () => {
     })
   })
   
-  describe('handleSubmit', () => {
-    test('should ', () => {
+  describe.skip('handleSubmit', () => {
+
+    it('should call makeOptions', () => {
+      const event = {
+        preventDefault() {}
+      }
+      const makeOptions = jest.fn();
       
+      wrapper.instance().handleSubmit(event);
+
+      expect(makeOptions).toHaveBeenCalledWith(mockTimeData)
     })
     
   })
   
-  
-  // describe('makeOptions', () => {
-  //   test('should call postItineraryThunk', () => {
-  //     const mockTimeData = {
-  //       hours: 1,
-  //       minutes: 30,
-  //       departing: true,
-  //       am: true
-  //     }
+  describe.skip('makeOptions', () => {
+    test('should call itineraryUrl with coorect params', () => {
+      const uid = mockUid;
+      const itineraryUrl = jest.fn;
 
-  //     wrapper.instance().makeOptions(mockTimeData)
-  //   })
+      wrapper.instance().makeOptions(uid)
+
+      expect(itineraryUrl).toHaveBeenCalledWith(uid);
+    })
     
-  // })
-  
+    it('should call postItineraryThunk', () => {
+      const mockPostItineraryThunk = jest.fn();
+      const mockTimeData = {
+        hours: 1,
+        minutes: 30,
+        departing: true,
+        am: true
+      }
+
+      wrapper.instance().makeOptions(mockTimeData)
+
+      expect(mockPostItineraryThunk).toHaveBeenCalled;
+    })
+  })
 })
  
 

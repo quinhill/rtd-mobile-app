@@ -26,7 +26,7 @@ export class ItineraryCard extends Component {
   render(){
     
     const {
-      itinerary_id,
+      id,
       arrival_time,
       duration,
       steps
@@ -53,7 +53,7 @@ export class ItineraryCard extends Component {
       return (
         <div 
           className='itinerary-card'
-          id ={itinerary_id}
+          id ={id}
           onClick={this.handleClick}
         >
           <div className='top-container'>

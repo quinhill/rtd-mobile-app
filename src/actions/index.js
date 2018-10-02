@@ -51,3 +51,13 @@ export const deleteFavorite = (id) => ({
   type: 'DELETE_FAVORITE',
   id
 });
+
+export const setTime = time => ({
+  type: 'SET_TIME',
+  time
+});
+
+export const getRecent = recentSearches => ({
+  type: 'GET_RECENT',
+  recentSearches
+});
