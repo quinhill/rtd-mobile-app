@@ -3,11 +3,9 @@
   "short_name": "RTD",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#2196F3",
-  "theme_color": "#2196F3",
   "description": "A mobile app for RTD.",
   "orientation": "portrait-primary",
-      "src": "https://i.imgur.com/BmUB9ud.png",
+  "src": "https://i.imgur.com/BmUB9ud.png",
   "icons": [
     {
       "src": "https://i.imgur.com/BmUB9ud.png",
@@ -19,5 +17,7 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]     
+  ],     
+  "background_color": "#2196F3",
+  "theme_color": "#2196F3"
 }
