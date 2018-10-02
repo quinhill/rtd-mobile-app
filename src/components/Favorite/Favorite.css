@@ -1,5 +1,5 @@
 .favorite-button-container {
-  height: 40px;
+  height: 60px;
   margin-top: 5px;
   width: 95%;
   border-radius: 5px;
@@ -7,8 +7,9 @@
 }
 
 .favorite-button {
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  font-size: 15px;
   background: white;
   width: 90%;
   border-bottom-left-radius: 5px;
