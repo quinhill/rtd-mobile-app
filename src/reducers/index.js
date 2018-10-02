@@ -7,6 +7,7 @@ import endAddress from './endAddressReducer';
 import itinerary from './itineraryReducer';
 import favorites from './favoriteReducer';
 import time from './timeReducer';
+import recentSearches from './recentSearchReducer';
 
 const rootReducer = combineReducers({
   startAddress,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   user,
   itinerary,
   favorites,
-  time
+  time,
+  recentSearches
 });
 
 export default rootReducer;

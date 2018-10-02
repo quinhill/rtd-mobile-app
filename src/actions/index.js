@@ -56,3 +56,8 @@ export const setTime = time => ({
   type: 'SET_TIME',
   time
 });
+
+export const getRecent = recentSearches => ({
+  type: 'GET_RECENT',
+  recentSearches
+});
