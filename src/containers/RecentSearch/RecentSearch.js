@@ -16,4 +16,4 @@ export const mapStateToProps = state => ({
   recentSearches: state.recentSearches
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecentSearch);
+export default connect(mapStateToProps)(RecentSearch);

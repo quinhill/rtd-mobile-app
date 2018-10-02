@@ -11,7 +11,7 @@ export const Footer = () => {
     <footer className="footer_container">
       <NavLink 
         to={routes.ACCOUNT}
-        id="favorites"
+        id="favorites-icon"
         className="icon"
       >
       </NavLink>

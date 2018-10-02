@@ -12,6 +12,7 @@ import { firebase } from '../../firebase';
 import { signInUrl, getFavoritesUrl } from '../../constants/urlGenerator';
 import { getRecentUrl } from '../../constants/urlGenerator';
 import getRecentThunk from '../../thunks/getRecentThunk';
+import RecentSearch from '../../containers/RecentSearch/RecentSearch';
 
 export class HomePage extends Component {
   constructor() {
@@ -52,6 +53,11 @@ export class HomePage extends Component {
   };
 
   render() {
+
+    const toggleDisplay = this.state.favorites
+      ? <FavoritesContainer />
+      : <RecentSearch />
+
     const {
       user,
       getFavorites
@@ -87,7 +93,7 @@ export class HomePage extends Component {
             Recent Searches
           </p>
         </div>
-        <FavoritesContainer />
+        {toggleDisplay}
       </div>
     );
   }

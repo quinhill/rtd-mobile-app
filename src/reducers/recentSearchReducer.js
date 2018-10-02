@@ -6,4 +6,6 @@ const recentSearches = (state = [], action) => {
   default:
     return state;
   }
-}
+};
+
+export default recentSearches;

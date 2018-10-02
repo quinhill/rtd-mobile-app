@@ -15,7 +15,7 @@ footer {
   width: 25px;
 }
 
-#favorites {
+#favorites-icon {
   background-image: url('/user.svg');
   background-size: 32px;
   background-position: center;
