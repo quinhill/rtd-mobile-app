@@ -66,3 +66,7 @@ export const deleteFavUrl = (uid, id) => {
     }
   };
 };
+
+export const getRecentUrl = (uid) => (
+  `${base}${uid}/itineraries?amount=5`
+);

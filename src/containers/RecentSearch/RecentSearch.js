@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
+
 class RecentSearch extends Component {
   render() {
     return (
@@ -12,6 +13,10 @@ class RecentSearch extends Component {
 
 export const mapStateToProps = state => ({
   
+});
+
+export const mapDispatchToProps = dispatch => ({
+  getRecent: url => dispatch(getRecentThunk(url))
 })
 
-export default connect(mapStateToProps)(RecentSearch);
+export default connect(mapStateToProps, mapDispatchToProps)(RecentSearch);
