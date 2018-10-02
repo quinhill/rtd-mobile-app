@@ -5,15 +5,14 @@
   "display": "standalone",
   "description": "A mobile app for RTD.",
   "orientation": "portrait-primary",
-  "src": "https://i.imgur.com/BmUB9ud.png",
   "icons": [
     {
-      "src": "https://i.imgur.com/BmUB9ud.png",
+      "src": "/rtd_192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://i.imgur.com/BmUB9ud.png",
+      "src": "/rtd_512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
