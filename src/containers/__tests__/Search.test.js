@@ -44,19 +44,19 @@ describe('Search', () => {
     )  
   })
 
-  // it('should match snapshot test', () => {
-  //   expect(wrapper).toMatchSnapshot();
-  // })
+  it.skip('should match snapshot test', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
 
-  // it("should match snapshot test if this.state.am is ", () => {
+  it.skip("should match snapshot test if this.state.am is ", () => {
     
-  //   wrapper.setState({am: true});
+    wrapper.setState({am: true});
  
-  //   expect(wrapper).toMatchSnapshot();
-  // });
+    expect(wrapper).toMatchSnapshot();
+  });
 
   describe('handleChange', () => {
-    it('should change the value of this.state.departing it ', () => {
+    it.skip('should change the value of this.state.departing it ', () => {
 
       const event = {
         target: {
@@ -72,15 +72,15 @@ describe('Search', () => {
     })
   })
 
-  // describe('getTime', () => {
-  //   it('should return the correct time', () => {
-  //     const hours = 14;
+  describe('getTime', () => {
+    it.skip('should return the correct time', () => {
+      const hours = 14;
 
-  //     wrapper.instance().getTime()
+      wrapper.instance().getTime()
 
-  //     expect(wrapper.hours).toEqual(2)
-  //   })
-  // })
+      expect(wrapper.hours).toEqual(2)
+    })
+  })
   
   describe('handleClick', () => {
     test.skip('should change the state of am from true to false on click', () => {
