@@ -3,24 +3,20 @@
   "short_name": "RTD",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#2196F3",
   "description": "A mobile app for RTD.",
   "orientation": "portrait-primary",
-  "icons": [{
-    "src": "https://i.imgur.com/BmUB9ud.png",
-    "type": "image/png",
-    "sizes": "128x128"
-  }, {
-    "src": "https://i.imgur.com/BmUB9ud.png",
-    "type": "image/png",
-    "sizes": "152x152"
-  }, {
-    "src": "https://i.imgur.com/BmUB9ud.png",
-    "type": "image/png",
-    "sizes": "144x144"
-  }, {
-    "src": "https://i.imgur.com/BmUB9ud.png",
-    "type": "image/png",
-    "sizes": "192x192"
-  }]
+  "icons": [
+    {
+      "src": "/rtd_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/rtd_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],     
+  "background_color": "#2196F3",
+  "theme_color": "#2196F3"
 }
