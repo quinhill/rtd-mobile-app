@@ -2,13 +2,13 @@ import { isLoading, hasErrored, getRecent } from '../actions';
 
 const getRecentThunk = (url) => {
   return (dispatch) => {
-    dispatch(isLoading(true));
+    dispatch(isLoading('recent'));
     fetch(url)
       .then(response => {
         if (!response.ok) {
           throw Error();
         }
-        dispatch(isLoading(false));
+        dispatch(isLoading(''));
         return response;
       })
       .then(response => response.json())

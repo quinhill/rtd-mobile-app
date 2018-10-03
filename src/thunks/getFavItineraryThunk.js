@@ -2,13 +2,13 @@ import { isLoading, hasErrored, storeItinerary } from '../actions';
  
 export const getFavItineraryThunk = (url) => {
   return (dispatch) => {
-    dispatch(isLoading(true));
+    dispatch(isLoading('favorite'));
     fetch(url)
       .then(response => {
         if (!response.ok) {
           throw Error();
         }
-        dispatch(isLoading(false));
+        dispatch(isLoading(''));
         return response;
       })
       .then(response => response.json())
