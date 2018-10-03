@@ -34,7 +34,10 @@ p {
   color: white;
   font-size: 15px;
   margin: 10px 0;
+}
 
+.button:disabled {
+  background: #bb5555;
 }
 
 .sign-up-page {

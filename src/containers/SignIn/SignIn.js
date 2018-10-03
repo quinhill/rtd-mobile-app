@@ -32,26 +32,31 @@ export class SignInPage extends Component {
 
   onSubmit = async event => {
     event.preventDefault();
-    const { email, password } = this.state;
+    const { 
+      email, 
+      password,
+      error
+    } = this.state;
     const { 
       history,
       signIn,
       getFavorites
     } = this.props;
-
-    try {
-      const authUser = await auth.doSignInWithEmailAndPassword(email, password);
-      const {
-        userUrl,
-        favoritesUrl
-      } = signInUrl(authUser.user.uid);
-      await signIn(userUrl);
-      await getFavorites(favoritesUrl);
-    } catch (error) {
-      this.setState({ error: error });
+    if (!error) {
+      try {
+        const authUser = await auth.doSignInWithEmailAndPassword(email, password);
+        const {
+          userUrl,
+          favoritesUrl
+        } = signInUrl(authUser.user.uid);
+        await signIn(userUrl);
+        await getFavorites(favoritesUrl);
+      } catch (error) {
+        this.setState({ error: error });
+      }
+      this.resetForm();
+      history.push(routes.HOME);
     }
-    this.resetForm();
-    history.push(routes.HOME);
   };
 
   handleChange = event => {
@@ -74,8 +79,9 @@ export class SignInPage extends Component {
       error 
     } = this.state;
 
-    const isInvalid = password === "" 
-      || email === "";
+    const isInvalid =
+      email === ""|| 
+      password.length < 6;
 
     return (
       <div className="page">
@@ -97,7 +103,9 @@ export class SignInPage extends Component {
                 onClick={this.deleteInput}
               />
             </div>
-            <div className='input-container last-input-container' >
+            <div 
+              className='input-container last-input-container'
+            >
               <input
                 className="input"
                 name="password"
@@ -109,12 +117,16 @@ export class SignInPage extends Component {
               <button
                 className="delete-button"
                 name='password'
-                onClick={this.deleteInput}/>
+                onClick={this.deleteInput}
+              />
             </div>
-            <button className="button" type="submit" disabled={isInvalid}>
+            <button 
+              className="button" 
+              type="submit" 
+              disabled={isInvalid}
+            >
               Sign In
             </button>
-
             {error && <p>{error.message}</p>}
           </form>
           <PasswordForgetLink />

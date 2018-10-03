@@ -20,10 +20,12 @@ export class Time extends Component {
     const time = new Date();
     let am = true;
     let hours = time.getHours();
-    const minutes = time.getMinutes();
+    let minutes = time.getMinutes();
     if (hours >= 12) {
       am = false;
       hours -= 12;
+    } else if (minutes.length < 2) {
+      minutes = '0' + minutes;
     }
     return {
       hours,

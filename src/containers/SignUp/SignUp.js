@@ -7,9 +7,9 @@ import * as routes from '../../constants/routes';
 import { auth } from '../../firebase';
 import PropTypes from 'prop-types';
 import { SignInLink } from '../SignIn/SignIn';
+import { signUpUrl } from '../../constants/urlGenerator';
 
 import './SignUp.css';
-import { signUpUrl } from '../../constants/urlGenerator';
 
 export class SignUpPage extends Component {
   constructor(props) {
@@ -67,7 +67,7 @@ export class SignUpPage extends Component {
 
     const isInvalid =
       passwordOne !== passwordTwo ||
-      passwordOne === "" ||
+      passwordOne.length < 6 ||
       email === "" ||
       username === "";
 
@@ -148,8 +148,10 @@ export class SignUpPage extends Component {
             >
         Sign Up
             </button>
-
             { error && <p>{error.message}</p> }
+            <p className='instructions'>
+              *Password must be at least 6 characters long and must include a number
+            </p>
           </form>
           <SignInLink />
         </div>
