@@ -85,7 +85,7 @@ export class Search extends Component {
       navigator.geolocation.getCurrentPosition(success, error, options)
     }
     
-    if (this.props.isLoading) {
+    if (this.props.isLoading === 'user') {
       return (
         <div className='container'>
           <LoadingPage type='loading-container' />

@@ -1,5 +1,5 @@
 import { getFavItineraryThunk } from '../getFavItineraryThunk';
-import { hasErrored, isLoading, storeItinerary } from "../../actions";
+import { isLoading } from "../../actions";
 
  
 describe('getFavItineraryThunk', () => {
@@ -16,7 +16,7 @@ describe('getFavItineraryThunk', () => {
 
     thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading('itinerary'));
   });
 
 
@@ -29,7 +29,7 @@ describe('getFavItineraryThunk', () => {
 
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(({ "isLoading": true, "type": "IS_LOADING" }));
+    expect(mockDispatch).toHaveBeenCalledWith(({ "string": 'itinerary', "type": "IS_LOADING" }));
     expect(mockDispatch).not.toHaveBeenCalledWith(isLoading(false));
   });
 
@@ -42,7 +42,7 @@ describe('getFavItineraryThunk', () => {
 
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading('itinerary'));
   });
 
 });

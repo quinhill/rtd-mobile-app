@@ -30,7 +30,7 @@ export class ItineraryPage extends Component {
 
   addFavorite = (event) => {
     let id;
-    if (this.props.itinerary.length) {
+    if (this.props.isLoading === 'itinerary') {
       id = this.props.itinerary[0].itinerary_id;
     }
     const { value } = event.target;

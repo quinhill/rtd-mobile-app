@@ -27,7 +27,7 @@ describe('deleteFavItineraryThunk', () => {
 
     thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading('favorite'));
   });
 
 
@@ -40,7 +40,7 @@ describe('deleteFavItineraryThunk', () => {
 
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(({ "isLoading": true, "type": "IS_LOADING" }));
+    expect(mockDispatch).toHaveBeenCalledWith(({ "string": 'favorite', "type": "IS_LOADING" }));
     expect(mockDispatch).not.toHaveBeenCalledWith(isLoading(false));
   });
 
@@ -53,7 +53,7 @@ describe('deleteFavItineraryThunk', () => {
 
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(''));
   });
 
 });

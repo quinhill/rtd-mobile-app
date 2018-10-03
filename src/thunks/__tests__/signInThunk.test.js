@@ -16,7 +16,7 @@ describe('signInThunk', () => {
 
     thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading('user'));
   });
 
   it('should dispatch hasErrored(true) if the response is not ok', async () => {
@@ -28,7 +28,7 @@ describe('signInThunk', () => {
   
     await thunk(mockDispatch);
   
-    expect(mockDispatch).toHaveBeenCalledWith(({"isLoading": true, "type": "IS_LOADING"}));
+    expect(mockDispatch).toHaveBeenCalledWith(({"string": 'user', "type": "IS_LOADING"}));
     expect(mockDispatch).not.toHaveBeenCalledWith(isLoading(false));
   });
 
@@ -41,7 +41,7 @@ describe('signInThunk', () => {
   
     await thunk(mockDispatch);
   
-    expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(''));
   });
 
   it.skip('should dispatch storeItinerary with the correct param', async () => {

@@ -1,5 +1,5 @@
 import { addFavoriteThunk } from '../addFavoriteThunk';
-import { hasErrored, isLoading, storeItinerary } from "../../actions";
+import { isLoading } from "../../actions";
 
 
 describe('addFavoriteThunk', () => {
@@ -16,7 +16,7 @@ describe('addFavoriteThunk', () => {
 
     thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading('favorite'));
   });
 
 
@@ -29,7 +29,7 @@ describe('addFavoriteThunk', () => {
 
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(({ "isLoading": true, "type": "IS_LOADING" }));
+    expect(mockDispatch).toHaveBeenCalledWith(({ "string": 'favorite', "type": "IS_LOADING" }));
     expect(mockDispatch).not.toHaveBeenCalledWith(isLoading(false));
   });
 
@@ -42,6 +42,6 @@ describe('addFavoriteThunk', () => {
 
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(''));
   });
 });
