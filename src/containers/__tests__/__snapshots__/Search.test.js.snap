@@ -1,0 +1,790 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search should match snapshot test 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Search
+    am={false}
+    departing={false}
+    endAddress="Ruby Hill Park, Denver, CO"
+    isLoading={false}
+    postItineraryThunk={[Function]}
+    startAddress="Union Station, Denver, CO"
+    storeUserSearch={[Function]}
+    uid="123456abcdefg"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2
+          className="title"
+>
+          Search for a connection:
+</h2>,
+        <form
+          className="form"
+          onSubmit={[Function]}
+>
+          <Connect(StartAddressInput) />
+          <Connect(EndAddressInput) />
+          <Connect(Time) />
+          <button
+                    className="button"
+                    type="submit"
+          >
+                    Search
+          </button>
+</form>,
+      ],
+      "className": "container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Search for a connection:",
+          "className": "title",
+        },
+        "ref": null,
+        "rendered": "Search for a connection:",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Connect(StartAddressInput) />,
+            <Connect(EndAddressInput) />,
+            <Connect(Time) />,
+            <button
+              className="button"
+              type="submit"
+>
+              Search
+</button>,
+          ],
+          "className": "form",
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Search",
+              "className": "button",
+              "type": "submit",
+            },
+            "ref": null,
+            "rendered": "Search",
+            "type": "button",
+          },
+        ],
+        "type": "form",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2
+            className="title"
+>
+            Search for a connection:
+</h2>,
+          <form
+            className="form"
+            onSubmit={[Function]}
+>
+            <Connect(StartAddressInput) />
+            <Connect(EndAddressInput) />
+            <Connect(Time) />
+            <button
+                        className="button"
+                        type="submit"
+            >
+                        Search
+            </button>
+</form>,
+        ],
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Search for a connection:",
+            "className": "title",
+          },
+          "ref": null,
+          "rendered": "Search for a connection:",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Connect(StartAddressInput) />,
+              <Connect(EndAddressInput) />,
+              <Connect(Time) />,
+              <button
+                className="button"
+                type="submit"
+>
+                Search
+</button>,
+            ],
+            "className": "form",
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Search",
+                "className": "button",
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": "Search",
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
+exports[`Search should match snapshot test if this.state.am is  1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Search
+    am={false}
+    departing={false}
+    endAddress="Ruby Hill Park, Denver, CO"
+    isLoading={false}
+    postItineraryThunk={[Function]}
+    startAddress="Union Station, Denver, CO"
+    storeUserSearch={[Function]}
+    uid="123456abcdefg"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2
+          className="title"
+>
+          Search for a connection:
+</h2>,
+        <form
+          className="form"
+          onSubmit={[Function]}
+>
+          <Connect(StartAddressInput) />
+          <Connect(EndAddressInput) />
+          <Connect(Time) />
+          <button
+                    className="button"
+                    type="submit"
+          >
+                    Search
+          </button>
+</form>,
+      ],
+      "className": "container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Search for a connection:",
+          "className": "title",
+        },
+        "ref": null,
+        "rendered": "Search for a connection:",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Connect(StartAddressInput) />,
+            <Connect(EndAddressInput) />,
+            <Connect(Time) />,
+            <button
+              className="button"
+              type="submit"
+>
+              Search
+</button>,
+          ],
+          "className": "form",
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Search",
+              "className": "button",
+              "type": "submit",
+            },
+            "ref": null,
+            "rendered": "Search",
+            "type": "button",
+          },
+        ],
+        "type": "form",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2
+            className="title"
+>
+            Search for a connection:
+</h2>,
+          <form
+            className="form"
+            onSubmit={[Function]}
+>
+            <Connect(StartAddressInput) />
+            <Connect(EndAddressInput) />
+            <Connect(Time) />
+            <button
+                        className="button"
+                        type="submit"
+            >
+                        Search
+            </button>
+</form>,
+        ],
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Search for a connection:",
+            "className": "title",
+          },
+          "ref": null,
+          "rendered": "Search for a connection:",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Connect(StartAddressInput) />,
+              <Connect(EndAddressInput) />,
+              <Connect(Time) />,
+              <button
+                className="button"
+                type="submit"
+>
+                Search
+</button>,
+            ],
+            "className": "form",
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Search",
+                "className": "button",
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": "Search",
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
+
+exports[`Search should match snapshot test if this.state.departing is true  1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Search
+    am={false}
+    departing={false}
+    endAddress="Ruby Hill Park, Denver, CO"
+    isLoading={false}
+    postItineraryThunk={[Function]}
+    startAddress="Union Station, Denver, CO"
+    storeUserSearch={[Function]}
+    uid="123456abcdefg"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2
+          className="title"
+>
+          Search for a connection:
+</h2>,
+        <form
+          className="form"
+          onSubmit={[Function]}
+>
+          <Connect(StartAddressInput) />
+          <Connect(EndAddressInput) />
+          <Connect(Time) />
+          <button
+                    className="button"
+                    type="submit"
+          >
+                    Search
+          </button>
+</form>,
+      ],
+      "className": "container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Search for a connection:",
+          "className": "title",
+        },
+        "ref": null,
+        "rendered": "Search for a connection:",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Connect(StartAddressInput) />,
+            <Connect(EndAddressInput) />,
+            <Connect(Time) />,
+            <button
+              className="button"
+              type="submit"
+>
+              Search
+</button>,
+          ],
+          "className": "form",
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Search",
+              "className": "button",
+              "type": "submit",
+            },
+            "ref": null,
+            "rendered": "Search",
+            "type": "button",
+          },
+        ],
+        "type": "form",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2
+            className="title"
+>
+            Search for a connection:
+</h2>,
+          <form
+            className="form"
+            onSubmit={[Function]}
+>
+            <Connect(StartAddressInput) />
+            <Connect(EndAddressInput) />
+            <Connect(Time) />
+            <button
+                        className="button"
+                        type="submit"
+            >
+                        Search
+            </button>
+</form>,
+        ],
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Search for a connection:",
+            "className": "title",
+          },
+          "ref": null,
+          "rendered": "Search for a connection:",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Connect(StartAddressInput) />,
+              <Connect(EndAddressInput) />,
+              <Connect(Time) />,
+              <button
+                className="button"
+                type="submit"
+>
+                Search
+</button>,
+            ],
+            "className": "form",
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Search",
+                "className": "button",
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": "Search",
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    "attachTo": undefined,
+    "hydrateIn": undefined,
+  },
+}
+`;
