@@ -86,20 +86,20 @@ describe('Reducers', () => {
 
   describe('isLoadingReducer', () => {
     it('should return the default state if nothing is passed in', () => {
-      const expected = false;
+      const expected = '';
       const result = isLoading(undefined, '');
 
       expect(result).toEqual(expected);
     });
 
     it('should return state with a boolean', () => {
-      const expected = true;
+      const expected = 'itinerary';
       const result = isLoading(undefined, {
         type: 'IS_LOADING',
-        isLoading: true
+        string: 'itinerary'
       });
 
-      expect(expected).toEqual(result);
+      expect(result).toEqual(expected);
     });
   });
 

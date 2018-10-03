@@ -2,7 +2,7 @@ import { isLoading, hasErrored, storeItinerary } from '../actions';
  
 export const getFavItineraryThunk = (url) => {
   return (dispatch) => {
-    dispatch(isLoading('favorite'));
+    dispatch(isLoading('itinerary'));
     fetch(url)
       .then(response => {
         if (!response.ok) {

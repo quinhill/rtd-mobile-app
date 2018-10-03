@@ -63,10 +63,11 @@ export class FavoritesContainer extends Component {
         />
       );
     });
+    
     return (
       <div className='card-container'>
         <div className='card-div'>
-          {this.props.isLoading 
+          {this.props.isLoading === 'favorite'
             ? loading
             : favoritesData}
         </div>
@@ -78,7 +79,8 @@ export class FavoritesContainer extends Component {
 
 export const mapStateToProps = state => ({
   favorites: state.favorites,
-  user: state.user
+  user: state.user,
+  isLoading: state.isLoading
 });
 
 export const mapDispatchToState = dispatch => ({
@@ -93,5 +95,6 @@ FavoritesContainer.propTypes = {
   user: PropTypes.object,
   getFavItinerary: PropTypes.func,
   history: PropTypes.object,
-  deleteFavItinerary: PropTypes.func
+  deleteFavItinerary: PropTypes.func,
+  isLoading: PropTypes.string
 };

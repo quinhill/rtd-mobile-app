@@ -5,9 +5,9 @@ describe('actions', () => {
   it('should have a type of IS_LOADING', () => {
     const expected = {
       type: 'IS_LOADING',
-      isLoading: true
+      string: 'user'
     };
-    const result = actions.isLoading(true);
+    const result = actions.isLoading('user');
 
     expect(result).toEqual(expected);
   });
