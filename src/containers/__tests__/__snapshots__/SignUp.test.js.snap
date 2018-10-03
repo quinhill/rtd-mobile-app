@@ -111,6 +111,11 @@ ShallowWrapper {
                 >
                         Sign Up
                 </button>
+                <p
+                        className="instructions"
+                >
+                        *Password must be at least 6 characters long and must include a number
+                </p>
         </form>
         <Unknown />
 </div>,
@@ -207,6 +212,11 @@ ShallowWrapper {
             >
                         Sign Up
             </button>
+            <p
+                        className="instructions"
+            >
+                        *Password must be at least 6 characters long and must include a number
+            </p>
 </form>,
           <Unknown />,
         ],
@@ -301,6 +311,11 @@ ShallowWrapper {
                 Sign Up
 </button>,
               null,
+              <p
+                className="instructions"
+>
+                *Password must be at least 6 characters long and must include a number
+</p>,
             ],
             "className": "form",
             "onSubmit": [Function],
@@ -558,6 +573,18 @@ ShallowWrapper {
               "type": "button",
             },
             null,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "*Password must be at least 6 characters long and must include a number",
+                "className": "instructions",
+              },
+              "ref": null,
+              "rendered": "*Password must be at least 6 characters long and must include a number",
+              "type": "p",
+            },
           ],
           "type": "form",
         },
@@ -668,6 +695,11 @@ ShallowWrapper {
                     >
                               Sign Up
                     </button>
+                    <p
+                              className="instructions"
+                    >
+                              *Password must be at least 6 characters long and must include a number
+                    </p>
           </form>
           <Unknown />
 </div>,
@@ -764,6 +796,11 @@ ShallowWrapper {
               >
                             Sign Up
               </button>
+              <p
+                            className="instructions"
+              >
+                            *Password must be at least 6 characters long and must include a number
+              </p>
 </form>,
             <Unknown />,
           ],
@@ -858,6 +895,11 @@ ShallowWrapper {
                   Sign Up
 </button>,
                 null,
+                <p
+                  className="instructions"
+>
+                  *Password must be at least 6 characters long and must include a number
+</p>,
               ],
               "className": "form",
               "onSubmit": [Function],
@@ -1115,6 +1157,18 @@ ShallowWrapper {
                 "type": "button",
               },
               null,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "*Password must be at least 6 characters long and must include a number",
+                  "className": "instructions",
+                },
+                "ref": null,
+                "rendered": "*Password must be at least 6 characters long and must include a number",
+                "type": "p",
+              },
             ],
             "type": "form",
           },

@@ -10,10 +10,10 @@ import Time from '../Time/Time';
 import { timeCleaner } from '../../constants/cleanerFunctions';
 import { itineraryUrl } from '../../constants/urlGenerator';
 import { storeStartAddress } from '../../actions';
-
-import './Search.css';
 import LoadingPage from '../../components/Loading/Loading';
 import { geocode } from '../../constants/geocoder';
+
+import './Search.css';
 
 export class Search extends Component {
   constructor() {
@@ -52,6 +52,16 @@ export class Search extends Component {
   };
   
   render() {
+
+    const {
+      startAddress,
+      endAddress,
+      user,
+    } = this.props;
+
+    const isInvalid = startAddress === ''
+      || endAddress === ''
+      || user.uid === '';
 
     const options = {
       enableHighAccuracy: true,
@@ -97,6 +107,7 @@ export class Search extends Component {
             <button
               type='submit'
               className='button'
+              disabled={isInvalid}
             >
               Search
             </button>

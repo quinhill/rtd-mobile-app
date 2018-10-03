@@ -23,7 +23,7 @@ class RecentSearch extends Component {
   render() {
     const { recentSearches } = this.props;
 
-    const recentDisplay = recentSearches.map((itinerary, index) => {
+    const recentDisplay = recentSearches.reverse().map((itinerary, index) => {
       return (
         <RecentButton 
           recentData={itinerary}
