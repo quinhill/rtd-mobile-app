@@ -1,6 +1,6 @@
-export const isLoading = (bool) => ({
+export const isLoading = (string) => ({
   type: 'IS_LOADING',
-  isLoading: bool
+  string
 });
    
 export const hasErrored = (bool) => ({
