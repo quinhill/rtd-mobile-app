@@ -93,8 +93,9 @@ p {
 
 .delete-button {
   background: transparent;
+  background-image: url('/delete-button.svg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 15px;
   border: none;
   height: 15px;
   width: 15px;

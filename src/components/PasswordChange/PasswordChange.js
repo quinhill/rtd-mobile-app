@@ -71,7 +71,7 @@ export class PasswordChangeForm extends Component {
           />
           <button 
             className='delete-button'
-            name='passwordTwo'
+            name='passwordOne'
             onClick={this.deleteInput}
           >
           </button>
