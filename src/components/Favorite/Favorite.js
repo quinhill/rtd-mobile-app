@@ -12,7 +12,6 @@ export class Favorite extends Component {
       deleteFavorite
     } = this.props;
 
-    console.log(favData);
     const {
       start_address,
       end_address,
