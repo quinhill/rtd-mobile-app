@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import './RecentCard.css';
 
 const RecentCard = (props) => {
+  console.log(props)
   const {
     recentData,
     searchRecent
@@ -45,6 +46,6 @@ const RecentCard = (props) => {
 export default RecentCard;
 
 RecentCard.propTypes = {
-  recentData: PropTypes.object,
+  recentData: PropTypes.array,
   searchRecent: PropTypes.func
 };

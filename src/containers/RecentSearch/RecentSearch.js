@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom';
 
 import '../FavoritesContainer/FavoritesContainer.css';
 
-class RecentSearch extends Component {
+export class RecentSearch extends Component {
 
   searchRecent = async (bodyObj) => {
     const fetchInfo = {

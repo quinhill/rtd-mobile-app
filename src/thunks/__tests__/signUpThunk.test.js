@@ -1,4 +1,4 @@
-import { hasErrored, isLoading, storeItinerary } from '../../actions';
+import { isLoading } from '../../actions';
 import signUpThunk from '../signUpThunk';
 import signUpUser from '../../containers/SignUp/SignUp';
 
