@@ -46,6 +46,6 @@ const RecentCard = (props) => {
 export default RecentCard;
 
 RecentCard.propTypes = {
-  recentData: PropTypes.array,
+  recentData: PropTypes.object,
   searchRecent: PropTypes.func
 };
