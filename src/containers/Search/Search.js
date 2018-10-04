@@ -116,8 +116,8 @@ export class Search extends Component {
         </div>
       );
     }
-  }
-}
+  };
+};
 
 export const mapStateToProps = state => ({
   startAddress: state.startAddress,
@@ -141,6 +141,6 @@ Search.propTypes = {
   endAddress: PropTypes.string,
   history: PropTypes.object,
   user: PropTypes.object,
-  isLoading: PropTypes.bool,
+  isLoading: PropTypes.string,
   storeStartAddress: PropTypes.func
 };

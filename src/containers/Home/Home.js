@@ -110,5 +110,6 @@ HomePage.propTypes = {
   user: PropTypes.object,
   display: PropTypes.string,
   getFavorites: PropTypes.func,
+  getRecent: PropTypes.func,
   history: PropTypes.object
 };

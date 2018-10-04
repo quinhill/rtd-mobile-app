@@ -167,5 +167,6 @@ export default withRouter(
 SignInPage.propTypes = {
   signIn: PropTypes.func,
   getFavorites: PropTypes.func,
+  isLoading: PropTypes.string,
   history: PropTypes.object
 };

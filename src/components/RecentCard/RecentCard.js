@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './RecentCard.css';
 
@@ -42,3 +43,8 @@ const RecentCard = (props) => {
 };
 
 export default RecentCard;
+
+RecentCard.propTypes = {
+  recentData: PropTypes.object,
+  searchRecent: PropTypes.func
+};

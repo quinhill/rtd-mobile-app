@@ -6,7 +6,7 @@ import * as routes from '../../constants/routes';
 import postItineraryThunk from '../../thunks/postItineraryThunk';
 import { withRouter } from 'react-router-dom';
 
-import '../../components/FavoritesContainer/FavoritesContainer.css';
+import '../FavoritesContainer/FavoritesContainer.css';
 
 class RecentSearch extends Component {
 

@@ -58,10 +58,6 @@ export class ItineraryPage extends Component {
       history
     } = this.props;
 
-    if (!itinerary.length && isLoading !== 'itinerary') {
-      history.push(routes.HOME);
-    }
-
     let startAddress;
     let endAddress;
     if (itinerary.length) {
