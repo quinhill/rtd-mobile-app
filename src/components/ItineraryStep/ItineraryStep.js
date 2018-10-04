@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './ItineraryStep.css';
 
@@ -8,7 +9,6 @@ export const ItineraryStep = ({handleClick, data}) => {
     arrival_stop,
     arrival_time,
     color,
-    duration,
     departure_stop,
     departure_time,
     headsign,
@@ -48,6 +48,7 @@ export const ItineraryStep = ({handleClick, data}) => {
           </h3>
           <div className='line-info-container'>
             <img 
+              alt='transit icon'
               className='transit-icon'
               src={`${imgUrl}`} 
             />
@@ -73,6 +74,7 @@ export const ItineraryStep = ({handleClick, data}) => {
       <div className='walk-leg-container'>
         <div className='instructions-container'>
           <img
+            alt='walk icon'
             className='walk-icon'
             src={`${imgUrl}`} 
           />
@@ -86,3 +88,16 @@ export const ItineraryStep = ({handleClick, data}) => {
 };
 
 export default ItineraryStep;
+
+ItineraryStep.propTypes = {
+  arrival_stop: PropTypes.string,
+  arrival_time: PropTypes.string,
+  color: PropTypes.string,
+  departure_stop: PropTypes.string,
+  departure_time: PropTypes.string,
+  headsign: PropTypes.string,
+  imgUrl: PropTypes.string,
+  instructions: PropTypes.string,
+  line: PropTypes.string,
+  handleClick: PropTypes.func
+}

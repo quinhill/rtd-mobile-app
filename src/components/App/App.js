@@ -1,10 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import HomePage from '../Home/Home';
+import HomePage from '../../containers/Home/Home';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import AccountPage from '../Account/Account';
-import LandingPage from '../Landing/Landing';
+import AccountPage from '../../containers/Account/Account';
 import SignUpPage from '../../containers/SignUp/SignUp';
 import SignInPage from '../../containers/SignIn/SignIn';
 import PasswordForgetPage from '../PasswordForget/PasswordForget';
@@ -21,10 +20,6 @@ export const App = () => {
       <div className="overlay">
         <Header />
         <Switch>
-          <Route 
-            exact path={routes.LANDING} 
-            component={HomePage} 
-          />
           <Route 
             exact path={routes.SIGN_UP} 
             component={SignUpPage}

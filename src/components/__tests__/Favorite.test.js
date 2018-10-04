@@ -1,20 +1,25 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Favorite } from '../Favorite/Favorite';
-import { mockItinerary } from '../../__mocks__/mockItinerary';
 
 describe('Favorite', () => {
-  it.skip('should match snapShot', () => {
-    const mockName = 'austin';
-    const mockData = mockItinerary;
-    const mockStart = 'union station, denver, co';
-    // const mockEnd = 'overland golf course';
+  it('should match snapshot', () => {
+    const mockFavData = {
+      end_address: "1700 Wynkoop St, Denver, CO 80202, USA",
+      favorite: true,
+      id: 88,
+      start_address: "2201, 1100 14th St, Denver, CO 80202, United States"
+    };
+    const mockSearchFavorite = jest.fn();
+    const mockDeleteFavorite = jest.fn();
+
     const wrapper = shallow(
       <Favorite 
-        name={mockName}
-        favData={[mockData]}
-        startAddress ={mockStart}
+        favData={mockFavData}
+        searchFavorite={mockSearchFavorite}
+        deleteFavorite={mockDeleteFavorite}
       />);
+
     expect(wrapper).toMatchSnapshot();
   });
 });

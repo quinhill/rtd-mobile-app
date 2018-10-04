@@ -69,6 +69,7 @@ ShallowWrapper {
                     className="line-info-container"
           >
                     <img
+                              alt="transit icon"
                               className="transit-icon"
                               src="undefined"
                     />
@@ -169,6 +170,7 @@ ShallowWrapper {
               className="line-info-container"
 >
               <img
+                            alt="transit icon"
                             className="transit-icon"
                             src="undefined"
               />
@@ -214,6 +216,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <img
+                  alt="transit icon"
                   className="transit-icon"
                   src="undefined"
 />,
@@ -239,6 +242,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
+                  "alt": "transit icon",
                   "className": "transit-icon",
                   "src": "undefined",
                 },
@@ -329,6 +333,7 @@ ShallowWrapper {
                         className="line-info-container"
             >
                         <img
+                                    alt="transit icon"
                                     className="transit-icon"
                                     src="undefined"
                         />
@@ -429,6 +434,7 @@ ShallowWrapper {
                 className="line-info-container"
 >
                 <img
+                                alt="transit icon"
                                 className="transit-icon"
                                 src="undefined"
                 />
@@ -474,6 +480,7 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <img
+                    alt="transit icon"
                     className="transit-icon"
                     src="undefined"
 />,
@@ -499,6 +506,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
+                    "alt": "transit icon",
                     "className": "transit-icon",
                     "src": "undefined",
                   },

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import ItineraryCard from '../../components/ItineraryCard/ItineraryCard';
 import PropTypes from 'prop-types';
 import { postFavoriteUrl } from '../../constants/urlGenerator';
 import addFavoriteThunk from '../../thunks/addFavoriteThunk';
 import getFavoritesThunk from '../../thunks/getFavoritesThunk';
 import LoadingPage from '../../components/Loading/Loading';
-
+import * as routes from '../../constants/routes';
 
 import './ItineraryPage.css';
 
@@ -28,15 +29,13 @@ export class ItineraryPage extends Component {
     }
   }
 
-  addFavorite = (event) => {
-    let id;
-    if (this.props.isLoading === 'itinerary') {
-      id = this.props.itinerary[0].itinerary_id;
-    }
+  addFavorite = async (event) => {
+    const { itinerary } = this.props;
+    event.preventDefault();
+    const id = itinerary[0].itinerary_id;
     const { value } = event.target;
     const url = postFavoriteUrl(value, id);
     const fetchObject = {
-      uid: value,
       url,
       options: {
         method: 'POST',
@@ -45,15 +44,23 @@ export class ItineraryPage extends Component {
         }
       }
     };
-    this.props.addFavorite(fetchObject);
+    await this.props.addFavorite(fetchObject);
+    this.setState({
+      favorite: !this.state.favorite
+    });
   }
 
   render() {
     const {
       itinerary,
-      uid,
-      isLoading
+      user,
+      isLoading,
+      history
     } = this.props;
+
+    if (!user.uid) {
+      history.push(routes.HOME);
+    }
 
     let startAddress;
     let endAddress;
@@ -74,12 +81,12 @@ export class ItineraryPage extends Component {
         <ItineraryCard
           key={index}
           itinerary={itinerary}
-          uid={uid}
+          uid={user.uid}
         />
       );
     });
 
-    if (isLoading) {
+    if (isLoading === 'itinerary') {
       return (
         <LoadingPage type='loading-page' />
       );
@@ -91,7 +98,7 @@ export class ItineraryPage extends Component {
             <button
               className={isFavorite}
               onClick={this.addFavorite}
-              value={uid}
+              value={user.uid}
             >
             </button>
           </div>
@@ -105,7 +112,7 @@ export class ItineraryPage extends Component {
 export const mapStateToProps = state => ({
   favorites: state.favorites,
   itinerary: state.itinerary,
-  uid: state.user.uid,
+  user: state.user,
   isLoading: state.isLoading
 });
 
@@ -114,12 +121,12 @@ export const mapDispatchToProps = dispatch => ({
   getFavorites: (url) => dispatch(getFavoritesThunk(url))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItineraryPage);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ItineraryPage));
 
 ItineraryPage.propTypes = {
   favorites: PropTypes.array,
   itinerary: PropTypes.array,
-  uid: PropTypes.string,
+  user: PropTypes.object,
   addFavorite: PropTypes.func,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.string
 };
