@@ -91,7 +91,7 @@ export const mapDispatchToState = dispatch => ({
 export default withRouter(connect(mapStateToProps, mapDispatchToState)(FavoritesContainer));
 
 FavoritesContainer.propTypes = {
-  favorites: PropTypes.arrayOf(PropTypes.object),
+  favorites: PropTypes.array,
   user: PropTypes.object,
   getFavItinerary: PropTypes.func,
   deleteFavItinerary: PropTypes.func,
