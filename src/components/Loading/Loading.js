@@ -9,6 +9,7 @@ export const LoadingPage = (props) => {
     return (
       <div className='loading-page'>
         <img
+          alt='loading spinner'
           className='loading-icon-white' 
           src='/spinner-white.svg' />
       </div>
@@ -17,6 +18,7 @@ export const LoadingPage = (props) => {
     return (
       <div className='loading-container'>
         <img 
+          alt='loading spinner'
           className='loading-icon-red'
           src='/spinner-red.svg' />
       </div>

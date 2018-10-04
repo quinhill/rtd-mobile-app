@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { withRouter, Link } from "react-router-dom";
-import { auth } from "../../firebase";
-import { SignUpLink } from "../SignUp/SignUp";
-import { PasswordForgetLink } from "../../components/PasswordForget/PasswordForget";
-import { connect } from "react-redux";
-import signInThunk from "../../thunks/signInThunk";
-import getFavoritesThunk from "../../thunks/getFavoritesThunk";
-import * as routes from "../../constants/routes";
-import { signInUrl } from "../../constants/urlGenerator";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { withRouter, Link } from 'react-router-dom';
+import { auth } from '../../firebase';
+import { SignUpLink } from '../SignUp/SignUp';
+import { PasswordForgetLink } from '../../components/PasswordForget/PasswordForget';
+import { connect } from 'react-redux';
+import signInThunk from '../../thunks/signInThunk';
+import getFavoritesThunk from '../../thunks/getFavoritesThunk';
+import * as routes from '../../constants/routes';
+import { signInUrl } from '../../constants/urlGenerator';
+import PropTypes from 'prop-types';
 
 import "./SignIn.css";
 

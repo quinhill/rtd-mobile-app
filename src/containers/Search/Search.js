@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import StartAddressInput from '../../containers/StartAddressInput/StartAddressInput';
-import EndAddressInput from '../../containers/EndAddressInput/EndAddressInput';
+import StartAddressInput from '../StartAddressInput/StartAddressInput';
+import EndAddressInput from '../EndAddressInput/EndAddressInput';
 import postItineraryThunk from '../../thunks/postItineraryThunk';
 import * as routes from '../../constants/routes';
 import Time from '../Time/Time';
@@ -30,13 +30,14 @@ export class Search extends Component {
   
   submitSearch = async (event) => {
     event.preventDefault();
-    if (this.props.user.uid) {
+    const {
+      user,
+      time,
+      postItineraryThunk,
+      history
+    } = this.props;
+    if (user.uid) {
       const { departing } = this.state;
-      const {
-        time,
-        postItineraryThunk,
-        history
-      } = this.props;
       const depOrArr = departing
       ? 'departure_time'
       : 'arrival_time';
@@ -47,7 +48,7 @@ export class Search extends Component {
       await postItineraryThunk(fetchObject);
       history.push(routes.ITINERARY);
     } else {
-      this.props.history.push(routes.SIGN_UP);
+      history.push(routes.SIGN_UP);
     }
   };
   

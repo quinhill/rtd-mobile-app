@@ -8,7 +8,6 @@ export const ItineraryStep = ({handleClick, data}) => {
     arrival_stop,
     arrival_time,
     color,
-    duration,
     departure_stop,
     departure_time,
     headsign,
@@ -48,6 +47,7 @@ export const ItineraryStep = ({handleClick, data}) => {
           </h3>
           <div className='line-info-container'>
             <img 
+              alt='transit icon'
               className='transit-icon'
               src={`${imgUrl}`} 
             />
@@ -73,6 +73,7 @@ export const ItineraryStep = ({handleClick, data}) => {
       <div className='walk-leg-container'>
         <div className='instructions-container'>
           <img
+            alt='walk icon'
             className='walk-icon'
             src={`${imgUrl}`} 
           />

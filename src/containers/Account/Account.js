@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import PasswordChangeForm from '../PasswordChange/PasswordChange';
+import React from 'react';
+import PasswordChangeForm from '../../components/PasswordChange/PasswordChange';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import SignOutButton from '../../containers/SignOut/SignOut';
-import SignInPage from '../../containers/SignIn/SignIn';
-
+import SignOutButton from '../SignOut/SignOut';
+import SignInPage from '../SignIn/SignIn';
 
 import './Account.css';
 
