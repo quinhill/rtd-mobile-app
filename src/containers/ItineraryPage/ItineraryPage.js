@@ -53,10 +53,14 @@ export class ItineraryPage extends Component {
   render() {
     const {
       itinerary,
-      uid,
+      user,
       isLoading,
       history
     } = this.props;
+
+    if (!user.uid) {
+      history.push(routes.HOME);
+    }
 
     let startAddress;
     let endAddress;
@@ -77,7 +81,7 @@ export class ItineraryPage extends Component {
         <ItineraryCard
           key={index}
           itinerary={itinerary}
-          uid={uid}
+          uid={user.uid}
         />
       );
     });
@@ -94,7 +98,7 @@ export class ItineraryPage extends Component {
             <button
               className={isFavorite}
               onClick={this.addFavorite}
-              value={uid}
+              value={user.uid}
             >
             </button>
           </div>
@@ -108,7 +112,7 @@ export class ItineraryPage extends Component {
 export const mapStateToProps = state => ({
   favorites: state.favorites,
   itinerary: state.itinerary,
-  uid: state.user.uid,
+  user: state.user,
   isLoading: state.isLoading
 });
 
@@ -122,7 +126,7 @@ export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Itinerary
 ItineraryPage.propTypes = {
   favorites: PropTypes.array,
   itinerary: PropTypes.array,
-  uid: PropTypes.string,
+  user: PropTypes.object,
   addFavorite: PropTypes.func,
   isLoading: PropTypes.string
 };
