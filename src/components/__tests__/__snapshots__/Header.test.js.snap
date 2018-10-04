@@ -18,6 +18,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <img
+        alt="RTD logo"
         className="logo-banner"
         src="https://i.imgur.com/BmUB9ud.png"
 />,
@@ -28,6 +29,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
+        "alt": "RTD logo",
         "className": "logo-banner",
         "src": "https://i.imgur.com/BmUB9ud.png",
       },
@@ -44,6 +46,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <img
+          alt="RTD logo"
           className="logo-banner"
           src="https://i.imgur.com/BmUB9ud.png"
 />,
@@ -54,6 +57,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "RTD logo",
           "className": "logo-banner",
           "src": "https://i.imgur.com/BmUB9ud.png",
         },

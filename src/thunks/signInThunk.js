@@ -8,7 +8,7 @@ export const signInThunk = (url) => {
         if (!response.ok) {
           throw Error();
         }
-        dispatch(isLoading(''));
+        dispatch(isLoading(null));
         return response;
       })
       .then(response => response.json())

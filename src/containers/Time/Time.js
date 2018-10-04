@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { hours, minutes } from '../../constants/timeArrays';
 import { connect } from 'react-redux';
 import { setTime } from '../../actions';
+import PropTypes from 'prop-types';
 
 import '../Search/Search.css';
 
@@ -184,3 +185,8 @@ export const mapDispatchToState = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToState)(Time);
+
+Time.propTypes = {
+  time: PropTypes.object,
+  setTime: PropTypes.func
+};

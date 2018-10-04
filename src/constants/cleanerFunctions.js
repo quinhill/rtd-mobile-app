@@ -1,7 +1,7 @@
 export const infoCleaner = steps => {
   const totalSteps = steps.reduce((sumTotal, step) => {
     if (step.travel_mode !== "Walking") {
-      let durTotal = parseInt(step.duration.split(" ")[0]);
+      let durTotal = parseInt(step.duration.split(' ')[0]);
       if (!sumTotal.stepsSum && !sumTotal.eachStep) {
         sumTotal.stepsSum = 1;
       } else {
@@ -84,5 +84,5 @@ export const timeCleaner = (hours, minutes, am) => {
   const minuteValue = minutes.length < 2
     ? 0 + minutes
     : minutes
-  return `${hourValue}: ${minutes}`;
+  return `${hourValue}: ${minuteValue}`;
 };

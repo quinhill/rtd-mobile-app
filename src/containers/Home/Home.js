@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Search from '../../containers/Search/Search';
+import Search from '../Search/Search';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -12,7 +12,7 @@ import { firebase } from '../../firebase';
 import { signInUrl, getFavoritesUrl } from '../../constants/urlGenerator';
 import { getRecentUrl } from '../../constants/urlGenerator';
 import getRecentThunk from '../../thunks/getRecentThunk';
-import RecentSearch from '../../containers/RecentSearch/RecentSearch';
+import RecentSearch from '../RecentSearch/RecentSearch';
 
 export class HomePage extends Component {
   constructor() {
@@ -57,11 +57,6 @@ export class HomePage extends Component {
     const toggleDisplay = this.state.favorites
       ? <FavoritesContainer />
       : <RecentSearch />
-
-    const {
-      user,
-      getFavorites
-    } = this.props;
 
     const favorites = this.state.favorites
       ? 'favorites'
@@ -115,5 +110,6 @@ HomePage.propTypes = {
   user: PropTypes.object,
   display: PropTypes.string,
   getFavorites: PropTypes.func,
+  getRecent: PropTypes.func,
   history: PropTypes.object
 };

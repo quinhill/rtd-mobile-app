@@ -1,7 +1,5 @@
-import { hasErrored, isLoading, storeItinerary } from "../../actions";
+import { isLoading } from "../../actions";
 import getFavoritesThunk from "../getFavoritesThunk";
-// import { mockItinerary } from "../../__mocks__/mockItinerary";
-
 
 describe('getFavoritesThunk', () => {
   let mockUrl;
@@ -30,10 +28,10 @@ describe('getFavoritesThunk', () => {
     await thunk(mockDispatch);
   
     expect(mockDispatch).toHaveBeenCalledWith(({"string": 'favorite', "type": "IS_LOADING"}));
-    expect(mockDispatch).not.toHaveBeenCalledWith(isLoading(false));
+    expect(mockDispatch).not.toHaveBeenCalledWith(isLoading(null));
   });
 
-  it('should dispatch isLoading(false) if the response is ok', async () => {
+  it('should dispatch isLoading(null) if the response is ok', async () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true
     }));
@@ -42,6 +40,6 @@ describe('getFavoritesThunk', () => {
   
     await thunk(mockDispatch);
   
-    expect(mockDispatch).toHaveBeenCalledWith(isLoading(''));
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(null));
   });
 });

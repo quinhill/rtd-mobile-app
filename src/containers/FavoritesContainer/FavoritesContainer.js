@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Favorite from '../Favorite/Favorite';
+import Favorite from '../../components/Favorite/Favorite';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -94,7 +94,7 @@ FavoritesContainer.propTypes = {
   favorites: PropTypes.array,
   user: PropTypes.object,
   getFavItinerary: PropTypes.func,
-  history: PropTypes.object,
   deleteFavItinerary: PropTypes.func,
-  isLoading: PropTypes.string
+  isLoading: PropTypes.string,
+  history: PropTypes.object
 };

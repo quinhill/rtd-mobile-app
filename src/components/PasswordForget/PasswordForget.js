@@ -44,9 +44,6 @@ export class PasswordForgetPage extends Component {
   }
 
   render() {
-    <div> 
-      <h1>Reset your password</h1>
-    </div>;
 
     const {
       email,

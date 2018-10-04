@@ -56,7 +56,7 @@ Favorite.propTypes = {
   start_address: PropTypes.string,
   end_address: PropTypes.string,
   itinerary_id: PropTypes.string,
-  isLoading: PropTypes.bool,
+  isLoading: PropTypes.string,
   searchFavorite: PropTypes.func,
   deleteFavorite: PropTypes.func
 }; 

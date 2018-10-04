@@ -30,7 +30,7 @@ describe('addFavoriteThunk', () => {
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(({ "string": 'favorite', "type": "IS_LOADING" }));
-    expect(mockDispatch).not.toHaveBeenCalledWith(isLoading(false));
+    expect(mockDispatch).not.toHaveBeenCalledWith(isLoading(null));
   });
 
   it('should dispatch isLoading(false) if the response is ok', async () => {
@@ -42,6 +42,6 @@ describe('addFavoriteThunk', () => {
 
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(isLoading(''));
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(null));
   });
 });

@@ -1,14 +1,10 @@
 import { isLoading, hasErrored, addFavorite,  } from '../actions';
-import getFavoritesThunk from './getFavoritesThunk';
-import { getFavoritesUrl } from '../constants/urlGenerator';
 
 export const addFavoriteThunk = (fetchObj) => {
   const {
     url,
     options,
-    uid
   } = fetchObj;
-  const url2 = getFavoritesUrl(uid);
   return (dispatch) => {
     dispatch(isLoading('favorite'));
     fetch(url, options)
@@ -16,14 +12,11 @@ export const addFavoriteThunk = (fetchObj) => {
         if (!response.ok) {
           throw Error();
         }
-        dispatch(isLoading(''));
+        dispatch(isLoading(null));
         return response;
       })
       .then(response => response.json())
-      .then(favorite => {
-        dispatch(addFavorite(favorite));
-      })
-      .then(() => getFavoritesThunk(url2))
+      .then(favorite => dispatch(addFavorite(favorite)))
       .catch(() => dispatch(hasErrored(true)));
   };
 };
