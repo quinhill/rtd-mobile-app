@@ -20,6 +20,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <img
+        alt="loading spinner"
         className="loading-icon-white"
         src="/spinner-white.svg"
 />,
@@ -31,6 +32,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
+        "alt": "loading spinner",
         "className": "loading-icon-white",
         "src": "/spinner-white.svg",
       },
@@ -47,6 +49,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <img
+          alt="loading spinner"
           className="loading-icon-white"
           src="/spinner-white.svg"
 />,
@@ -58,6 +61,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "loading spinner",
           "className": "loading-icon-white",
           "src": "/spinner-white.svg",
         },
@@ -110,6 +114,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <img
+        alt="loading spinner"
         className="loading-icon-red"
         src="/spinner-red.svg"
 />,
@@ -121,6 +126,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
+        "alt": "loading spinner",
         "className": "loading-icon-red",
         "src": "/spinner-red.svg",
       },
@@ -137,6 +143,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <img
+          alt="loading spinner"
           className="loading-icon-red"
           src="/spinner-red.svg"
 />,
@@ -148,6 +155,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "loading spinner",
           "className": "loading-icon-red",
           "src": "/spinner-red.svg",
         },

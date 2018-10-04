@@ -203,85 +203,29 @@ describe('Reducers', () => {
   describe('favoriteReducer', () => {
     it('should return a defalut state of an empty array if no action type is met', () => {
       const expected = [];
-      const result = favorites(undefined, '')
+      const result = favorites(undefined, '');
+
+      expect(result).toEqual(expected);
     })
     
     describe('ADD_FAVORITE', () => {    
       it('should return an array of favorites if the type is ADD_FAVORITE', () => {
-        const expected =[{
-          arrival_time: "6:33am",
-          departure_time: "5:51am",
-          distance: "8.1 mi",
-          duration: "42 mins",
-          end_address: "Columbine St, Denver, CO, USA",
-          favorite: false,
-          itinerary_id: 59,
-          start_address: "S Monaco Pkwy, Colorado, USA",
-          steps: [{
-            arrival_stop: "Monaco Pkwy & 29th Ave",
-            arrival_time: "6:07am",
-            color: "#0277bd",
-            credit_name: "Regional Transportation District",
-            credit_url: "http://rtd-denver.com/",
-            departure_stop: "S Monaco Pkwy & Evans Ave",
-            departure_time: "5:51am",
-            distance: "5.5 mi",
-            duration: "16 mins",
-            headsign: "Central Park 65 via Monaco",
-            id: 656,
-            instructions: "Bus towards Central Park 65 via Monaco",
-            name: "Monaco Parkway",
-            num_stops: 24,
-            possible_route_id: 169,
-            short_name: "65",
-            travel_mode: "TRANSIT",
-            vehicle_type: "Bus"
-          }]
-        },
-        {
-          arrival_time: "6:33am",
-          departure_time: "5:51am",
-          distance: "8.1 mi",
-          duration: "42 mins",
-          end_address: "Columbine St, Denver, CO, USA",
-          favorite: false,
-          itinerary_id: 59,
-          start_address: "S Monaco Pkwy, Colorado, USA",
-          steps: [{
-            arrival_stop: "Monaco Pkwy & 29th Ave",
-            arrival_time: "6:07am",
-            color: "#0277bd",
-            credit_name: "Regional Transportation District",
-            credit_url: "http://rtd-denver.com/",
-            departure_stop: "S Monaco Pkwy & Evans Ave",
-            departure_time: "5:51am",
-            distance: "5.5 mi",
-            duration: "16 mins",
-            headsign: "Central Park 65 via Monaco",
-            id: 656,
-            instructions: "Bus towards Central Park 65 via Monaco",
-            name: "Monaco Parkway",
-            num_stops: 24,
-            possible_route_id: 169,
-            short_name: "65",
-            travel_mode: "TRANSIT",
-            vehicle_type: "Bus"
-          }]
-        }];
+        const state = [{}];
+        const expected = [{}, {}];
         
-        const result = favorites(undefined, {
+        const result = favorites(state, {
           type: 'ADD_FAVORITE',
-          favorite: [...expected]
+          favorite: {}
         });
         
         expect(result).toEqual(expected);
       });
 
       it('should return with an empty favorites array if there is no favorite inputed', () => {
-        const expected = [];
-        const result =favorites(undefined, {
+        const expected = [{}];
+        const result = favorites(undefined, {
           type: 'ADD_FAVORITE',
-          favorite: []
+          favorite: {}
         });
         expect(result).toEqual(expected);
       });

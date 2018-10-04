@@ -80,7 +80,7 @@ describe('ItineraryPage', () => {
     const wrapper = shallow(
       <ItineraryPage
         favorites={mockFavorites}
-        uid='12'
+        user={{uid: '12'}}
         addFavorite={jest.fn()}
         itinerary={mockItinerary}
       />);

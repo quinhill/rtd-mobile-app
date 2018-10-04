@@ -53,7 +53,7 @@ describe('deleteFavItineraryThunk', () => {
 
     await thunk(mockDispatch);
 
-    expect(mockDispatch).toHaveBeenCalledWith(isLoading(''));
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(null));
   });
 
 });

@@ -35,7 +35,7 @@ describe('signUpThunk', () => {
     await thunk(mockDispatch);
   
     expect(mockDispatch).toHaveBeenCalledWith(({"string": 'user', "type": "IS_LOADING"}));
-    expect(mockDispatch).not.toHaveBeenCalledWith(isLoading(false));
+    expect(mockDispatch).not.toHaveBeenCalledWith(isLoading(null));
   });
 
   it('should dispatch isLoading(false) if the response is ok', async () => {
@@ -47,7 +47,7 @@ describe('signUpThunk', () => {
   
     await thunk(mockDispatch);
   
-    expect(mockDispatch).toHaveBeenCalledWith(isLoading(''));
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(null));
   });
 
   it.skip('should dispatch SignUpThunk with the correct param', async () => {
