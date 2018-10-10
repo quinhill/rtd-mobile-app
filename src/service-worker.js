@@ -2,7 +2,7 @@
 var doCache = true;
 var CACHE_NAME = 'rtd-mobile';
 // Delete old caches
-this.addEventListener('activate', event => {
+window.addEventListener('activate', event => {
   const currentCachelist = [CACHE_NAME];
   event.waitUntil(
     caches.keys()
@@ -16,7 +16,7 @@ this.addEventListener('activate', event => {
   );
 });
 // This triggers when user starts the app
-this.addEventListener('install', function (event) {
+window.addEventListener('install', function (event) {
   if (doCache) {
     event.waitUntil(
       caches.open(CACHE_NAME)
@@ -39,7 +39,7 @@ this.addEventListener('install', function (event) {
   }
 });
 // Here we intercept request and serve up the matching files
-this.addEventListener('fetch', function (event) {
+window.addEventListener('fetch', function (event) {
   if (doCache) {
     event.respondWith(
       caches.match(event.request).then(function (response) {
