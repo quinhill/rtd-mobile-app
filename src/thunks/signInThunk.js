@@ -1,4 +1,4 @@
-import { isLoading, hasErrored, signInUser } from '../actions';
+import { isLoading, hasErrored, signInUser, getFavorites, getRecent } from '../actions';
 
 export const signInThunk = (url) => {
   return (dispatch) => {
@@ -12,7 +12,11 @@ export const signInThunk = (url) => {
         return response;
       })
       .then(response => response.json())
-      .then(userInfo => dispatch(signInUser(userInfo)))
+      .then(userInfo => {
+        dispatch(signInUser(userInfo.user))
+        dispatch(getFavorites(userInfo.favorites))
+        dispatch(getRecent(userInfo.recent_searches))
+      })
       .catch(() => dispatch(hasErrored(true)));
   };
 };

@@ -40,17 +40,12 @@ export class SignInPage extends Component {
     const { 
       history,
       signIn,
-      getFavorites
     } = this.props;
     if (!error) {
       try {
         const authUser = await auth.doSignInWithEmailAndPassword(email, password);
-        const {
-          userUrl,
-          favoritesUrl
-        } = signInUrl(authUser.user.uid);
-        await signIn(userUrl);
-        await getFavorites(favoritesUrl);
+        const url = signInUrl(authUser.user.uid);
+        await signIn(url);
       } catch (error) {
         this.setState({ error: error });
       }
