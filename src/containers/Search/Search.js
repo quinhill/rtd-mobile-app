@@ -99,8 +99,8 @@ export class Search extends Component {
               Search for a connection:
           </h2>
           <form
-          className='form'
-          onSubmit={this.submitSearch}
+            className='form'
+            onSubmit={this.submitSearch}
           >
             <StartAddressInput />
             <EndAddressInput />
